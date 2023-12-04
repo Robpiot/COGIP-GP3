@@ -319,6 +319,10 @@ Files inside this folder can contain global styles used in the project.
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
 */
+@roboto {
+  font-family: "Roboto", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&family=Roboto:wght@500&display=swap");
+}
 /*
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.

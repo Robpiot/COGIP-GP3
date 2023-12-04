@@ -315,6 +315,41 @@ template {
 This file is used to contain all base imports.
 Files inside this folder can contain global styles used in the project.
 */
+.title {
+  font-size: 4.16vw;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: normal;
+}
+
+.lastInvoices {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.lastContacts {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.lastCompanies {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
 /*
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
@@ -323,6 +358,41 @@ Files inside this folder can contain abstract settings, helpers or functions. Th
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
 */
+.page .home {
+  background: #F9DE4E;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 7%;
+  position: relative;
+}
+.page .home .title {
+  display: flex;
+  justify-content: center;
+  width: 41.25vw;
+  z-index: 1;
+  position: absolute;
+}
+.page .home .homeLogo {
+  z-index: 0;
+  margin-left: 43%;
+  height: 40.69vw;
+}
+.page .svgSection {
+  position: absolute;
+  z-index: 2;
+  width: 90%;
+  margin-top: -7.7%;
+  padding-left: 5%;
+}
+
+.invoices {
+  margin: 5% 10% 5% 10%;
+}
+.invoices th {
+  background-color: #F9DE4E;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 

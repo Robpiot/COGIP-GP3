@@ -509,6 +509,49 @@ Files inside this folder should contain all styles relating to a reusable compon
   z-index: 0;
 }
 
+footer {
+  background-color: white;
+  height: 543px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .divFooter {
+  display: flex;
+  background-color: white;
+  border-top: 2px solid #F9DE4E;
+}
+footer .divFooter .titleFooter {
+  width: 50%;
+  height: 90%;
+}
+footer .divFooter .titleFooter h3 {
+  font-size: 48px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: black;
+  padding: 3px;
+  border: 5px solid #F9DE4E;
+  text-align: left;
+}
+footer .divContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 90%;
+  padding: 10px;
+  border-left: 2px solid #F9DE4E;
+  border-right: 2px solid #F9DE4E;
+  flex-wrap: wrap;
+}
+footer .divContact .listePhone {
+  display: inline-flex;
+  list-style-type: none;
+}
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
@@ -545,11 +588,13 @@ Files inside this folder can contain specific element styles and layout.
 .headerDiv .ulTitleHeader .titleHeader {
   text-align: center;
   text-decoration: none;
+  margin-right: 33px;
 }
 .headerDiv .linksHeader {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  background-color: white;
   width: 100vw;
   height: 100vh;
   background-color: #F9DE4E;

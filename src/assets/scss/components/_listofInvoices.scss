@@ -1,0 +1,44 @@
+
+.invoices {
+    margin: 5% 10% 5% 10%;
+
+    table {
+        width: 77.67vw;
+
+        th {
+            background-color:#F9DE4E;
+            height: 3.6vw;
+        }
+        .name, .company {
+            width:18%;
+        }
+        .tva, .country, .comp, .invNum {
+            width: 15%;
+        }
+
+        .mail {
+            width:25%;
+        }
+
+        .phone, .type {
+            width: 10%;
+        }
+
+        .date {
+            width: 12%;
+        }
+
+        td {
+            height: 3.6vw;
+            
+        }
+        tr:nth-child(even) {
+            background-color: #F5F5F5;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #FFF; 
+        }
+    }
+
+}

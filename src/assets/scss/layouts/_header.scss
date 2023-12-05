@@ -4,9 +4,10 @@
 
 .headerDiv {
     background-color: #F9DE4E;
+    display: flex;
+    flex-direction: column;
     height : 10vh; 
     width: 100vw;
-    align-items: center;
 
     .menuButton {
         background-color: #F9DE4E;
@@ -14,7 +15,6 @@
         font-size: 24px;
         cursor:none;
         border: none;
-        align-items: center;
     }
 
     .ulTitleHeader {
@@ -23,7 +23,7 @@
         text-align: center;
         text-decoration: none;
         .titleHeader {
-            text-align: center;
+            text-decoration: none;
             
         }
     }
@@ -32,7 +32,7 @@
 
 .linksHeader {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     width: 100vw;
     height: 10vh;

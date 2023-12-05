@@ -3,10 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "../assets/css/style.css";
 import { Route, Routes, Link } from "react-router-dom";
-import Invoices from "../view/invoices.jsx";
-import Companies from "../view/companies.jsx";
-import Contacts from "../view/contacts.jsx";
-import App from "../App.jsx";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

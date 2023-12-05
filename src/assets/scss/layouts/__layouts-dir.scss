@@ -4,5 +4,6 @@ Files inside this folder can contain specific element styles and layout.
 */
 
 //Import Layout files
-
 @import './_header.scss';
+@import 'dashboard-page';
+@import 'dashboard-navbar';

@@ -93,7 +93,7 @@ const Footer = () => {
           </li>
         </ul>
         <ul>
-          <p>Copyright @ 2002 COGIP Inc</p>
+          <p>Copyright &copy; 2002 COGIP Inc</p>
         </ul>
       </nav>
     </div>

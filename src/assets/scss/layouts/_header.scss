@@ -6,13 +6,15 @@
     background-color: #F9DE4E;
     height : 10vh; 
     width: 100vw;
+    align-items: center;
 
     .menuButton {
         background-color: #F9DE4E;
-        color : white;
         padding: 15px;
         font-size: 24px;
         cursor:none;
+        border: none;
+        align-items: center;
     }
 
     .ulTitleHeader {

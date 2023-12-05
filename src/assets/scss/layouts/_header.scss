@@ -5,25 +5,31 @@
 .headerDiv {
     background-color: #F9DE4E;
     display: flex;
+    position:relative; 
     flex-direction: row;
     height : 10vh; 
-    width: 100vw;
+    width: 100%;
+    justify-content: center;
+    
+    
 
     .menuButton {
         background-color: #F9DE4E;
-        padding: 15px;
+        position: absolute;
+        padding: 10px;
         font-size: 24px;
+        top: 10px;
+        left: 10px;
         cursor:pointer;
         border: none;
-        justify-content: flex-start;
+        justify-content:center;
     }
 
     .ulTitleHeader {
-        position : absolute;
-        justify-content: center;
-        text-align: center;
         text-decoration: none;
         list-style-type: none;
+        margin: auto; 
+        
         .titleHeader {
             text-align: center;
             text-decoration: none;

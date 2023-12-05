@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "../assets/css/style.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import Invoices from "../view/invoices.jsx";
 import Companies from "../view/companies.jsx";
 import Contacts from "../view/contacts.jsx";
-import Home from "../App.jsx";
+import App from "../App.jsx";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <div className="headerDiv">
       <button className="menuButton" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={faBars} style={{ color: "#a2bf3b" }} />
+        <FontAwesomeIcon icon={faBars} style={{ color: "#000000" }} />
       </button>
       <nav className="navBarHeader">
         <ul className="ulTitleHeader">
@@ -29,25 +29,16 @@ const Header = () => {
         {isOpen && (
           <ul className="linksHeader">
             <li>
-              <Routes>
-                <Route path="/src/App.jsx" element={<Home />} />
-              </Routes>
-            </li>
-
-            <li>
-              <Routes>
-                <Route path="../view/invoices.jsx" element={<Invoices />} />
-              </Routes>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Routes>
-                <Route path="../view/companies.jsx" element={<Companies />} />
-              </Routes>
+              <Link to="/invoices">Invoices</Link>
             </li>
             <li>
-              <Routes>
-                <Route path="../view/contacts.jsx" element={<Contacts />} />
-              </Routes>
+              <Link to="/companies">Companies</Link>
+            </li>
+            <li>
+              <Link to="/contacts">Contacts</Link>
             </li>
           </ul>
         )}

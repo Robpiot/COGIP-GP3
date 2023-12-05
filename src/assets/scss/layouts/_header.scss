@@ -1,11 +1,11 @@
 .navBarHeader {
-    display: inline-flex;
+    display: flex;
 }
 
 .headerDiv {
     background-color: #F9DE4E;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height : 10vh; 
     width: 100vw;
 
@@ -13,8 +13,9 @@
         background-color: #F9DE4E;
         padding: 15px;
         font-size: 24px;
-        cursor:none;
+        cursor:pointer;
         border: none;
+        justify-content: flex-start;
     }
 
     .ulTitleHeader {
@@ -35,7 +36,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     width: 100vw;
-    height: 10vh;
+    height: 100vh;
     background-color: #F9DE4E;
     margin-top: 0px;
     padding-top: 0px;

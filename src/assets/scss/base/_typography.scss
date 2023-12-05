@@ -6,29 +6,37 @@
     line-height: normal; 
 }
 
-.lastInvoices {
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 4.5vw;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal; 
+.lastInvTable, .lastCompTable, .lastContTable {
+    .lastInvoices, .lastCompanies, .lastContacts {
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-size: 4.5vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal; 
+    }
+    table {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.3vw;
+        font-weight: 600;
+        line-height: normal;
+        border-collapse: collapse;
+        th {
+            text-align: left;
+            padding-left: 2%;
+        }
+        td {
+            padding-left: 2%;
+        }
+    }
 }
 
-.lastContacts {
+.endTitle {
     color: #000;
     font-family: 'Inter', sans-serif;
-    font-size: 4.5vw;
+    font-size: 3.5vw;
     font-style: normal;
     font-weight: 900;
     line-height: normal; 
-}
-
-.lastCompanies {
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 4.5vw;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal; 
+    text-transform: uppercase;
 }

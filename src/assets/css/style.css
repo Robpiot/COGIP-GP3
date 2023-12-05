@@ -323,7 +323,7 @@ Files inside this folder can contain global styles used in the project.
   line-height: normal;
 }
 
-.lastInvoices {
+.lastInvTable .lastInvoices, .lastInvTable .lastCompanies, .lastInvTable .lastContacts, .lastCompTable .lastInvoices, .lastCompTable .lastCompanies, .lastCompTable .lastContacts, .lastContTable .lastInvoices, .lastContTable .lastCompanies, .lastContTable .lastContacts {
   color: #000;
   font-family: "Inter", sans-serif;
   font-size: 4.5vw;
@@ -331,23 +331,29 @@ Files inside this folder can contain global styles used in the project.
   font-weight: 900;
   line-height: normal;
 }
-
-.lastContacts {
-  color: #000;
-  font-family: "Inter", sans-serif;
-  font-size: 4.5vw;
-  font-style: normal;
-  font-weight: 900;
+.lastInvTable table, .lastCompTable table, .lastContTable table {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 600;
   line-height: normal;
+  border-collapse: collapse;
+}
+.lastInvTable table th, .lastCompTable table th, .lastContTable table th {
+  text-align: left;
+  padding-left: 2%;
+}
+.lastInvTable table td, .lastCompTable table td, .lastContTable table td {
+  padding-left: 2%;
 }
 
-.lastCompanies {
+.endTitle {
   color: #000;
   font-family: "Inter", sans-serif;
-  font-size: 4.5vw;
+  font-size: 3.5vw;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  text-transform: uppercase;
 }
 
 /*
@@ -358,6 +364,41 @@ Files inside this folder can contain abstract settings, helpers or functions. Th
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
 */
+.invoices {
+  margin: 5% 10% 5% 10%;
+}
+.invoices table {
+  width: 77.67vw;
+}
+.invoices table th {
+  background-color: #F9DE4E;
+  height: 3.6vw;
+}
+.invoices table .name, .invoices table .company {
+  width: 18%;
+}
+.invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
+  width: 15%;
+}
+.invoices table .mail {
+  width: 25%;
+}
+.invoices table .phone, .invoices table .type {
+  width: 10%;
+}
+.invoices table .date {
+  width: 12%;
+}
+.invoices table td {
+  height: 3.6vw;
+}
+.invoices table tr:nth-child(even) {
+  background-color: #F5F5F5;
+}
+.invoices table tr:nth-child(odd) {
+  background-color: #FFF;
+}
+
 .page .home {
   background: #F9DE4E;
   display: flex;
@@ -385,12 +426,79 @@ Files inside this folder should contain all styles relating to a reusable compon
   margin-top: -7.7%;
   padding-left: 5%;
 }
+.page .invoices .lastContTable {
+  margin-top: -5%;
+}
+.page .invoices .lastCompTable {
+  z-index: 1;
+  margin-top: -15%;
+}
+.page .invoices .calepin {
+  width: 12vw;
+  z-index: 0;
+  margin-left: 97%;
+  margin-top: -5%;
+}
+.page .invoices .ampoule {
+  z-index: 0;
+  width: 10vw;
+  margin-left: -13%;
+}
 
 .invoices {
   margin: 5% 10% 5% 10%;
 }
-.invoices th {
+.invoices table {
+  width: 77.67vw;
+}
+.invoices table th {
   background-color: #F9DE4E;
+  height: 3.6vw;
+}
+.invoices table .name, .invoices table .company {
+  width: 18%;
+}
+.invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
+  width: 15%;
+}
+.invoices table .mail {
+  width: 25%;
+}
+.invoices table .phone, .invoices table .type {
+  width: 10%;
+}
+.invoices table .date {
+  width: 12%;
+}
+.invoices table td {
+  height: 3.6vw;
+}
+.invoices table tr:nth-child(even) {
+  background-color: #F5F5F5;
+}
+.invoices table tr:nth-child(odd) {
+  background-color: #FFF;
+}
+
+.endPage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0% 0% 5% 8.5%;
+}
+.endPage .endTitle {
+  width: 33vw;
+  z-index: 1;
+}
+.endPage .phoneImg {
+  width: 32vw;
+  position: absolute;
+  z-index: 1;
+  margin-left: 50%;
+  margin-bottom: 5%;
+}
+.endPage .svgYellow {
+  z-index: 0;
 }
 
 /*

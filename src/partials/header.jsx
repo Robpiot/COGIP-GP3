@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "../assets/css/style.css";
+import { Route, Routes } from "react-router-dom";
+import Invoices from "../view/invoices.jsx";
+import Companies from "../view/companies.jsx";
+import Contacts from "../view/contacts.jsx";
+import Home from "../App.jsx";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,16 +29,25 @@ const Header = () => {
         {isOpen && (
           <ul className="linksHeader">
             <li>
-              <Link to="/">Home</Link>
+              <Routes>
+                <Route path="/src/App.jsx" element={<Home />} />
+              </Routes>
+            </li>
+
+            <li>
+              <Routes>
+                <Route path="../view/invoices.jsx" element={<Invoices />} />
+              </Routes>
             </li>
             <li>
-              <Link to="/invoices">Invoices</Link>
+              <Routes>
+                <Route path="../view/companies.jsx" element={<Companies />} />
+              </Routes>
             </li>
             <li>
-              <Link to="/companies">Companies</Link>
-            </li>
-            <li>
-              <Link to="/contacts">Contacts</Link>
+              <Routes>
+                <Route path="../view/contacts.jsx" element={<Contacts />} />
+              </Routes>
             </li>
           </ul>
         )}

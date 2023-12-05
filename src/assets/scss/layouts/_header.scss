@@ -23,7 +23,9 @@
         justify-content: center;
         text-align: center;
         text-decoration: none;
+        list-style-type: none;
         .titleHeader {
+            text-align: center;
             text-decoration: none;
             
         }
@@ -33,7 +35,7 @@
 
 .linksHeader {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     width: 100vw;
     height: 100vh;
@@ -44,9 +46,9 @@
     padding-left: 0px;
     padding-right: 0px;
     list-style-type: none;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    text-align: left;
+    align-items: left;
+    justify-content: space-evenly;
     font-size: 24px;
     font-weight: 600;
     color: white;

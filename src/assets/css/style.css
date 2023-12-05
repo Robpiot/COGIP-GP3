@@ -359,13 +359,15 @@ Files inside this folder can contain specific element styles and layout.
   justify-content: center;
   text-align: center;
   text-decoration: none;
+  list-style-type: none;
 }
 .headerDiv .ulTitleHeader .titleHeader {
+  text-align: center;
   text-decoration: none;
 }
 .headerDiv .linksHeader {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   width: 100vw;
   height: 100vh;
@@ -376,9 +378,9 @@ Files inside this folder can contain specific element styles and layout.
   padding-left: 0px;
   padding-right: 0px;
   list-style-type: none;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  text-align: left;
+  align-items: left;
+  justify-content: space-evenly;
   font-size: 24px;
   font-weight: 600;
   color: white;

@@ -5,7 +5,7 @@ const Companies = () => {
   return (
     <div>
       <Header />
-      <h1>Contacts</h1>
+      <h1>Companies</h1>
       <Footer />
     </div>
   );

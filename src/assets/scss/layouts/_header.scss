@@ -1,0 +1,72 @@
+.navBarHeader {
+    display: flex;
+}
+
+.headerDiv {
+    background-color: #F9DE4E;
+    display: flex;
+    flex-direction: row;
+    height : 10vh; 
+    width: 100vw;
+
+    .menuButton {
+        background-color: #F9DE4E;
+        padding: 15px;
+        font-size: 24px;
+        cursor:pointer;
+        border: none;
+        justify-content: flex-start;
+    }
+
+    .ulTitleHeader {
+        position : absolute;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        list-style-type: none;
+        .titleHeader {
+            text-align: center;
+            text-decoration: none;
+            
+        }
+    }
+
+
+
+.linksHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F9DE4E;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    list-style-type: none;
+    text-align: left;
+    align-items: left;
+    justify-content: space-evenly;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    .link {
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+    .link:hover {
+        color: #F9DE4E;
+        background-color: white;
+        border-radius: 10px;
+        padding: 5px;
+    }
+}
+
+.headerButtons {
+    display: none;
+} }

@@ -5,7 +5,7 @@ const Invoices = () => {
   return (
     <div>
       <Header />
-      <h1>Contacts</h1>
+      <h1>Invoices</h1>
       <Footer />
     </div>
   );

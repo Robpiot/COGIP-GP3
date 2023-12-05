@@ -1,14 +1,14 @@
 import Header from "../partials/header.jsx";
 import Footer from "../partials/footer.jsx";
 
-const Companies = () => {
+const Home = () => {
   return (
     <div>
       <Header />
-      <h1>Companies</h1>
+      <h1>Home</h1>
       <Footer />
     </div>
   );
 };
 
-export default Companies;
+export default Home;

@@ -1,10 +1,13 @@
 import LastInvoices from '../components/LastInvoices.jsx';
 import LastContacts from '../components/LastContacts.jsx';
 import LastCompanies from '../components/LastCompanies.jsx';
+import Header from "../partials/header.jsx";
+import Footer from "../partials/footer.jsx";
 
 export function HomePage() {
     return (
         <div className="page">
+            <Header />
             <div className="home">
                 <h1 className="title">Manage your customers and invoices easily</h1>
                 <img src="/img/homeLogo.png" className="homeLogo" alt="homeLogo"/>
@@ -28,6 +31,7 @@ export function HomePage() {
                     <path d="M92.6332 0L772 167V409H0.960754L92.6332 0Z" fill="#F9DE4E"/>
                 </svg> 
             </div>
+            <Footer />
         </div>
     )
 }

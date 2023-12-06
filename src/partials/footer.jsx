@@ -11,7 +11,7 @@ import {
   faGooglePlusG,
 } from "@fortawesome/free-brands-svg-icons";
 import {
-  faLocationArrow,
+  faLocationDot,
   faPhone,
   faPrint,
 } from "@fortawesome/free-solid-svg-icons";
@@ -25,10 +25,10 @@ const Footer = () => {
           <h3>COGIP</h3>
         </div>
         <div className="divContact">
-          <ul>
+          <ul className="location">
             <FontAwesomeIcon
-              icon={faLocationArrow}
-              style={{ color: "#f9DE4E" }}
+              icon={faLocationDot}
+              style={{ color: "#F9DE4E" }}
             />
             <p>Square des Martyrs, 6000 Charleroi</p>
           </ul>
@@ -42,7 +42,7 @@ const Footer = () => {
               (123) 456-7890
             </li>
           </ul>
-          <ul className="listePhone">
+          <ul className="listeSocials">
             <li>Social Media</li>
             <li>
               <FontAwesomeIcon
@@ -97,9 +97,12 @@ const Footer = () => {
               <li>
                 <Link to="/contacts">Contacts</Link>
               </li>
+              <li>
+                <Link to="/about">Privacy Policy</Link>
+              </li>
             </ul>
             <ul className="copyright">
-              <p>Copyright &copy; 2002 COGIP Inc</p>
+              <p>Copyright © 2022 • COGIP Inc</p>
             </ul>
           </nav>
         </div>

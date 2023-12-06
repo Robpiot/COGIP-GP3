@@ -1,7 +1,7 @@
 footer {
     background-color: white;
     height: 543px;
-    width: 100vw;
+    width: 1440px;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -10,9 +10,11 @@ footer {
         display: grid;
         grid-template-columns:50% 50%;
         grid-template-rows: 80% 20%;
-        width: 80%;
+        width: 1091px;
+        height: 342px;
         background-color: white;
         border-top: 2px solid  #F9DE4E;
+        align-items: center;
        
         
 
@@ -27,7 +29,7 @@ footer {
                 color: black;
                 padding : 3px;
                 border: 5px solid #F9DE4E;
-                // margin: auto;
+                
                text-align: left;
             }
         }
@@ -39,17 +41,38 @@ footer {
         width: 100%;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
         text-align: left;
+        color : #737373;
         
-        height: 90%;
-        padding: 10px;
+
+        .location{
+
+        
+            display:flex;
+            width: fit-content;
+            align-items: center;
+            gap: 20px;
+        }
+        li {
+            display:flex;
+            width: fit-content;
+            align-items: center;
+            justify-content: space-evenly;
+            gap:17px;
+            margin: 0px 10px
+        }
        
         
-        .listePhone {
-            display:inline-flex;
-            justify-content: space-between;
+        .listeSocials, ul {
+            display:flex;
+            gap: 3rem;
             list-style-type: none;
+            text-decoration: none;
+            li {
+                margin: 0px;
+                padding: 0px;
+                color: #737373;
+            }
             
         }
     }
@@ -62,19 +85,31 @@ footer {
             display: flex;
             justify-content: space-between;
             width: 100%;
+            border-top:1px solid rgba(123, 185, 252, 0.2);
 
             .listeBottomLinks {
-                li {
-                    justify-content: space-between;
-                    margin: auto;
+                li, a {
+                    width: auto;
+                    display: inline-flex;
+                    justify-content: space-evenly;
+                    margin: 0px;
                     display: inline-flex;
                     list-style-type: none;
+                    text-decoration: none;
                     align-self: center;
+                    font: "Inter";
+                    font-size: 17px;
+                    color: #737373;
+                    margin: 0px 14px;
+                    
                     
                 }
             }
             .copyright {
                 align-self: flex-end;
+                font: "Inter";
+                font-size: 14px;
+                color: #737373;
             }
 
         };

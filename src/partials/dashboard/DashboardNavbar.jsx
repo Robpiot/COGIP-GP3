@@ -7,10 +7,10 @@ const DashboardNavbar = () => {
                 <nav className="menu--left" /*role="navigation"*/>
                     <div className="menuToggle">
 
-                        <input type="checkbox" />
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                            <input type="checkbox" />
+                            <span></span>
+                            <span></span>
+                            <span></span>
 
                         <div className="menuItem">
 

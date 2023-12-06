@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Dashboard from './view/dashboard/Dashboard.jsx'
+import DashboardPage from './view/dashboard/DashboardPage.jsx'
 import Home from "./view/home.jsx";
 import Invoices from "./view/invoices.jsx";
 import Companies from "./view/companies.jsx";
@@ -17,7 +17,7 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/companies" element={<Companies />} />
           <Route path="/invoices" element={<Invoices />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </div>
   );

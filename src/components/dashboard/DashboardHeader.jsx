@@ -1,4 +1,4 @@
-const Header = () => {
+const DashboardHeader = () => {
     return ( 
         <>
             <header className="dashboard-header">
@@ -16,4 +16,4 @@ const Header = () => {
      );
 }
 
-export default Header;
+export default DashboardHeader;

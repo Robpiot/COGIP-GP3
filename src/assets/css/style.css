@@ -8,6 +8,8 @@ This file is used to contain all vendor imports.
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -376,6 +378,7 @@ main.dashboard-main {
   z-index: 0;
   position: absolute;
   top: 50px;
+  box-sizing: border-box;
   left: 50px;
   right: 50px;
   max-width: 90%;
@@ -433,7 +436,7 @@ header.dashboard-header p {
 header.dashboard-header div {
   background: #9698D6;
   color: #ffffff;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 20px;
   margin: 20px 0;
 }
@@ -470,6 +473,86 @@ header.dashboard-header div h3 {
   header.dashboard-header div {
     padding: 60px;
     margin: 40px 0;
+  }
+}
+.dashboard-sections {
+  position: relative;
+  z-index: 0;
+  max-width: 100%;
+}
+.dashboard-sections .dashboard-grid {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section.statistics {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 0px 37px -21px rgba(0, 0, 0, 0.25);
+}
+section.statistics h3 {
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 24px 30px;
+  margin: 0;
+}
+section.statistics .stat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+section.statistics .stat-container .stat-item {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+section.statistics .stat-container .stat-item p {
+  margin: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+section.statistics .stat-container .stat-item:nth-of-type(1) {
+  background: #4D4CAC;
+}
+section.statistics .stat-container .stat-item:nth-of-type(2) {
+  background: #9698D6;
+}
+section.statistics .stat-container .stat-item:nth-of-type(3) {
+  background: #FF808B;
+}
+
+@media only screen and (min-width: 480px) {
+  section.statistics .stat-container {
+    flex-direction: row;
+  }
+  section.statistics .stat-container .stat-item {
+    margin: 20px clamp(5px, 4%, 50px) 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  section.statistics .stat-container .stat-item {
+    margin: 6px clamp(20px, 10%, 60px) 50px;
   }
 }
 .invoices {
@@ -681,10 +764,10 @@ Files inside this folder can contain specific element styles and layout.
 }
 
 .dashboard-page {
-  height: 100vh;
+  min-height: 100vh;
+  max-width: 100%;
   border-left: 1px solid #E7E7E7;
   background: #F5F5FB;
-  box-sizing: border-box;
   z-index: 2;
 }
 
@@ -694,9 +777,11 @@ Files inside this folder can contain specific element styles and layout.
   }
 }
 header.dashboard-navbar {
+  position: fixed;
+  z-index: 2;
   width: 285px;
   height: 100vh;
-  background: #F5F5FB;
+  background: rgba(245, 245, 251, 0);
 }
 header.dashboard-navbar .menu--left {
   position: relative;
@@ -740,6 +825,7 @@ header.dashboard-navbar .menu--left .menuToggle input:checked ~ .menuItem {
 }
 header.dashboard-navbar .menu--left .menuToggle span {
   position: relative;
+  z-index: 3;
   display: block;
   width: 33px;
   height: 4px;

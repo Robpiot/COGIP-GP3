@@ -7,7 +7,7 @@ const DashboardStatistics = ( {  statistics } ) => {
                 { 
                     statistics && (
                         statistics.map(stat => (
-                            <div className="stat-item">
+                            <div className="stat-item" key={stat.id}>
                                 <p>{stat.number}</p>
                                 <p>{stat.name}</p>
                             </div>

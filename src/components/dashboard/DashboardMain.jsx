@@ -1,6 +1,7 @@
 import DashboardHeader from "./DashboardHeader";
 import DashboardImg from "../../assets/img/dashboard.png";
 import DashboardSections from "./DashboardSections";
+
 const DashboardMain = () => {
     return (
         <main className="dashboard-main">

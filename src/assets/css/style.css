@@ -375,13 +375,14 @@ This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
 */
 main.dashboard-main {
-  z-index: 0;
   position: absolute;
+  z-index: 0;
   top: 50px;
   box-sizing: border-box;
-  left: 50px;
-  right: 50px;
-  max-width: 90%;
+  padding: 0 10%;
+  margin: 0;
+  max-width: 100%;
+  background: #F5F5FB;
 }
 main.dashboard-main img {
   display: none;
@@ -401,13 +402,13 @@ main.dashboard-main img {
 @media only screen and (min-width: 1024px) {
   main.dashboard-main {
     top: 0;
-    left: 335px;
+    left: 275px;
   }
   main.dashboard-main img {
     top: 50px;
     width: clamp(130px, 20vw, 250px);
     max-height: 350px;
-    right: 3vw;
+    right: 5vw;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -415,6 +416,7 @@ main.dashboard-main img {
     top: 0;
     right: clamp(30px, 10vw, 50px);
     width: 350px;
+    right: 15vw;
   }
 }
 header.dashboard-header {
@@ -484,6 +486,8 @@ header.dashboard-header div h3 {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
 }
 
 section.statistics {
@@ -553,6 +557,73 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
 @media only screen and (min-width: 1200px) {
   section.statistics .stat-container .stat-item {
     margin: 6px clamp(20px, 10%, 60px) 50px;
+  }
+}
+section.infos {
+  width: 100%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 0px 37px -21px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+section.infos::-webkit-scrollbar {
+  display: none;
+}
+section.infos h3 {
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 24px 30px;
+  margin: 0;
+}
+section.infos .separate {
+  height: 1px;
+  background: #E0E0E0;
+  margin: 0 30px;
+}
+section.infos .infos-container {
+  margin: 24px 30px 50px;
+}
+section.infos .infos-container table tr {
+  text-align: left;
+  height: 2rem;
+}
+section.infos .infos-container table tr th {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  min-width: 180px;
+}
+section.infos .infos-container table tr th:nth-last-of-type(2) {
+  min-width: 150px;
+}
+section.infos .infos-container table tr td {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+@media only screen and (min-width: 1200px) {
+  section.infos {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 580px;
   }
 }
 .invoices {
@@ -764,6 +835,7 @@ Files inside this folder can contain specific element styles and layout.
 }
 
 .dashboard-page {
+  position: relative;
   min-height: 100vh;
   max-width: 100%;
   border-left: 1px solid #E7E7E7;
@@ -771,16 +843,12 @@ Files inside this folder can contain specific element styles and layout.
   z-index: 2;
 }
 
-@media only screen and (min-width: 1024px) {
-  .dashboard-page {
-    display: flex;
-  }
-}
 header.dashboard-navbar {
   position: fixed;
   z-index: 2;
   width: 285px;
   height: 100vh;
+  min-height: 100%;
   background: rgba(245, 245, 251, 0);
 }
 header.dashboard-navbar .menu--left {
@@ -859,6 +927,7 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem {
 }
 header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar {
   position: relative;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 130px;
@@ -977,6 +1046,7 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout P {
     height: calc(100vh - 80px);
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar {
+    top: 50px;
     padding-top: 50px;
     margin-top: 50px;
     height: 200px;
@@ -990,7 +1060,12 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout P {
     font-size: 25px;
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .separate {
+    top: 60px;
     margin: 30px 0 20px;
+  }
+  header.dashboard-navbar .menu--left .menuToggle .menuItem ul {
+    position: relative;
+    top: 70px;
   }
 }
 @media only screen and (min-width: 1024px), only screen and (min-height: 756px) {

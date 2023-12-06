@@ -1,11 +1,15 @@
 main.dashboard-main {
-    z-index: 0;
     position: absolute;
+    z-index: 0;
     top: 50px;
     box-sizing: border-box;
-    left: 50px;
-    right: 50px;
-    max-width: 90%;
+    // left: 50px;
+    // right: 50px;
+    padding: 0 10%;
+    margin: 0;
+    max-width: 100%;
+    background: #F5F5FB;
+
     img {
         display: none;
         position: absolute;
@@ -26,12 +30,12 @@ main.dashboard-main {
 @media only screen and (min-width: 1024px) {
     main.dashboard-main {
         top: 0;
-        left: 335px;
+        left: 275px;
         img {
             top: 50px;
             width: clamp(130px, 20vw, 250px);
             max-height: 350px;
-            right: 3vw;
+            right: 5vw;
         }
     }
 }
@@ -41,6 +45,7 @@ main.dashboard-main {
             top: 0;
             right: clamp(30px, 10vw, 50px);
             width: 350px;
+            right: 15vw;
         }
     }
 }

@@ -25,14 +25,14 @@ const Footer = () => {
           <h3>COGIP</h3>
         </div>
         <div className="divContact">
-          <ul className="listePhone">
+          <ul>
             <FontAwesomeIcon
               icon={faLocationArrow}
               style={{ color: "#f9DE4E" }}
             />
             <p>Square des Martyrs, 6000 Charleroi</p>
           </ul>
-          <ul>
+          <ul className="listeContacts">
             <li>
               <FontAwesomeIcon icon={faPhone} style={{ color: "#f9DE4E" }} />
               <p>(123) 456-7890</p>

@@ -541,16 +541,17 @@ footer .divFooter .titleFooter h3 {
 }
 footer .divContact {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  width: 50%;
+  text-align: left;
   height: 90%;
   padding: 10px;
-  flex-wrap: wrap;
 }
 footer .divContact .listePhone {
   display: inline-flex;
+  justify-content: space-between;
   list-style-type: none;
 }
 footer .bottomLinks {
@@ -566,6 +567,7 @@ footer .bottomLinks nav {
 }
 footer .bottomLinks nav .listeBottomLinks li {
   justify-content: space-between;
+  margin: auto;
   display: inline-flex;
   list-style-type: none;
   align-self: center;

@@ -518,7 +518,10 @@ footer {
   align-items: center;
 }
 footer .divFooter {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 80% 20%;
+  width: 80%;
   background-color: white;
   border-top: 2px solid #F9DE4E;
 }
@@ -544,14 +547,33 @@ footer .divContact {
   width: 50%;
   height: 90%;
   padding: 10px;
-  border-left: 2px solid #F9DE4E;
-  border-right: 2px solid #F9DE4E;
   flex-wrap: wrap;
 }
 footer .divContact .listePhone {
   display: inline-flex;
   list-style-type: none;
 }
+footer .bottomLinks {
+  display: flex;
+  justify-content: space-between;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+footer .bottomLinks nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+footer .bottomLinks nav .listeBottomLinks li {
+  justify-content: space-between;
+  display: inline-flex;
+  list-style-type: none;
+  align-self: center;
+}
+footer .bottomLinks nav .copyright {
+  align-self: flex-end;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 

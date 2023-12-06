@@ -82,26 +82,27 @@ const Footer = () => {
           </li> */}
           </ul>
         </div>
-        <div className="bottomLinks"></div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/invoices">Invoices</Link>
-            </li>
-            <li>
-              <Link to="/companies">Companies</Link>
-            </li>
-            <li>
-              <Link to="/contacts">Contacts</Link>
-            </li>
-          </ul>
-          <ul>
-            <p>Copyright &copy; 2002 COGIP Inc</p>
-          </ul>
-        </nav>
+        <div className="bottomLinks">
+          <nav>
+            <ul className="listeBottomLinks">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/invoices">Invoices</Link>
+              </li>
+              <li>
+                <Link to="/companies">Companies</Link>
+              </li>
+              <li>
+                <Link to="/contacts">Contacts</Link>
+              </li>
+            </ul>
+            <ul className="copyright">
+              <p>Copyright &copy; 2002 COGIP Inc</p>
+            </ul>
+          </nav>
+        </div>
       </div>
     </footer>
   );

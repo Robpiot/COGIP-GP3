@@ -27,7 +27,7 @@ export function HomePage() {
             <div className="endPage">
                 <h2 className="endTitle">Work Better in your Company</h2>
                 <img src="/img/phone.png" className="phoneImg" alt="phone"/>
-                <svg className="svgYellow" width="772" height="409" viewBox="0 0 772 409" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="svgYellow" width="772" height="" viewBox="0 0 772 409" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M92.6332 0L772 167V409H0.960754L92.6332 0Z" fill="#F9DE4E"/>
                 </svg> 
             </div>

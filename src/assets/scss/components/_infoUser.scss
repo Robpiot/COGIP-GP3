@@ -1,0 +1,45 @@
+.contactPage {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right:5%;
+    margin-bottom: 20%;
+    gap: 20%;
+    align-items: center;
+
+    .infoContacts {
+        display: flex;
+        flex-direction: column;
+
+        .nameUser {
+            margin-bottom: 0;
+            position:relative;
+            z-index:99;
+        
+            &::after {
+                content:"";
+                position:absolute;
+                top:60%;
+                left:13.7%;
+                bottom: 0;
+                height: 30%;
+                width: 100%;
+                background-color: #F9DE4E;
+                z-index:-1;
+            }
+        }
+
+        .cont {
+            padding-left: 0;
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+
+    .userPicture {
+        border-radius: 50%;
+        height: 18vw
+    }
+}

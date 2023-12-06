@@ -6,7 +6,6 @@ import Contacts from "./view/contacts.jsx";
 
 import '../src/assets/css/style.css'
 import { HomePage } from './view/HomePage.jsx';
-import ShowCompanies from "./view/showCompany.jsx";
 
 function App() {
 
@@ -18,7 +17,6 @@ function App() {
           <Route path="/companies" element={<Companies />} />
           <Route path="/invoices" element={<Invoices />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/showCompany" element={<ShowCompanies />} />
       </Routes>
     </div>
   );

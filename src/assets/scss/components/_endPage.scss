@@ -1,0 +1,23 @@
+.endPage {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    padding: 0% 0% 5% 8.5%;
+
+    .endTitle {
+        width: 33vw;
+        z-index: 1;
+    }
+
+    .phoneImg {
+        width: 38vw;
+        position: absolute;
+        z-index:1;
+        margin-left: 50%;
+        margin-bottom: 5%;
+    }
+
+    .svgYellow {
+        z-index: 0;
+    }
+}

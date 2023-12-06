@@ -401,6 +401,106 @@ h1, h2, h3, h4, h5, h6 {
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
 */
+main.dashboard-main {
+  z-index: 0;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  right: 50px;
+  max-width: 90%;
+}
+main.dashboard-main img {
+  display: none;
+  position: absolute;
+  width: clamp(130px, 30vw, 300px);
+  right: 4vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 756px) {
+  main.dashboard-main img {
+    display: block;
+    top: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main.dashboard-main {
+    top: 0;
+    left: 335px;
+  }
+  main.dashboard-main img {
+    top: 50px;
+    width: clamp(130px, 20vw, 250px);
+    max-height: 350px;
+    right: 3vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main.dashboard-main img {
+    top: 0;
+    right: clamp(30px, 10vw, 50px);
+    width: 350px;
+  }
+}
+header.dashboard-header {
+  font-family: Inter;
+  margin-top: 50px;
+}
+header.dashboard-header h2 {
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 32.31px;
+  margin-bottom: 6px;
+}
+header.dashboard-header p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0;
+}
+header.dashboard-header div {
+  background: #9698D6;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+header.dashboard-header div h3 {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 28.36px;
+}
+
+@media only screen and (min-width: 756px) {
+  header.dashboard-header h2 {
+    font-size: 28px;
+    line-height: 34.31px;
+    margin-bottom: 8px;
+  }
+  header.dashboard-header div {
+    padding: 40px;
+    margin: 30px 0;
+  }
+  header.dashboard-header div h3 {
+    font-size: 33px;
+    line-height: 40.36px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  header.dashboard-header h2 {
+    font-size: 30px;
+    line-height: 36.31px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  header.dashboard-header div {
+    padding: 60px;
+    margin: 40px 0;
+  }
+}
 .invoices {
   margin: 5% 10% 5% 10%;
 }
@@ -570,8 +670,8 @@ Files inside this folder should contain all styles relating to a reusable compon
 }
 
 .field {
-  height: 3.5vh;
-  width: 16vw;
+  height: 2.8vw;
+  width: 18%;
   position: absolute;
   right: 12.5%;
 }
@@ -692,8 +792,14 @@ Files inside this folder can contain specific element styles and layout.
   border-left: 1px solid #E7E7E7;
   background: #F5F5FB;
   box-sizing: border-box;
+  z-index: 2;
 }
 
+@media only screen and (min-width: 1024px) {
+  .dashboard-page {
+    display: flex;
+  }
+}
 header.dashboard-navbar {
   width: 285px;
   height: 100vh;

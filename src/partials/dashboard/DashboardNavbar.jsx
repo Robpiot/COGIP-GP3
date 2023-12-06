@@ -3,7 +3,6 @@ import AdminImg from '../../assets/img/pexels-italo-melo-2379004-1.png'
 
 const DashboardNavbar = () => {
     return (
-        // <div className="dashboard-navbar">
             <header className="dashboard-navbar">
                 <nav className="menu--left" /*role="navigation"*/>
                     <div className="menuToggle">
@@ -80,7 +79,6 @@ const DashboardNavbar = () => {
                     </div>
                 </nav>
             </header>
-        // </div>
     )
 }
 

@@ -4,6 +4,8 @@ Files inside this folder should contain all styles relating to a reusable compon
 */
 
 //Import Component files
+@import './dashboard/dashboard-main';
+@import './dashboard/dashboard-header';
 
 @import './listofInvoices';
 @import './introHomePage';

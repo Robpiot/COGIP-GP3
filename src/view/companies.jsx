@@ -12,7 +12,7 @@ const Companies = () => {
           </svg> 
       </div>
       <h1 className="titleSection">All Companies</h1>
-      <input className="field" type="text" />
+      <input className="field" type="text" placeholder="Search company name"/>
       <div className="allInvoices">
         <AllCompanies />
       </div>

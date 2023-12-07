@@ -1,3 +1,7 @@
+* {
+    margin : 0px;
+    padding: 0px;
+}
 .navBarHeader {
     display: flex;
 }
@@ -7,6 +11,7 @@
     display: flex;
     position:relative; 
     justify-content: center;
+    align-items: center;
     
     ul {
         li {
@@ -50,12 +55,17 @@
       }
 
     .ulTitleHeader {
+       display: flex;
+         justify-content: center;
+            align-items: center;
+
 
 
         .titleHeader, a{
             text-decoration: none;
             list-style-type: none;
             color : black;
+            
 
         }
        
@@ -78,7 +88,7 @@
         display: none;
     }
     .headerButtons.is-open{
-        background-color: white;
+       
             display: block;
             position: absolute;
             top: 100%; // Adjust this line

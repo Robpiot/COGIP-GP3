@@ -1,21 +1,15 @@
-import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
-import "../assets/css/style.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenuLinks = () => {
-    setIsOpen((open) => !isOpen);
-  };
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen((open) => !isMenuOpen);
-  };
+  const toggleMenuLinks = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <div className="headerDiv">
       <button className="menuButton" onClick={toggleMenuLinks}>
@@ -43,10 +37,13 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>
-          <li className="signupButton">Sign up</li>
-          <li className="loginButton">Login</li>
+          <li className="signupButton">
+            <button>Sign up</button>
+          </li>
+          <li className="loginButton">
+            <button>Login</button>
+          </li>
         </ul>
       </nav>
       <button className="userButton" onClick={toggleMenu}>

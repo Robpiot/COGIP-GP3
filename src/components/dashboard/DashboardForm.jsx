@@ -14,7 +14,10 @@ const Form = ( {data} ) => {
 
             <div className="form-container">
                 <form action="">
-                    <input type="text" placeholder="" />
+                    <input className="input" type="text" placeholder="Reference" />
+                    <input className="input" type="text" placeholder="Price" />
+                    <input className="input" type="text" placeholder="Company Name" />
+                    <button className="save">Save</button>
                 </form>
 
             </div>

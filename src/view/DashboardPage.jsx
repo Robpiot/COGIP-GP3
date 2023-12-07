@@ -18,7 +18,7 @@ const DashboardPage = () => {
         <div className="dashboard-page">
 
             {/* Barre de navigation (menu hamburger...) */}
-            <DashboardNavbar onPage={getComponent} /> 
+            <DashboardNavbar onPage={getComponent} page={page} /> 
 
             {/* Section principale reprenant un header et une grille contenant les informations 
                 (Statistics, Last Contacts, Last invoices, Last Companies) */}

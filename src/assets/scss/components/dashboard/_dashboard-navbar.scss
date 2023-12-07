@@ -123,33 +123,28 @@ header.dashboard-navbar {
                 ul {
                     padding: 0;
                     list-style-type: none;
-                    width: 60%;
+                    // width: 60%;
+                    width: 100%;
                     margin: 0 auto;
                     li {
+                        padding-left: 50px;
                         color: #000;
                         font-family: Inter;
                         font-size: 20px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: normal;
-                        a {
-                            display: flex;
-                            align-items: center;
-                            text-decoration: none;
-                            color: #232323;
-                            transition: all 0.3s ease;
-                            &:hover {
-                                color: tomato;
-                            }
-                            &:hover > svg path,
-                            &:hover > svg rect,
-                            &:hover > svg circle {
-                                stroke: tomato;
-                            }
-                            p {
-                                margin: 10px 0 10px 20px;
-                            }
+                        display: flex;
+                        align-items: center;
+                        color: #232323;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+
+
+                        p {
+                            margin: 10px 0 10px 20px;
                         }
+                        
                     }
                     // TODO: ↓ à vérifier !!!
                     li:active {
@@ -213,6 +208,7 @@ header.dashboard-navbar {
                     .avatar {
                         margin-top: 30px;
                     }
+
                 }
             }
         }    

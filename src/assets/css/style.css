@@ -496,9 +496,9 @@ main.dashboard-main {
   z-index: 0;
   top: 50px;
   box-sizing: border-box;
-  padding: 0 10%;
+  padding: 0 8%;
   margin: 0;
-  max-width: 100%;
+  width: 100%;
   background: #F5F5FB;
 }
 main.dashboard-main img {
@@ -518,6 +518,7 @@ main.dashboard-main img {
 }
 @media only screen and (min-width: 1024px) {
   main.dashboard-main {
+    width: calc(100% - 275px);
     top: 0;
     left: 275px;
   }
@@ -656,31 +657,24 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .separate {
 header.dashboard-navbar .menu--left .menuToggle .menuItem ul {
   padding: 0;
   list-style-type: none;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
 }
 header.dashboard-navbar .menu--left .menuToggle .menuItem ul li {
+  padding-left: 50px;
   color: #000;
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a {
   display: flex;
   align-items: center;
-  text-decoration: none;
   color: #232323;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a:hover {
-  color: tomato;
-}
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a:hover > svg path, header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a:hover > svg rect, header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a:hover > svg circle {
-  stroke: tomato;
-}
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a p {
+header.dashboard-navbar .menu--left .menuToggle .menuItem ul li p {
   margin: 10px 0 10px 20px;
 }
 header.dashboard-navbar .menu--left .menuToggle .menuItem ul li:active {
@@ -986,8 +980,6 @@ section.infos .infos-container table tr td {
   }
 }
 section.form {
-  position: relative;
-  max-width: 100%;
   margin-bottom: 50px;
   border-radius: 10px;
   background: #FFF;
@@ -1022,7 +1014,6 @@ section.form .form-container {
   section.form {
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 580px;
   }
 }
 .invoices {

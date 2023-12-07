@@ -1,13 +1,15 @@
-.svgSectionIn {
+.empty {
+    height: 13vw;
     background-color: #F9DE4E;
-    height:15vh;
-    width: auto;
+}
+
+.svgSectionIn {
 
     .svgInvoices {
         position: absolute;
         z-index:2;
-        width: 85.5vw;
-        margin-top: 9vh;
+        width: 90%;
+        margin-top: -7.7%;
         padding-left: 5%; 
     }
 }
@@ -39,7 +41,7 @@
 }
 
 .allInvoices {
-    margin: 5% 10% 5% 10%;
+    margin: 5% 10% 10% 10%;
 
     table {
         width: 77.67vw;
@@ -67,23 +69,6 @@
 
         tr:nth-child(odd) {
             background-color: #FFF; 
-        }
-    }
-}
-
-@media screen and (min-width:360px) and (max-width:540px) {
-    .svgSectionIn {
-        .svgInvoices {
-            margin-top: 10.9vh;
-        }
-    }
-}
-
-@media screen and (min-width:1014px){
-    .svgSectionIn {
-        max-height: 15vh;
-        .svgInvoices {
-            margin-top: 5vh;
         }
     }
 }

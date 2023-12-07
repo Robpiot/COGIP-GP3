@@ -1128,10 +1128,7 @@ Files inside this folder can contain specific element styles and layout.
   background-color: #F9DE4E;
   display: flex;
   position: relative;
-  flex-direction: row;
-  height: 10vh;
-  width: 100%;
-  justify-content: center;
+  justify-content: space-between;
 }
 .headerDiv .menuButton {
   background-color: #F9DE4E;
@@ -1162,7 +1159,13 @@ Files inside this folder can contain specific element styles and layout.
   margin-right: 33px;
   list-style-type: none;
 }
-.headerDiv .userButton {
+.headerDiv .ulTitleHeader .titleHeader h1 {
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+  pointer-events: none;
+}
+.headerDiv .ulTitleHeader .userButton {
   background-color: #F9DE4E;
   padding: 10px;
   font-size: 24px;
@@ -1172,10 +1175,10 @@ Files inside this folder can contain specific element styles and layout.
   border: none;
   justify-content: center;
 }
-.headerDiv .headerButtons {
+.headerDiv .ulTitleHeader .headerButtons {
   display: none;
 }
-.headerDiv .headerButtons.is-open {
+.headerDiv .ulTitleHeader .headerButtons.is-open {
   display: flex;
   flex-direction: column;
   justify-content: center;

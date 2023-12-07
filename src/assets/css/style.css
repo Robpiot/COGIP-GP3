@@ -8,6 +8,8 @@ This file is used to contain all vendor imports.
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -356,6 +358,123 @@ Files inside this folder can contain global styles used in the project.
   text-transform: uppercase;
 }
 
+.titleSection {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.field {
+  border-radius: 5px;
+  border: 1px solid #636363;
+  color: #636363;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.allInvoices table {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 600;
+  line-height: normal;
+  border-collapse: collapse;
+}
+.allInvoices table th {
+  text-align: left;
+  padding-left: 2%;
+}
+.allInvoices table td {
+  padding-left: 2%;
+}
+
+.name {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.infoUsers li {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.7vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.infoUsers li .bold {
+  font-weight: 900;
+}
+
+.contactInfo .contacts {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.contactInfo .contactPeople .contactName {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.2vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.lastInvoices .lastInv {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.lastInvoices .userLastInv table {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 600;
+  line-height: normal;
+  border-collapse: collapse;
+}
+.lastInvoices .userLastInv table th {
+  text-align: left;
+  padding-left: 2%;
+}
+.lastInvoices .userLastInv table td {
+  padding-left: 2%;
+}
+
+.contactPage .infoContacts .nameUser {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.contactPage .infoContacts .cont li {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.7vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.contactPage .infoContacts .cont li .bold {
+  font-weight: 900;
+}
+
 /*
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
@@ -372,6 +491,295 @@ h1, h2, h3, h4, h5, h6 {
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
 */
+main.dashboard-main {
+  position: absolute;
+  z-index: 0;
+  top: 50px;
+  box-sizing: border-box;
+  padding: 0 10%;
+  margin: 0;
+  max-width: 100%;
+  background: #F5F5FB;
+}
+main.dashboard-main img {
+  display: none;
+  position: absolute;
+  width: clamp(130px, 30vw, 300px);
+  right: 4vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 756px) {
+  main.dashboard-main img {
+    display: block;
+    top: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main.dashboard-main {
+    top: 0;
+    left: 275px;
+  }
+  main.dashboard-main img {
+    top: 50px;
+    width: clamp(130px, 20vw, 250px);
+    max-height: 350px;
+    right: 5vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main.dashboard-main img {
+    top: 0;
+    right: clamp(30px, 10vw, 50px);
+    width: 350px;
+    right: 15vw;
+  }
+}
+header.dashboard-header {
+  font-family: Inter;
+  margin: 50px 0 100px;
+}
+header.dashboard-header h2 {
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 32.31px;
+  margin-bottom: 6px;
+}
+header.dashboard-header p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0;
+}
+header.dashboard-header div {
+  background: #9698D6;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+header.dashboard-header div h3 {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 28.36px;
+}
+
+@media only screen and (min-width: 756px) {
+  header.dashboard-header h2 {
+    font-size: 28px;
+    line-height: 34.31px;
+    margin-bottom: 8px;
+  }
+  header.dashboard-header div {
+    padding: 40px;
+    margin: 30px 0;
+  }
+  header.dashboard-header div h3 {
+    font-size: 33px;
+    line-height: 40.36px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  header.dashboard-header h2 {
+    font-size: 30px;
+    line-height: 36.31px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  header.dashboard-header div {
+    padding: 60px;
+    margin: 40px 0;
+  }
+}
+section.infos {
+  width: 100%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 0px 37px -21px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+section.infos::-webkit-scrollbar {
+  display: none;
+}
+section.infos h3 {
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 24px 30px;
+  margin: 0;
+}
+section.infos .separate {
+  height: 1px;
+  background: #E0E0E0;
+  margin: 0 30px;
+}
+section.infos .infos-container {
+  margin: 24px 30px 50px;
+}
+section.infos .infos-container table tr {
+  text-align: left;
+  height: 2rem;
+}
+section.infos .infos-container table tr th {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  min-width: 180px;
+}
+section.infos .infos-container table tr th:nth-last-of-type(2) {
+  min-width: 150px;
+}
+section.infos .infos-container table tr td {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+@media only screen and (min-width: 1200px) {
+  section.infos {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 580px;
+  }
+}
+main.dashboard-main {
+  position: absolute;
+  z-index: 0;
+  top: 50px;
+  box-sizing: border-box;
+  padding: 0 10%;
+  margin: 0;
+  max-width: 100%;
+  background: #F5F5FB;
+}
+main.dashboard-main img {
+  display: none;
+  position: absolute;
+  width: clamp(130px, 30vw, 300px);
+  right: 4vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 756px) {
+  main.dashboard-main img {
+    display: block;
+    top: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main.dashboard-main {
+    top: 0;
+    left: 275px;
+  }
+  main.dashboard-main img {
+    top: 50px;
+    width: clamp(130px, 20vw, 250px);
+    max-height: 350px;
+    right: 5vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main.dashboard-main img {
+    top: 0;
+    right: clamp(30px, 10vw, 50px);
+    width: 350px;
+    right: 15vw;
+  }
+}
+section.statistics {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 0px 37px -21px rgba(0, 0, 0, 0.25);
+}
+section.statistics h3 {
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 24px 30px;
+  margin: 0;
+}
+section.statistics .stat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+section.statistics .stat-container .stat-item {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+section.statistics .stat-container .stat-item p {
+  margin: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+section.statistics .stat-container .stat-item:nth-of-type(1) {
+  background: #4D4CAC;
+}
+section.statistics .stat-container .stat-item:nth-of-type(2) {
+  background: #9698D6;
+}
+section.statistics .stat-container .stat-item:nth-of-type(3) {
+  background: #FF808B;
+}
+
+@media only screen and (min-width: 480px) {
+  section.statistics .stat-container {
+    flex-direction: row;
+  }
+  section.statistics .stat-container .stat-item {
+    margin: 20px clamp(5px, 4%, 50px) 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  section.statistics {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 580px;
+  }
+  section.statistics .stat-container .stat-item {
+    margin: 50px clamp(20px, 10%, 60px) 50px;
+  }
+}
 .invoices {
   margin: 5% 10% 5% 10%;
 }
@@ -507,6 +915,205 @@ Files inside this folder should contain all styles relating to a reusable compon
 }
 .endPage .svgYellow {
   z-index: 0;
+  margin-top: 5%;
+}
+
+.empty {
+  height: 13vw;
+  background-color: #F9DE4E;
+}
+
+.svgSectionIn {
+  position: absolute;
+  z-index: 2;
+  width: 90%;
+  margin-top: -7.7%;
+  padding-left: 5%;
+}
+
+.titleSection {
+  margin-left: 10%;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 99;
+}
+.titleSection::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 13.7%;
+  bottom: 0;
+  height: 30%;
+  width: 30%;
+  background-color: #F9DE4E;
+  z-index: -1;
+}
+
+.field {
+  height: 2.8vw;
+  width: 18%;
+  position: absolute;
+  right: 12.5%;
+}
+
+.allInvoices {
+  margin: 5% 10% 10% 10%;
+}
+.allInvoices table {
+  width: 77.67vw;
+  border-collapse: collapse;
+}
+.allInvoices table th {
+  background-color: #F9DE4E;
+  height: 3.6vw;
+}
+.allInvoices table .invNum {
+  width: 15%;
+}
+.allInvoices table .date {
+  width: 12%;
+}
+.allInvoices table td {
+  height: 3.6vw;
+}
+.allInvoices table tr:nth-child(even) {
+  background-color: #F5F5F5;
+}
+.allInvoices table tr:nth-child(odd) {
+  background-color: #FFF;
+}
+
+.user .infos {
+  border-bottom: 1px solid #CDCDCD;
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-bottom: 3%;
+}
+.user .infos .name {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 99;
+}
+.user .infos .name::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 13.7%;
+  bottom: 0;
+  height: 30%;
+  width: 30%;
+  background-color: #F9DE4E;
+  z-index: -1;
+}
+.user .infos ul {
+  padding-left: 0;
+}
+.user .infos ul li {
+  list-style-type: none;
+}
+.user .contactInfo {
+  border-bottom: 1px solid #CDCDCD;
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-bottom: 8%;
+  z-index: 1;
+}
+.user .contactInfo .contactPeople {
+  display: flex;
+  flex-direction: row;
+  gap: 8%;
+  width: 50vw;
+}
+.user .contactInfo .contactPeople .people {
+  display: flex;
+  flex-direction: row;
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  align-items: center;
+  padding: 3% 12% 3% 7%;
+  gap: 10%;
+}
+.user .contactInfo .contactPeople .people .contactPicture {
+  border-radius: 50%;
+  height: 10vw;
+}
+.user .contactInfo .calepin {
+  height: 12vh;
+  z-index: 0;
+  margin-left: 29%;
+  position: relative;
+}
+.user .lastInvoices {
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-bottom: 8%;
+}
+.user .lastInvoices .userLastInv table {
+  width: 77.67vw;
+  border-collapse: collapse;
+}
+.user .lastInvoices .userLastInv table th {
+  background-color: #F9DE4E;
+  height: 3.6vw;
+}
+.user .lastInvoices .userLastInv table td {
+  height: 3.6vw;
+}
+.user .lastInvoices .userLastInv table tr:nth-child(even) {
+  background-color: #F5F5F5;
+}
+.user .lastInvoices .userLastInv table tr:nth-child(odd) {
+  background-color: #FFF;
+}
+.user .lastInvoices .userLastInv table .company {
+  width: 18%;
+}
+.user .lastInvoices .userLastInv table .invNum {
+  width: 15%;
+}
+.user .lastInvoices .userLastInv table .date {
+  width: 12%;
+}
+
+.contactPage {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-bottom: 20%;
+  gap: 20%;
+  align-items: center;
+}
+.contactPage .infoContacts {
+  display: flex;
+  flex-direction: column;
+}
+.contactPage .infoContacts .nameUser {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 99;
+}
+.contactPage .infoContacts .nameUser::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 13.7%;
+  bottom: 0;
+  height: 30%;
+  width: 100%;
+  background-color: #F9DE4E;
+  z-index: -1;
+}
+.contactPage .infoContacts .cont {
+  padding-left: 0;
+}
+.contactPage .infoContacts .cont li {
+  list-style-type: none;
+}
+.contactPage .userPicture {
+  border-radius: 50%;
+  height: 18vw;
 }
 
 /*
@@ -567,16 +1174,21 @@ Files inside this folder can contain specific element styles and layout.
 }
 
 .dashboard-page {
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  max-width: 100%;
   border-left: 1px solid #E7E7E7;
   background: #F5F5FB;
-  box-sizing: border-box;
+  z-index: 2;
 }
 
 header.dashboard-navbar {
+  position: fixed;
+  z-index: 2;
   width: 285px;
   height: 100vh;
-  background: #F5F5FB;
+  min-height: 100%;
+  background: rgba(245, 245, 251, 0);
 }
 header.dashboard-navbar .menu--left {
   position: relative;
@@ -620,6 +1232,7 @@ header.dashboard-navbar .menu--left .menuToggle input:checked ~ .menuItem {
 }
 header.dashboard-navbar .menu--left .menuToggle span {
   position: relative;
+  z-index: 3;
   display: block;
   width: 33px;
   height: 4px;
@@ -653,6 +1266,7 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem {
 }
 header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar {
   position: relative;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 130px;
@@ -771,6 +1385,7 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout P {
     height: calc(100vh - 80px);
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar {
+    top: 50px;
     padding-top: 50px;
     margin-top: 50px;
     height: 200px;
@@ -784,7 +1399,12 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout P {
     font-size: 25px;
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .separate {
+    top: 60px;
     margin: 30px 0 20px;
+  }
+  header.dashboard-navbar .menu--left .menuToggle .menuItem ul {
+    position: relative;
+    top: 70px;
   }
 }
 @media only screen and (min-width: 1024px), only screen and (min-height: 756px) {

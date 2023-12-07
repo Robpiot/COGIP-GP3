@@ -1,7 +1,10 @@
 header.dashboard-navbar {
+    position: fixed;
+    z-index: 2;
     width: 285px;
     height: 100vh;
-    background: #F5F5FB;
+    min-height: 100%;
+    background: #f5f5fb00;
 
     .menu--left {
         position: relative;
@@ -45,6 +48,7 @@ header.dashboard-navbar {
 
             span {
                 position: relative;
+                z-index: 3;
                 display: block;
                 width: 33px;
                 height: 4px;
@@ -78,9 +82,10 @@ header.dashboard-navbar {
                 transform-origin: 0% 0%;
                 transform: translate(-100%, 0);
                 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-
+                
                 .avatar {
                     position: relative;
+                    top: 10px;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 130px;
@@ -190,11 +195,12 @@ header.dashboard-navbar {
 @media only screen and (min-width: 1024px) {
     header.dashboard-navbar {
         height: 100vh;
-    
+
         .menu--left {
 
             .menuToggle {
                 top: 0;
+                
 
                 span {
                     display: none;
@@ -218,7 +224,7 @@ header.dashboard-navbar {
 // ////////////////////////////////////////////////////////////////////////////////////
 @media only screen and (min-height: 756px) {
     header.dashboard-navbar {
-    
+        
         .menu--left {
             
             .menuToggle {
@@ -228,6 +234,7 @@ header.dashboard-navbar {
                     height: calc(100vh - 80px);
 
                     .avatar {
+                        top: 50px;
                         padding-top: 50px;
                         margin-top: 50px;
                         height: 200px;
@@ -243,8 +250,13 @@ header.dashboard-navbar {
                     }
 
                     .separate {
-                        
+                        top: 60px;
                         margin: 30px 0 20px;
+                    }
+
+                    ul {
+                        position: relative;
+                        top: 70px;
                     }
                 }
             }
@@ -259,10 +271,13 @@ header.dashboard-navbar {
 
     header.dashboard-navbar {
         height: 100vh;
+        
     
         .menu--left {
             
+            
             .menuToggle {
+                
 
                 .menuItem {
                     padding-top: 0;

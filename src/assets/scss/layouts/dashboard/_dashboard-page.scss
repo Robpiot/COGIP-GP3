@@ -1,0 +1,14 @@
+.dashboard-page {
+    position: relative;
+    min-height: 100vh;
+    max-width: 100%;
+    border-left: 1px solid #E7E7E7;
+    background: #F5F5FB;
+    z-index: 2;
+}
+
+// @media only screen and (min-width: 1024px) {
+//     .dashboard-page {
+//         display: flex;
+//     }
+// }

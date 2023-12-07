@@ -1,0 +1,109 @@
+.user {
+    .infos {
+        border-bottom: 1px solid #CDCDCD;
+        margin-left: 10%;
+        margin-right:5%;
+        padding-bottom: 3%;
+        .name {
+            margin-bottom: 0;
+            position:relative;
+            z-index:99;
+        
+            &::after {
+                content:"";
+                position:absolute;
+                top:60%;
+                left:13.7%;
+                bottom: 0;
+                height: 30%;
+                width: 30%;
+                background-color: #F9DE4E;
+                z-index:-1;
+            }
+        }
+        ul {
+            padding-left: 0;
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+    
+    .contactInfo {
+        border-bottom: 1px solid #CDCDCD;
+        margin-left: 10%;
+        margin-right:5%;
+        padding-bottom: 8%;
+        z-index:1;
+
+        .contactPeople {
+            display: flex;
+            flex-direction: row;
+            gap: 8%;
+            width: 50vw;
+
+            .people {
+                display: flex;
+                flex-direction: row;
+                background-color: #F5F5F5;
+                border-radius: 20px;
+                align-items: center;
+                padding: 3% 12% 3% 7%;
+                gap: 10%;
+
+                .contactPicture {
+                    border-radius: 50%;
+                    height: 10vw;
+                }
+            }
+        }
+
+        .calepin {
+            height: 12vh;
+            z-index:0;
+            margin-left: 29%;
+            position:relative;
+            
+        }
+    }
+
+    .lastInvoices {
+        margin-left: 10%;
+        margin-right:5%;
+        padding-bottom: 8%;
+
+        .userLastInv {
+            table {
+                width: 77.67vw;
+                border-collapse: collapse;
+        
+                th {
+                    background-color:#F9DE4E;
+                    height: 3.6vw;
+                }
+                td {
+                    height: 3.6vw;
+                    
+                }
+                tr:nth-child(even) {
+                    background-color: #F5F5F5;
+                }
+        
+                tr:nth-child(odd) {
+                    background-color: #FFF; 
+                }
+                .company {
+                    width:18%;
+                }
+                .invNum {
+                    width: 15%;
+                }
+        
+                .date {
+                    width: 12%;
+                }
+            }
+
+        }
+    }
+}

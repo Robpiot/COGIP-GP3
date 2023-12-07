@@ -1,0 +1,74 @@
+.empty {
+    height: 13vw;
+    background-color: #F9DE4E;
+}
+
+.svgSectionIn {
+
+    .svgInvoices {
+        position: absolute;
+        z-index:2;
+        width: 90%;
+        margin-top: -7.7%;
+        padding-left: 5%; 
+    }
+}
+
+.titleSection {
+    margin-left: 10%;
+    margin-bottom: 0;
+    position:relative;
+    z-index:99;
+
+    &::after {
+        content:"";
+        position:absolute;
+        top:60%;
+        left:13.7%;
+        bottom: 0;
+        height: 30%;
+        width: 30%;
+        background-color: #F9DE4E;
+        z-index:-1;
+    }
+}
+
+.field {
+    height: 2.8vw;
+    width:18%;
+    position: absolute;
+    right:12.5%;
+}
+
+.allInvoices {
+    margin: 5% 10% 10% 10%;
+
+    table {
+        width: 77.67vw;
+        border-collapse: collapse;
+
+        th {
+            background-color:#F9DE4E;
+            height: 3.6vw;
+        }
+        .invNum {
+            width: 15%;
+        }
+
+        .date {
+            width: 12%;
+        }
+
+        td {
+            height: 3.6vw;
+            
+        }
+        tr:nth-child(even) {
+            background-color: #F5F5F5;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #FFF; 
+        }
+    }
+}

@@ -358,6 +358,123 @@ Files inside this folder can contain global styles used in the project.
   text-transform: uppercase;
 }
 
+.titleSection {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.field {
+  border-radius: 5px;
+  border: 1px solid #636363;
+  color: #636363;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.allInvoices table {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 600;
+  line-height: normal;
+  border-collapse: collapse;
+}
+.allInvoices table th {
+  text-align: left;
+  padding-left: 2%;
+}
+.allInvoices table td {
+  padding-left: 2%;
+}
+
+.name {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.infoUsers li {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.7vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.infoUsers li .bold {
+  font-weight: 900;
+}
+
+.contactInfo .contacts {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.contactInfo .contactPeople .contactName {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.2vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.lastInvoices .lastInv {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.lastInvoices .userLastInv table {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 600;
+  line-height: normal;
+  border-collapse: collapse;
+}
+.lastInvoices .userLastInv table th {
+  text-align: left;
+  padding-left: 2%;
+}
+.lastInvoices .userLastInv table td {
+  padding-left: 2%;
+}
+
+.contactPage .infoContacts .nameUser {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 4.5vw;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.contactPage .infoContacts .cont li {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.7vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.contactPage .infoContacts .cont li .bold {
+  font-weight: 900;
+}
+
 /*
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
@@ -766,6 +883,205 @@ section.infos .infos-container table tr td {
 }
 .endPage .svgYellow {
   z-index: 0;
+  margin-top: 5%;
+}
+
+.empty {
+  height: 13vw;
+  background-color: #F9DE4E;
+}
+
+.svgSectionIn .svgInvoices {
+  position: absolute;
+  z-index: 2;
+  width: 90%;
+  margin-top: -7.7%;
+  padding-left: 5%;
+}
+
+.titleSection {
+  margin-left: 10%;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 99;
+}
+.titleSection::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 13.7%;
+  bottom: 0;
+  height: 30%;
+  width: 30%;
+  background-color: #F9DE4E;
+  z-index: -1;
+}
+
+.field {
+  height: 2.8vw;
+  width: 18%;
+  position: absolute;
+  right: 12.5%;
+}
+
+.allInvoices {
+  margin: 5% 10% 10% 10%;
+}
+.allInvoices table {
+  width: 77.67vw;
+  border-collapse: collapse;
+}
+.allInvoices table th {
+  background-color: #F9DE4E;
+  height: 3.6vw;
+}
+.allInvoices table .invNum {
+  width: 15%;
+}
+.allInvoices table .date {
+  width: 12%;
+}
+.allInvoices table td {
+  height: 3.6vw;
+}
+.allInvoices table tr:nth-child(even) {
+  background-color: #F5F5F5;
+}
+.allInvoices table tr:nth-child(odd) {
+  background-color: #FFF;
+}
+
+.user .infos {
+  border-bottom: 1px solid #CDCDCD;
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-bottom: 3%;
+}
+.user .infos .name {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 99;
+}
+.user .infos .name::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 13.7%;
+  bottom: 0;
+  height: 30%;
+  width: 30%;
+  background-color: #F9DE4E;
+  z-index: -1;
+}
+.user .infos ul {
+  padding-left: 0;
+}
+.user .infos ul li {
+  list-style-type: none;
+}
+.user .contactInfo {
+  border-bottom: 1px solid #CDCDCD;
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-bottom: 8%;
+  z-index: 1;
+}
+.user .contactInfo .contactPeople {
+  display: flex;
+  flex-direction: row;
+  gap: 8%;
+  width: 50vw;
+}
+.user .contactInfo .contactPeople .people {
+  display: flex;
+  flex-direction: row;
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  align-items: center;
+  padding: 3% 12% 3% 7%;
+  gap: 10%;
+}
+.user .contactInfo .contactPeople .people .contactPicture {
+  border-radius: 50%;
+  height: 10vw;
+}
+.user .contactInfo .calepin {
+  height: 12vh;
+  z-index: 0;
+  margin-left: 29%;
+  position: relative;
+}
+.user .lastInvoices {
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-bottom: 8%;
+}
+.user .lastInvoices .userLastInv table {
+  width: 77.67vw;
+  border-collapse: collapse;
+}
+.user .lastInvoices .userLastInv table th {
+  background-color: #F9DE4E;
+  height: 3.6vw;
+}
+.user .lastInvoices .userLastInv table td {
+  height: 3.6vw;
+}
+.user .lastInvoices .userLastInv table tr:nth-child(even) {
+  background-color: #F5F5F5;
+}
+.user .lastInvoices .userLastInv table tr:nth-child(odd) {
+  background-color: #FFF;
+}
+.user .lastInvoices .userLastInv table .company {
+  width: 18%;
+}
+.user .lastInvoices .userLastInv table .invNum {
+  width: 15%;
+}
+.user .lastInvoices .userLastInv table .date {
+  width: 12%;
+}
+
+.contactPage {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-bottom: 20%;
+  gap: 20%;
+  align-items: center;
+}
+.contactPage .infoContacts {
+  display: flex;
+  flex-direction: column;
+}
+.contactPage .infoContacts .nameUser {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 99;
+}
+.contactPage .infoContacts .nameUser::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 13.7%;
+  bottom: 0;
+  height: 30%;
+  width: 100%;
+  background-color: #F9DE4E;
+  z-index: -1;
+}
+.contactPage .infoContacts .cont {
+  padding-left: 0;
+}
+.contactPage .infoContacts .cont li {
+  list-style-type: none;
+}
+.contactPage .userPicture {
+  border-radius: 50%;
+  height: 18vw;
 }
 
 /*

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import DashboardPage from './view/dashboard/DashboardPage.jsx'
-import Home from "./view/home.jsx";
+// import HomePage from "./view/HomePage.jsx";
 import Invoices from "./view/invoices.jsx";
 import Companies from "./view/companies.jsx";
 import Contacts from "./view/contacts.jsx";

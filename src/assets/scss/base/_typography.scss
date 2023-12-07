@@ -40,3 +40,142 @@
     line-height: normal; 
     text-transform: uppercase;
 }
+
+.titleSection {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 4.5vw;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.field {
+    border-radius: 5px;
+    border: 1px solid #636363; 
+    color: #636363;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal; 
+}
+
+.allInvoices {
+    table {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.3vw;
+        font-weight: 600;
+        line-height: normal;
+        border-collapse: collapse;
+        th {
+            text-align: left;
+            padding-left: 2%;
+        }
+        td {
+            padding-left: 2%;
+        }
+    }
+}
+
+.name {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 4.5vw;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.infoUsers {
+    li {
+        color: #000;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.7vw;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal; 
+
+        .bold {
+            font-weight: 900;
+        }
+    }
+}
+
+.contactInfo {
+    .contacts {
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-size: 4.5vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+    }
+
+    .contactPeople {
+        .contactName {
+            color: #000;
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.2vw;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal; 
+        }
+    }
+}
+
+.lastInvoices {
+    .lastInv {
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-size: 4.5vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal; 
+    }
+
+    .userLastInv {
+        table {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3vw;
+            font-weight: 600;
+            line-height: normal;
+            border-collapse: collapse;
+            th {
+                text-align: left;
+                padding-left: 2%;
+            }
+            td {
+                padding-left: 2%;
+            }
+        }
+    }
+}
+
+.contactPage {
+    .infoContacts {
+        .nameUser {
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            font-size: 4.5vw;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal; 
+        }
+        .cont {
+            li {
+                color: #000;
+                font-family: 'Roboto', sans-serif;
+                font-size: 1.7vw;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal; 
+        
+                .bold {
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}

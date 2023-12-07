@@ -1,8 +1,9 @@
 import Header from "../partials/header.jsx";
 import Footer from "../partials/footer.jsx";
-import { AllCompanies } from "../components/AllCompanies.jsx";
+import { InfoPeople } from "../components/InfoPeople.jsx";
 
-const Companies = () => {
+
+const ShowCompanies = () => {
   return (
     <div>
       <Header />
@@ -12,14 +13,12 @@ const Companies = () => {
               <path d="M0 39.3514H649.5L1046 0L1299 112H0V39.3514Z" fill="white"/>
           </svg> 
       </div>
-      <h1 className="titleSection">All Companies</h1>
-      <input className="field" type="text" placeholder="Search company name"/>
-      <div className="allInvoices">
-        <AllCompanies />
+      <div className="User">
+        <InfoPeople />
       </div>
       <Footer />
     </div>
   );
 };
 
-export default Companies;
+export default ShowCompanies;

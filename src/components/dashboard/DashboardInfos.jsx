@@ -1,4 +1,3 @@
-import DashboardStatistics from "./DashboardStatistics";
 
 const DashboardInfos = ({ data }) => {
     console.log('data', data);

@@ -67,14 +67,12 @@ section.statistics {
 
 @media only screen and (min-width: 480px) {
     section.statistics {
-        // h3 {
-        // }
+        
         .stat-container {
             flex-direction: row;
+
             .stat-item {
                 margin: 20px clamp(5px, 4%, 50px) 30px;
-                // p {
-                // }
             }
         }
     }
@@ -84,18 +82,10 @@ section.statistics {
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 580px;
-        // max-height: 250px;
-
-        // h3 {
-        // }
         
         .stat-container {
             .stat-item {
                 margin: 50px clamp(20px, 10%, 60px) 50px;
-                // margin: 20px clamp(20px, 10%, 60px) 50px;
-                
-                // p {
-                // }
             }
         }
     }

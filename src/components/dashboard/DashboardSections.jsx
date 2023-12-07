@@ -1,5 +1,4 @@
 import DashboardInfos from "./DashboardInfos";
-import DashboardStatistics from "./DashboardStatistics";
 
 let statistics = { "dataName": "statistics", "dataInfos": [
     {"id": 1, "number": 245, "name": "invoices"},
@@ -29,7 +28,6 @@ const DashboardSections = () => {
     return ( 
         <div className="dashboard-sections">
             <div className="dashboard-grid">
-                {/* <DashboardStatistics statistics={statistics} /> */}
                 <DashboardInfos data={statistics} />
                 <DashboardInfos data={contacts} />
                 <DashboardInfos data={invoices} />

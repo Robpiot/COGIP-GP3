@@ -1,5 +1,5 @@
 import DashboardMain from "../../components/dashboard/DashboardMain.jsx";
-import DashboardNavbar from "../../partials/dashboard/DashboardNavbar.jsx";
+import DashboardNavbar from "../../components/dashboard/DashboardNavbar.jsx";
 
 const DashboardPage = () => {
     return (

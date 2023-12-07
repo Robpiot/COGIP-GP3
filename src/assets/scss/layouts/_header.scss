@@ -24,57 +24,42 @@
         border: none;
         justify-content:center;
     }
+    .ulheaderLinks {
+        display: none;
+    }
 
     .ulTitleHeader {
         text-decoration: none;
         list-style-type: none;
         margin: auto; 
+        text-decoration: none;
         
-        .titleHeader {
+        .titleHeader{
             text-align: center;
             text-decoration: none;
             margin-right: 33px;
+            list-style-type: none;
             
         }
+        }
+
+
+    .userButton {
+        
+            background-color: #F9DE4E;
+            
+            padding: 10px;
+            font-size: 24px;
+            top: 10px;
+            left: 10px;
+            cursor:pointer;
+            border: none;
+            justify-content:center;
+    }
+
+    .headerButtons {
+        display: none;
     }
 
 
-
-.linksHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: white;
-    width: 100vw;
-    height: 100vh;
-    background-color: #F9DE4E;
-    margin-top: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    list-style-type: none;
-    text-align: left;
-    align-items: left;
-    justify-content: space-evenly;
-    font-size: 24px;
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    .link {
-        text-decoration: none;
-        color: white;
-        cursor: pointer;
-    }
-    .link:hover {
-        color: #F9DE4E;
-        background-color: white;
-        border-radius: 10px;
-        padding: 5px;
-    }
 }
-
-.headerButtons {
-    display: none;
-} }

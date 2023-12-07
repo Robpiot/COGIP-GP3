@@ -537,49 +537,30 @@ Files inside this folder can contain specific element styles and layout.
   border: none;
   justify-content: center;
 }
+.headerDiv .ulheaderLinks {
+  display: none;
+}
 .headerDiv .ulTitleHeader {
   text-decoration: none;
   list-style-type: none;
   margin: auto;
+  text-decoration: none;
 }
 .headerDiv .ulTitleHeader .titleHeader {
   text-align: center;
   text-decoration: none;
   margin-right: 33px;
-}
-.headerDiv .linksHeader {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: white;
-  width: 100vw;
-  height: 100vh;
-  background-color: #F9DE4E;
-  margin-top: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
   list-style-type: none;
-  text-align: left;
-  align-items: left;
-  justify-content: space-evenly;
+}
+.headerDiv .userButton {
+  background-color: #F9DE4E;
+  padding: 10px;
   font-size: 24px;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
+  top: 10px;
+  left: 10px;
   cursor: pointer;
-}
-.headerDiv .linksHeader .link {
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-}
-.headerDiv .linksHeader .link:hover {
-  color: #F9DE4E;
-  background-color: white;
-  border-radius: 10px;
-  padding: 5px;
+  border: none;
+  justify-content: center;
 }
 .headerDiv .headerButtons {
   display: none;

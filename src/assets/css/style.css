@@ -677,9 +677,6 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem ul li {
 header.dashboard-navbar .menu--left .menuToggle .menuItem ul li p {
   margin: 10px 0 10px 20px;
 }
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li:active {
-  font-weight: 600;
-}
 header.dashboard-navbar .menu--left .menuToggle .menuItem .logout {
   position: absolute;
   bottom: 20px;

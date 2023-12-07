@@ -16,13 +16,21 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
     <li
         onClick={onClick}
         style={{
-            fontWeight: isSelected ? '600' : 'normal',
-            borderRight: isSelected ? '10px solid #9698D6' : 'none',
+        fontWeight: isSelected ? '600' : 'normal',
         }}
     >
+
         {icon}
-        <p>{label}</p>
-    </li>
+
+        <p style={{
+            borderRight: isSelected ? '10px solid #9698D6' : 'none',
+            width: '100%',
+            padding: '5px 0',
+        }}>
+            {label}
+        </p>
+        
+  </li>
 );
 
 

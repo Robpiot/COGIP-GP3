@@ -25,4 +25,4 @@ const HeaderNavBarLinks = () => {
   );
 };
 
-export default HeaderNavBar;
+export default HeaderNavBarLinks;

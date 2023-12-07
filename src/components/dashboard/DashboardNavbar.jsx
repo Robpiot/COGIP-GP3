@@ -29,7 +29,7 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
         }}>
             {label}
         </p>
-        
+
   </li>
 );
 
@@ -54,54 +54,54 @@ const DashboardNavbar = ( {onPage, page} ) => {
     ];
 
     return (
-            <header className="dashboard-navbar">
-                <nav className="menu--left" /*role="navigation"*/>
-                    <div className="menuToggle">
+        <header className="dashboard-navbar">
+            <nav className="menu--left" /*role="navigation"*/>
+                <div className="menuToggle">
 
-                            {/* Menu hamburger */}
-                            <input type="checkbox" checked={isMenuOpen} onChange={() => setMenuOpen(!isMenuOpen)} />
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        {/* Menu hamburger */}
+                        <input type="checkbox" checked={isMenuOpen} onChange={() => setMenuOpen(!isMenuOpen)} />
+                        <span></span>
+                        <span></span>
+                        <span></span>
 
 
-                        <div className="menuItem">
+                    <div className="menuItem">
 
-                            {/* Photo + nom de l'utilisateur */}
-                            <div className='avatar'>
-                                <img src={AdminImg} alt="Photo de l'administrateur" />
-                                <p>Henry George</p>
-                            </div>
-
-                            {/* Ligne de séparation */}
-                            <div className="separate"></div>
-
-                            {/* Navigation */}
-                            <ul>
-                            {
-                                menuItems.map((item) => (
-                                    <MenuItem
-                                        key={item.key}
-                                        label={item.label}
-                                        icon={item.icon}
-                                        onClick={handleDashboardClick}
-                                        isSelected={page === item.label}
-                                    />
-                                 ))
-                            }
-                            </ul>
-
-                            {/* Section pour se déconnecter (logout) */}
-                            <div className="logout">
-                                <img src={AdminImg} alt="Photo de l'administrateur" />
-                                {/* <Link to={''}><p>Logout</p></Link> */}
-                                <p>Logout</p>
-                            </div>
-
+                        {/* Photo + nom de l'utilisateur */}
+                        <div className='avatar'>
+                            <img src={AdminImg} alt="Photo de l'administrateur" />
+                            <p>Henry George</p>
                         </div>
+
+                        {/* Ligne de séparation */}
+                        <div className="separate"></div>
+
+                        {/* Navigation */}
+                        <ul>
+                        {
+                            menuItems.map((item) => (
+                                <MenuItem
+                                    key={item.key}
+                                    label={item.label}
+                                    icon={item.icon}
+                                    onClick={handleDashboardClick}
+                                    isSelected={page === item.label}
+                                />
+                                ))
+                        }
+                        </ul>
+
+                        {/* Section pour se déconnecter (logout) */}
+                        <div className="logout">
+                            <img src={AdminImg} alt="Photo de l'administrateur" />
+                            {/* <Link to={''}><p>Logout</p></Link> */}
+                            <p>Logout</p>
+                        </div>
+
                     </div>
-                </nav>
-            </header>
+                </div>
+            </nav>
+        </header>
     )
 }
 

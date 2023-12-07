@@ -1144,8 +1144,11 @@ Files inside this folder can contain specific element styles and layout.
   border: none;
   justify-content: center;
 }
-.headerDiv .ulheaderLinks {
+.headerDiv .ulHeaderLinks {
   display: none;
+}
+.headerDiv .ulHeaderLinks.is-open {
+  display: block;
 }
 .headerDiv .ulTitleHeader {
   text-decoration: none;
@@ -1171,6 +1174,13 @@ Files inside this folder can contain specific element styles and layout.
 }
 .headerDiv .headerButtons {
   display: none;
+}
+.headerDiv .headerButtons.is-open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
 }
 
 .dashboard-page {

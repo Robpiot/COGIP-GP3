@@ -24,10 +24,14 @@
         border: none;
         justify-content:center;
     }
-    .ulheaderLinks {
-        display: none;
+    .ulHeaderLinks{
+        display:none;
+        // border-top: .0625rem solid #F9DE4E;
     }
 
+    .ulHeaderLinks.is-open{
+        display:block;
+    }
     .ulTitleHeader {
         text-decoration: none;
         list-style-type: none;
@@ -59,6 +63,13 @@
 
     .headerButtons {
         display: none;
+    }
+    .headerButtons.is-open {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
     }
 
 

@@ -1130,6 +1130,12 @@ Files inside this folder can contain specific element styles and layout.
   position: relative;
   justify-content: space-between;
 }
+.headerDiv ul li {
+  list-style-type: none;
+}
+.headerDiv ul li a {
+  text-decoration: none;
+}
 .headerDiv .menuButton {
   background-color: #F9DE4E;
   position: absolute;
@@ -1140,6 +1146,7 @@ Files inside this folder can contain specific element styles and layout.
   cursor: pointer;
   border: none;
   justify-content: center;
+  z-index: 1;
 }
 .headerDiv .ulHeaderLinks {
   display: none;
@@ -1152,6 +1159,9 @@ Files inside this folder can contain specific element styles and layout.
   list-style-type: none;
   margin: auto;
   text-decoration: none;
+  z-index: 0;
+  position: absolute;
+  margin-left: 2%;
 }
 .headerDiv .ulTitleHeader .titleHeader {
   text-align: center;
@@ -1165,7 +1175,7 @@ Files inside this folder can contain specific element styles and layout.
   cursor: default;
   pointer-events: none;
 }
-.headerDiv .ulTitleHeader .userButton {
+.headerDiv .userButton {
   background-color: #F9DE4E;
   padding: 10px;
   font-size: 24px;
@@ -1175,10 +1185,10 @@ Files inside this folder can contain specific element styles and layout.
   border: none;
   justify-content: center;
 }
-.headerDiv .ulTitleHeader .headerButtons {
+.headerDiv .headerButtons {
   display: none;
 }
-.headerDiv .ulTitleHeader .headerButtons.is-open {
+.headerDiv .headerButtons.is-open {
   display: flex;
   flex-direction: column;
   justify-content: center;

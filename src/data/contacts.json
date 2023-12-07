@@ -1,0 +1,10 @@
+{ 
+    "dataName": "contacts", 
+    "dataInfos": 
+        [
+            {"id": 1, "name": "Henry Bailleux", "phone": "0485 78 76 01", "email": "henry.bailleux@gr.be" },
+            {"id": 2, "name": "John Doe", "phone": "0485 78 76 02", "email": "john.doe@hotmail.fr" },
+            {"id": 3, "name": "Laura Dujardin", "phone": "0485 78 76 03", "email": "laura.dujardin@skynet.be" },
+            {"id": 4, "name": "Pierre Forêt", "phone": "0485 78 76 04", "email": "pierre.foret@gmail.com" }
+        ]
+}

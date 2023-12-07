@@ -1,0 +1,10 @@
+{ 
+    "dataName": "companies", 
+    "dataInfos": 
+        [
+            {"id": 1, "name": "Jouet Jean-Michel 1", "TVA": "FR873 736 001", "country": "FRANCE" },
+            {"id": 2, "name": "Jouet Jean-Michel 2", "TVA": "FR873 736 002", "country": "BELGIQUE" },
+            {"id": 3, "name": "Jouet Jean-Michel 3", "TVA": "FR873 736 003", "country": "SUISSE" },
+            {"id": 4, "name": "Jouet Jean-Michel 4", "TVA": "FR873 736 004", "country": "ESPAGNE" }
+        ]
+}

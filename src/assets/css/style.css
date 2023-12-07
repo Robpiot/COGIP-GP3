@@ -475,6 +475,35 @@ Files inside this folder can contain global styles used in the project.
   font-weight: 900;
 }
 
+footer .divFooter .titleFooter h3 {
+  font-size: 3vw;
+  font-weight: 600;
+  color: black;
+  text-align: left;
+}
+footer .divContact .listeSocials, footer .divContact ul {
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9vw;
+}
+footer .divContact .listeSocials li, footer .divContact ul li {
+  color: #737373;
+}
+footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBottomLinks a {
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9vw;
+  color: #737373;
+  text-transform: uppercase;
+}
+footer .bottomLinks nav .copyright {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9vw;
+  color: #737373;
+}
+
 /*
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
@@ -1444,7 +1473,7 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout P {
 }
 footer {
   background-color: white;
-  height: 543px;
+  height: 40vw;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -1454,8 +1483,8 @@ footer .divFooter {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 80% 20%;
-  width: 1091px;
-  height: 342px;
+  width: 71vw;
+  height: 28vw;
   background-color: white;
   border-top: 2px solid #F9DE4E;
   align-items: center;
@@ -1465,13 +1494,11 @@ footer .divFooter .titleFooter {
   height: 90%;
 }
 footer .divFooter .titleFooter h3 {
-  font-size: 48px;
-  font-weight: 600;
   width: -moz-fit-content;
   width: fit-content;
-  color: black;
-  padding: 3px;
+  padding: 2%;
   border: 5px solid #F9DE4E;
+  margin-top: 30%;
   text-align: left;
 }
 footer .divContact {
@@ -1487,7 +1514,13 @@ footer .divContact .location {
   width: -moz-fit-content;
   width: fit-content;
   align-items: center;
-  gap: 20px;
+  gap: 10%;
+  padding-left: 0;
+  margin: 0;
+}
+footer .divContact .location p {
+  width: 20vw;
+  margin: 0;
 }
 footer .divContact li {
   display: flex;
@@ -1495,19 +1528,23 @@ footer .divContact li {
   width: fit-content;
   align-items: center;
   justify-content: space-evenly;
-  gap: 17px;
-  margin: 0px 10px;
+  gap: 10%;
+  margin: 0% 5%;
 }
 footer .divContact .listeSocials, footer .divContact ul {
   display: flex;
-  gap: 3rem;
-  list-style-type: none;
-  text-decoration: none;
+  gap: 10%;
+  padding-left: 0;
 }
 footer .divContact .listeSocials li, footer .divContact ul li {
-  margin: 0px;
-  padding: 0px;
-  color: #737373;
+  margin: 0%;
+  padding: 0%;
+}
+footer .divContact .listeContacts li {
+  margin-top: 0;
+}
+footer .divContact .listeContacts li p {
+  width: 12vw;
 }
 footer .bottomLinks {
   display: flex;
@@ -1521,23 +1558,17 @@ footer .bottomLinks nav {
   width: 100%;
   border-top: 1px solid rgba(123, 185, 252, 0.2);
 }
+footer .bottomLinks nav .listeBottomLinks {
+  padding-left: 0;
+}
 footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBottomLinks a {
   width: auto;
   display: inline-flex;
   justify-content: space-evenly;
-  margin: 0px;
   display: inline-flex;
-  list-style-type: none;
-  text-decoration: none;
   align-self: center;
-  font: "Inter";
-  font-size: 17px;
-  color: #737373;
-  margin: 0px 14px;
+  margin: 0% 0.9vw;
 }
 footer .bottomLinks nav .copyright {
   align-self: flex-end;
-  font: "Inter";
-  font-size: 14px;
-  color: #737373;
 }/*# sourceMappingURL=style.css.map */

@@ -39,7 +39,7 @@ const Footer = () => {
             </li>
             <li>
               <FontAwesomeIcon icon={faPrint} style={{ color: "#f9DE4E" }} />
-              (123) 456-7890
+              <p>(123) 456-7890</p>
             </li>
           </ul>
           <ul className="listeSocials">

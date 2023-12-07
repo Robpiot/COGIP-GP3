@@ -19,7 +19,9 @@ const Header = () => {
       <nav className="navBarHeader">
         <ul className="ulTitleHeader">
           <li className="titleHeader">
-            <h1>COGIP</h1>
+            <Link to="/">
+              <h1>COGIP</h1>
+            </Link>
           </li>
         </ul>
         {isOpen && (

@@ -213,7 +213,7 @@ footer {
             h3 {
                 font-size: 3vw;
                 font-weight: 600;
-                color: black;
+                color: #434138;
                 text-align: left;
             }
         }
@@ -234,16 +234,19 @@ footer {
     .bottomLinks {
         nav {
             .listeBottomLinks {
-                li, a {
-                    list-style-type: none;
-                    text-decoration: none;
-                    font-family: 'Inter', sans-serif;
-                    font-size: 0.9vw;
-                    color: #737373;
-                    text-transform: uppercase;                    
+                .listFooter {
+                    li, a {
+                        list-style-type: none;
+                        text-decoration: none;
+                        font-family: 'Inter', sans-serif;
+                        font-size: 0.9vw;
+                        color: #737373;
+                        text-transform: uppercase;                    
+                    }
                 }
             }
             .copyright {
+                list-style-type: none;
                 font-family: "Inter", sans-serif;
                 font-size: 0.9vw;
                 color: #737373;

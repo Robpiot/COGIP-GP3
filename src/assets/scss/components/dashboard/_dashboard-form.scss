@@ -1,7 +1,7 @@
 section.form {
 
-    margin-bottom: 50px;
-    border-radius: 10px;
+    // margin-bottom: 50px;
+    // border-radius: 10px;
     position: relative;
     // max-width: 65vw;
     margin-bottom: 3.47vw;
@@ -41,6 +41,15 @@ section.form {
                 width: 94%;
             }
 
+            select {
+                width: 100%;
+                background: #F5F5F5; 
+                height: 3.9vw;
+                border: none;
+                padding-left: 5%;
+                width: 94%;
+            }
+
             .save {
                 height: 3.9vw;
                 background: #9698D6;
@@ -58,6 +67,7 @@ section.form {
 
 
 
+
 // @media only screen and (min-width: 756px) {
 //     section.form {
 
@@ -65,10 +75,19 @@ section.form {
 // }
 // @media only screen and (min-width: 1024px) {
 
-//             section.form {
-//                 top: 0;
-//                 left: 275px;
-//             }
+//     section.form {
+//         // top: 0;
+//         // left: 275px;
+
+//         h3 {
+//             color: #000;
+//             font-family: Inter;
+//             font-size: 20px;
+//             font-style: normal;
+//             font-weight: 700;
+//             line-height: normal;
+//         }
+//     }
 
 // }
 // @media only screen and (min-width: 1200px) {

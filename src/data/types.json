@@ -1,0 +1,9 @@
+{ 
+    "dataName": "types", 
+    "dataInfos": 
+        [
+            {"id": 1, "name": "customer" },
+            {"id": 2, "name": "supplier" },
+            {"id": 3, "name": "service" }
+        ]
+}

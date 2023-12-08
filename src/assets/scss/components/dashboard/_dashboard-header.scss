@@ -1,7 +1,7 @@
 
 header.dashboard-header {
     font-family: Inter;
-    margin: 50px 0 100px;
+    margin: 50px 0 50px;
 
     img {
         display: none;
@@ -64,7 +64,7 @@ header.dashboard-header {
 
 @media only screen and (min-width: 1024px) {
     header.dashboard-header {
-
+        
         img {
             display: none;
         }
@@ -79,6 +79,8 @@ header.dashboard-header {
 
 @media only screen and (min-width: 1200px) {
     header.dashboard-header {
+        
+        margin-bottom: 100px;
 
         img {
             display: block;

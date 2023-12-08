@@ -93,14 +93,9 @@ const Form = ( {data} ) => {
                     )
                 }
 
-
-
-
             </div>
             
-
         </section>
-    
     );
 }
 

@@ -550,9 +550,9 @@ main.dashboard-main {
   z-index: 0;
   top: 50px;
   box-sizing: border-box;
-  padding: 0 10%;
+  padding: 0 8%;
   margin: 0;
-  max-width: 100%;
+  width: 100%;
   background: #F5F5FB;
 }
 main.dashboard-main img {
@@ -572,6 +572,7 @@ main.dashboard-main img {
 }
 @media only screen and (min-width: 1024px) {
   main.dashboard-main {
+    width: calc(100% - 275px);
     top: 0;
     left: 275px;
   }
@@ -710,35 +711,25 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .separate {
 header.dashboard-navbar .menu--left .menuToggle .menuItem ul {
   padding: 0;
   list-style-type: none;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
 }
 header.dashboard-navbar .menu--left .menuToggle .menuItem ul li {
+  padding-left: 50px;
   color: #000;
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a {
   display: flex;
   align-items: center;
-  text-decoration: none;
   color: #232323;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a:hover {
-  color: tomato;
-}
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a:hover > svg path, header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a:hover > svg rect, header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a:hover > svg circle {
-  stroke: tomato;
-}
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li a p {
+header.dashboard-navbar .menu--left .menuToggle .menuItem ul li p {
   margin: 10px 0 10px 20px;
-}
-header.dashboard-navbar .menu--left .menuToggle .menuItem ul li:active {
-  font-weight: 600;
 }
 header.dashboard-navbar .menu--left .menuToggle .menuItem .logout {
   position: absolute;
@@ -830,7 +821,6 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout P {
 header.dashboard-header {
   font-family: Inter;
   margin: 50px 0 100px;
-  width: 50vw;
 }
 header.dashboard-header h2 {
   font-weight: 900;
@@ -858,6 +848,34 @@ header.dashboard-header div h3 {
   line-height: 28.36px;
 }
 
+@media only screen and (min-width: 756px) {
+  header.dashboard-header h2 {
+    font-size: 28px;
+    line-height: 34.31px;
+    margin-bottom: 8px;
+  }
+  header.dashboard-header div {
+    padding: 40px;
+    margin: 30px 0;
+  }
+  header.dashboard-header div h3 {
+    font-size: 33px;
+    line-height: 40.36px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  header.dashboard-header h2 {
+    font-size: 30px;
+    line-height: 36.31px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  header.dashboard-header div {
+    padding: 60px;
+    margin: 40px 0;
+  }
+}
 section.statistics {
   width: 100%;
   max-width: 100%;
@@ -1000,6 +1018,8 @@ section.infos .infos-container table tr td {
   }
 }
 section.form {
+  margin-bottom: 50px;
+  border-radius: 10px;
   position: relative;
   margin-bottom: 3.47vw;
   border-radius: 0.69vw;
@@ -1047,9 +1067,9 @@ main.dashboard-main {
   z-index: 0;
   top: 50px;
   box-sizing: border-box;
-  padding: 0 10%;
+  padding: 0 8%;
   margin: 0;
-  max-width: 100%;
+  width: 100%;
   background: #F5F5FB;
 }
 main.dashboard-main img {
@@ -1069,6 +1089,7 @@ main.dashboard-main img {
 }
 @media only screen and (min-width: 1024px) {
   main.dashboard-main {
+    width: calc(100% - 275px);
     top: 0;
     left: 275px;
   }
@@ -1501,6 +1522,11 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
 */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 .navBarHeader {
   display: flex;
 }
@@ -1510,6 +1536,7 @@ Files inside this folder can contain specific element styles and layout.
   display: flex;
   position: relative;
   justify-content: center;
+  align-items: center;
 }
 .headerDiv ul li {
   list-style-type: none;
@@ -1543,6 +1570,11 @@ Files inside this folder can contain specific element styles and layout.
   text-decoration: none;
   color: black;
 }
+.headerDiv .ulTitleHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .headerDiv .ulTitleHeader .titleHeader, .headerDiv .ulTitleHeader a {
   text-decoration: none;
   list-style-type: none;
@@ -1563,7 +1595,6 @@ Files inside this folder can contain specific element styles and layout.
   display: none;
 }
 .headerDiv .headerButtons.is-open {
-  background-color: white;
   display: block;
   position: absolute;
   top: 100%;

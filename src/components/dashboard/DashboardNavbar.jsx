@@ -1,90 +1,107 @@
+import { useState } from 'react'
+
 import AdminImg from '../../assets/img/pexels-italo-melo-2379004-1.png'
 
-const DashboardNavbar = ( {onPage} ) => {
+import DashboardIcon from '../../assets/icons/dashboard.svg'
+import InvoicesIcon from '../../assets/icons/invoices.svg'
+import CompaniesIcon from '../../assets/icons/companies.svg'
+import ContactsIcon from '../../assets/icons/contacts.svg'
+
+/*
+    Extraction des éléments répétitifs : 
+    Extraire le code répétitif dans une fonction pour éviter la duplication de code. 
+    Cela rendra le composant plus lisible et plus facile à maintenir.
+*/
+const MenuItem = ({ label, icon, onClick, isSelected }) => (
+    <li
+        onClick={onClick}
+        style={{
+        fontWeight: isSelected ? '600' : 'normal',
+        }}
+    >
+
+        {icon}
+
+        <p style={{
+            borderRight: isSelected ? '10px solid #9698D6' : 'none',
+            width: '100%',
+            padding: '5px 0',
+        }}>
+            {label}
+        </p>
+
+  </li>
+);
+
+
+
+const DashboardNavbar = ( {onPage, page} ) => {
+
+    const [isMenuOpen, setMenuOpen] = useState(false);
 
     const handleDashboardClick = (e) => {
         e.preventDefault();
         
         onPage(e.target.textContent);
+        setMenuOpen(false);
     };
 
+    const menuItems = [
+        { label: 'Dashboard', icon: <img src= {DashboardIcon} alt='Icône du dashboard' />, key: 'dashboard' },
+        { label: 'Invoices', icon: <img src= {InvoicesIcon} alt='Icône de invoices' />, key: 'invoices' },
+        { label: 'Companies', icon: <img src= {CompaniesIcon} alt='Icône de invoices' />, key: 'companies' },
+        { label: 'Contacts', icon: <img src= {ContactsIcon} alt='Icône de invoices' />, key: 'contacts' },
+    ];
+
     return (
-            <header className="dashboard-navbar">
-                <nav className="menu--left" /*role="navigation"*/>
-                    <div className="menuToggle">
+        <header className="dashboard-navbar">
+            <nav className="menu--left" /*role="navigation"*/>
+                <div className="menuToggle">
 
-                            <input type="checkbox" />
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        {/* Menu hamburger */}
+                        <input type="checkbox" checked={isMenuOpen} onChange={() => setMenuOpen(!isMenuOpen)} />
+                        <span></span>
+                        <span></span>
+                        <span></span>
 
-                        <div className="menuItem">
 
-                            <div className='avatar'>
-                                <img src={AdminImg} alt="Photo de l'administrateur" />
-                                <p>Henry George</p>
-                            </div>
+                    <div className="menuItem">
 
-                            <div className="separate"></div>
-
-                            <ul>
-                                <li onClick={handleDashboardClick}>
-                                    <a href="">
-                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="Icon_dashboard">
-                                                <path id="Vector 2" d="M7.0968 6.03223V21.2903" stroke="#9698D6" />
-                                                <rect id="Rectangle 30" x="0.5" y="0.5" width="21" height="21" rx="2.5" stroke="#9698D6" />
-                                                <path id="Vector 1" d="M0.354858 6.03223H21.2903" stroke="#9698D6" />
-                                            </g>
-                                        </svg>
-                                        <p>Dashboard</p>
-                                    </a>
-                                </li>
-                                <li onClick={handleDashboardClick}>
-                                    <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                            <path d="M3.88232 11H17.4706" stroke="#9698D6" />
-                                            <path d="M3.88232 16.8235H17.4706" stroke="#9698D6" />
-                                            <path d="M3.88232 7.11768H7.76468" stroke="#9698D6" />
-                                            <rect x="0.5" y="0.5" width="21" height="21" rx="2.5" stroke="#9698D6" />
-                                        </svg>
-                                        <p>Invoices</p>
-                                    </a>
-                                </li>
-                                <li onClick={handleDashboardClick}>
-                                    <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                            <path d="M5.82355 10.353H7.76472M5.82355 14.2354H7.76472M12.2941 8.41187H15.5294M12.2941 11.6472H15.5294M12.2941 14.2354H15.5294" stroke="#9698D6" />
-                                            <path d="M1.29407 16.8236H20.7058M3.8823 16.8236V7.11768H7.1176H10.3529V16.8236H3.8823Z" stroke="#9698D6" />
-                                            <path d="M10.353 7.62853V5.17651H18.1177V16.8236" stroke="#9698D6" />
-                                            <rect x="0.5" y="0.5" width="21" height="21" rx="2.5" stroke="#9698D6" />
-                                        </svg>
-                                        <p>Companies</p>
-                                    </a>
-                                </li>
-                                <li onClick={handleDashboardClick}>
-                                    <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                            <rect x="0.5" y="0.5" width="21" height="21" rx="2.5" stroke="#9698D6" />
-                                            <path d="M16.8235 18.1176H5.17645V11.647L11 12.9411L16.8235 11.647V18.1176Z" stroke="#9698D6" />
-                                            <circle cx="11" cy="8.41174" r="4.02941" stroke="#9698D6" />
-                                        </svg>
-                                        <p>Contacts</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            
-                            <div className="logout">
-                                <img src={AdminImg} alt="Photo de l'administrateur" />
-                                {/* <Link to={''}><p>Logout</p></Link> */}
-                                <p>Logout</p>
-                            </div>
-
+                        {/* Photo + nom de l'utilisateur */}
+                        <div className='avatar'>
+                            <img src={AdminImg} alt="Photo de l'administrateur" />
+                            <p>Henry George</p>
                         </div>
+
+                        {/* Ligne de séparation */}
+                        <div className="separate"></div>
+
+                        {/* Navigation */}
+                        <ul>
+                        {
+                            menuItems.map((item) => (
+                                <MenuItem
+                                    key={item.key}
+                                    label={item.label}
+                                    icon={item.icon}
+                                    onClick={handleDashboardClick}
+                                    isSelected={page === item.label}
+                                />
+                                ))
+                        }
+                        </ul>
+
+                        {/* Section pour se déconnecter (logout) */}
+                        <div className="logout">
+                            <img src={AdminImg} alt="Photo de l'administrateur" />
+                            {/* <Link to={''}><p>Logout</p></Link> */}
+                            <p>Logout</p>
+                        </div>
+
                     </div>
-                </nav>
-            </header>
+                </div>
+            </nav>
+        </header>
     )
 }
 

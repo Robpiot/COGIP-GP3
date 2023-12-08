@@ -42,7 +42,7 @@ export default function LastCompanies() {
                         <td>25/09/2020</td>
                     </tr>
                     <tr>
-                        <td>Jouet Jean-Miche</td>
+                        <td>Jouet Jean-Michel</td>
                         <td>FR 787 776 999</td>
                         <td>France</td>
                         <td>Client</td>

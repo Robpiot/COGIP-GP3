@@ -5,7 +5,7 @@ export default function LastContacts() {
             <table>
                 <thead>
                     <tr>
-                        <th className="name">Name</th>
+                        <th className="names">Name</th>
                         <th className="phone">Phone</th>
                         <th className="mail">Mail</th>
                         <th className="comp">Company</th>

@@ -2,6 +2,7 @@
 header.dashboard-header {
     font-family: Inter;
     margin: 50px 0 100px;
+    width: 50vw;
 
     h2 {
         font-weight: 900;
@@ -15,12 +16,14 @@ header.dashboard-header {
         line-height: 18px;
         margin: 0;
     }
+    
     div {
         background: #9698D6;
         color: #ffffff;
         border-radius: 10px;
         padding: 20px;
         margin: 20px 0;
+
         h3 {
             margin: 0 0 20px;
             font-weight: 700;
@@ -30,40 +33,40 @@ header.dashboard-header {
     }
 }
 
-@media only screen and (min-width: 756px) {
-    header.dashboard-header {
-        h2 {
-            font-size: 28px;
-            line-height: 34.31px;
-            margin-bottom: 8px;
-        }
+// @media only screen and (min-width: 756px) {
+//     header.dashboard-header {
+//         h2 {
+//             font-size: 28px;
+//             line-height: 34.31px;
+//             margin-bottom: 8px;
+//         }
         
-        div {
-            padding: 40px;
-            margin: 30px 0;
-            h3 {
-                font-size: 33px;
-                line-height: 40.36px;
-            }
-        }
-    }
-}
+//         div {
+//             padding: 40px;
+//             margin: 30px 0;
+//             h3 {
+//                 font-size: 33px;
+//                 line-height: 40.36px;
+//             }
+//         }
+//     }
+// }
 
-@media only screen and (min-width: 1024px) {
-    header.dashboard-header {
-        h2 {
-            font-size: 30px;
-            line-height: 36.31px;
-            margin-bottom: 10px;
-        }
-    }
-}
+// @media only screen and (min-width: 1024px) {
+//     header.dashboard-header {
+//         h2 {
+//             font-size: 30px;
+//             line-height: 36.31px;
+//             margin-bottom: 10px;
+//         }
+//     }
+// }
 
-@media only screen and (min-width: 1200px) {
-    header.dashboard-header {
-        div {
-            padding: 60px;
-            margin: 40px 0;
-        }
-    }
-}
+// @media only screen and (min-width: 1200px) {
+//     header.dashboard-header {
+//         div {
+//             padding: 60px;
+//             margin: 40px 0;
+//         }
+//     }
+// }

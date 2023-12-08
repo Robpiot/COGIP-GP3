@@ -3,7 +3,7 @@ export function AllCompanies() {
         <table>
             <thead>
                 <tr>
-                    <th className="name">Name</th>
+                    <th className="names">Name</th>
                     <th className="tva">TVA</th>
                     <th className="country">Country</th>
                     <th className="type">Type</th>

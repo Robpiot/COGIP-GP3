@@ -3,11 +3,9 @@ main.dashboard-main {
     z-index: 0;
     top: 50px;
     box-sizing: border-box;
-    // left: 50px;
-    // right: 50px;
-    padding: 0 10%;
+    padding: 0 8%;
     margin: 0;
-    max-width: 100%;
+    width: 100%;
     background: #F5F5FB;
 
     img {
@@ -21,6 +19,7 @@ main.dashboard-main {
 
 @media only screen and (min-width: 756px) {
     main.dashboard-main {
+        
         img {
             display: block;
             top: 20px;
@@ -28,7 +27,9 @@ main.dashboard-main {
     }
 }
 @media only screen and (min-width: 1024px) {
+    
     main.dashboard-main {
+        width: calc(100% - 275px);
         top: 0;
         left: 275px;
         img {

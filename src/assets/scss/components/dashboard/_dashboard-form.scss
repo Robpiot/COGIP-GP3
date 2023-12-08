@@ -1,4 +1,7 @@
 section.form {
+
+    margin-bottom: 50px;
+    border-radius: 10px;
     position: relative;
     // max-width: 65vw;
     margin-bottom: 3.47vw;
@@ -46,4 +49,34 @@ section.form {
             }
         }
     }
+
+    
 }
+
+
+
+
+
+
+// @media only screen and (min-width: 756px) {
+//     section.form {
+
+//     }
+// }
+// @media only screen and (min-width: 1024px) {
+
+//             section.form {
+//                 top: 0;
+//                 left: 275px;
+//             }
+
+// }
+// @media only screen and (min-width: 1200px) {
+
+//             section.form {
+//                 flex-grow: 1;
+//                 flex-shrink: 1;
+//                 // flex-basis: 580px;
+//             }
+
+// }

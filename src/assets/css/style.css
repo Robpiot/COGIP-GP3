@@ -509,7 +509,7 @@ footer .bottomLinks nav .copyright {
 section.form h3 {
   color: #000;
   font-family: "Inter" sans-serif;
-  font-size: 1.25vw;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -519,11 +519,11 @@ section.form .input {
   font-weight: 100;
   line-height: normal;
   font-family: "Inter", sans-serif;
-  font-size: 1.3vw;
+  font-size: 20px;
 }
 section.form .save {
   font-family: "Inter", sans-serif;
-  font-size: 1.3vw;
+  font-size: 20px;
   text-align: left;
   color: white;
   font-style: normal;
@@ -531,6 +531,62 @@ section.form .save {
   line-height: normal;
 }
 
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .lastInvTable table, .lastCompTable table, .lastContTable table {
+    font-size: 1.9vw;
+  }
+  .titleSection {
+    font-size: 6vw;
+  }
+  .field {
+    border-radius: 3px;
+    font-size: 1.9vw;
+  }
+  .allInvoices table {
+    font-size: 1.9vw;
+  }
+  .name {
+    font-size: 6vw;
+  }
+  .infoUsers li {
+    font-size: 1.9vw;
+  }
+  .contactInfo .contacts {
+    font-size: 6vw;
+  }
+  .contactInfo .contactPeople .contactName {
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 2.2vw;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
+  .lastInvoices .lastInv {
+    font-size: 6vw;
+  }
+  .lastInvoices .userLastInv table {
+    font-size: 1.9vw;
+  }
+  .contactPage .infoContacts .nameUser {
+    font-size: 6vw;
+  }
+  .contactPage .infoContacts .cont li {
+    font-size: 1.9vw;
+  }
+  footer .divFooter .titleFooter h3 {
+    font-size: 4vw;
+  }
+  footer .divContact .listeSocials, footer .divContact ul {
+    font-size: 1.2vw;
+  }
+  footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBottomLinks a {
+    font-size: 1.2vw;
+  }
+  footer .bottomLinks nav .copyright {
+    font-size: 1.2vw;
+  }
+}
 /*
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
@@ -1054,16 +1110,31 @@ section.form .form-container form .input {
   background: #F5F5F5;
   height: 3.9vw;
   border: none;
-  padding-left: 5%;
+  padding-left: 3%;
   width: 94%;
 }
 section.form .form-container form .save {
   height: 3.9vw;
   background: #9698D6;
   border: none;
-  padding-left: 5%;
+  padding-left: 3%;
+  width: 97.5%;
 }
 
+@media screen and (min-width: 320px) and (max-width: 774px) {
+  section.form {
+    margin-top: -15%;
+  }
+  section.form .form-container {
+    height: 45vw;
+  }
+  section.form .form-container form .input {
+    height: 6vw;
+  }
+  section.form .form-container form .save {
+    height: 6vw;
+  }
+}
 main.dashboard-main {
   position: absolute;
   z-index: 0;
@@ -1194,7 +1265,7 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .name, .invoices table .company {
+.invoices table .names, .invoices table .company {
   width: 18%;
 }
 .invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
@@ -1219,6 +1290,39 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   background-color: #FFF;
 }
 
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .invoices {
+    margin: 5% 10% 5% 10%;
+  }
+  .invoices table {
+    width: 77.67vw;
+  }
+  .invoices table th {
+    background-color: #F9DE4E;
+    height: 3.6vw;
+  }
+  .invoices table .company {
+    width: 24%;
+  }
+  .invoices table .names {
+    width: 23%;
+  }
+  .invoices table .country, .invoices table .comp, .invoices table .invNum {
+    width: 20%;
+  }
+  .invoices table .tva {
+    width: 24%;
+  }
+  .invoices table .mail {
+    width: 30%;
+  }
+  .invoices table .phone, .invoices table .type {
+    width: 12%;
+  }
+  .invoices table .date {
+    width: 15%;
+  }
+}
 .page .home {
   background: #F9DE4E;
   display: flex;
@@ -1275,7 +1379,7 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .name, .invoices table .company {
+.invoices table .names, .invoices table .company {
   width: 18%;
 }
 .invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
@@ -1300,6 +1404,39 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   background-color: #FFF;
 }
 
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .invoices {
+    margin: 5% 10% 5% 10%;
+  }
+  .invoices table {
+    width: 77.67vw;
+  }
+  .invoices table th {
+    background-color: #F9DE4E;
+    height: 3.6vw;
+  }
+  .invoices table .company {
+    width: 24%;
+  }
+  .invoices table .names {
+    width: 23%;
+  }
+  .invoices table .country, .invoices table .comp, .invoices table .invNum {
+    width: 20%;
+  }
+  .invoices table .tva {
+    width: 24%;
+  }
+  .invoices table .mail {
+    width: 30%;
+  }
+  .invoices table .phone, .invoices table .type {
+    width: 12%;
+  }
+  .invoices table .date {
+    width: 15%;
+  }
+}
 .endPage {
   display: flex;
   flex-direction: row;
@@ -1387,6 +1524,34 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   background-color: #FFF;
 }
 
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .allInvoices {
+    margin: 5% 10% 10% 10%;
+  }
+  .allInvoices table {
+    width: 77.67vw;
+    border-collapse: collapse;
+  }
+  .allInvoices table th {
+    background-color: #F9DE4E;
+    height: 3.6vw;
+  }
+  .allInvoices table .invNum {
+    width: 20%;
+  }
+  .allInvoices table .date {
+    width: 15%;
+  }
+  .allInvoices table td {
+    height: 3.6vw;
+  }
+  .allInvoices table tr:nth-child(even) {
+    background-color: #F5F5F5;
+  }
+  .allInvoices table tr:nth-child(odd) {
+    background-color: #FFF;
+  }
+}
 .user .infos {
   border-bottom: 1px solid #CDCDCD;
   margin-left: 10%;
@@ -1713,7 +1878,7 @@ footer .divContact .location {
   padding-left: 0;
   margin: 0;
 }
-footer .divContact .location p {
+footer .divContact .location .infoFooter {
   width: 20vw;
   margin: 0;
 }
@@ -1748,8 +1913,10 @@ footer .bottomLinks {
   grid-column-end: 3;
 }
 footer .bottomLinks nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   border-top: 1px solid rgba(123, 185, 252, 0.2);
 }
@@ -1760,10 +1927,6 @@ footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBott
   width: auto;
   display: inline-flex;
   justify-content: space-evenly;
-  display: inline-flex;
   align-self: center;
   margin: 0% 0.9vw;
-}
-footer .bottomLinks nav .copyright {
-  align-self: flex-end;
 }/*# sourceMappingURL=style.css.map */

@@ -48,7 +48,7 @@ footer {
             gap: 10%;
             padding-left: 0;
             margin: 0;
-            p { 
+            .infoFooter { 
                 width: 20vw;
                 margin: 0;
             }
@@ -90,24 +90,22 @@ footer {
         grid-column-start: 1;
         grid-column-end: 3;
         nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto;
             justify-content: space-between;
+            align-items: center;
             width: 100%;
             border-top:1px solid rgba(123, 185, 252, 0.2);
-
+    
             .listeBottomLinks {
                 padding-left: 0;
                 li, a {
                     width: auto;
                     display: inline-flex;
                     justify-content: space-evenly;
-                    display: inline-flex;
                     align-self: center;
                     margin: 0% 0.9vw;                
                 }
-            }
-            .copyright {
-                align-self: flex-end;
             }
         } 
     }

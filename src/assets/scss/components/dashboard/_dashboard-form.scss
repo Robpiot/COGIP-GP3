@@ -3,7 +3,6 @@ section.form {
     margin-bottom: 50px;
     border-radius: 10px;
     position: relative;
-    // max-width: 65vw;
     margin-bottom: 3.47vw;
     border-radius: 0.69vw;
     background: #FFF;
@@ -37,7 +36,7 @@ section.form {
                 background: #F5F5F5; 
                 height: 3.9vw;
                 border: none;
-                padding-left: 5%;
+                padding-left: 3%;
                 width: 94%;
             }
 
@@ -45,38 +44,30 @@ section.form {
                 height: 3.9vw;
                 background: #9698D6;
                 border: none;
-                padding-left: 5%;
+                padding-left: 3%;
+                width: 97.5%;
             }
         }
     }
-
-    
 }
 
+@media screen and (min-width:320px) and (max-width:774px) {
+    section.form {
+        margin-top: -15%;
+        
+        .form-container {
+            height: 45vw;
+    
+            form {    
+                .input {
 
-
-
-
-
-// @media only screen and (min-width: 756px) {
-//     section.form {
-
-//     }
-// }
-// @media only screen and (min-width: 1024px) {
-
-//             section.form {
-//                 top: 0;
-//                 left: 275px;
-//             }
-
-// }
-// @media only screen and (min-width: 1200px) {
-
-//             section.form {
-//                 flex-grow: 1;
-//                 flex-shrink: 1;
-//                 // flex-basis: 580px;
-//             }
-
-// }
+                    height: 6vw;
+                }
+    
+                .save {
+                    height: 6vw;
+                }
+            }
+        }
+    }
+}

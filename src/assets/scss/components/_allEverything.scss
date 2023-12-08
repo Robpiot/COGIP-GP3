@@ -69,3 +69,38 @@
         }
     }
 }
+
+@media screen and (min-width:320px) and (max-width:425px) {    
+    .allInvoices {
+        margin: 5% 10% 10% 10%;
+    
+        table {
+            width: 77.67vw;
+            border-collapse: collapse;
+    
+            th {
+                background-color:#F9DE4E;
+                height: 3.6vw;
+            }
+            .invNum {
+                width: 20%;
+            }
+    
+            .date {
+                width: 15%;
+            }
+    
+            td {
+                height: 3.6vw;
+                
+            }
+            tr:nth-child(even) {
+                background-color: #F5F5F5;
+            }
+    
+            tr:nth-child(odd) {
+                background-color: #FFF; 
+            }
+        }
+    }
+}

@@ -1,18 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState(false);
 
   const toggleMenuLinks = () => setIsOpen(!isOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const handleLinkClick = (path) => {
-    setActiveLink(path);
-  };
   return (
     <div className="headerDiv">
       <button className="menuButton" onClick={toggleMenuLinks}>
@@ -21,47 +17,47 @@ const Header = () => {
       <nav className="navBarHeader">
         <ul className={`ulHeaderLinks ${isOpen ? "is-open" : ""}`}>
           <li>
-            <Link
+            <NavLink
               to="/"
-              onClick={() => handleLinkClick("/")}
-              className={activeLink === "/" ? "active" : ""}
+              isActive={(match, location) => location.pathname === "/"}
+              activeClassName="active"
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/invoices"
-              onClick={() => handleLinkClick("/invoices")}
-              className={activeLink === "/invoices" ? "active" : ""}
+              isActive={(match, location) => location.pathname === "/"}
+              activeClassName="active"
             >
               Invoices
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              to="/companies"
-              onClick={() => handleLinkClick("/companies")}
-              className={activeLink === "/companies" ? "active" : ""}
+            <NavLink
+              to="/Companies"
+              isActive={(match, location) => location.pathname === "/"}
+              activeClassName="active"
             >
               Companies
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/contacts"
-              onClick={() => handleLinkClick("/contacts")}
-              className={activeLink === "/contacts" ? "active" : ""}
+              isActive={(match, location) => location.pathname === "/"}
+              activeClassName="active"
             >
               Contacts
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <ul className="ulTitleHeader">
           <li className="titleHeader">
-            <Link to="/">
+            <navLink to="/">
               <h1>COGIP</h1>
-            </Link>
+            </navLink>
           </li>
         </ul>
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>

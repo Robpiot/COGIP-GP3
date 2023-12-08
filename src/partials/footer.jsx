@@ -83,7 +83,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="bottomLinks">
-          <nav>
+          <nav className="navFooter">
             <ul className="listeBottomLinks">
               <li>
                 <Link to="/">Home</Link>

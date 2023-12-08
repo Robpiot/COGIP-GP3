@@ -106,59 +106,66 @@
 
 
     @media only screen and (min-width: 756px) {
-
         .menuButton, .userButton {
-            display: none;
+          display: none;
         }
         .headerDiv {
-            background-color: #F9DE4E;
-            padding: 30px;;
-
-            .navBarHeader {
-                display : grid;
+          background-color: #F9DE4E;
+          padding: 30px;
+      
+          .navBarHeader {
+            display: grid;
             grid-template-columns: 1fr 3fr 1fr;
             width: 100vw;
             align-items: center;
-                .ulHeaderLinks {
-                    grid-column : 2;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    li {
-                        margin: 0 20px;
-                        a {
-                            text-decoration: none;
-                            color: black;
-                        }
-                    }
-                }
-                .ulTitleHeader {
-                    grid-column : 1;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    .titleHeader, a{
-                        text-decoration: none;
-                        list-style-type: none;
-                        color : black;
-                        
-            
-                    }
-                }
-                .headerButtons {
-                    grid-column: 3; 
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    li {
-                        margin: 0 20px;
-                        a {
-                            text-decoration: none;
-                            color: black;
-                        }
-                    }
-                }
-            }
-        }
+      
+            .ulHeaderLinks {
+              grid-column: 2;
+              grid-row: 1;
+              display: flex;
+              position: relative; // Reset the positioning
+              align-items: center;
+              top: auto; // Reset the top property
+              left: auto; // Reset the left property
+      
+              li {
+                margin: 0 20px;
+      
+                a {
+                  text-decoration: none;
+                    color: black;
 
-    }
+                    &.active { // Add this block
+                        border: 2px solid black;
+                      }
+                    
+                    
+                }
+              }
+            }
+
+            .ulTitleHeader {
+                grid-column: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .titleHeader, a{
+                    text-decoration: none;
+                    list-style-type: none;
+                    color : black;
+                    
+        
+                }
+               
+            }
+      
+            .headerButtons {
+                grid-column: 3;
+                display: flex;
+              position: static; // Reset the positioning
+              top: auto; // Reset the top property
+              right: auto; // Reset the right property
+            }
+          }
+        }
+      }

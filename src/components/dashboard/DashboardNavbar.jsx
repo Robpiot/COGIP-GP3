@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 
 import AdminImg from '../../assets/img/pexels-italo-melo-2379004-1.png'
 
@@ -35,15 +34,11 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
 
 
 
-const DashboardNavbar = ( {onPage, page, isMenuOpen, onMenuChange} ) => {
-
-    // const [isMenuOpen, setMenuOpen] = useState(false);
+const DashboardNavbar = ( {onChangeComponent, componentToDisplay, isMenuOpen, onMenuChange} ) => {
 
     const handleDashboardClick = (e) => {
         e.preventDefault();
-        
-        onPage(e.target.textContent);
-        // setMenuOpen(false);
+        onChangeComponent(e.target.textContent);
         onMenuChange(false);
     };
 
@@ -53,6 +48,7 @@ const DashboardNavbar = ( {onPage, page, isMenuOpen, onMenuChange} ) => {
         { label: 'Companies', icon: <img src= {CompaniesIcon} alt='Icône de invoices' />, key: 'companies' },
         { label: 'Contacts', icon: <img src= {ContactsIcon} alt='Icône de invoices' />, key: 'contacts' },
     ];
+
 
     return (
         <header className="dashboard-navbar">
@@ -86,7 +82,7 @@ const DashboardNavbar = ( {onPage, page, isMenuOpen, onMenuChange} ) => {
                                     label={item.label}
                                     icon={item.icon}
                                     onClick={handleDashboardClick}
-                                    isSelected={page === item.label}
+                                    isSelected={componentToDisplay === item.label}
                                 />
                                 ))
                         }

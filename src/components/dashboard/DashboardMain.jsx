@@ -9,7 +9,7 @@ import contactsData from '../../data/contacts.json'
 import invoicesData from '../../data/invoices.json'
 import companiesData from '../../data/companies.json'
 
-const DashboardMain = ( { page, isMenuOpen } ) => {
+const DashboardMain = ( { componentToDisplay, isMenuOpen } ) => {
 
     return (
         <main 
@@ -21,7 +21,7 @@ const DashboardMain = ( { page, isMenuOpen } ) => {
             <DashboardHeader />
 
             { 
-                (page === 'Dashboard') && (
+                (componentToDisplay === 'Dashboard') && (
                     <DashboardSections
                         statisticsData={statisticsData}
                         contactsData={contactsData}
@@ -31,9 +31,9 @@ const DashboardMain = ( { page, isMenuOpen } ) => {
                 ) 
             }
 
-            { (page === 'Contacts') && (<DashboardForm data={contactsData} />) }
-            { (page === 'Invoices') && (<DashboardForm data={invoicesData} />) }
-            { (page === 'Companies') && (<DashboardForm data={companiesData} />) }
+            { (componentToDisplay === 'Contacts') && (<DashboardForm data={contactsData} />) }
+            { (componentToDisplay === 'Invoices') && (<DashboardForm data={invoicesData} />) }
+            { (componentToDisplay === 'Companies') && (<DashboardForm data={companiesData} />) }
               
         </main>
     );

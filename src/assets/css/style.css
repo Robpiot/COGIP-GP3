@@ -475,6 +475,60 @@ Files inside this folder can contain global styles used in the project.
   font-weight: 900;
 }
 
+footer .divFooter .titleFooter h3 {
+  font-size: 3vw;
+  font-weight: 600;
+  color: black;
+  text-align: left;
+}
+footer .divContact .listeSocials, footer .divContact ul {
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9vw;
+}
+footer .divContact .listeSocials li, footer .divContact ul li {
+  color: #737373;
+}
+footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBottomLinks a {
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9vw;
+  color: #737373;
+  text-transform: uppercase;
+}
+footer .bottomLinks nav .copyright {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9vw;
+  color: #737373;
+}
+
+section.form h3 {
+  color: #000;
+  font-family: "Inter" sans-serif;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+section.form .input {
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal;
+  font-family: "Inter", sans-serif;
+  font-size: 1.3vw;
+}
+section.form .save {
+  font-family: "Inter", sans-serif;
+  font-size: 1.3vw;
+  text-align: left;
+  color: white;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 /*
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
@@ -822,19 +876,6 @@ header.dashboard-header div h3 {
     margin: 40px 0;
   }
 }
-.dashboard-sections {
-  position: relative;
-  z-index: 0;
-  max-width: 100%;
-}
-.dashboard-sections .dashboard-grid {
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 50px;
-}
-
 section.statistics {
   width: 100%;
   max-width: 100%;
@@ -979,10 +1020,103 @@ section.infos .infos-container table tr td {
 section.form {
   margin-bottom: 50px;
   border-radius: 10px;
+  position: relative;
+  margin-bottom: 3.47vw;
+  border-radius: 0.69vw;
+  background: #FFF;
+  box-shadow: 0px 0px 2.56vw -1.46vw rgba(0, 0, 0, 0.25);
+  margin-top: -5%;
+}
+section.form h3 {
+  padding: 3.5vw 0vw 2.08vw 2.5vw;
+  margin: 0;
+}
+section.form .separate {
+  height: 0.07vw;
+  background: #E0E0E0;
+  margin: 0 2.08vw;
+}
+section.form .form-container {
+  margin: 1.67vw 2.08vw 3.47vw;
+  display: flex;
+  height: 28vw;
+}
+section.form .form-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10%;
+}
+section.form .form-container form .input {
+  width: 100%;
+  background: #F5F5F5;
+  height: 3.9vw;
+  border: none;
+  padding-left: 5%;
+  width: 94%;
+}
+section.form .form-container form .save {
+  height: 3.9vw;
+  background: #9698D6;
+  border: none;
+  padding-left: 5%;
+}
+
+main.dashboard-main {
+  position: absolute;
+  z-index: 0;
+  top: 50px;
+  box-sizing: border-box;
+  padding: 0 8%;
+  margin: 0;
+  width: 100%;
+  background: #F5F5FB;
+}
+main.dashboard-main img {
+  display: none;
+  position: absolute;
+  width: clamp(130px, 30vw, 300px);
+  right: 4vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 756px) {
+  main.dashboard-main img {
+    display: block;
+    top: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main.dashboard-main {
+    width: calc(100% - 275px);
+    top: 0;
+    left: 275px;
+  }
+  main.dashboard-main img {
+    top: 50px;
+    width: clamp(130px, 20vw, 250px);
+    max-height: 350px;
+    right: 5vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main.dashboard-main img {
+    top: 0;
+    right: clamp(30px, 10vw, 50px);
+    width: 350px;
+    right: 15vw;
+  }
+}
+section.statistics {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 50px;
+  border-radius: 10px;
   background: #FFF;
   box-shadow: 0px 0px 37px -21px rgba(0, 0, 0, 0.25);
 }
-section.form h3 {
+section.statistics h3 {
   color: #000;
   font-family: Inter;
   font-size: 18px;
@@ -992,25 +1126,60 @@ section.form h3 {
   padding: 24px 30px;
   margin: 0;
 }
-section.form .separate {
-  height: 1px;
-  background: #E0E0E0;
-  margin: 0 30px;
+section.statistics .stat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
 }
-section.form .form-container {
-  margin: 24px 30px 50px;
+section.statistics .stat-container .stat-item {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+section.statistics .stat-container .stat-item p {
+  margin: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+section.statistics .stat-container .stat-item:nth-of-type(1) {
+  background: #4D4CAC;
+}
+section.statistics .stat-container .stat-item:nth-of-type(2) {
+  background: #9698D6;
+}
+section.statistics .stat-container .stat-item:nth-of-type(3) {
+  background: #FF808B;
 }
 
-@media only screen and (min-width: 1024px) {
-  section.form {
-    top: 0;
-    left: 275px;
+@media only screen and (min-width: 480px) {
+  section.statistics .stat-container {
+    flex-direction: row;
+  }
+  section.statistics .stat-container .stat-item {
+    margin: 20px clamp(5px, 4%, 50px) 30px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  section.form {
+  section.statistics {
     flex-grow: 1;
     flex-shrink: 1;
+    flex-basis: 580px;
+  }
+  section.statistics .stat-container .stat-item {
+    margin: 50px clamp(20px, 10%, 60px) 50px;
   }
 }
 .invoices {
@@ -1156,7 +1325,7 @@ section.form .form-container {
   background-color: #F9DE4E;
 }
 
-.svgSectionIn .svgInvoices {
+.svgSectionIn {
   position: absolute;
   z-index: 2;
   width: 90%;
@@ -1353,6 +1522,11 @@ section.form .form-container {
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
 */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 .navBarHeader {
   display: flex;
 }
@@ -1360,64 +1534,78 @@ Files inside this folder can contain specific element styles and layout.
 .headerDiv {
   background-color: #F9DE4E;
   display: flex;
-  flex-direction: row;
-  height: 10vh;
-  width: 100vw;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.headerDiv ul li {
+  list-style-type: none;
+}
+.headerDiv ul li a {
+  text-decoration: none;
 }
 .headerDiv .menuButton {
   background-color: #F9DE4E;
-  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 10px;
   font-size: 24px;
   cursor: pointer;
   border: none;
-  justify-content: flex-start;
+}
+.headerDiv .ulHeaderLinks {
+  display: none;
+}
+.headerDiv .ulHeaderLinks.is-open {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  list-style-type: none;
+}
+.headerDiv .ulHeaderLinks.is-open li, .headerDiv .ulHeaderLinks.is-open a {
+  text-decoration: none;
+  color: black;
 }
 .headerDiv .ulTitleHeader {
-  position: absolute;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  list-style-type: none;
-}
-.headerDiv .ulTitleHeader .titleHeader {
-  text-align: center;
-  text-decoration: none;
-}
-.headerDiv .linksHeader {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 100vw;
-  height: 100vh;
-  background-color: #F9DE4E;
-  margin-top: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
+  justify-content: center;
+  align-items: center;
+}
+.headerDiv .ulTitleHeader .titleHeader, .headerDiv .ulTitleHeader a {
+  text-decoration: none;
   list-style-type: none;
-  text-align: left;
-  align-items: left;
-  justify-content: space-evenly;
+  color: black;
+}
+.headerDiv .userButton {
+  background-color: #F9DE4E;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 10px;
   font-size: 24px;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
   cursor: pointer;
-}
-.headerDiv .linksHeader .link {
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-}
-.headerDiv .linksHeader .link:hover {
-  color: #F9DE4E;
-  background-color: white;
-  border-radius: 10px;
-  padding: 5px;
+  border: none;
 }
 .headerDiv .headerButtons {
   display: none;
+}
+.headerDiv .headerButtons.is-open {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-right: 30px;
+  z-index: 9999;
+  list-style-type: none;
+}
+.headerDiv .headerButtons.is-open li, .headerDiv .headerButtons.is-open a {
+  text-decoration: none;
+  color: black;
 }
 
 .dashboard-page {
@@ -1427,4 +1615,106 @@ Files inside this folder can contain specific element styles and layout.
   border-left: 1px solid #E7E7E7;
   background: #F5F5FB;
   z-index: 2;
+}
+
+footer {
+  background-color: white;
+  height: 40vw;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .divFooter {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 80% 20%;
+  width: 71vw;
+  height: 28vw;
+  background-color: white;
+  border-top: 2px solid #F9DE4E;
+  align-items: center;
+}
+footer .divFooter .titleFooter {
+  width: 50%;
+  height: 90%;
+}
+footer .divFooter .titleFooter h3 {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2%;
+  border: 5px solid #F9DE4E;
+  margin-top: 30%;
+  text-align: left;
+}
+footer .divContact {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  color: #737373;
+}
+footer .divContact .location {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  gap: 10%;
+  padding-left: 0;
+  margin: 0;
+}
+footer .divContact .location p {
+  width: 20vw;
+  margin: 0;
+}
+footer .divContact li {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10%;
+  margin: 0% 5%;
+}
+footer .divContact .listeSocials, footer .divContact ul {
+  display: flex;
+  gap: 10%;
+  padding-left: 0;
+}
+footer .divContact .listeSocials li, footer .divContact ul li {
+  margin: 0%;
+  padding: 0%;
+}
+footer .divContact .listeContacts li {
+  margin-top: 0;
+}
+footer .divContact .listeContacts li p {
+  width: 12vw;
+}
+footer .bottomLinks {
+  display: flex;
+  justify-content: space-between;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+footer .bottomLinks nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid rgba(123, 185, 252, 0.2);
+}
+footer .bottomLinks nav .listeBottomLinks {
+  padding-left: 0;
+}
+footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBottomLinks a {
+  width: auto;
+  display: inline-flex;
+  justify-content: space-evenly;
+  display: inline-flex;
+  align-self: center;
+  margin: 0% 0.9vw;
+}
+footer .bottomLinks nav .copyright {
+  align-self: flex-end;
 }/*# sourceMappingURL=style.css.map */

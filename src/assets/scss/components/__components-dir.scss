@@ -7,10 +7,13 @@ Files inside this folder should contain all styles relating to a reusable compon
 @import './dashboard/dashboard-main';
 @import './dashboard/dashboard-navbar';
 @import './dashboard/dashboard-header';
-@import './dashboard/dashboard-sections';
 @import './dashboard/dashboard-infos-statistics';
 @import './dashboard/dashboard-infos';
 @import './dashboard/dashboard-form';
+
+@import './dashboard/dashboard-main';
+@import './dashboard/dashboard-infos-statistics';
+
 
 
 @import './listofInvoices';

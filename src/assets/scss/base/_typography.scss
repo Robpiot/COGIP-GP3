@@ -179,3 +179,80 @@
         }
     }
 }
+
+
+
+footer {
+    .divFooter{
+        .titleFooter {
+            h3 {
+                font-size: 3vw;
+                font-weight: 600;
+                color: black;
+                text-align: left;
+            }
+        }
+    }
+
+    .divContact {   
+        .listeSocials, ul {
+            list-style-type: none;
+            text-decoration: none;
+            font-family: 'Inter',sans-serif;
+            font-size: 0.9vw;
+            li {
+                color: #737373;
+            }
+            
+        }
+    }
+    .bottomLinks {
+        nav {
+            .listeBottomLinks {
+                li, a {
+                    list-style-type: none;
+                    text-decoration: none;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 0.9vw;
+                    color: #737373;
+                    text-transform: uppercase;                    
+                }
+            }
+            .copyright {
+                font-family: "Inter", sans-serif;
+                font-size: 0.9vw;
+                color: #737373;
+            }
+        }
+    }
+}
+
+
+section.form {
+    h3 {
+        color: #000;
+        font-family: 'Inter' sans-serif;
+        font-size: 1.25vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .input {
+        font-style: normal;
+        font-weight: 100;
+        line-height: normal;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.3vw;
+    }
+
+    .save {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.3vw;
+        text-align: left;
+        color:white;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal; 
+    }
+}

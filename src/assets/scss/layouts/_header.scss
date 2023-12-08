@@ -1,3 +1,7 @@
+* {
+    margin : 0px;
+    padding: 0px;
+}
 .navBarHeader {
     display: flex;
 }
@@ -5,68 +9,111 @@
 .headerDiv {
     background-color: #F9DE4E;
     display: flex;
-    flex-direction: row;
-    height : 10vh; 
-    width: 100vw;
+    position:relative; 
+    justify-content: center;
+    align-items: center;
+    
+    ul {
+        li {
+            list-style-type: none;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    
 
     .menuButton {
         background-color: #F9DE4E;
-        padding: 15px;
+        position: absolute;
+        top: 50%; 
+        left: 0; // Add this line
+        transform: translateY(-50%);
+        padding: 10px;
         font-size: 24px;
-        cursor:pointer;
+        cursor: pointer;
         border: none;
-        justify-content: flex-start;
     }
+    .ulHeaderLinks{
+        display:none;
+        
+        // border-top: .0625rem solid #F9DE4E;
+    }
+
+    .ulHeaderLinks.is-open {
+        display: block;
+        position: absolute;
+        top: 100%; // Adjust this line
+        left: 0;
+        z-index: 9999;
+        list-style-type: none;
+      
+        li, a {
+          text-decoration: none;
+          color: black;
+        }
+      }
 
     .ulTitleHeader {
-        position : absolute;
-        justify-content: center;
-        text-align: center;
-        text-decoration: none;
-        list-style-type: none;
-        .titleHeader {
-            text-align: center;
+       display: flex;
+         justify-content: center;
+            align-items: center;
+
+
+
+        .titleHeader, a{
             text-decoration: none;
+            list-style-type: none;
+            color : black;
             
+
         }
+       
     }
 
 
-
-.linksHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100vw;
-    height: 100vh;
-    background-color: #F9DE4E;
-    margin-top: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    list-style-type: none;
-    text-align: left;
-    align-items: left;
-    justify-content: space-evenly;
-    font-size: 24px;
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    .link {
-        text-decoration: none;
-        color: white;
+    .userButton {
+        background-color: #F9DE4E;
+        position: absolute;
+        top: 50%; 
+        right: 0; // Add this line
+        transform: translateY(-50%);
+        padding: 10px;
+        font-size: 24px;
         cursor: pointer;
+        border: none;
     }
-    .link:hover {
-        color: #F9DE4E;
-        background-color: white;
-        border-radius: 10px;
-        padding: 5px;
+
+    .headerButtons {
+        display: none;
     }
+    .headerButtons.is-open{
+       
+            display: block;
+            position: absolute;
+            top: 100%; // Adjust this line
+            right: 0;
+            margin-right: 30px;
+            z-index: 9999;
+            list-style-type: none;
+          
+            li, a {
+              text-decoration: none;
+              color: black;
+            }
+          }
+    }
+
+
+
+
+
+@media screen {
+    
 }
 
-.headerButtons {
-    display: none;
-} }
+
+
+@media screen {
+
+}

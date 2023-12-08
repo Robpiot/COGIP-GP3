@@ -1123,7 +1123,7 @@ section.form .form-container form .save {
 
 @media screen and (min-width: 320px) and (max-width: 774px) {
   section.form {
-    margin-top: -15%;
+    margin-top: -8%;
   }
   section.form .form-container {
     height: 45vw;

@@ -1,4 +1,20 @@
+import { RequestLastCompanies } from "../assets/utils/Requests";
+import { useState, useEffect } from 'react';
+
 export default function LastCompanies() {
+    const [companies, setCompanies] = useState([]);
+
+    useEffect(() => {
+        const fetchCompanies = async () => {
+            const result = await RequestLastCompanies();
+            setCompanies(result);
+        };
+
+        fetchCompanies();
+    }, []);
+
+    console.log(companies);
+    
     return (
         <div className="lastCompTable">
             <h2 className="lastCompanies">Last Companies</h2>
@@ -13,41 +29,17 @@ export default function LastCompanies() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Raviga</td>
-                        <td>US456 654 321</td>
-                        <td>United States</td>
-                        <td>Supplier</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>Dunder Mifflin</td>
-                        <td>US676 787 767</td>
-                        <td>United States</td>
-                        <td>Client</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>Pierre Cailloux</td>
-                        <td>FR 676 676 676</td>
-                        <td>France</td>
-                        <td>Supplier</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>Belgalol</td>
-                        <td>BE0987 876 787</td>
-                        <td>Belgium</td>
-                        <td>Supplier</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>Jouet Jean-Michel</td>
-                        <td>FR 787 776 999</td>
-                        <td>France</td>
-                        <td>Client</td>
-                        <td>25/09/2020</td>
-                    </tr>
+                {companies.map(company => {
+                    return (
+                        <tr key={company.id}>
+                            <td>{company.name}</td>
+                            <td>{company.tva}</td>
+                            <td>{company.country}</td>
+                            <td>{company.types_name}</td>
+                            <td>{company.created_at}</td>
+                        </tr>
+                    );
+                })}
                 </tbody>
             </table>
         </div>

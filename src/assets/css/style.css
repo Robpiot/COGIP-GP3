@@ -509,7 +509,7 @@ footer .bottomLinks nav .copyright {
 section.form h3 {
   color: #000;
   font-family: "Inter" sans-serif;
-  font-size: 1.3vw;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -519,11 +519,11 @@ section.form .input {
   font-weight: 100;
   line-height: normal;
   font-family: "Inter", sans-serif;
-  font-size: 1.3vw;
+  font-size: 20px;
 }
 section.form .save {
   font-family: "Inter", sans-serif;
-  font-size: 1.3vw;
+  font-size: 20px;
   text-align: left;
   color: white;
   font-style: normal;
@@ -585,40 +585,6 @@ section.form .save {
   }
   footer .bottomLinks nav .copyright {
     font-size: 1.2vw;
-  }
-  section.form h3 {
-    font-size: 5vw;
-  }
-  section.form .input {
-    font-size: 3vw;
-    color: #636363;
-  }
-  section.form .save {
-    font-size: 3vw;
-  }
-}
-@media screen and (min-width: 425px) and (max-width: 774px) {
-  section.form h3 {
-    font-size: 5.2vw;
-  }
-  section.form .input {
-    font-size: 3.1vw;
-    color: #636363;
-  }
-  section.form .save {
-    font-size: 3.1vw;
-  }
-}
-@media screen and (min-width: 774px) and (max-width: 10244px) {
-  section.form h3 {
-    font-size: 3.2vw;
-  }
-  section.form .input {
-    font-size: 2.5vw;
-    color: #636363;
-  }
-  section.form .save {
-    font-size: 2.5vw;
   }
 }
 /*
@@ -1152,9 +1118,10 @@ section.form .form-container form .save {
   background: #9698D6;
   border: none;
   padding-left: 3%;
+  width: 97.5%;
 }
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 774px) {
   section.form {
     margin-top: -15%;
   }
@@ -1915,7 +1882,7 @@ footer .divContact .location {
   padding-left: 0;
   margin: 0;
 }
-footer .divContact .location p {
+footer .divContact .location .infoFooter {
   width: 20vw;
   margin: 0;
 }

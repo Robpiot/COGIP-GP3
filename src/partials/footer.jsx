@@ -30,16 +30,16 @@ const Footer = () => {
               icon={faLocationDot}
               style={{ color: "#F9DE4E" }}
             />
-            <p>Square des Martyrs, 6000 Charleroi</p>
+            <p className="infoFooter">Square des Martyrs, 6000 Charleroi</p>
           </ul>
           <ul className="listeContacts">
             <li>
               <FontAwesomeIcon icon={faPhone} style={{ color: "#f9DE4E" }} />
-              <p>(123) 456-7890</p>
+              <p className="infoFooter">(123) 456-7890</p>
             </li>
             <li>
               <FontAwesomeIcon icon={faPrint} style={{ color: "#f9DE4E" }} />
-              <p>(123) 456-7890</p>
+              <p className="infoFooter">(123) 456-7890</p>
             </li>
           </ul>
           <ul className="listeSocials">

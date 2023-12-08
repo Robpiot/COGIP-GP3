@@ -1,4 +1,3 @@
-import DashboardImg from "../../assets/img/dashboard.png";
 
 import DashboardHeader from "./DashboardHeader";
 import DashboardSections from "./DashboardSections";
@@ -14,7 +13,6 @@ const DashboardMain = ( { page } ) => {
 
     return (
         <main className="dashboard-main">
-            {/* <img src={DashboardImg} alt="Image de dashboard" /> */}
             <DashboardHeader />
 
             { 

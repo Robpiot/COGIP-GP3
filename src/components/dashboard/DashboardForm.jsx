@@ -13,12 +13,42 @@ const Form = ( {data} ) => {
             <div className="separate"></div>
 
             <div className="form-container">
-                <form action="">
-                    <input className="input" type="text" placeholder="Reference" />
-                    <input className="input" type="text" placeholder="Price" />
-                    <input className="input" type="text" placeholder="Company Name" />
-                    <button className="save">Save</button>
-                </form>
+
+                {   
+                    (data.dataName === 'invoices') && (
+                        <form action="">
+                            <input className="input" type="text" placeholder="Reference" />
+                            <input className="input" type="text" placeholder="Price" />
+                            <input className="input" type="text" placeholder="Company Name" />
+                            <button className="save">Save</button>
+                        </form>
+                    )
+                }
+
+                {   
+                    (data.dataName === 'companies') && (
+                        <form action="">
+                            <input className="input" type="text" placeholder="Reference" />
+                            <input className="input" type="text" placeholder="Price" />
+                            <input className="input" type="text" placeholder="Company Name" />
+                            <button className="save">Save</button>
+                        </form>
+                    )
+                }
+
+                {   
+                    (data.dataName === 'contacts') && (
+                        <form action="">
+                            <input className="input" type="text" placeholder="Reference" />
+                            <input className="input" type="text" placeholder="Price" />
+                            <input className="input" type="text" placeholder="Company Name" />
+                            <button className="save">Save</button>
+                        </form>
+                    )
+                }
+
+
+
 
             </div>
             

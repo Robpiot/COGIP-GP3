@@ -3,6 +3,14 @@ header.dashboard-header {
     font-family: Inter;
     margin: 50px 0 100px;
 
+    img {
+        display: none;
+        position: absolute;
+        width: clamp(130px, 25vw, 300px);
+        right: 12vw;
+        object-fit: cover;   
+    }
+
     h2 {
         font-weight: 900;
         font-size: 26px;
@@ -32,6 +40,11 @@ header.dashboard-header {
 
 @media only screen and (min-width: 756px) {
     header.dashboard-header {
+
+        img {
+            display: block;
+        }
+
         h2 {
             font-size: 28px;
             line-height: 34.31px;
@@ -51,6 +64,11 @@ header.dashboard-header {
 
 @media only screen and (min-width: 1024px) {
     header.dashboard-header {
+
+        img {
+            display: none;
+        }
+
         h2 {
             font-size: 30px;
             line-height: 36.31px;
@@ -61,9 +79,41 @@ header.dashboard-header {
 
 @media only screen and (min-width: 1200px) {
     header.dashboard-header {
+
+        img {
+            display: block;
+            top: 40px;
+            width: clamp(200px, 30vw, 270px);
+            right: 10vw;
+        }
+
         div {
             padding: 60px;
             margin: 40px 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 1450px) {
+    header.dashboard-header {
+
+        img {
+            display: block;
+            top: 0;
+            width: clamp(270px, 45vw, 350px);
+            right: 12vw;
+        }
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    header.dashboard-header {
+
+        img {
+            display: block;
+            top: 0;
+            width: clamp(350px, 45vw, 380px);
+            right: 15vw;
         }
     }
 }

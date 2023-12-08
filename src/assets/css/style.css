@@ -509,7 +509,7 @@ footer .bottomLinks nav .copyright {
 section.form h3 {
   color: #000;
   font-family: "Inter" sans-serif;
-  font-size: 2vw;
+  font-size: 1.3vw;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -519,11 +519,11 @@ section.form .input {
   font-weight: 100;
   line-height: normal;
   font-family: "Inter", sans-serif;
-  font-size: 1.7vw;
+  font-size: 1.3vw;
 }
 section.form .save {
   font-family: "Inter", sans-serif;
-  font-size: 1.7vw;
+  font-size: 1.3vw;
   text-align: left;
   color: white;
   font-style: normal;
@@ -1274,7 +1274,7 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .name, .invoices table .company {
+.invoices table .names, .invoices table .company {
   width: 18%;
 }
 .invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
@@ -1388,7 +1388,7 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .name, .invoices table .company {
+.invoices table .names, .invoices table .company {
   width: 18%;
 }
 .invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
@@ -1930,6 +1930,7 @@ footer .bottomLinks nav {
   justify-content: space-between;
   width: 100%;
   border-top: 1px solid rgba(123, 185, 252, 0.2);
+  align-items: center;
 }
 footer .bottomLinks nav .listeBottomLinks {
   padding-left: 0;

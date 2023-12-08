@@ -90,25 +90,25 @@ footer {
         grid-column-start: 1;
         grid-column-end: 3;
         nav {
-            display: flex;
+            display: grid; // Change this to grid
+            grid-template-columns: 1fr auto; // Define the grid columns
             justify-content: space-between;
+            align-items: center; // This will vertically center the items
             width: 100%;
             border-top:1px solid rgba(123, 185, 252, 0.2);
-            align-items: center;
-
+    
             .listeBottomLinks {
                 padding-left: 0;
                 li, a {
                     width: auto;
                     display: inline-flex;
                     justify-content: space-evenly;
-                    display: inline-flex;
                     align-self: center;
                     margin: 0% 0.9vw;                
                 }
             }
             .copyright {
-                align-self: flex-end;
+                // No need for align-self: flex-end;
             }
         } 
     }

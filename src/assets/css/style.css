@@ -597,6 +597,30 @@ section.form .save {
     font-size: 3vw;
   }
 }
+@media screen and (min-width: 425px) and (max-width: 774px) {
+  section.form h3 {
+    font-size: 5.2vw;
+  }
+  section.form .input {
+    font-size: 3.1vw;
+    color: #636363;
+  }
+  section.form .save {
+    font-size: 3.1vw;
+  }
+}
+@media screen and (min-width: 774px) and (max-width: 10244px) {
+  section.form h3 {
+    font-size: 3.2vw;
+  }
+  section.form .input {
+    font-size: 2.5vw;
+    color: #636363;
+  }
+  section.form .save {
+    font-size: 2.5vw;
+  }
+}
 /*
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
@@ -1926,11 +1950,12 @@ footer .bottomLinks {
   grid-column-end: 3;
 }
 footer .bottomLinks nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   border-top: 1px solid rgba(123, 185, 252, 0.2);
-  align-items: center;
 }
 footer .bottomLinks nav .listeBottomLinks {
   padding-left: 0;
@@ -1939,10 +1964,6 @@ footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBott
   width: auto;
   display: inline-flex;
   justify-content: space-evenly;
-  display: inline-flex;
   align-self: center;
   margin: 0% 0.9vw;
-}
-footer .bottomLinks nav .copyright {
-  align-self: flex-end;
 }/*# sourceMappingURL=style.css.map */

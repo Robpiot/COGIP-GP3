@@ -1788,6 +1788,7 @@ Files inside this folder can contain specific element styles and layout.
   .headerDiv .navBarHeader .ulHeaderLinks {
     grid-column: 2;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
   }
   .headerDiv .navBarHeader .ulHeaderLinks li {

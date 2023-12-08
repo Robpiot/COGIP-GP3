@@ -122,6 +122,7 @@
                 .ulHeaderLinks {
                     grid-column : 2;
                     display: flex;
+                    justify-content: flex-start;
                     align-items: center;
                     li {
                         margin: 0 20px;

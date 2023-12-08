@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 
 import AdminImg from '../../assets/img/pexels-italo-melo-2379004-1.png'
 
@@ -35,15 +35,16 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
 
 
 
-const DashboardNavbar = ( {onPage, page} ) => {
+const DashboardNavbar = ( {onPage, page, isMenuOpen, onMenuChange} ) => {
 
-    const [isMenuOpen, setMenuOpen] = useState(false);
+    // const [isMenuOpen, setMenuOpen] = useState(false);
 
     const handleDashboardClick = (e) => {
         e.preventDefault();
         
         onPage(e.target.textContent);
-        setMenuOpen(false);
+        // setMenuOpen(false);
+        onMenuChange(false);
     };
 
     const menuItems = [
@@ -59,7 +60,7 @@ const DashboardNavbar = ( {onPage, page} ) => {
                 <div className="menuToggle">
 
                         {/* Menu hamburger */}
-                        <input type="checkbox" checked={isMenuOpen} onChange={() => setMenuOpen(!isMenuOpen)} />
+                        <input type="checkbox" checked={isMenuOpen} onChange={() => onMenuChange(!isMenuOpen)} />
                         <span></span>
                         <span></span>
                         <span></span>

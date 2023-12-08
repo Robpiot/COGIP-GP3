@@ -9,10 +9,15 @@ import contactsData from '../../data/contacts.json'
 import invoicesData from '../../data/invoices.json'
 import companiesData from '../../data/companies.json'
 
-const DashboardMain = ( { page } ) => {
+const DashboardMain = ( { page, isMenuOpen } ) => {
 
     return (
-        <main className="dashboard-main">
+        <main 
+            className="dashboard-main"
+            style={{
+                zIndex: isMenuOpen ? '0' : '2',
+            }}  
+        >
             <DashboardHeader />
 
             { 

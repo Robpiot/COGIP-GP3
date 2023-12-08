@@ -332,6 +332,8 @@ Files inside this folder can contain global styles used in the project.
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 .lastInvTable table, .lastCompTable table, .lastContTable table {
   font-family: "Roboto", sans-serif;

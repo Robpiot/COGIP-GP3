@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 
 const Header = () => {
@@ -19,8 +19,8 @@ const Header = () => {
           <li>
             <NavLink
               to="/"
-              isActive={(match, location) => location.pathname === "/"}
-              activeClassName="active"
+              isactive={(match, location) => location.pathname === "/"}
+              activeclassname="active"
             >
               Home
             </NavLink>
@@ -28,8 +28,8 @@ const Header = () => {
           <li>
             <NavLink
               to="/invoices"
-              isActive={(match, location) => location.pathname === "/"}
-              activeClassName="active"
+              isactive={(match, location) => location.pathname === "/"}
+              activeclassname="active"
             >
               Invoices
             </NavLink>
@@ -37,8 +37,8 @@ const Header = () => {
           <li>
             <NavLink
               to="/Companies"
-              isActive={(match, location) => location.pathname === "/"}
-              activeClassName="active"
+              isactive={(match, location) => location.pathname === "/"}
+              activeclassname="active"
             >
               Companies
             </NavLink>
@@ -46,8 +46,8 @@ const Header = () => {
           <li>
             <NavLink
               to="/contacts"
-              isActive={(match, location) => location.pathname === "/"}
-              activeClassName="active"
+              isactive={(match, location) => location.pathname === "/"}
+              activeclassname="active"
             >
               Contacts
             </NavLink>
@@ -55,9 +55,9 @@ const Header = () => {
         </ul>
         <ul className="ulTitleHeader">
           <li className="titleHeader">
-            <navLink to="/">
+            <Link to="/">
               <h1>COGIP</h1>
-            </navLink>
+            </Link>
           </li>
         </ul>
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>

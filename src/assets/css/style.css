@@ -1829,7 +1829,7 @@ Files inside this folder can contain specific element styles and layout.
   .headerDiv .navBarHeader .ulHeaderLinks li a {
     text-decoration: none;
     color: black;
-    padding: 1px;
+    padding: 7px;
   }
   .headerDiv .navBarHeader .ulHeaderLinks li a.active {
     border: 1px solid black;

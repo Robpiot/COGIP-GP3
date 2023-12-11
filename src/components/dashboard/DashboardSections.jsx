@@ -8,14 +8,30 @@ import DashboardInfos from "./DashboardInfos";
 import { ApiContext } from "../../context/ApiContext";
 import { useContext } from "react";
 
-const DashboardSections = ( {statisticsData, /*contactsData, invoicesData, companiesData*/} ) => {
+const DashboardSections = ( {/*statisticsData, contactsData, invoicesData, companiesData*/} ) => {
     
-    const {lastContacts, lastCompanies, lastInvoices} = useContext(ApiContext);
+    const { 
+        lastContacts, 
+        lastCompanies, 
+        lastInvoices ,
+        invoicesLength,
+        contactsLength,
+        companiesLength
+    } = useContext(ApiContext);
+
+    const statisticsData = {
+        "dataName": "statistics",
+        "dataInfos": [
+            {"id": 1, "name": "Invoices", "number": invoicesLength}, 
+            {"id": 2, "name": "Contacts",  "number": contactsLength}, 
+            {"id": 3, "name": "Companies",  "number": companiesLength}
+        ]
+    };
 
     return ( 
         <div className="dashboard-sections">
             <div className="dashboard-grid">
-                <DashboardInfos data={statisticsData} />
+                {statisticsData ? <DashboardInfos data={statisticsData} /> : <p>Chargement des statistiques...</p>}
                 {lastContacts ? <DashboardInfos data={lastContacts} /> : <p>Chargement des contacts...</p>}
                 {lastInvoices ? <DashboardInfos data={lastInvoices} /> : <p>Chargement des factures...</p>}
                 {lastCompanies ? <DashboardInfos data={lastCompanies} /> : <p>Chargement des compagnies...</p>}

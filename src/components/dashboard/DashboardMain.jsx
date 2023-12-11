@@ -5,9 +5,9 @@ import DashboardForm from "./DashboardForm";
 
 
 import statisticsData from '../../data/statistics.json'
-import contactsData from '../../data/contacts.json'
-import invoicesData from '../../data/invoices.json'
-import companiesData from '../../data/companies.json'
+// import contactsData from '../../data/contacts.json'
+// import invoicesData from '../../data/invoices.json'
+// import companiesData from '../../data/companies.json'
 
 const DashboardMain = ( { componentToDisplay, isMenuOpen } ) => {
 
@@ -25,8 +25,8 @@ const DashboardMain = ( { componentToDisplay, isMenuOpen } ) => {
                     <DashboardSections
                         statisticsData={statisticsData}
                         // contactsData={contactsData}
-                        invoicesData={invoicesData}
-                        companiesData={companiesData}
+                        // invoicesData={invoicesData}
+                        // companiesData={companiesData}
                     />
                 ) 
             }

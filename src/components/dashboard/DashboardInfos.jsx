@@ -1,6 +1,7 @@
 
 const DashboardInfos = ({ data }) => {
-    // console.log('data', data);
+    console.log('data', data);
+
 
     function toUppercase(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -26,6 +27,7 @@ const DashboardInfos = ({ data }) => {
                             }
                         </div>
                     </section>
+                
                 ) : (
 
                     <section className="infos">

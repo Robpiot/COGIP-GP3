@@ -3,7 +3,7 @@
  * Récupère toutes les données des contacts depuis l'API.
  * @returns {Promise<Object>} Un objet contenant le nom des données ("contacts") et les informations des contacts.
  */
-export async function fetchAllContacts() {
+export default async function fetchAllContacts() {
 
     // Récupère l'URL de l'API depuis les variables d'environnement.
     const url = import.meta.env.VITE_URL;

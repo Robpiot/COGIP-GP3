@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DashboardMain from "../components/dashboard/DashboardMain.jsx";
 import DashboardNavbar from "../components/dashboard/DashboardNavbar.jsx";
 
-const DashboardPage = ( {allContacts} ) => {
-
-    console.log('allContacts : ', allContacts);
+const DashboardPage = () => {
 
     /*
         variable qui permet de savoir quel composant afficher dans le DashboardMain :

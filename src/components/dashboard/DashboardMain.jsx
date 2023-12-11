@@ -24,7 +24,7 @@ const DashboardMain = ( { componentToDisplay, isMenuOpen } ) => {
                 (componentToDisplay === 'Dashboard') && (
                     <DashboardSections
                         statisticsData={statisticsData}
-                        contactsData={contactsData}
+                        // contactsData={contactsData}
                         invoicesData={invoicesData}
                         companiesData={companiesData}
                     />

@@ -6,11 +6,9 @@ const DashboardInfos = ({ data }) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-
+   
     return (
-
-        <>
-
+        <>  
             {
                 (data.dataName === 'statistics') ? (
                     <section className="statistics">
@@ -70,9 +68,6 @@ const DashboardInfos = ({ data }) => {
 
                 )
             }
-
-
-
         </>
     );
 }

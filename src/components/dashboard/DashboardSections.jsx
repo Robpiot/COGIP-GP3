@@ -5,12 +5,19 @@ import DashboardInfos from "./DashboardInfos";
 // import invoices from '../../data/invoices.json'
 // import companies from '../../data/companies.json'
 
-const DashboardSections = ( {statisticsData, contactsData, invoicesData, companiesData} ) => {
+import { ApiContext } from "../../context/ApiContext";
+import { useContext } from "react";
+
+const DashboardSections = ( {statisticsData, /*contactsData,*/ invoicesData, companiesData} ) => {
+    
+    const {contacts} = useContext(ApiContext);
+    console.log(contacts);
+
     return ( 
         <div className="dashboard-sections">
             <div className="dashboard-grid">
                 <DashboardInfos data={statisticsData} />
-                <DashboardInfos data={contactsData} />
+                {contacts ? <DashboardInfos data={contacts} /> : <p>Chargement des contacts...</p>}
                 <DashboardInfos data={invoicesData} />
                 <DashboardInfos data={companiesData} />
             </div>

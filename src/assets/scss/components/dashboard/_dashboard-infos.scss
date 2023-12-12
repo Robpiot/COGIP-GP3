@@ -84,3 +84,17 @@ section.infos {
         flex-basis: 580px;
     }
 }
+@media only screen and (min-width: 1500px) {
+    section.infos {    
+        flex-basis: 570px;
+        .infos-container {
+            table {
+                tr {
+                    td {
+                        font-size: clamp(10px, .7vw, 20px);
+                    }
+                }
+            }
+        }
+    }
+}

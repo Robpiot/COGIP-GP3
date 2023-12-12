@@ -2,10 +2,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
+import ModalLogin from "../components/ModalLogin";
+import ModalRegister from "../components/ModalRegister";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openModalLogin, setOpenModalLogin] = useState(false);
+  const [openModalRegister, setOpenModalRegister] = useState(false);
 
   const toggleMenuLinks = () => setIsOpen(!isOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -62,16 +66,36 @@ const Header = () => {
         </ul>
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>
           <li className="signupButton">
-            <button className="signUpBtnStyle">Sign up</button>
+            <button
+              className="signUpBtnStyle"
+              onClick={() => setOpenModalRegister(true)}
+            >
+              Sign up
+            </button>
           </li>
+
           <li className="loginButton">
-            <button className="loginBtnStyle">Login</button>
+            <button
+              className="loginBtnStyle"
+              onClick={() => setOpenModalLogin(true)}
+            >
+              Login
+            </button>
           </li>
         </ul>
+        <div>
+          {openModalLogin && <ModalLogin closeModalLogin={setOpenModalLogin} />}
+        </div>
+        <div>
+          {openModalRegister && (
+            <ModalRegister closeModalRegister={setOpenModalRegister} />
+          )}
+        </div>
       </nav>
       <button className="userButton" onClick={toggleMenu}>
         <FontAwesomeIcon icon={faUser} style={{ color: "#4e511f" }} />
       </button>
+      ;
     </div>
   );
 };

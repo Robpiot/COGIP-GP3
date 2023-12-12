@@ -4,6 +4,7 @@
 }
 .navBarHeader {
     display: flex;
+    width: 80%;
 }
 
 .headerDiv {
@@ -168,7 +169,30 @@
                 display: flex;
               position: static; // Reset the positioning
               top: auto; // Reset the top property
-              right: auto; // Reset the right property
+              .signUpBtnStyle {
+                background-color: white;
+                border: none;
+                border-radius: 12px;
+                padding: 10px 20px; // Adjust as needed
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+              .loginBtnStyle {
+                background-color: #F9DE4E;
+                border: none;
+                border-radius: 12px;
+                padding: 10px 20px; // Adjust as needed
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
             }
           }
         }

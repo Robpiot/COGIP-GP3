@@ -326,7 +326,13 @@ Files inside this folder can contain global styles used in the project.
 .ulTitleHeader .titleHeader, .ulTitleHeader a {
   font-size: 32px;
   font-family: "Roboto", sans-serif;
-  font-size: 900;
+  font-weight: 900;
+}
+
+.signupButton, .loginButton {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
 }
 
 .title {
@@ -1721,6 +1727,7 @@ Files inside this folder can contain specific element styles and layout.
 
 .navBarHeader {
   display: flex;
+  width: 80%;
 }
 
 .headerDiv {
@@ -1850,7 +1857,30 @@ Files inside this folder can contain specific element styles and layout.
     display: flex;
     position: static;
     top: auto;
-    right: auto;
+  }
+  .headerDiv .navBarHeader .headerButtons .signUpBtnStyle {
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .headerDiv .navBarHeader .headerButtons .loginBtnStyle {
+    background-color: #F9DE4E;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
   }
 }
 .dashboard-page {

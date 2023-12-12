@@ -62,10 +62,10 @@ const Header = () => {
         </ul>
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>
           <li className="signupButton">
-            <button>Sign up</button>
+            <button className="signUpBtnStyle">Sign up</button>
           </li>
           <li className="loginButton">
-            <button>Login</button>
+            <button className="loginBtnStyle">Login</button>
           </li>
         </ul>
       </nav>

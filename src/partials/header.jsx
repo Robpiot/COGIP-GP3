@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
-import ModalLogin from "../components/ModalLogin";
+import ModalLogin from "../components/modalLogin";
 import ModalRegister from "../components/ModalRegister";
 
 const Header = () => {

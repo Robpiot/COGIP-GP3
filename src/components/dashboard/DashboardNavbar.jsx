@@ -22,7 +22,7 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
         {icon}
 
         <p style={{
-            borderRight: isSelected ? '10px solid #9698D6' : 'none',
+            borderRight: isSelected ? '15px solid #9698D6' : 'none',
             width: '100%',
             padding: '5px 0',
         }}>
@@ -39,6 +39,7 @@ const DashboardNavbar = ( {onChangeComponent, componentToDisplay, isMenuOpen, on
     const handleDashboardClick = (e) => {
         e.preventDefault();
         onChangeComponent(e.target.textContent);
+        // console.log(e.target.textContent);
         onMenuChange(false);
     };
 

@@ -1,66 +1,66 @@
 import { createContext, useState } from "react";
+import fetchAll from '../api/fetchAll';
+import fetchCreate from '../api/fetchCreate';
 
 export const ApiContext = createContext();
-
-import fetchAll from '../api/fetchAll';
-
-
 
 export default function ApiProvider(props) {
 
     const [contacts, setContacts] = useState(null);
-    const [lastContacts, setLastContacts] = useState(null);
-    const [contactsLength, setContactsLength] = useState(null);
-
     const [companies, setCompanies] = useState(null);
-    const [lastCompanies, setLastCompanies] = useState(null);
-    const [companiesLength, setCompaniesLength] = useState(null);
-
     const [invoices, setInvoices] = useState(null);
-    const [lastInvoices, setLastInvoices] = useState(null);
-    const [invoicesLength, setInvoicesLength] = useState(null);
+    const [types, setTypes] = useState(null);
 
-    // const [types, setTypes] = useState(null);
+    const fetchEntity = async (method, entityName, setEntity) => {
+        try {
+            if (method === 'get') {
+                const entityData = await fetchAll(entityName);
+                setEntity(entityData.dataObject);
+            }
+            else if (method === 'post') {
+                const entityData = await fetchCreate(entityName);
+                setEntity(entityData.dataObject);
+            }
+        } catch (error) {
+            console.error(`Error fetching data for ${entityName}: ${error.message}`);
+        }
+    };
 
-    async function fetchContacts() {
-        const contacts = await fetchAll('contacts');
-        setContacts(contacts.dataObject);
-        setContactsLength(contacts.dataObject.dataInfos.length);
-        setLastContacts(contacts.lastDataObject);
-    }
-    async function fetchCompanies() {
-        const companies = await fetchAll('companies');
-        setCompanies(companies.dataObject);
-        setCompaniesLength(companies.dataObject.dataInfos.length);
-        setLastCompanies(companies.lastDataObject);
-    }
-    async function fetchInvoices() {
-        const invoices = await fetchAll('invoices');
-        setInvoices(invoices.dataObject);
-        setInvoicesLength(invoices.dataObject.dataInfos.length);
-        setLastInvoices(invoices.lastDataObject);
-    }
+    const fetchContacts = async () => {
+        await fetchEntity('get', 'contacts', setContacts);
+    };
 
+    const fetchCompanies = async () => {
+        await fetchEntity('get', 'companies', setCompanies);
+    };
+
+    const fetchInvoices = async () => {
+        await fetchEntity('get', 'invoices', setInvoices);
+    };
+
+    const fetchTypes = async () => {
+        await fetchEntity('get', 'types', setTypes);
+    };
+
+    const createInvoices = async () => {
+        await fetchEntity('post', 'invoices', setInvoices);
+    };
 
     return (
-        <ApiContext.Provider 
-        value={
-            { 
-                fetchContacts, 
+        <ApiContext.Provider
+            value={{
+                fetchContacts,
                 contacts,
-                contactsLength, 
-                lastContacts,
-                fetchCompanies, 
-                companies, 
-                companiesLength,
-                lastCompanies,
-                fetchInvoices, 
+                fetchCompanies,
+                companies,
+                fetchInvoices,
+                createInvoices,
                 invoices,
-                invoicesLength,
-                lastInvoices
-            }
-        }>
+                fetchTypes,
+                types
+            }}
+        >
             {props.children}
         </ApiContext.Provider>
-    )
-} 
+    );
+}

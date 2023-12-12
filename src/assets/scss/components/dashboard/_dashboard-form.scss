@@ -63,12 +63,19 @@ section.form {
             select {
                 @extend %format;
             }
+            p {
+                font-size: 15px;
+                margin-left: 10px;
+                margin-bottom: 25px;
+                color: crimson
+            }
             button {
                 @extend %format;
                 text-align: left ;
                 background: #9698D6;
                 color: #FFF;
                 font-weight: 400;
+                cursor: pointer;
             }
         }
     }

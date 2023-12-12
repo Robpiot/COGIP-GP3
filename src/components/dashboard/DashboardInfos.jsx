@@ -122,7 +122,7 @@ import formatDate from "../../functions/dateFormat";
 
 const DashboardInfos = ({ data }) => {
 
-    // console.log(data);
+    console.log(data);
 
     // Initialisez les variables pour stocker les titres des colonnes du tableau et les lignes de données.
     let title_1 = '';

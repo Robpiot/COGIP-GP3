@@ -13,27 +13,30 @@ import { ApiContext } from "./context/ApiContext.jsx";
 
 function App() {
   
-  const {fetchContacts, contacts, fetchCompanies, companies, fetchInvoices, invoices} = useContext(ApiContext);
+  const {fetchContacts, contacts, fetchCompanies, companies, fetchInvoices, invoices, fetchTypes, types} = useContext(ApiContext);
 
     useEffect(() => {
       const fetchData = async () => {
         if (!contacts) {
           await fetchContacts();
-          // console.log(contacts);
         } 
         if (!companies) {
           await fetchCompanies();
-          // console.log(companies);
         } 
         if (!invoices) {
           await fetchInvoices();
-          // console.log(invoices);
+        } 
+        if (!types) {
+          await fetchTypes();
         } 
       };
         
       fetchData();
     }, []);
 
+    // console.log('contacts : ', contacts);
+    // console.log('companies : ', companies);
+    // console.log('invoices : ', invoices);
 
   return (
       <Routes>

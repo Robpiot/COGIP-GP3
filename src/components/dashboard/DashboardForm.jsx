@@ -1,57 +1,83 @@
-import Companies from '../../data/companies.json'
-import Types from '../../data/types.json'
+import { useForm } from "react-hook-form";
+import { ApiContext } from "../../context/ApiContext";
+import { useContext } from "react";
+
+const Form = ({ formName }) => {
+
+    const { companies, types, createInvoices } = useContext(ApiContext);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm();
 
 
+    const onSubmit = data => {
+        data.id_company = parseInt(data.id_company, 10);
+        console.log(data);
+        console.log(JSON.stringify(data));
+        createInvoices(data);
+    }
 
-const Form = ( {data} ) => {
-
-    // console.log('data : ', data);
-    // console.log('Types : ', Types.dataInfos);
-
-    return ( 
-
+    return (
         <section className="form">
-            <h3>New {data.dataName}</h3>
+            <h3>New {formName}</h3>
 
             <div className="separate"></div>
 
             <div className="form-container">
 
-                {   
-                    (data.dataName === 'invoices') && (
-                        <form action="">
+                {
+                    (formName === 'Invoices') && (
+                        <form action="" onSubmit={handleSubmit(onSubmit)}>
 
                             <label htmlFor="reference" className="visually-hidden">Reference</label>
-                            <input className="input" type="text" id="reference" placeholder="Reference" />
+                            <input
+                                className="input"
+                                type="text"
+                                id="reference"
+                                placeholder="Reference"
+                                {...register("ref", { required: "The reference is required" })}
+                            />
+                            {errors.ref && (<p>{errors.ref.message}</p>)}
 
-                            <label htmlFor="price" className="visually-hidden">Price</label>
+                            {/* TODO : à vérifier, ajout de la colonne "price" dans le table "invoices" ? */}
+                            {/* <label htmlFor="price" className="visually-hidden">Price</label> */}
                             {/* TODO : à vérifier, pour le "price" -> type = number ???? */}
-                            <input className="input" type="text" id="price" placeholder="Price" />
+                            {/* <input className="input" type="text" id="price" placeholder="Price" /> */}
 
                             <label htmlFor="companie" className="visually-hidden">Choose a companie</label>
-                            <select name="companie" id="companie">
+                            <select
+                                name="id_company"
+                                id="companie"
+                                {...register("id_company", { required: "The companie is required" })}
+                            >
                                 <option value="">Choose a companie</option>
-                                {Companies.dataInfos.map((companie) => (
-                                    <option key={companie.id} value={companie.id}>{companie.id} - {companie.name}</option>
+                                {companies.dataInfos.map((companie) => (
+                                    <option key={companie.id} value={companie.id}>
+                                        {companie.id} - {companie.name}
+                                    </option>
                                 ))}
                             </select>
+                            {errors.id_company && (<p>{errors.id_company.message}</p>)}
 
                             <button className="save">Save</button>
                         </form>
                     )
                 }
 
-                {   
-                    (data.dataName === 'companies') && (
+                {
+                    (formName === 'Companies') && (
                         <form action="">
-                            
+
                             <label htmlFor="name" className="visually-hidden">Name</label>
                             <input className="input" type="text" id="name" placeholder="Name" />
 
                             <label htmlFor="type" className="visually-hidden">Choose a type</label>
                             <select name="type" id="type">
                                 <option value="">Choose a type</option>
-                                {Types.dataInfos.map((type) => (
+                                {types.dataInfos.map((type) => (
                                     <option key={type.id} value={type.id}>{type.id} - {type.name}</option>
                                 ))}
                             </select>
@@ -67,17 +93,17 @@ const Form = ( {data} ) => {
                     )
                 }
 
-                {   
-                    (data.dataName === 'contacts') && (
+                {
+                    (formName === 'Contacts') && (
                         <form action="">
 
                             <label htmlFor="name" className="visually-hidden">Name</label>
                             <input className="input" type="text" id="name" placeholder="Name" />
-                            
+
                             <label htmlFor="companie" className="visually-hidden">Choose a companie</label>
                             <select name="companie" id="companie">
                                 <option value="">Choose a companie</option>
-                                {Companies.dataInfos.map((companie) => (
+                                {companies.dataInfos.map((companie) => (
                                     <option key={companie.id} value={companie.id}>{companie.id} - {companie.name}</option>
                                 ))}
                             </select>
@@ -94,7 +120,7 @@ const Form = ( {data} ) => {
                 }
 
             </div>
-            
+
         </section>
     );
 }

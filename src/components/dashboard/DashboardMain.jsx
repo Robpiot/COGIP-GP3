@@ -4,7 +4,7 @@ import DashboardSections from "./DashboardSections";
 import DashboardForm from "./DashboardForm";
 
 
-import statisticsData from '../../data/statistics.json'
+// import statisticsData from '../../data/statistics.json'
 // import contactsData from '../../data/contacts.json'
 // import invoicesData from '../../data/invoices.json'
 // import companiesData from '../../data/companies.json'
@@ -23,7 +23,7 @@ const DashboardMain = ( { componentToDisplay, isMenuOpen } ) => {
             { 
                 (componentToDisplay === 'Dashboard') && (
                     <DashboardSections
-                        statisticsData={statisticsData}
+                        // statisticsData={statisticsData}
                         // contactsData={contactsData}
                         // invoicesData={invoicesData}
                         // companiesData={companiesData}
@@ -31,9 +31,12 @@ const DashboardMain = ( { componentToDisplay, isMenuOpen } ) => {
                 ) 
             }
 
-            { (componentToDisplay === 'Contacts') && (<DashboardForm data={contactsData} />) }
-            { (componentToDisplay === 'Invoices') && (<DashboardForm data={invoicesData} />) }
-            { (componentToDisplay === 'Companies') && (<DashboardForm data={companiesData} />) }
+            { (componentToDisplay === 'Contacts') && (<DashboardForm formName={'Contacts'} />) }
+            { (componentToDisplay === 'Invoices') && (<DashboardForm formName={'Invoices'} />) }
+            { (componentToDisplay === 'Companies') && (<DashboardForm formName={'Companies'} />) }
+            {/* { (componentToDisplay === 'Contacts') && (<DashboardForm data={contactsData} />) } */}
+            {/* { (componentToDisplay === 'Invoices') && (<DashboardForm data={invoicesData} />) } */}
+            {/* { (componentToDisplay === 'Companies') && (<DashboardForm data={companiesData} />) } */}
               
         </main>
     );

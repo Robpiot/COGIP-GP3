@@ -1083,11 +1083,18 @@ section.form .form-container form button, section.form .form-container form sele
   border: none;
   outline: none;
 }
+section.form .form-container form p {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  color: crimson;
+}
 section.form .form-container form button {
   text-align: left;
   background: #9698D6;
   color: #FFF;
   font-weight: 400;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px) {

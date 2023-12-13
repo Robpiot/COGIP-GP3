@@ -1,14 +1,26 @@
 import { useForm } from "react-hook-form";
 import { ApiContext } from "../../context/ApiContext";
+import { DashboardContext } from "../../context/DashboardContext";
 import { useContext } from "react";
+
 
 const Form = ({ formName }) => {
 
-    const { companies, types, createInvoices } = useContext(ApiContext);
+    const { changeComponentToDisplay } = useContext(DashboardContext);
+
+    const { 
+        fetchContacts,
+        fetchCompanies,
+        fetchInvoices,
+        companies, 
+        types, 
+        createInvoices 
+    } = useContext(ApiContext);
 
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors }
     } = useForm();
 
@@ -18,6 +30,11 @@ const Form = ({ formName }) => {
         console.log(data);
         console.log(JSON.stringify(data));
         createInvoices(data);
+        // if (formName === 'Invoices') {
+        //     fetchInvoices();
+        // }
+        reset();
+        changeComponentToDisplay('Dashboard');
     }
 
     return (

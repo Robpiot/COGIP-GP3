@@ -1,15 +1,14 @@
+import { DashboardContext } from "../../context/DashboardContext";
+import { useContext } from "react";
 
 import DashboardHeader from "./DashboardHeader";
 import DashboardSections from "./DashboardSections";
 import DashboardForm from "./DashboardForm";
 
 
-// import statisticsData from '../../data/statistics.json'
-// import contactsData from '../../data/contacts.json'
-// import invoicesData from '../../data/invoices.json'
-// import companiesData from '../../data/companies.json'
+const DashboardMain = ( { isMenuOpen } ) => {
 
-const DashboardMain = ( { componentToDisplay, isMenuOpen } ) => {
+    const { componentToDisplay } = useContext(DashboardContext);
 
     return (
         <main 
@@ -21,22 +20,12 @@ const DashboardMain = ( { componentToDisplay, isMenuOpen } ) => {
             <DashboardHeader />
 
             { 
-                (componentToDisplay === 'Dashboard') && (
-                    <DashboardSections
-                        // statisticsData={statisticsData}
-                        // contactsData={contactsData}
-                        // invoicesData={invoicesData}
-                        // companiesData={companiesData}
-                    />
-                ) 
+                (componentToDisplay === 'Dashboard') ? (
+                    <DashboardSections />
+                ) : (
+                    <DashboardForm formName={componentToDisplay} />
+                )
             }
-
-            { (componentToDisplay === 'Contacts') && (<DashboardForm formName={'Contacts'} />) }
-            { (componentToDisplay === 'Invoices') && (<DashboardForm formName={'Invoices'} />) }
-            { (componentToDisplay === 'Companies') && (<DashboardForm formName={'Companies'} />) }
-            {/* { (componentToDisplay === 'Contacts') && (<DashboardForm data={contactsData} />) } */}
-            {/* { (componentToDisplay === 'Invoices') && (<DashboardForm data={invoicesData} />) } */}
-            {/* { (componentToDisplay === 'Companies') && (<DashboardForm data={companiesData} />) } */}
               
         </main>
     );

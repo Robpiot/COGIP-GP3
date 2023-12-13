@@ -1,3 +1,5 @@
+import { DashboardContext } from "../../context/DashboardContext";
+import { useContext } from "react";
 
 import AdminImg from '../../assets/img/pexels-italo-melo-2379004-1.png'
 
@@ -5,6 +7,7 @@ import DashboardIcon from '../../assets/icons/dashboard.svg'
 import InvoicesIcon from '../../assets/icons/invoices.svg'
 import CompaniesIcon from '../../assets/icons/companies.svg'
 import ContactsIcon from '../../assets/icons/contacts.svg'
+
 
 /*
     Extraction des éléments répétitifs : 
@@ -34,12 +37,13 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
 
 
 
-const DashboardNavbar = ( {onChangeComponent, componentToDisplay, isMenuOpen, onMenuChange} ) => {
+const DashboardNavbar = ( { isMenuOpen, onMenuChange} ) => {
+
+    const { changeComponentToDisplay, componentToDisplay } = useContext(DashboardContext);
 
     const handleDashboardClick = (e) => {
         e.preventDefault();
-        onChangeComponent(e.target.textContent);
-        // console.log(e.target.textContent);
+        changeComponentToDisplay(e.target.textContent);
         onMenuChange(false);
     };
 
@@ -53,7 +57,7 @@ const DashboardNavbar = ( {onChangeComponent, componentToDisplay, isMenuOpen, on
 
     return (
         <header className="dashboard-navbar">
-            <nav className="menu--left" /*role="navigation"*/>
+            <nav className="menu--left" role="navigation">
                 <div className="menuToggle">
 
                         {/* Menu hamburger */}
@@ -85,7 +89,7 @@ const DashboardNavbar = ( {onChangeComponent, componentToDisplay, isMenuOpen, on
                                     onClick={handleDashboardClick}
                                     isSelected={componentToDisplay === item.label}
                                 />
-                                ))
+                            ))
                         }
                         </ul>
 

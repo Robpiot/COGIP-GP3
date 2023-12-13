@@ -26,6 +26,7 @@ export default async function createData(tableName, data) {
         };
 
         return { dataObject, lastDataObject };
+
     } catch (error) {
         throw new Error(`Error when creating data in the ${tableName} table`);
     }

@@ -11,14 +11,15 @@ export default function ApiProvider(props) {
     const [invoices, setInvoices] = useState(null);
     const [types, setTypes] = useState(null);
 
-    const fetchEntity = async (method, entityName, setEntity) => {
+    const fetchEntity = async (method, entityName, setEntity, data) => {
         try {
             if (method === 'get') {
                 const entityData = await fetchAll(entityName);
                 setEntity(entityData.dataObject);
             }
             else if (method === 'post') {
-                const entityData = await fetchCreate(entityName);
+                // await fetchCreate(entityName, data);
+                const entityData = await fetchCreate(entityName, data);
                 setEntity(entityData.dataObject);
             }
         } catch (error) {
@@ -42,8 +43,8 @@ export default function ApiProvider(props) {
         await fetchEntity('get', 'types', setTypes);
     };
 
-    const createInvoices = async () => {
-        await fetchEntity('post', 'invoices', setInvoices);
+    const createInvoices = async (data) => {
+        await fetchEntity('post', 'invoices', setInvoices, data);
     };
 
     return (

@@ -9,9 +9,6 @@ const Form = () => {
     const { changeComponentToDisplay, componentToDisplay } = useContext(DashboardContext);
 
     const { 
-        // fetchContacts,
-        // fetchCompanies,
-        // fetchInvoices,
         companies, 
         types, 
         createInvoices 
@@ -29,12 +26,9 @@ const Form = () => {
         data.id_company = parseInt(data.id_company, 10);
         console.log(data);
         console.log(JSON.stringify(data));
-        createInvoices(data);
-        // if (formName === 'Invoices') {
-        //     fetchInvoices();
-        // }
+        // createInvoices(data);
         reset();
-        changeComponentToDisplay('Dashboard');
+        // changeComponentToDisplay('Dashboard');
     }
 
     return (
@@ -47,13 +41,14 @@ const Form = () => {
 
                 {
                     (componentToDisplay === 'Invoices') && (
-                        <form action="" onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={handleSubmit(onSubmit)}>
 
                             <label htmlFor="reference" className="visually-hidden">Reference</label>
                             <input
                                 className="input"
                                 type="text"
                                 id="reference"
+                                name="ref"
                                 placeholder="Reference"
                                 {...register("ref", { required: "The reference is required" })}
                             />
@@ -64,10 +59,10 @@ const Form = () => {
                             {/* TODO : à vérifier, pour le "price" -> type = number ???? */}
                             {/* <input className="input" type="text" id="price" placeholder="Price" /> */}
 
-                            <label htmlFor="companie" className="visually-hidden">Choose a companie</label>
+                            <label htmlFor="id_company" className="visually-hidden">Choose a companie</label>
                             <select
                                 name="id_company"
-                                id="companie"
+                                id="id_company"
                                 {...register("id_company", { required: "The companie is required" })}
                             >
                                 <option value="">Choose a companie</option>
@@ -86,13 +81,13 @@ const Form = () => {
 
                 {
                     (componentToDisplay === 'Companies') && (
-                        <form action="">
+                        <form onSubmit={handleSubmit(onSubmit)}>
 
                             <label htmlFor="name" className="visually-hidden">Name</label>
-                            <input className="input" type="text" id="name" placeholder="Name" />
+                            <input className="input" type="text" id="name" name="name" placeholder="Name" />
 
                             <label htmlFor="type" className="visually-hidden">Choose a type</label>
-                            <select name="type" id="type">
+                            <select name="type_id" id="type">
                                 <option value="">Choose a type</option>
                                 {types?.dataInfos.map((type) => (
                                     <option key={type.id} value={type.id}>{type.id} - {type.name}</option>
@@ -100,10 +95,10 @@ const Form = () => {
                             </select>
 
                             <label htmlFor="country" className="visually-hidden">Country</label>
-                            <input className="input" type="text" id="country" placeholder="Country" />
+                            <input className="input" type="text" id="country" name="country" placeholder="Country" />
 
                             <label htmlFor="tva" className="visually-hidden">TVA</label>
-                            <input className="input" type="text" id="tva" placeholder="TVA" />
+                            <input className="input" type="text" id="tva" name="tva" placeholder="TVA" />
 
                             <button className="save">Save</button>
                         </form>
@@ -115,10 +110,10 @@ const Form = () => {
                         <form action="">
 
                             <label htmlFor="name" className="visually-hidden">Name</label>
-                            <input className="input" type="text" id="name" placeholder="Name" />
+                            <input className="input" type="text" id="name" name="name" placeholder="Name" />
 
-                            <label htmlFor="companie" className="visually-hidden">Choose a companie</label>
-                            <select name="companie" id="companie">
+                            <label htmlFor="companie_id" className="visually-hidden">Choose a companie</label>
+                            <select name="companie_id" id="companie_id">
                                 <option value="">Choose a companie</option>
                                 {companies?.dataInfos.map((companie) => (
                                     <option key={companie.id} value={companie.id}>{companie.id} - {companie.name}</option>
@@ -126,10 +121,10 @@ const Form = () => {
                             </select>
 
                             <label htmlFor="email" className="visually-hidden">Email</label>
-                            <input className="input" type="email" id="email" placeholder="Email" />
+                            <input className="input" type="email" id="email" name="email" placeholder="Email" />
 
                             <label htmlFor="phone" className="visually-hidden">Phone</label>
-                            <input className="input" type="text" id="phone" placeholder="Phone" />
+                            <input className="input" type="text" id="phone" name="phone" placeholder="Phone" />
 
                             <button className="save">Save</button>
                         </form>

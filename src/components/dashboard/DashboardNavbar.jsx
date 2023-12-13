@@ -18,7 +18,7 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
     <li
         onClick={onClick}
         style={{
-        fontWeight: isSelected ? '600' : 'normal',
+            fontWeight: isSelected ? '600' : 'normal',
         }}
     >
 
@@ -66,7 +66,13 @@ const DashboardNavbar = () => {
                 <div className="menuToggle">
 
                         {/* Menu hamburger */}
-                        <input type="checkbox" checked={isMenuOpen} onChange={() => setMenuOpen(!isMenuOpen)} />
+                        <input 
+                            type="checkbox" 
+                            checked={isMenuOpen} 
+                            onChange={() => setMenuOpen(!isMenuOpen)} 
+                            id="menu-dashboard"
+                            name="menu-dashboard"
+                        />
                         <span></span>
                         <span></span>
                         <span></span>

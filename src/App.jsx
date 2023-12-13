@@ -13,10 +13,39 @@ import ModalRegister from "./components/ModalRegister.jsx";
 import '../src/assets/css/style.css'
 import { HomePage } from './view/HomePage.jsx';
 
+import { useContext, useEffect } from "react";
+import { ApiContext } from "./context/ApiContext.jsx";
+
 import { useState } from "react";
 
 
 function App() {
+  
+  const {fetchContacts, contacts, fetchCompanies, companies, fetchInvoices, invoices, fetchTypes, types} = useContext(ApiContext);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        if (!contacts) {
+          await fetchContacts();
+        } 
+        if (!companies) {
+          await fetchCompanies();
+        } 
+        if (!invoices) {
+          await fetchInvoices();
+        } 
+        if (!types) {
+          await fetchTypes();
+        } 
+      };
+        
+      fetchData();
+    }, []);
+
+    // console.log('contacts : ', contacts);
+    // console.log('companies : ', companies);
+    // console.log('invoices : ', invoices);
+    // console.log('types : ', types);
   const [openModal, setOpenModal] = useState('');
 
   return (

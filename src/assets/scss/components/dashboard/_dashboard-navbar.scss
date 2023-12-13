@@ -44,6 +44,9 @@ header.dashboard-navbar {
                 &:checked ~ .menuItem {
                     transform: none;
                 }
+                // &:checked ~ .dashboard-main {
+                //     z-index: 2;
+                // }
             }
 
             span {

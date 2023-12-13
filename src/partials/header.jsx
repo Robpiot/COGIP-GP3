@@ -95,7 +95,6 @@ const Header = () => {
       <button className="userButton" onClick={toggleMenu}>
         <FontAwesomeIcon icon={faUser} style={{ color: "#4e511f" }} />
       </button>
-      ;
     </div>
   );
 };

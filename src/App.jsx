@@ -85,9 +85,6 @@ function App() {
         } />
         <Route path="dashboard" element={
           <>
-            <Header setOpenModal={setOpenModal} />
-            {openModal === 'login' && <ModalLogin closeModal={() => setOpenModal('')} />}
-            {openModal === 'register' && <ModalRegister closeModal={() => setOpenModal('')} />}
             <DashboardPage />
           </>
         } />

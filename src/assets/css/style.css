@@ -426,6 +426,12 @@ Files inside this folder can contain global styles used in the project.
 .allInvoices table td a:hover {
   color: #F9DE4E;
 }
+.allInvoices .pagination button, .allInvoices .pagination .pageNbr {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1.8vw;
+}
 
 .name {
   color: #000;
@@ -1563,14 +1569,14 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   height: 2.8vw;
   width: 18%;
   position: absolute;
-  right: 12.5%;
+  right: 10%;
 }
 
 .allInvoices {
   margin: 5% 10% 10% 10%;
 }
 .allInvoices table {
-  width: 77.67vw;
+  width: 100%;
   border-collapse: collapse;
 }
 .allInvoices table th {
@@ -1591,6 +1597,39 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
 }
 .allInvoices table tr:nth-child(odd) {
   background-color: #FFF;
+}
+.allInvoices .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+}
+.allInvoices .pagination button, .allInvoices .pagination .pageNbr {
+  margin: 0 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background-color: white;
+  border: #C8CFD5 solid 2px;
+  cursor: pointer;
+  display: flex;
+  width: 4vw;
+  height: 4vw;
+  justify-content: center;
+  align-items: center;
+}
+.allInvoices .pagination button:disabled, .allInvoices .pagination .pageNbr:disabled {
+  background-color: #C8CFD5;
+  cursor: not-allowed;
+}
+.allInvoices .pagination .prevPage svg, .allInvoices .pagination .nextPage svg {
+  width: 2vw;
+  height: 2vw;
+  color: #F9DE4E;
+}
+.allInvoices .pagination .currentPage {
+  background-color: white;
+  border: #F9DE4E solid 2px;
+  color: #F9DE4E;
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
@@ -1687,7 +1726,7 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
   padding-bottom: 8%;
 }
 .user .lastInvoices .userLastInv table {
-  width: 77.67vw;
+  width: 98%;
   border-collapse: collapse;
 }
 .user .lastInvoices .userLastInv table th {
@@ -1711,6 +1750,40 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
 }
 .user .lastInvoices .userLastInv table .date {
   width: 12%;
+}
+.user .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+  width: 98%;
+}
+.user .pagination button, .user .pagination .pageNbr {
+  margin: 0 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background-color: white;
+  border: #C8CFD5 solid 2px;
+  cursor: pointer;
+  display: flex;
+  width: 4vw;
+  height: 4vw;
+  justify-content: center;
+  align-items: center;
+}
+.user .pagination button:disabled, .user .pagination .pageNbr:disabled {
+  background-color: #C8CFD5;
+  cursor: not-allowed;
+}
+.user .pagination .prevPage svg, .user .pagination .nextPage svg {
+  width: 2vw;
+  height: 2vw;
+  color: #F9DE4E;
+}
+.user .pagination .currentPage {
+  background-color: white;
+  border: #F9DE4E solid 2px;
+  color: #F9DE4E;
 }
 
 .contactPage {

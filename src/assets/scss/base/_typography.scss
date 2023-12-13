@@ -123,6 +123,16 @@
             }
         }
     }
+
+    .pagination {
+        button, .pageNbr {
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold; 
+            font-size: 1.8vw;
+            
+        }
+    }
 }
 
 .name {

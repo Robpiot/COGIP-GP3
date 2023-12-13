@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { RequestCompanies, RequestContacts, RequestInvoices } from '../assets/utils/Requests';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 export function InfoCompany() {
     const [company, setCompany] = useState(null);
     const [contact, setContact] = useState([]);
     const [invoice, setInvoices] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage=5;
     const { id } = useParams();
 
     useEffect (() => {
@@ -13,25 +17,25 @@ export function InfoCompany() {
             const result = await RequestCompanies(id); 
             const company = result.find(company => company.id === parseInt(id));
             setCompany(company);
-            console.log(company);
+    
+            const resultInvoices = await RequestInvoices();
+            const filteredInvoices = resultInvoices.filter(invoice => invoice.id_company === company.id);
+            setInvoices(filteredInvoices);
         };
         fetchCompanies();
-
+    
         const fetchContacts = async () => {
             const result = await RequestContacts();
             setContact(result);
         };
         fetchContacts();
-
-        const fetchInvoices = async () => {
-            const result = await RequestInvoices();
-            setInvoices(result);
-            console.log(result);
-        };
-        fetchInvoices();
-
+    
     }, [id]);
 
+    const totalPages = Math.ceil(invoice.length / itemsPerPage);
+    const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+    
     if (!company) {
         return <div>Loading...</div>;
     }
@@ -80,7 +84,9 @@ export function InfoCompany() {
                         </tr>
                     </thead>
                     <tbody>
-                        {invoice && invoice.filter(invoice => invoice.id_company === company.id).map((invoice) => (
+                        {invoice
+                        .slice((currentPage-1) * itemsPerPage, currentPage * itemsPerPage)
+                        .map((invoice) => (
                             <tr key={invoice.id}>
                                 <td>{invoice.ref}</td>
                                 <td>{invoice.due_date}</td>
@@ -94,6 +100,23 @@ export function InfoCompany() {
                         ))}
                     </tbody>
                     </table>
+                    <div className="pagination">
+                        <button className="prevPage" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                        <FontAwesomeIcon icon={faChevronRight} rotation={180}/>
+                        </button>
+                        {pageNumbers.map(page => (
+                            <button
+                                key={page}
+                                onClick={() => setCurrentPage(page)}
+                                className={`pageNbr ${page === currentPage ? 'currentPage' : ''}`}
+                            >
+                                {page}
+                            </button>
+                        ))}
+                        <button className="nextPage" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+                            <FontAwesomeIcon icon={faChevronRight} />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

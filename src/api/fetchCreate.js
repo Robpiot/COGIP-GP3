@@ -16,16 +16,16 @@ export default async function createData(tableName, data) {
             body: JSON.stringify(data),
         });
 
-        const json = await response.json();
+        // const json = await response.json();
 
-        const dataObject = { "dataName": tableName, "dataInfos": json.data };
-        const copyData = [...json.data];
-        const lastDataObject = {
-            "dataName": tableName,
-            "dataInfos": copyData.slice(-5)
-        };
+        // const dataObject = { "dataName": tableName, "dataInfos": json.data };
+        // const copyData = [...json.data];
+        // const lastDataObject = {
+        //     "dataName": tableName,
+        //     "dataInfos": copyData.slice(-5)
+        // };
 
-        return { dataObject, lastDataObject };
+        // return { dataObject, lastDataObject };
 
     } catch (error) {
         throw new Error(`Error when creating data in the ${tableName} table`);

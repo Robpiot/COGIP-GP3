@@ -26,9 +26,9 @@ const Form = () => {
         data.id_company = parseInt(data.id_company, 10);
         console.log(data);
         console.log(JSON.stringify(data));
-        // createInvoices(data);
+        createInvoices(data);
         reset();
-        // changeComponentToDisplay('Dashboard');
+        changeComponentToDisplay('Dashboard');
     }
 
     return (

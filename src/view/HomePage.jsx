@@ -7,7 +7,6 @@ import Footer from "../partials/footer.jsx";
 export function HomePage() {
     return (
         <div className="page">
-            <Header />
             <div className="home">
                 <h1 className="title">Manage your customers and invoices easily</h1>
                 <img src="/img/homeLogo.png" className="homeLogo" alt="homeLogo"/>

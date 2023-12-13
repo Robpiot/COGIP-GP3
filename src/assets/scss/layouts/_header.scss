@@ -5,195 +5,182 @@
 .navBarHeader {
     display: flex;
     width: 80%;
+    position: relative;
+    z-index: 10;
 }
 
 .headerDiv {
-    background-color: #F9DE4E;
+  background-color: #F9DE4E;
+  display: flex;
+  position: relative; 
+  justify-content: center;
+  align-items: center;
+  
+  ul {
+      li {
+          list-style-type: none;
+          a {
+              text-decoration: none;
+          }
+      }
+  }
+
+  .menuButton {
+      background-color: #F9DE4E;
+      position: absolute;
+      top: 50%; 
+      left: 0; // Add this line
+      transform: translateY(-50%);
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      border: none;
+  }
+  .ulHeaderLinks{
+      display:none;
+      // border-top: .0625rem solid #F9DE4E;
+  }
+
+  .ulHeaderLinks.is-open {
+      display: block;
+      position: absolute;
+      top: 100%; // Adjust this line
+      left: 0;
+      z-index: 9999;
+      list-style-type: none;
+    
+      li, a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+  .ulTitleHeader {
     display: flex;
-    position:relative; 
     justify-content: center;
     align-items: center;
-    
-    ul {
-        li {
-            list-style-type: none;
-            a {
-                text-decoration: none;
-            }
-        }
-    }
-    
 
-    .menuButton {
-        background-color: #F9DE4E;
-        position: absolute;
-        top: 50%; 
-        left: 0; // Add this line
-        transform: translateY(-50%);
-        padding: 10px;
-        font-size: 24px;
-        cursor: pointer;
-        border: none;
-    }
-    .ulHeaderLinks{
-        display:none;
-        
-        // border-top: .0625rem solid #F9DE4E;
-    }
-
-    .ulHeaderLinks.is-open {
-        display: block;
-        position: absolute;
-        top: 100%; // Adjust this line
-        left: 0;
-        z-index: 9999;
-        list-style-type: none;
-      
-        li, a {
+      .titleHeader, a{
           text-decoration: none;
-          color: black;
-        }
+          list-style-type: none;
+          color : black;
       }
+  }
 
-    .ulTitleHeader {
-       display: flex;
-         justify-content: center;
-            align-items: center;
+  .userButton {
+      background-color: #F9DE4E;
+      position: absolute;
+      top: 50%; 
+      right: 0; // Add this line
+      transform: translateY(-50%);
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      border: none;
+  }
 
+  .headerButtons {
+      display: none;
+  }
+  
+  .headerButtons.is-open{
+    display: block;
+    position: absolute;
+    top: 100%; // Adjust this line
+    right: 0;
+    margin-right: 30px;
+    z-index: 9999;
+    list-style-type: none;
+  
+    li, a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
 
+@media only screen and (min-width: 880px) {
+  .menuButton, .userButton {
+    display: none;
+  }
+  .headerDiv {
+    background-color: #F9DE4E;
+    padding: 30px;
 
-        .titleHeader, a{
+    .navBarHeader {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      width: 100vw;
+      align-items: center;
+
+      .ulHeaderLinks {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        position: relative; // Reset the positioning
+        align-items: center;
+        top: auto; // Reset the top property
+        left: auto; // Reset the left property
+
+        li {
+          margin: 0 20px;
+
+          a {
             text-decoration: none;
-            list-style-type: none;
-            color : black;
-            
-
-        }
-       
-    }
-
-
-    .userButton {
-        background-color: #F9DE4E;
-        position: absolute;
-        top: 50%; 
-        right: 0; // Add this line
-        transform: translateY(-50%);
-        padding: 10px;
-        font-size: 24px;
-        cursor: pointer;
-        border: none;
-    }
-
-    .headerButtons {
-        display: none;
-    }
-    .headerButtons.is-open{
-       
-            display: block;
-            position: absolute;
-            top: 100%; // Adjust this line
-            right: 0;
-            margin-right: 30px;
-            z-index: 9999;
-            list-style-type: none;
-          
-            li, a {
-              text-decoration: none;
               color: black;
-            }
-          }
-    }
+              padding: 7px;
 
-
-
-
-
-    @media only screen and (min-width: 756px) {
-        .menuButton, .userButton {
-          display: none;
-        }
-        .headerDiv {
-          background-color: #F9DE4E;
-          padding: 30px;
-      
-          .navBarHeader {
-            display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            width: 100vw;
-            align-items: center;
-      
-            .ulHeaderLinks {
-              grid-column: 2;
-              grid-row: 1;
-              display: flex;
-              position: relative; // Reset the positioning
-              align-items: center;
-              top: auto; // Reset the top property
-              left: auto; // Reset the left property
-      
-              li {
-                margin: 0 20px;
-      
-                a {
-                  text-decoration: none;
-                    color: black;
-                    padding: 7px;
-
-                    &.active { // Add this block
-                        border: 1px solid black;
-                      }
-                    
-                    
+              &.active { // Add this block
+                  border: 1px solid black;
                 }
-              }
-            }
-
-            .ulTitleHeader {
-                grid-column: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                .titleHeader, a{
-                    text-decoration: none;
-                    list-style-type: none;
-                    color : black;
-                    
-        
-                }
-               
-            }
-      
-            .headerButtons {
-                grid-column: 3;
-                display: flex;
-              position: static; // Reset the positioning
-              top: auto; // Reset the top property
-              .signUpBtnStyle {
-                background-color: white;
-                border: none;
-                border-radius: 12px;
-                padding: 10px 20px; // Adjust as needed
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                cursor: pointer;
-              }
-              .loginBtnStyle {
-                background-color: #F9DE4E;
-                border: none;
-                border-radius: 12px;
-                padding: 10px 20px; // Adjust as needed
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                cursor: pointer;
-              }
-            }
+              
+              
           }
         }
       }
+
+      .ulTitleHeader {
+          grid-column: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .titleHeader, a{
+              text-decoration: none;
+              list-style-type: none;
+              color : black;
+          }
+      }
+
+      .headerButtons {
+          grid-column: 3;
+          display: flex;
+        position: static; // Reset the positioning
+        top: auto; // Reset the top property
+        .signUpBtnStyle {
+          background-color: white;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        .loginBtnStyle {
+          background-color: #F9DE4E;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import RegisterForm from "./RegisterForm";
 
-export default function ModalRegister({ closeModalRegister }) {
+export default function ModalRegister({ closeModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
           <button
             className="closeBtn"
-            onClick={() => closeModalRegister(false)}
+            onClick={closeModal}
           >
             X
           </button>

@@ -1,12 +1,12 @@
 import React from "react";
 import LoginForm from "./LoginForm";
 
-export default function ModalLogin({ closeModalLogin }) {
+export default function ModalLogin({ closeModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
-          <button className="closeBtn" onClick={() => closeModalLogin(false)}>
+          <button className="closeBtn" onClick={closeModal}>
             X
           </button>
         </div>

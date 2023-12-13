@@ -37,6 +37,7 @@ function App() {
     // console.log('contacts : ', contacts);
     // console.log('companies : ', companies);
     // console.log('invoices : ', invoices);
+    // console.log('types : ', types);
 
   return (
       <Routes>

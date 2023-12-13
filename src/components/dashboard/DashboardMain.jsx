@@ -6,16 +6,20 @@ import DashboardSections from "./DashboardSections";
 import DashboardForm from "./DashboardForm";
 
 
-const DashboardMain = ( { isMenuOpen } ) => {
+const DashboardMain = () => {
 
-    const { componentToDisplay } = useContext(DashboardContext);
+    const { 
+        componentToDisplay, 
+        isMenuOpen 
+    } = useContext(DashboardContext);
+    
 
     return (
         <main 
             className="dashboard-main"
-            style={{
-                zIndex: isMenuOpen ? '0' : '2',
-            }}  
+            // style={{
+            //     zIndex: isMenuOpen ? '0' : '2',
+            // }}  
         >
             <DashboardHeader />
 
@@ -23,7 +27,7 @@ const DashboardMain = ( { isMenuOpen } ) => {
                 (componentToDisplay === 'Dashboard') ? (
                     <DashboardSections />
                 ) : (
-                    <DashboardForm formName={componentToDisplay} />
+                    <DashboardForm />
                 )
             }
               

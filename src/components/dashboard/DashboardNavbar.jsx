@@ -37,14 +37,19 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
 
 
 
-const DashboardNavbar = ( { isMenuOpen, onMenuChange} ) => {
+const DashboardNavbar = () => {
 
-    const { changeComponentToDisplay, componentToDisplay } = useContext(DashboardContext);
+    const { 
+        changeComponentToDisplay, 
+        componentToDisplay,
+        setMenuOpen,
+        isMenuOpen
+    } = useContext(DashboardContext);
 
     const handleDashboardClick = (e) => {
         e.preventDefault();
         changeComponentToDisplay(e.target.textContent);
-        onMenuChange(false);
+        setMenuOpen(false);
     };
 
     const menuItems = [
@@ -61,7 +66,7 @@ const DashboardNavbar = ( { isMenuOpen, onMenuChange} ) => {
                 <div className="menuToggle">
 
                         {/* Menu hamburger */}
-                        <input type="checkbox" checked={isMenuOpen} onChange={() => onMenuChange(!isMenuOpen)} />
+                        <input type="checkbox" checked={isMenuOpen} onChange={() => setMenuOpen(!isMenuOpen)} />
                         <span></span>
                         <span></span>
                         <span></span>

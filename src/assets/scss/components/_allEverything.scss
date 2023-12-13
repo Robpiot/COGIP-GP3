@@ -34,14 +34,14 @@
     height: 2.8vw;
     width:18%;
     position: absolute;
-    right:12.5%;
+    right:10%;
 }
 
 .allInvoices {
     margin: 5% 10% 10% 10%;
 
     table {
-        width: 77.67vw;
+        width: 100%;
         border-collapse: collapse;
 
         th {
@@ -66,6 +66,83 @@
 
         tr:nth-child(odd) {
             background-color: #FFF; 
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2em 0;
+    
+        button, .pageNbr {
+            margin: 0 1em;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            background-color: white;
+            border: #C8CFD5 solid 2px;
+            cursor: pointer;
+            display: flex;
+            width: 4vw;
+            height: 4vw; 
+            justify-content: center;
+            align-items: center;
+    
+            &:disabled {
+                background-color: #C8CFD5;
+                cursor: not-allowed;
+            }
+        }
+
+        .prevPage, .nextPage {
+            svg {
+                width: 2vw;
+                height: 2vw;
+                color:#F9DE4E;
+            }
+        }
+
+        .currentPage {
+            background-color: white;
+            border:#F9DE4E solid 2px;
+            color:#F9DE4E;
+        }
+    }
+}
+
+
+
+@media screen and (min-width:320px) and (max-width:425px) {    
+    .allInvoices {
+        margin: 5% 10% 10% 10%;
+    
+        table {
+            width: 77.67vw;
+            border-collapse: collapse;
+    
+            th {
+                background-color:#F9DE4E;
+                height: 3.6vw;
+            }
+            .invNum {
+                width: 20%;
+            }
+    
+            .date {
+                width: 15%;
+            }
+    
+            td {
+                height: 3.6vw;
+                
+            }
+            tr:nth-child(even) {
+                background-color: #F5F5F5;
+            }
+    
+            tr:nth-child(odd) {
+                background-color: #FFF; 
+            }
         }
     }
 }

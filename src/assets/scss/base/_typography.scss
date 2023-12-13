@@ -1,3 +1,32 @@
+// Header
+
+.ulHeaderLinks {
+    li {
+        a {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+        }
+    }
+}
+
+.ulTitleHeader {
+    .titleHeader, a{
+        font-size: 32px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+    }
+}
+
+.signupButton, .loginButton {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+
+}
+
+
+
 .title {
     font-size: 4.16vw;
     font-family: 'Inter', sans-serif;
@@ -13,7 +42,9 @@
         font-size: 4.5vw;
         font-style: normal;
         font-weight: 900;
-        line-height: normal; 
+        line-height: normal;
+        margin-bottom: 5%;
+        margin-top: 5%; 
     }
     table {
         font-family: 'Roboto', sans-serif;
@@ -27,6 +58,14 @@
         }
         td {
             padding-left: 2%;
+
+            a {
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    color:#F9DE4E
+                }
+            }
         }
     }
 }
@@ -74,6 +113,24 @@
         }
         td {
             padding-left: 2%;
+
+            a {
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    color:#F9DE4E
+                }
+            }
+        }
+    }
+
+    .pagination {
+        button, .pageNbr {
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold; 
+            font-size: 1.8vw;
+            
         }
     }
 }
@@ -111,6 +168,7 @@
         font-style: normal;
         font-weight: 900;
         line-height: normal;
+        margin: 2%;
     }
 
     .contactPeople {
@@ -121,6 +179,15 @@
             font-style: normal;
             font-weight: 900;
             line-height: normal; 
+
+            a {
+                text-decoration: none;
+                color: black;
+
+                &:hover {
+                    color:#F9DE4E
+                }
+            }
         }
     }
 }
@@ -132,7 +199,8 @@
         font-size: 4.5vw;
         font-style: normal;
         font-weight: 900;
-        line-height: normal; 
+        line-height: normal;
+        margin: 2%; 
     }
 
     .userLastInv {
@@ -148,6 +216,15 @@
             }
             td {
                 padding-left: 2%;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+
+                    &:hover {
+                        color:#F9DE4E
+                    }
+                }
             }
         }
     }
@@ -162,6 +239,7 @@
             font-style: normal;
             font-weight: 900;
             line-height: normal; 
+            margin-bottom: 2%;
         }
         .cont {
             li {
@@ -174,6 +252,14 @@
         
                 .bold {
                     font-weight: 900;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    &:hover {
+                        color:#F9DE4E
+                    }
                 }
             }
         }
@@ -188,7 +274,7 @@ footer {
             h3 {
                 font-size: 3vw;
                 font-weight: 600;
-                color: black;
+                color: #434138;
                 text-align: left;
             }
         }
@@ -209,16 +295,19 @@ footer {
     .bottomLinks {
         nav {
             .listeBottomLinks {
-                li, a {
-                    list-style-type: none;
-                    text-decoration: none;
-                    font-family: 'Inter', sans-serif;
-                    font-size: 0.9vw;
-                    color: #737373;
-                    text-transform: uppercase;                    
+                .listFooter {
+                    li, a {
+                        list-style-type: none;
+                        text-decoration: none;
+                        font-family: 'Inter', sans-serif;
+                        font-size: 0.9vw;
+                        color: #737373;
+                        text-transform: uppercase;                    
+                    }
                 }
             }
             .copyright {
+                list-style-type: none;
                 font-family: "Inter", sans-serif;
                 font-size: 0.9vw;
                 color: #737373;
@@ -232,7 +321,7 @@ footer {
 //     h3 {
 //         color: #000;
 //         font-family: 'Inter' sans-serif;
-//         font-size: 1.25vw;
+//         font-size: 20px;
 //         font-style: normal;
 //         font-weight: 700;
 //         line-height: normal;
@@ -243,12 +332,12 @@ footer {
 //         font-weight: 100;
 //         line-height: normal;
 //         font-family: 'Inter', sans-serif;
-//         font-size: 1.3vw;
+//         font-size: 20px;
 //     }
 
 //     .save {
 //         font-family: 'Inter', sans-serif;
-//         font-size: 1.3vw;
+//         font-size: 20px;
 //         text-align: left;
 //         color:white;
 //         font-style: normal;
@@ -256,3 +345,134 @@ footer {
 //         line-height: normal; 
 //     }
 // }
+
+
+@media screen and (min-width:320px) and (max-width:425px) {
+    .lastInvTable, .lastCompTable, .lastContTable {
+        table {
+            font-size: 1.9vw;
+        }
+    }
+    
+    .titleSection {
+        font-size: 6vw;
+    }
+    
+    .field {
+        border-radius: 3px;
+        font-size: 1.9vw;
+    }
+    
+    .allInvoices {
+        table {
+            font-size: 1.9vw;
+        }
+    }
+    
+    .name {
+        font-size: 6vw;
+    }
+    
+    .infoUsers {
+        li {
+            font-size: 1.9vw;
+        }
+    }
+    
+    .contactInfo {
+        .contacts {
+            font-size: 6vw;
+        }
+    
+        .contactPeople {
+            .contactName {
+                color: #000;
+                font-family: 'Roboto', sans-serif;
+                font-size: 2.2vw;
+                font-style: normal;
+                font-weight: 900;
+                line-height: normal; 
+            }
+        }
+    }
+    
+    .lastInvoices {
+        .lastInv {
+            font-size: 6vw;
+        }
+    
+        .userLastInv {
+            table {
+                font-size: 1.9vw;
+            }
+        }
+    }
+    
+    .contactPage {
+        .infoContacts {
+            .nameUser {
+                font-size: 6vw;
+            }
+            .cont {
+                li {
+                    font-size: 1.9vw;
+                }
+            }
+        }
+    }
+    
+    
+    
+    footer {
+        .divFooter{
+            .titleFooter {
+                h3 {
+                    font-size: 4vw;
+                }
+            }
+        }
+    
+        .divContact {   
+            .listeSocials, ul {
+                font-size: 1.2vw;
+            }
+        }
+        .bottomLinks {
+            nav {
+                .listeBottomLinks {
+                    li, a {
+                        font-size: 1.2vw;          
+                    }
+                }
+                .copyright {
+                    font-size: 1.2vw;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:320px) and (max-width:768px) {
+    // Header
+
+.ulHeaderLinks {
+    li {
+        a {
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 600;
+        }
+    }
+}
+
+.ulTitleHeader {
+    .titleHeader, a{
+        font-size: 22px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 900;
+    }
+}
+
+}
+

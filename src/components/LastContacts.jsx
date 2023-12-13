@@ -1,11 +1,27 @@
+import { RequestLastContacts } from "../assets/utils/Requests";
+import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+
 export default function LastContacts() {
-    return (    
+    const [contacts, setContacts] = useState([]);
+
+    useEffect(() => {
+        const fetchContacts = async () => {
+            const result = await RequestLastContacts();
+            setContacts(result);
+        };
+
+        fetchContacts();
+    }, []);
+
+    console.log(contacts);
+    return (
         <div className="lastContTable">
             <h2 className="lastContacts">Last Contacts</h2>
             <table>
                 <thead>
                     <tr>
-                        <th className="name">Name</th>
+                        <th className="names">Name</th>
                         <th className="phone">Phone</th>
                         <th className="mail">Mail</th>
                         <th className="comp">Company</th>
@@ -13,43 +29,22 @@ export default function LastContacts() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Peter Gregory  </td>
-                        <td>555-4567</td>
-                        <td>peter.gregory@raviga.com</td>
-                        <td>Raviga</td>
-                        <td>25/09/2020</td>
+                {contacts.map(contact => (
+                    <tr key={contact.id}>
+                        <td>
+                            <Link key={contact.id} to={`/ShowContacts/${contact.id}`}>
+                                {contact.name}
+                            </Link>
+                        </td>
+                        <td>{contact.phone}</td>
+                        <td>{contact.email}</td>
+                        <td>{contact.company_name}</td>
+                        <td>{contact.created_at}</td>
                     </tr>
-                    <tr>
-                        <td>Cameron How</td>
-                        <td>555-8765</td>
-                        <td>cam.how@mutiny.net</td>
-                        <td>Mutiny</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>Gavin Belson</td>
-                        <td>555-6354</td>
-                        <td>gavin@hooli.com</td>
-                        <td>Hooli</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>Jian Yang</td>
-                        <td>555-8765</td>
-                        <td>jian.yan@phoque.off</td>
-                        <td>Phoque Off</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>Bertram Gilfoyle</td>
-                        <td>555-5434</td>
-                        <td>gilfoy@piedpiper.com</td>
-                        <td>Pied Pipper</td>
-                        <td>25/09/2020</td>
-                    </tr>
+                ))}
+
                 </tbody>
             </table>
         </div>
-    )
-}
+
+)}

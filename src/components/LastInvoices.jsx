@@ -1,4 +1,28 @@
+import { RequestLastInvoices, RequestCompanies } from "../assets/utils/Requests";
+import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+
 export default function LastInvoices() {
+    const [invoices, setInvoices] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const invoicesResult = await RequestLastInvoices();
+            const companiesResult = await RequestCompanies();
+    
+            const invoicesWithCompanyName = invoicesResult.map(invoice => {
+                const company = companiesResult.find(company => company.id === invoice.id_company);
+                return { ...invoice, companyName: company ? company.name : 'Unknown' };
+            });
+    
+            setInvoices(invoicesWithCompanyName);
+        };
+    
+        fetchData();
+    }, []);
+
+    console.log(invoices)
+    
     return (    
         <div className="lastInvTable">
             <h2 className="lastInvoices">Last Invoices</h2>
@@ -6,42 +30,26 @@ export default function LastInvoices() {
                 <thead>
                     <tr>
                         <th className="invNum">Invoice Number</th>
-                        <th className="date">Date due</th>
+                        <th className="date">Due date</th>
                         <th className="company">Company</th>
                         <th className="creation">Created at</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>F20220915-001</td>
-                        <td>15/09/2022</td>
-                        <td>Jouet Jean-Michel</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>F20220915-002</td>
-                        <td>15/09/2022</td>
-                        <td>Dunder Mifflin</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>F20220915-003</td>
-                        <td>15/09/2022</td>
-                        <td>Pierre Cailloux</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>F20220915-004</td>
-                        <td>15/09/2022</td>
-                        <td>Pierre Cailloux</td>
-                        <td>25/09/2020</td>
-                    </tr>
-                    <tr>
-                        <td>F20220915-005</td>
-                        <td>15/09/2022</td>
-                        <td>Pier Pipper</td>
-                        <td>25/09/2020</td>
-                    </tr>
+                    {invoices.map(invoice => {
+                        return (
+                            <tr key={invoice.id}>
+                                <td>{invoice.ref}</td>
+                                <td>{invoice.due_date}</td>
+                                <td>
+                                    <Link to={`/ShowCompany/${invoice.companyId}`}>
+                                        {invoice.companyName}
+                                    </Link>
+                                </td>
+                                <td>{invoice.created_at}</td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </div>

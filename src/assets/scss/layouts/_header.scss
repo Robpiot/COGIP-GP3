@@ -4,6 +4,7 @@
 }
 .navBarHeader {
     display: flex;
+    width: 80%;
 }
 
 .headerDiv {
@@ -108,12 +109,91 @@
 
 
 
-@media screen {
-    
-}
+    @media only screen and (min-width: 756px) {
+        .menuButton, .userButton {
+          display: none;
+        }
+        .headerDiv {
+          background-color: #F9DE4E;
+          padding: 30px;
+      
+          .navBarHeader {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            width: 100vw;
+            align-items: center;
+      
+            .ulHeaderLinks {
+              grid-column: 2;
+              grid-row: 1;
+              display: flex;
+              position: relative; // Reset the positioning
+              align-items: center;
+              top: auto; // Reset the top property
+              left: auto; // Reset the left property
+      
+              li {
+                margin: 0 20px;
+      
+                a {
+                  text-decoration: none;
+                    color: black;
+                    padding: 7px;
 
+                    &.active { // Add this block
+                        border: 1px solid black;
+                      }
+                    
+                    
+                }
+              }
+            }
 
-
-@media screen {
-
-}
+            .ulTitleHeader {
+                grid-column: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .titleHeader, a{
+                    text-decoration: none;
+                    list-style-type: none;
+                    color : black;
+                    
+        
+                }
+               
+            }
+      
+            .headerButtons {
+                grid-column: 3;
+                display: flex;
+              position: static; // Reset the positioning
+              top: auto; // Reset the top property
+              .signUpBtnStyle {
+                background-color: white;
+                border: none;
+                border-radius: 12px;
+                padding: 10px 20px; // Adjust as needed
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+              .loginBtnStyle {
+                background-color: #F9DE4E;
+                border: none;
+                border-radius: 12px;
+                padding: 10px 20px; // Adjust as needed
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }

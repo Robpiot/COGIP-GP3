@@ -317,6 +317,24 @@ template {
 This file is used to contain all base imports.
 Files inside this folder can contain global styles used in the project.
 */
+.ulHeaderLinks li a {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+.ulTitleHeader .titleHeader, .ulTitleHeader a {
+  font-size: 32px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+.signupButton, .loginButton {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
 .title {
   font-size: 4.16vw;
   font-family: "Inter", sans-serif;
@@ -332,6 +350,8 @@ Files inside this folder can contain global styles used in the project.
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 .lastInvTable table, .lastCompTable table, .lastContTable table {
   font-family: "Roboto", sans-serif;
@@ -346,6 +366,13 @@ Files inside this folder can contain global styles used in the project.
 }
 .lastInvTable table td, .lastCompTable table td, .lastContTable table td {
   padding-left: 2%;
+}
+.lastInvTable table td a, .lastCompTable table td a, .lastContTable table td a {
+  text-decoration: none;
+  color: black;
+}
+.lastInvTable table td a:hover, .lastCompTable table td a:hover, .lastContTable table td a:hover {
+  color: #F9DE4E;
 }
 
 .endTitle {
@@ -392,6 +419,19 @@ Files inside this folder can contain global styles used in the project.
 .allInvoices table td {
   padding-left: 2%;
 }
+.allInvoices table td a {
+  text-decoration: none;
+  color: black;
+}
+.allInvoices table td a:hover {
+  color: #F9DE4E;
+}
+.allInvoices .pagination button, .allInvoices .pagination .pageNbr {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1.8vw;
+}
 
 .name {
   color: #000;
@@ -422,6 +462,7 @@ Files inside this folder can contain global styles used in the project.
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin: 2%;
 }
 .contactInfo .contactPeople .contactName {
   color: #000;
@@ -431,6 +472,13 @@ Files inside this folder can contain global styles used in the project.
   font-weight: 900;
   line-height: normal;
 }
+.contactInfo .contactPeople .contactName a {
+  text-decoration: none;
+  color: black;
+}
+.contactInfo .contactPeople .contactName a:hover {
+  color: #F9DE4E;
+}
 
 .lastInvoices .lastInv {
   color: #000;
@@ -439,6 +487,7 @@ Files inside this folder can contain global styles used in the project.
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin: 2%;
 }
 .lastInvoices .userLastInv table {
   font-family: "Roboto", sans-serif;
@@ -454,6 +503,13 @@ Files inside this folder can contain global styles used in the project.
 .lastInvoices .userLastInv table td {
   padding-left: 2%;
 }
+.lastInvoices .userLastInv table td a {
+  text-decoration: none;
+  color: black;
+}
+.lastInvoices .userLastInv table td a:hover {
+  color: #F9DE4E;
+}
 
 .contactPage .infoContacts .nameUser {
   color: #000;
@@ -462,6 +518,7 @@ Files inside this folder can contain global styles used in the project.
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin-bottom: 2%;
 }
 .contactPage .infoContacts .cont li {
   color: #000;
@@ -474,11 +531,18 @@ Files inside this folder can contain global styles used in the project.
 .contactPage .infoContacts .cont li .bold {
   font-weight: 900;
 }
+.contactPage .infoContacts .cont li a {
+  text-decoration: none;
+  color: black;
+}
+.contactPage .infoContacts .cont li a:hover {
+  color: #F9DE4E;
+}
 
 footer .divFooter .titleFooter h3 {
   font-size: 3vw;
   font-weight: 600;
-  color: black;
+  color: #434138;
   text-align: left;
 }
 footer .divContact .listeSocials, footer .divContact ul {
@@ -490,7 +554,7 @@ footer .divContact .listeSocials, footer .divContact ul {
 footer .divContact .listeSocials li, footer .divContact ul li {
   color: #737373;
 }
-footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBottomLinks a {
+footer .bottomLinks nav .listeBottomLinks .listFooter li, footer .bottomLinks nav .listeBottomLinks .listFooter a {
   list-style-type: none;
   text-decoration: none;
   font-family: "Inter", sans-serif;
@@ -499,11 +563,80 @@ footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBott
   text-transform: uppercase;
 }
 footer .bottomLinks nav .copyright {
+  list-style-type: none;
   font-family: "Inter", sans-serif;
   font-size: 0.9vw;
   color: #737373;
 }
 
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .lastInvTable table, .lastCompTable table, .lastContTable table {
+    font-size: 1.9vw;
+  }
+  .titleSection {
+    font-size: 6vw;
+  }
+  .field {
+    border-radius: 3px;
+    font-size: 1.9vw;
+  }
+  .allInvoices table {
+    font-size: 1.9vw;
+  }
+  .name {
+    font-size: 6vw;
+  }
+  .infoUsers li {
+    font-size: 1.9vw;
+  }
+  .contactInfo .contacts {
+    font-size: 6vw;
+  }
+  .contactInfo .contactPeople .contactName {
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 2.2vw;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
+  .lastInvoices .lastInv {
+    font-size: 6vw;
+  }
+  .lastInvoices .userLastInv table {
+    font-size: 1.9vw;
+  }
+  .contactPage .infoContacts .nameUser {
+    font-size: 6vw;
+  }
+  .contactPage .infoContacts .cont li {
+    font-size: 1.9vw;
+  }
+  footer .divFooter .titleFooter h3 {
+    font-size: 4vw;
+  }
+  footer .divContact .listeSocials, footer .divContact ul {
+    font-size: 1.2vw;
+  }
+  footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBottomLinks a {
+    font-size: 1.2vw;
+  }
+  footer .bottomLinks nav .copyright {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .ulHeaderLinks li a {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-size: 600;
+  }
+  .ulTitleHeader .titleHeader, .ulTitleHeader a {
+    font-size: 22px;
+    font-family: "Roboto", sans-serif;
+    font-size: 900;
+  }
+}
 /*
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
@@ -1118,7 +1251,7 @@ section.form .form-container form button {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .name, .invoices table .company {
+.invoices table .names, .invoices table .company {
   width: 18%;
 }
 .invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
@@ -1143,6 +1276,39 @@ section.form .form-container form button {
   background-color: #FFF;
 }
 
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .invoices {
+    margin: 5% 10% 5% 10%;
+  }
+  .invoices table {
+    width: 77.67vw;
+  }
+  .invoices table th {
+    background-color: #F9DE4E;
+    height: 3.6vw;
+  }
+  .invoices table .company {
+    width: 24%;
+  }
+  .invoices table .names {
+    width: 23%;
+  }
+  .invoices table .country, .invoices table .comp, .invoices table .invNum {
+    width: 20%;
+  }
+  .invoices table .tva {
+    width: 24%;
+  }
+  .invoices table .mail {
+    width: 30%;
+  }
+  .invoices table .phone, .invoices table .type {
+    width: 12%;
+  }
+  .invoices table .date {
+    width: 15%;
+  }
+}
 .page .home {
   background: #F9DE4E;
   display: flex;
@@ -1199,7 +1365,7 @@ section.form .form-container form button {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .name, .invoices table .company {
+.invoices table .names, .invoices table .company {
   width: 18%;
 }
 .invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
@@ -1224,6 +1390,39 @@ section.form .form-container form button {
   background-color: #FFF;
 }
 
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .invoices {
+    margin: 5% 10% 5% 10%;
+  }
+  .invoices table {
+    width: 77.67vw;
+  }
+  .invoices table th {
+    background-color: #F9DE4E;
+    height: 3.6vw;
+  }
+  .invoices table .company {
+    width: 24%;
+  }
+  .invoices table .names {
+    width: 23%;
+  }
+  .invoices table .country, .invoices table .comp, .invoices table .invNum {
+    width: 20%;
+  }
+  .invoices table .tva {
+    width: 24%;
+  }
+  .invoices table .mail {
+    width: 30%;
+  }
+  .invoices table .phone, .invoices table .type {
+    width: 12%;
+  }
+  .invoices table .date {
+    width: 15%;
+  }
+}
 .endPage {
   display: flex;
   flex-direction: row;
@@ -1281,14 +1480,14 @@ section.form .form-container form button {
   height: 2.8vw;
   width: 18%;
   position: absolute;
-  right: 12.5%;
+  right: 10%;
 }
 
 .allInvoices {
   margin: 5% 10% 10% 10%;
 }
 .allInvoices table {
-  width: 77.67vw;
+  width: 100%;
   border-collapse: collapse;
 }
 .allInvoices table th {
@@ -1310,7 +1509,68 @@ section.form .form-container form button {
 .allInvoices table tr:nth-child(odd) {
   background-color: #FFF;
 }
+.allInvoices .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+}
+.allInvoices .pagination button, .allInvoices .pagination .pageNbr {
+  margin: 0 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background-color: white;
+  border: #C8CFD5 solid 2px;
+  cursor: pointer;
+  display: flex;
+  width: 4vw;
+  height: 4vw;
+  justify-content: center;
+  align-items: center;
+}
+.allInvoices .pagination button:disabled, .allInvoices .pagination .pageNbr:disabled {
+  background-color: #C8CFD5;
+  cursor: not-allowed;
+}
+.allInvoices .pagination .prevPage svg, .allInvoices .pagination .nextPage svg {
+  width: 2vw;
+  height: 2vw;
+  color: #F9DE4E;
+}
+.allInvoices .pagination .currentPage {
+  background-color: white;
+  border: #F9DE4E solid 2px;
+  color: #F9DE4E;
+}
 
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .allInvoices {
+    margin: 5% 10% 10% 10%;
+  }
+  .allInvoices table {
+    width: 77.67vw;
+    border-collapse: collapse;
+  }
+  .allInvoices table th {
+    background-color: #F9DE4E;
+    height: 3.6vw;
+  }
+  .allInvoices table .invNum {
+    width: 20%;
+  }
+  .allInvoices table .date {
+    width: 15%;
+  }
+  .allInvoices table td {
+    height: 3.6vw;
+  }
+  .allInvoices table tr:nth-child(even) {
+    background-color: #F5F5F5;
+  }
+  .allInvoices table tr:nth-child(odd) {
+    background-color: #FFF;
+  }
+}
 .user .infos {
   border-bottom: 1px solid #CDCDCD;
   margin-left: 10%;
@@ -1368,8 +1628,8 @@ section.form .form-container form button {
 .user .contactInfo .calepin {
   height: 12vh;
   z-index: 0;
-  margin-left: 29%;
-  position: relative;
+  position: absolute;
+  right: 0;
 }
 .user .lastInvoices {
   margin-left: 10%;
@@ -1377,7 +1637,7 @@ section.form .form-container form button {
   padding-bottom: 8%;
 }
 .user .lastInvoices .userLastInv table {
-  width: 77.67vw;
+  width: 98%;
   border-collapse: collapse;
 }
 .user .lastInvoices .userLastInv table th {
@@ -1401,6 +1661,40 @@ section.form .form-container form button {
 }
 .user .lastInvoices .userLastInv table .date {
   width: 12%;
+}
+.user .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+  width: 98%;
+}
+.user .pagination button, .user .pagination .pageNbr {
+  margin: 0 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background-color: white;
+  border: #C8CFD5 solid 2px;
+  cursor: pointer;
+  display: flex;
+  width: 4vw;
+  height: 4vw;
+  justify-content: center;
+  align-items: center;
+}
+.user .pagination button:disabled, .user .pagination .pageNbr:disabled {
+  background-color: #C8CFD5;
+  cursor: not-allowed;
+}
+.user .pagination .prevPage svg, .user .pagination .nextPage svg {
+  width: 2vw;
+  height: 2vw;
+  color: #F9DE4E;
+}
+.user .pagination .currentPage {
+  background-color: white;
+  border: #F9DE4E solid 2px;
+  color: #F9DE4E;
 }
 
 .contactPage {
@@ -1444,6 +1738,71 @@ section.form .form-container form button {
   height: 18vw;
 }
 
+.modalBackground {
+  grid-row: 2;
+  width: 100vw;
+  height: 70vh;
+  background-color: #F9DE4E;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.modalBackground .modalContainer {
+  width: 50%;
+  height: 40vh;
+  border-radius: 12px;
+  background-color: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.32) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  justify-content: flex-start;
+}
+.modalBackground .modalContainer .title {
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+}
+.modalBackground .modalContainer .titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "roboto", sans-serif;
+}
+.modalBackground .modalContainer .titleCloseBtn .closeBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modalBackground .modalContainer .formLogin {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.modalBackground .modalContainer .form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.modalBackground .modalContainer .form-control label {
+  margin-bottom: 5px;
+}
+.modalBackground .modalContainer .form-control input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.modalBackground .modalContainer .errorMsg {
+  color: red;
+  margin-top: 5px;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
@@ -1455,6 +1814,7 @@ Files inside this folder can contain specific element styles and layout.
 
 .navBarHeader {
   display: flex;
+  width: 80%;
 }
 
 .headerDiv {
@@ -1534,6 +1894,82 @@ Files inside this folder can contain specific element styles and layout.
   color: black;
 }
 
+@media only screen and (min-width: 756px) {
+  .menuButton, .userButton {
+    display: none;
+  }
+  .headerDiv {
+    background-color: #F9DE4E;
+    padding: 30px;
+  }
+  .headerDiv .navBarHeader {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 100vw;
+    align-items: center;
+  }
+  .headerDiv .navBarHeader .ulHeaderLinks {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    position: relative;
+    align-items: center;
+    top: auto;
+    left: auto;
+  }
+  .headerDiv .navBarHeader .ulHeaderLinks li {
+    margin: 0 20px;
+  }
+  .headerDiv .navBarHeader .ulHeaderLinks li a {
+    text-decoration: none;
+    color: black;
+    padding: 7px;
+  }
+  .headerDiv .navBarHeader .ulHeaderLinks li a.active {
+    border: 1px solid black;
+  }
+  .headerDiv .navBarHeader .ulTitleHeader {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .headerDiv .navBarHeader .ulTitleHeader .titleHeader, .headerDiv .navBarHeader .ulTitleHeader a {
+    text-decoration: none;
+    list-style-type: none;
+    color: black;
+  }
+  .headerDiv .navBarHeader .headerButtons {
+    grid-column: 3;
+    display: flex;
+    position: static;
+    top: auto;
+  }
+  .headerDiv .navBarHeader .headerButtons .signUpBtnStyle {
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .headerDiv .navBarHeader .headerButtons .loginBtnStyle {
+    background-color: #F9DE4E;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+}
 .dashboard-page {
   position: relative;
   min-height: 100vh;
@@ -1545,7 +1981,7 @@ Files inside this folder can contain specific element styles and layout.
 
 footer {
   background-color: white;
-  height: 40vw;
+  height: 45vw;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -1556,10 +1992,11 @@ footer .divFooter {
   grid-template-columns: 50% 50%;
   grid-template-rows: 80% 20%;
   width: 71vw;
-  height: 28vw;
+  height: 25vw;
   background-color: white;
   border-top: 2px solid #F9DE4E;
   align-items: center;
+  padding-top: 5%;
 }
 footer .divFooter .titleFooter {
   width: 50%;
@@ -1568,8 +2005,8 @@ footer .divFooter .titleFooter {
 footer .divFooter .titleFooter h3 {
   width: -moz-fit-content;
   width: fit-content;
-  padding: 2%;
-  border: 5px solid #F9DE4E;
+  padding: 1%;
+  border: 3px solid #F9DE4E;
   margin-top: 30%;
   text-align: left;
 }
@@ -1588,9 +2025,9 @@ footer .divContact .location {
   align-items: center;
   gap: 10%;
   padding-left: 0;
-  margin: 0;
+  margin-bottom: 5%;
 }
-footer .divContact .location p {
+footer .divContact .location .infoFooter {
   width: 20vw;
   margin: 0;
 }
@@ -1607,6 +2044,7 @@ footer .divContact .listeSocials, footer .divContact ul {
   display: flex;
   gap: 10%;
   padding-left: 0;
+  margin-bottom: 10%;
 }
 footer .divContact .listeSocials li, footer .divContact ul li {
   margin: 0%;
@@ -1619,28 +2057,20 @@ footer .divContact .listeContacts li p {
   width: 12vw;
 }
 footer .bottomLinks {
-  display: flex;
-  justify-content: space-between;
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-footer .bottomLinks nav {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   border-top: 1px solid rgba(123, 185, 252, 0.2);
+  width: 71vw;
+  padding-top: 5%;
 }
-footer .bottomLinks nav .listeBottomLinks {
-  padding-left: 0;
+footer .bottomLinks .navFooter .listeBottomLinks {
+  display: flex;
+  flex-direction: row;
 }
-footer .bottomLinks nav .listeBottomLinks li, footer .bottomLinks nav .listeBottomLinks a {
-  width: auto;
-  display: inline-flex;
-  justify-content: space-evenly;
-  display: inline-flex;
-  align-self: center;
-  margin: 0% 0.9vw;
+footer .bottomLinks .navFooter .listeBottomLinks .listFooter {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 8%;
 }
-footer .bottomLinks nav .copyright {
-  align-self: flex-end;
+footer .bottomLinks .navFooter .listeBottomLinks .copyright {
+  width: 19vw;
 }/*# sourceMappingURL=style.css.map */

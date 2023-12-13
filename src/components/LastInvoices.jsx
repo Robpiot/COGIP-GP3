@@ -1,5 +1,6 @@
 import { RequestLastInvoices, RequestCompanies } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 export default function LastInvoices() {
     const [invoices, setInvoices] = useState([]);
@@ -40,7 +41,11 @@ export default function LastInvoices() {
                             <tr key={invoice.id}>
                                 <td>{invoice.ref}</td>
                                 <td>{invoice.due_date}</td>
-                                <td>{invoice.companyName}</td>
+                                <td>
+                                    <Link to={`/ShowCompany/${invoice.companyId}`}>
+                                        {invoice.companyName}
+                                    </Link>
+                                </td>
                                 <td>{invoice.created_at}</td>
                             </tr>
                         );

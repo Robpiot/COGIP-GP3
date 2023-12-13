@@ -367,6 +367,13 @@ Files inside this folder can contain global styles used in the project.
 .lastInvTable table td, .lastCompTable table td, .lastContTable table td {
   padding-left: 2%;
 }
+.lastInvTable table td a, .lastCompTable table td a, .lastContTable table td a {
+  text-decoration: none;
+  color: black;
+}
+.lastInvTable table td a:hover, .lastCompTable table td a:hover, .lastContTable table td a:hover {
+  color: #F9DE4E;
+}
 
 .endTitle {
   color: #000;
@@ -412,6 +419,13 @@ Files inside this folder can contain global styles used in the project.
 .allInvoices table td {
   padding-left: 2%;
 }
+.allInvoices table td a {
+  text-decoration: none;
+  color: black;
+}
+.allInvoices table td a:hover {
+  color: #F9DE4E;
+}
 
 .name {
   color: #000;
@@ -442,6 +456,7 @@ Files inside this folder can contain global styles used in the project.
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin: 2%;
 }
 .contactInfo .contactPeople .contactName {
   color: #000;
@@ -451,6 +466,13 @@ Files inside this folder can contain global styles used in the project.
   font-weight: 900;
   line-height: normal;
 }
+.contactInfo .contactPeople .contactName a {
+  text-decoration: none;
+  color: black;
+}
+.contactInfo .contactPeople .contactName a:hover {
+  color: #F9DE4E;
+}
 
 .lastInvoices .lastInv {
   color: #000;
@@ -459,6 +481,7 @@ Files inside this folder can contain global styles used in the project.
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin: 2%;
 }
 .lastInvoices .userLastInv table {
   font-family: "Roboto", sans-serif;
@@ -474,6 +497,13 @@ Files inside this folder can contain global styles used in the project.
 .lastInvoices .userLastInv table td {
   padding-left: 2%;
 }
+.lastInvoices .userLastInv table td a {
+  text-decoration: none;
+  color: black;
+}
+.lastInvoices .userLastInv table td a:hover {
+  color: #F9DE4E;
+}
 
 .contactPage .infoContacts .nameUser {
   color: #000;
@@ -482,6 +512,7 @@ Files inside this folder can contain global styles used in the project.
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  margin-bottom: 2%;
 }
 .contactPage .infoContacts .cont li {
   color: #000;
@@ -493,6 +524,13 @@ Files inside this folder can contain global styles used in the project.
 }
 .contactPage .infoContacts .cont li .bold {
   font-weight: 900;
+}
+.contactPage .infoContacts .cont li a {
+  text-decoration: none;
+  color: black;
+}
+.contactPage .infoContacts .cont li a:hover {
+  color: #F9DE4E;
 }
 
 footer .divFooter .titleFooter h3 {
@@ -1640,8 +1678,8 @@ section.statistics .stat-container .stat-item:nth-of-type(3) {
 .user .contactInfo .calepin {
   height: 12vh;
   z-index: 0;
-  margin-left: 29%;
-  position: relative;
+  position: absolute;
+  right: 0;
 }
 .user .lastInvoices {
   margin-left: 10%;

@@ -1,5 +1,6 @@
 import { RequestInvoices, RequestCompanies } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 export function AllInvoices() {
     const [invoices, setInvoices] = useState([]);
@@ -9,41 +10,43 @@ export function AllInvoices() {
             const invoicesResult = await RequestInvoices();
             const companiesResult = await RequestCompanies();
     
-            const invoicesWithCompanyName = invoicesResult.map(invoice => {
+            const invoicesWithCompanyData = invoicesResult.map(invoice => {
                 const company = companiesResult.find(company => company.id === invoice.id_company);
-                return { ...invoice, companyName: company ? company.name : 'Unknown' };
+                return { ...invoice, companyName: company ? company.name : 'Unknown', companyId: company ? company.id : null };
             });
     
-            setInvoices(invoicesWithCompanyName);
+            setInvoices(invoicesWithCompanyData);
         };
     
         fetchData();
     }, []);
 
-    console.log(invoices);
-    
     return (
         <table>
-        <thead>
-            <tr>
-                <th className="invNum">Invoice Number</th>
-                <th className="date">Due date</th>
-                <th className="company">Company</th>
-                <th className="creation">Created at</th>
-            </tr>
-        </thead>
-        <tbody>
-            {invoices.map(invoice => {
-                return (
-                    <tr key={invoice.id}>
-                        <td>{invoice.ref}</td>
-                        <td>{invoice.due_date}</td>
-                        <td>{invoice.companyName}</td>
-                        <td>{invoice.created_at}</td>
-                    </tr>
-                );
-            })}
-        </tbody>
+            <thead>
+                <tr>
+                    <th className="invNum">Invoice Number</th>
+                    <th className="date">Due date</th>
+                    <th className="company">Company</th>
+                    <th className="creation">Created at</th>
+                </tr>
+            </thead>
+            <tbody>
+                {invoices.map(invoice => {
+                    return (
+                        <tr key={invoice.id}>
+                            <td>{invoice.ref}</td>
+                            <td>{invoice.due_date}</td>
+                            <td>
+                                <Link to={`/ShowCompany/${invoice.companyId}`}>
+                                    {invoice.companyName}
+                                </Link>
+                            </td>
+                            <td>{invoice.created_at}</td>
+                        </tr>
+                    );
+                })}
+            </tbody>
         </table>
     );
 }

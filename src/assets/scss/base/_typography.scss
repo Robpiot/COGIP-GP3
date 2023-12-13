@@ -58,6 +58,14 @@
         }
         td {
             padding-left: 2%;
+
+            a {
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    color:#F9DE4E
+                }
+            }
         }
     }
 }
@@ -105,6 +113,14 @@
         }
         td {
             padding-left: 2%;
+
+            a {
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    color:#F9DE4E
+                }
+            }
         }
     }
 }
@@ -142,6 +158,7 @@
         font-style: normal;
         font-weight: 900;
         line-height: normal;
+        margin: 2%;
     }
 
     .contactPeople {
@@ -152,6 +169,15 @@
             font-style: normal;
             font-weight: 900;
             line-height: normal; 
+
+            a {
+                text-decoration: none;
+                color: black;
+
+                &:hover {
+                    color:#F9DE4E
+                }
+            }
         }
     }
 }
@@ -163,7 +189,8 @@
         font-size: 4.5vw;
         font-style: normal;
         font-weight: 900;
-        line-height: normal; 
+        line-height: normal;
+        margin: 2%; 
     }
 
     .userLastInv {
@@ -179,6 +206,15 @@
             }
             td {
                 padding-left: 2%;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+
+                    &:hover {
+                        color:#F9DE4E
+                    }
+                }
             }
         }
     }
@@ -193,6 +229,7 @@
             font-style: normal;
             font-weight: 900;
             line-height: normal; 
+            margin-bottom: 2%;
         }
         .cont {
             li {
@@ -205,6 +242,14 @@
         
                 .bold {
                     font-weight: 900;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    &:hover {
+                        color:#F9DE4E
+                    }
                 }
             }
         }

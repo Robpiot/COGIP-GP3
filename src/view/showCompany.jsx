@@ -1,9 +1,9 @@
 import Header from "../partials/header.jsx";
 import Footer from "../partials/footer.jsx";
-import { InfoPeople } from "../components/InfoPeople.jsx";
+import { InfoCompany } from "../components/InfoCompany.jsx";
 
 
-const ShowCompanies = () => {
+const ShowCompany = () => {
   return (
     <div>
       <Header />
@@ -14,11 +14,11 @@ const ShowCompanies = () => {
           </svg> 
       </div>
       <div className="User">
-        <InfoPeople />
+        <InfoCompany />
       </div>
       <Footer />
     </div>
   );
 };
 
-export default ShowCompanies;
+export default ShowCompany;

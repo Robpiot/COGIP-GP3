@@ -61,8 +61,8 @@
         .calepin {
             height: 12vh;
             z-index:0;
-            margin-left: 29%;
-            position:relative;
+            position:absolute;
+            right: 0;
             
         }
     }
@@ -74,7 +74,7 @@
 
         .userLastInv {
             table {
-                width: 77.67vw;
+                width: 98%;
                 border-collapse: collapse;
         
                 th {
@@ -104,6 +104,46 @@
                 }
             }
 
+        }
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2em 0;
+        width: 98%;
+    
+        button, .pageNbr {
+            margin: 0 1em;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            background-color: white;
+            border: #C8CFD5 solid 2px;
+            cursor: pointer;
+            display: flex;
+            width: 4vw;
+            height: 4vw; 
+            justify-content: center;
+            align-items: center;
+    
+            &:disabled {
+                background-color: #C8CFD5;
+                cursor: not-allowed;
+            }
+        }
+
+        .prevPage, .nextPage {
+            svg {
+                width: 2vw;
+                height: 2vw;
+                color:#F9DE4E;
+            }
+        }
+
+        .currentPage {
+            background-color: white;
+            border:#F9DE4E solid 2px;
+            color:#F9DE4E;
         }
     }
 }

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { DashboardContext } from "../../context/DashboardContext";
+import { useContext } from "react";
 
 import AdminImg from '../../assets/img/pexels-italo-melo-2379004-1.png'
 
@@ -6,6 +7,7 @@ import DashboardIcon from '../../assets/icons/dashboard.svg'
 import InvoicesIcon from '../../assets/icons/invoices.svg'
 import CompaniesIcon from '../../assets/icons/companies.svg'
 import ContactsIcon from '../../assets/icons/contacts.svg'
+
 
 /*
     Extraction des éléments répétitifs : 
@@ -16,14 +18,14 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
     <li
         onClick={onClick}
         style={{
-        fontWeight: isSelected ? '600' : 'normal',
+            fontWeight: isSelected ? '600' : 'normal',
         }}
     >
 
         {icon}
 
         <p style={{
-            borderRight: isSelected ? '10px solid #9698D6' : 'none',
+            borderRight: isSelected ? '15px solid #9698D6' : 'none',
             width: '100%',
             padding: '5px 0',
         }}>
@@ -35,14 +37,18 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
 
 
 
-const DashboardNavbar = ( {onPage, page} ) => {
+const DashboardNavbar = () => {
 
-    const [isMenuOpen, setMenuOpen] = useState(false);
+    const { 
+        changeComponentToDisplay, 
+        componentToDisplay,
+        setMenuOpen,
+        isMenuOpen
+    } = useContext(DashboardContext);
 
     const handleDashboardClick = (e) => {
         e.preventDefault();
-        
-        onPage(e.target.textContent);
+        changeComponentToDisplay(e.target.textContent);
         setMenuOpen(false);
     };
 
@@ -53,13 +59,20 @@ const DashboardNavbar = ( {onPage, page} ) => {
         { label: 'Contacts', icon: <img src= {ContactsIcon} alt='Icône de invoices' />, key: 'contacts' },
     ];
 
+
     return (
         <header className="dashboard-navbar">
-            <nav className="menu--left" /*role="navigation"*/>
+            <nav className="menu--left" role="navigation">
                 <div className="menuToggle">
 
                         {/* Menu hamburger */}
-                        <input type="checkbox" checked={isMenuOpen} onChange={() => setMenuOpen(!isMenuOpen)} />
+                        <input 
+                            type="checkbox" 
+                            checked={isMenuOpen} 
+                            onChange={() => setMenuOpen(!isMenuOpen)} 
+                            id="menu-dashboard"
+                            name="menu-dashboard"
+                        />
                         <span></span>
                         <span></span>
                         <span></span>
@@ -85,9 +98,9 @@ const DashboardNavbar = ( {onPage, page} ) => {
                                     label={item.label}
                                     icon={item.icon}
                                     onClick={handleDashboardClick}
-                                    isSelected={page === item.label}
+                                    isSelected={componentToDisplay === item.label}
                                 />
-                                ))
+                            ))
                         }
                         </ul>
 

@@ -1,5 +1,6 @@
 import { RequestLastCompanies } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 export default function LastCompanies() {
     const [companies, setCompanies] = useState([]);
@@ -32,7 +33,11 @@ export default function LastCompanies() {
                 {companies.map(company => {
                     return (
                         <tr key={company.id}>
-                            <td>{company.name}</td>
+                            <td>                            
+                                <Link key={company.id} to={`/ShowCompany/${company.id}`}>
+                                    {company.name}
+                                </Link>
+                            </td>
                             <td>{company.tva}</td>
                             <td>{company.country}</td>
                             <td>{company.types_name}</td>

@@ -1,52 +1,21 @@
 main.dashboard-main {
     position: absolute;
     z-index: 0;
-    top: 50px;
+    top: 60px;
     box-sizing: border-box;
     padding: 0 8%;
     margin: 0;
     width: 100%;
     background: #F5F5FB;
-
-    img {
-        display: none;
-        position: absolute;
-        width: clamp(130px, 30vw, 300px);
-        right: 4vw;
-        object-fit: cover;   
-    }
 }
 
-@media only screen and (min-width: 756px) {
-    main.dashboard-main {
-        
-        img {
-            display: block;
-            top: 20px;
-        }
-    }
-}
+
 @media only screen and (min-width: 1024px) {
     
     main.dashboard-main {
         width: calc(100% - 275px);
         top: 0;
         left: 275px;
-        img {
-            top: 50px;
-            width: clamp(130px, 20vw, 250px);
-            max-height: 350px;
-            right: 5vw;
-        }
     }
 }
-@media only screen and (min-width: 1200px) {
-    main.dashboard-main {
-        img {
-            top: 0;
-            right: clamp(30px, 10vw, 50px);
-            width: 350px;
-            right: 15vw;
-        }
-    }
-}
+

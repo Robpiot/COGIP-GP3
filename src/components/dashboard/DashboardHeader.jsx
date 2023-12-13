@@ -1,7 +1,10 @@
+import DashboardImg from "../../assets/img/dashboard.png";
+
 const DashboardHeader = () => {
     return ( 
         <>
             <header className="dashboard-header">
+                <img src={DashboardImg} alt="Image de dashboard" />
                 
                 <h2>Dashboard</h2>
                 <p>dashboard/</p>

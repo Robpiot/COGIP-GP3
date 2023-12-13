@@ -1,5 +1,6 @@
 import { RequestLastContacts } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 export default function LastContacts() {
     const [contacts, setContacts] = useState([]);
@@ -30,7 +31,11 @@ export default function LastContacts() {
                 <tbody>
                 {contacts.map(contact => (
                     <tr key={contact.id}>
-                        <td>{contact.name}</td>
+                        <td>
+                            <Link key={contact.id} to={`/ShowContacts/${contact.id}`}>
+                                {contact.name}
+                            </Link>
+                        </td>
                         <td>{contact.phone}</td>
                         <td>{contact.email}</td>
                         <td>{contact.company_name}</td>

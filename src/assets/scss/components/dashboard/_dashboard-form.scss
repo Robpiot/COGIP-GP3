@@ -1,73 +1,108 @@
+
 section.form {
 
+    position: relative;
+    z-index: 2;
     margin-bottom: 50px;
     border-radius: 10px;
-    position: relative;
-    margin-bottom: 3.47vw;
-    border-radius: 0.69vw;
     background: #FFF;
-    box-shadow: 0px 0px 2.56vw -1.46vw rgba(0, 0, 0, 0.25);
-    margin-top: -5%;
-
+    box-shadow: 0px 0px 37px -21px rgba(0, 0, 0, 0.25);
+    font-family: Inter;
+    font-size: 20px;
+    color: #000;
+    
     h3 {
-        padding: 3.5vw 0vw 2.08vw 2.5vw;
-        margin: 0;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;  
+        padding: 24px 30px;
+        // margin: 0;
     }
 
     .separate {
-        height: 0.07vw;
+        height: 1px;
         background: #E0E0E0;
-        margin: 0 2.08vw;
+        margin: 0 30px;
     }
 
     .form-container {
-        margin: 1.67vw 2.08vw 3.47vw;
-        display: flex;
-        height: 28vw;
+        margin: 24px 30px 50px;
+        padding-bottom: 14px;
 
         form {
             display: flex;
             flex-direction: column;
-            width: 100%;
+            // width: 100%;
             gap: 10%;
 
-            .input {
-                width: 100%;
-                background: #F5F5F5; 
-                height: 3.9vw;
-                border: none;
-                padding-left: 3%;
-                width: 94%;
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                margin: -1px;
+                padding: 0;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                border: 0;
             }
 
-            .save {
-                height: 3.9vw;
-                background: #9698D6;
+            %format {
+                padding: 5px 10px;
+                background: #F5F5F5;
+                margin-bottom: 20px;
+                font-style: normal;
+                font-weight: 200;
+                line-height: normal;
                 border: none;
-                padding-left: 3%;
-                width: 97.5%;
+                outline: none;
+                
+            }
+            input {
+                @extend %format;
+            }
+            select {
+                @extend %format;
+            }
+            p {
+                font-size: 15px;
+                margin-left: 10px;
+                margin-bottom: 25px;
+                color: crimson
+            }
+            button {
+                @extend %format;
+                text-align: left ;
+                background: #9698D6;
+                color: #FFF;
+                font-weight: 400;
+                cursor: pointer;
             }
         }
     }
 }
 
-@media screen and (min-width:320px) and (max-width:774px) {
-    section.form {
-        margin-top: -8%;
-        
-        .form-container {
-            height: 45vw;
-    
-            form {    
-                .input {
 
-                    height: 6vw;
-                }
-    
-                .save {
-                    height: 6vw;
-                }
+
+
+// @media only screen and (min-width: 756px) {
+//     section.form {
+
+//     }
+// }
+@media only screen and (min-width: 1024px) {
+
+            section.form {
+                top: 0;
+                // left: 275px;
             }
-        }
-    }
+
+}
+@media only screen and (min-width: 1200px) {
+
+            section.form {
+                flex-grow: 1;
+                flex-shrink: 1;
+                // flex-basis: 580px;
+            }
+
 }

@@ -16,6 +16,44 @@ export default function LoginForm() {
     <div className="formLogin">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
+          <label>First Name :</label>
+          <input
+            type="text"
+            name="firstName"
+            {...register("firstName", {
+              required: true,
+              maxLength: 20,
+              pattern: /^[A-Za-z]+$/i,
+            })}
+          />
+          {errors.firstName && errors.firstName.type === "required" && (
+            <p className="errorMsg">First Name is required.</p>
+          )}
+          {errors.firstName && errors.firstName.type === "maxLength" && (
+            <p className="errorMsg">First Name is too long.</p>
+          )}
+          {errors.firstName && errors.firstName.type === "pattern" && (
+            <p className="errorMsg">Alphabetical characters only.</p>
+          )}
+          <label>Last Name : </label>
+          <input
+            type="text"
+            name="lastName"
+            {...register("lastName", {
+              required: true,
+              maxLength: 20,
+              pattern: /^[A-Za-z]+$/i,
+            })}
+          />
+          {errors.lastName && errors.lastName.type === "required" && (
+            <p className="errorMsg">Last Name is required.</p>
+          )}
+          {errors.lastName && errors.lastName.type === "maxLength" && (
+            <p className="errorMsg">Last Name is too long.</p>
+          )}
+          {errors.lastName && errors.lastName.type === "pattern" && (
+            <p className="errorMsg">Alphabetical characters only.</p>
+          )}
           <label>Email</label>
           <input
             type="text"

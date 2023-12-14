@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { RequestCompanies, RequestInvoices } from '../assets/utils/Requests';
+import formatDate from "../assets/utils/Date";
 
 export function InfoInvoices() {
     const [invoice, setInvoices] = useState(null);
@@ -39,7 +40,7 @@ export function InfoInvoices() {
                             {invoice.companyName}
                         </Link>
                     </li>
-                    <li><span className="bold">Created at: </span>{invoice.created_at}
+                    <li><span className="bold">Created at: </span>{formatDate(invoice.created_at)}
                     </li>
                 </ul>
             </div>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import formatDate from "../assets/utils/Date";
 
 export function AllInvoices() {
     const [invoices, setInvoices] = useState([]);
@@ -56,7 +57,7 @@ export function AllInvoices() {
                                         {invoice.companyName}
                                     </Link>
                                 </td>
-                                <td>{invoice.created_at}</td>
+                                <td>{formatDate(invoice.created_at)}</td>
                             </tr>
                         );
                     })}

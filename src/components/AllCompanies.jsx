@@ -1,8 +1,9 @@
 import { RequestCompanies } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import formatDate from "../assets/utils/Date";
 
 export function AllCompanies() { 
     const [companies, setCompanies] = useState([]);
@@ -49,7 +50,7 @@ export function AllCompanies() {
                             <td>{company.tva}</td>
                             <td>{company.country}</td>
                             <td>{company.type}</td>
-                            <td>{company.created_at}</td>
+                            <td>{formatDate(company.created_at)}</td>
                         </tr>
                     );
                 })}

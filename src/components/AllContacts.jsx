@@ -1,8 +1,9 @@
 import { RequestContacts } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import formatDate from "../assets/utils/Date";
 
 export function AllContacts() {
     const [contacts, setContacts] = useState([]);
@@ -48,7 +49,7 @@ export function AllContacts() {
                         <td>{contact.phone}</td>
                         <td>{contact.email}</td>
                         <td>{contact.company_name}</td>
-                        <td>{contact.created_at}</td>
+                        <td>{formatDate(contact.created_at)}</td>
                     </tr>
                 ))}
                 </tbody>

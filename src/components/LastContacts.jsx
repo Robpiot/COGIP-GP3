@@ -1,6 +1,7 @@
 import { RequestLastContacts } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import formatDate from "../assets/utils/Date";
 
 export default function LastContacts() {
     const [contacts, setContacts] = useState([]);
@@ -39,7 +40,7 @@ export default function LastContacts() {
                         <td>{contact.phone}</td>
                         <td>{contact.email}</td>
                         <td>{contact.company_name}</td>
-                        <td>{contact.created_at}</td>
+                        <td>{formatDate(contact.created_at)}</td>
                     </tr>
                 ))}
 

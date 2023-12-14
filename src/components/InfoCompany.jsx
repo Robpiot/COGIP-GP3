@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { RequestCompanies, RequestContacts, RequestInvoices } from '../assets/utils/Requests';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import formatDate from "../assets/utils/Date";
 
 export function InfoCompany() {
     const [company, setCompany] = useState(null);
@@ -98,7 +99,7 @@ export function InfoCompany() {
                                         {company.name}
                                     </Link>
                                 </td>
-                                <td>{invoice.created_at}</td>
+                                <td>{formatDate(invoice.created_at)}</td>
                             </tr>
                         ))}
                     </tbody>

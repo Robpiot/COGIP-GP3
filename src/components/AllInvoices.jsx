@@ -46,7 +46,10 @@ export function AllInvoices() {
                     .map(invoice => {
                         return (
                             <tr key={invoice.id}>
-                                <td>{invoice.ref}</td>
+                                <td>
+                                    <Link to={`/ShowInvoices/${invoice.id}`}>
+                                        {invoice.ref}
+                                    </Link></td>
                                 <td>{invoice.due_date}</td>
                                 <td>
                                     <Link to={`/ShowCompany/${invoice.companyId}`}>

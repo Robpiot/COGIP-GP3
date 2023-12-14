@@ -511,7 +511,7 @@ Files inside this folder can contain global styles used in the project.
   color: #F9DE4E;
 }
 
-.contactPage .infoContacts .nameUser {
+.contactPage .infoContacts .nameUser, .contactPage .infoContacts .InvRef, .contactPage .infoInvoices .nameUser, .contactPage .infoInvoices .InvRef, .InvoicePage .infoContacts .nameUser, .InvoicePage .infoContacts .InvRef, .InvoicePage .infoInvoices .nameUser, .InvoicePage .infoInvoices .InvRef {
   color: #000;
   font-family: "Inter", sans-serif;
   font-size: 4.5vw;
@@ -520,7 +520,7 @@ Files inside this folder can contain global styles used in the project.
   line-height: normal;
   margin-bottom: 2%;
 }
-.contactPage .infoContacts .cont li {
+.contactPage .infoContacts .cont li, .contactPage .infoInvoices .cont li, .InvoicePage .infoContacts .cont li, .InvoicePage .infoInvoices .cont li {
   color: #000;
   font-family: "Roboto", sans-serif;
   font-size: 1.7vw;
@@ -528,14 +528,14 @@ Files inside this folder can contain global styles used in the project.
   font-weight: 600;
   line-height: normal;
 }
-.contactPage .infoContacts .cont li .bold {
+.contactPage .infoContacts .cont li .bold, .contactPage .infoInvoices .cont li .bold, .InvoicePage .infoContacts .cont li .bold, .InvoicePage .infoInvoices .cont li .bold {
   font-weight: 900;
 }
-.contactPage .infoContacts .cont li a {
+.contactPage .infoContacts .cont li a, .contactPage .infoInvoices .cont li a, .InvoicePage .infoContacts .cont li a, .InvoicePage .infoInvoices .cont li a {
   text-decoration: none;
   color: black;
 }
-.contactPage .infoContacts .cont li a:hover {
+.contactPage .infoContacts .cont li a:hover, .contactPage .infoInvoices .cont li a:hover, .InvoicePage .infoContacts .cont li a:hover, .InvoicePage .infoInvoices .cont li a:hover {
   color: #F9DE4E;
 }
 
@@ -1749,6 +1749,43 @@ section.form .form-container form button {
 .contactPage .userPicture {
   border-radius: 50%;
   height: 18vw;
+}
+
+.InvoicePage {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-bottom: 20%;
+  gap: 20%;
+  align-items: center;
+}
+.InvoicePage .infoInvoices {
+  display: flex;
+  flex-direction: column;
+}
+.InvoicePage .infoInvoices .InvRef {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 99;
+}
+.InvoicePage .infoInvoices .InvRef::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 13.7%;
+  bottom: 0;
+  height: 30%;
+  width: 100%;
+  background-color: #F9DE4E;
+  z-index: -1;
+}
+.InvoicePage .infoInvoices .cont {
+  padding-left: 0;
+}
+.InvoicePage .infoInvoices .cont li {
+  list-style-type: none;
 }
 
 .modalBackground {

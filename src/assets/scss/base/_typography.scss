@@ -230,9 +230,9 @@
     }
 }
 
-.contactPage {
-    .infoContacts {
-        .nameUser {
+.contactPage, .InvoicePage {
+    .infoContacts, .infoInvoices {
+        .nameUser, .InvRef {
             color: #000;
             font-family: 'Inter', sans-serif;
             font-size: 4.5vw;

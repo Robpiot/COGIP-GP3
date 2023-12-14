@@ -88,7 +88,10 @@ export function InfoCompany() {
                         .slice((currentPage-1) * itemsPerPage, currentPage * itemsPerPage)
                         .map((invoice) => (
                             <tr key={invoice.id}>
-                                <td>{invoice.ref}</td>
+                                <td>
+                                    <Link to={`/ShowInvoices/${invoice.id}`}>
+                                        {invoice.ref}
+                                    </Link></td>
                                 <td>{invoice.due_date}</td>
                                 <td>
                                     <Link key={company.id} to={`/ShowCompany/${company.id}`}>

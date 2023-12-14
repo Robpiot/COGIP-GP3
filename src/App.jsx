@@ -110,7 +110,7 @@ function App() {
             <Header setOpenModal={setOpenModal} />
             {openModal === 'login' && <ModalLogin closeModal={() => setOpenModal('')} />}
             {openModal === 'register' && <ModalRegister closeModal={() => setOpenModal('')} />}
-            <ShowCompany />
+            <ShowInvoices />
           </>
         }/>
       </Routes>

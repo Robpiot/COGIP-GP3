@@ -1,31 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { RequestInvoices } from '../assets/utils/Requests';
+import { useParams, Link } from 'react-router-dom';
+import { RequestCompanies, RequestInvoices } from '../assets/utils/Requests';
 
 export function InfoInvoices() {
     const [invoice, setInvoices] = useState(null);
     const { id } = useParams();
     console.log(id);
 
-    useEffect (() => {
-        const fetchInvoices = async () => {
-            const result = await RequestInvoices(id);
-            const invoice = result.find(invoice => invoice.id === parseInt(id));
-            setInvoices(invoice);
+    useEffect(() => {
+        const fetchData = async () => {
+            const invoicesResult = await RequestInvoices();
+            const companiesResult = await RequestCompanies();
+    
+            const invoice = invoicesResult.find(inv => inv.id === parseInt(id));
+            const company = companiesResult.find(comp => comp.id === invoice.id_company);
+    
+            setInvoices({ ...invoice, companyName: company ? company.name : 'Unknown', companyId: company ? company.id : null });
         };
-        fetchInvoices();
+    
+        fetchData();
     }, [id]);
-
-    // useEffect(() => {
-    //     if (contact) {
-    //         const fetchCompanies = async () => {
-    //             const result = await RequestCompanies();
-    //             const company = result.find(c => c.id === contact.company_id);
-    //             setCompany(company);
-    //         };
-    //         fetchCompanies();
-    //     }
-    // }, [contact]);
+    
+    console.log('invoice:', invoice);
 
     if (!invoice) {
         return <div>Loading...</div>;
@@ -36,14 +32,15 @@ export function InfoInvoices() {
             <div className="infoInvoices">
                 <h1 className="InvRef">{invoice.ref}</h1>
                 <ul className="cont">
-                    {/* <li><span className="bold">Contact: </span>{contact.name}</li>
-                    <li><span className="bold">Phone: </span>{contact.phone}</li>
-                    <li><span className="bold">Mail: </span>{contact.email}</li>
+                    <li><span className="bold">Invoice Number: </span>{invoice.ref}</li>
+                    <li><span className="bold">Due date: </span>{invoice.due_date}</li>
                     <li><span className="bold">Company: </span>
-                        <Link key={company.id} to={`/ShowCompany/${company.id}`}>
-                            {contact.company_name}
+                        <Link to={`/ShowCompany/${invoice.companyId}`}>
+                            {invoice.companyName}
                         </Link>
-                    </li> */}
+                    </li>
+                    <li><span className="bold">Created at: </span>{invoice.created_at}
+                    </li>
                 </ul>
             </div>
         </div>

@@ -10,6 +10,7 @@ export default function RegisterForm() {
 
   const onSubmit = (data) => {
     data.role_id = 1;
+    console.log(data);
     fetch("https://cogip-990e44950882.herokuapp.com/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

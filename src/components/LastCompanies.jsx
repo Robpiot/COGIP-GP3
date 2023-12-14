@@ -1,6 +1,7 @@
 import { RequestLastCompanies } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import formatDate from "../assets/utils/Date";
 
 export default function LastCompanies() {
     const [companies, setCompanies] = useState([]);
@@ -41,7 +42,7 @@ export default function LastCompanies() {
                             <td>{company.tva}</td>
                             <td>{company.country}</td>
                             <td>{company.types_name}</td>
-                            <td>{company.created_at}</td>
+                            <td>{formatDate(company.created_at)}</td>
                         </tr>
                     );
                 })}

@@ -52,14 +52,14 @@ export const RequestContacts = async () => {
 export const RequestLastInvoices = async () => {
     try {
         const response = await fetch(
-            `https://cogip-990e44950882.herokuapp.com/invoices`
+            `https://cogip-990e44950882.herokuapp.com/invoices?_sort=due_date&_order=desc`
         );
         if (!response.ok) {
             throw new Error('Something went wrong');
         }
         const data = await response.json();
         console.log(data);
-        return data.data.slice(0, 5); // Return only the first five items
+        return data.data.slice(-5);
     } catch (error) {
         console.error(error);
         throw new Error("Can't fetch the datas");
@@ -76,7 +76,7 @@ export const RequestLastCompanies = async () => {
         }
         const data = await response.json();
         console.log(data);
-        return data.data.slice(0, 5); // Return only the first five items
+        return data.data.slice(-5);
     } catch (error) {
         console.error(error);
         throw new Error("Can't fetch the datas");
@@ -93,7 +93,7 @@ export const RequestLastContacts = async () => {
         }
         const data = await response.json();
         console.log(data);
-        return data.data.slice(0, 5); // Return only the first five items
+        return data.data.slice(-5);
     } catch (error) {
         console.error(error);
         throw new Error("Can't fetch the datas");

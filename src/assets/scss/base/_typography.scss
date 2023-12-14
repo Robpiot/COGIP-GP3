@@ -230,9 +230,9 @@
     }
 }
 
-.contactPage {
-    .infoContacts {
-        .nameUser {
+.contactPage, .InvoicePage {
+    .infoContacts, .infoInvoices {
+        .nameUser, .InvRef {
             color: #000;
             font-family: 'Inter', sans-serif;
             font-size: 4.5vw;
@@ -346,7 +346,7 @@ footer {
 //     }
 // }
 
-.modalContainer {
+.modalContainer, .modalContainer-Register {
     .title {
         font-size: 20px;
         font-family: 'Roboto', sans-serif;

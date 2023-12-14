@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export default function LoginForm() {
+export default function RegisterForm() {
   const {
     register, // that is use to register input
     handleSubmit, //we can use this to handle the form submission
@@ -9,7 +9,19 @@ export default function LoginForm() {
   } = useForm(); //
 
   const onSubmit = (data) => {
-    console.log(data); // data will contain all the input values
+    data.role_id = 1;
+    fetch("https://cogip-990e44950882.herokuapp.com/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success", data);
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
   };
 
   return (
@@ -19,39 +31,39 @@ export default function LoginForm() {
           <label>First Name :</label>
           <input
             type="text"
-            name="firstName"
-            {...register("firstName", {
+            name="first_name"
+            {...register("first_name", {
               required: true,
               maxLength: 20,
               pattern: /^[A-Za-z]+$/i,
             })}
           />
-          {errors.firstName && errors.firstName.type === "required" && (
+          {errors.first_name && errors.first_name.type === "required" && (
             <p className="errorMsg">First Name is required.</p>
           )}
-          {errors.firstName && errors.firstName.type === "maxLength" && (
+          {errors.first_name && errors.first_name.type === "maxLength" && (
             <p className="errorMsg">First Name is too long.</p>
           )}
-          {errors.firstName && errors.firstName.type === "pattern" && (
+          {errors.first_name && errors.first_name.type === "pattern" && (
             <p className="errorMsg">Alphabetical characters only.</p>
           )}
           <label>Last Name : </label>
           <input
             type="text"
-            name="lastName"
-            {...register("lastName", {
+            name="last_name"
+            {...register("last_name", {
               required: true,
               maxLength: 20,
               pattern: /^[A-Za-z]+$/i,
             })}
           />
-          {errors.lastName && errors.lastName.type === "required" && (
+          {errors.last_name && errors.last_name.type === "required" && (
             <p className="errorMsg">Last Name is required.</p>
           )}
-          {errors.lastName && errors.lastName.type === "maxLength" && (
+          {errors.last_name && errors.last_name.type === "maxLength" && (
             <p className="errorMsg">Last Name is too long.</p>
           )}
-          {errors.lastName && errors.lastName.type === "pattern" && (
+          {errors.last_name && errors.last_name.type === "pattern" && (
             <p className="errorMsg">Alphabetical characters only.</p>
           )}
           <label>Email</label>
@@ -92,7 +104,9 @@ export default function LoginForm() {
         </div>
         <div className="form-control">
           <label></label>
-          <button className="sumbitReg" type="submit">Register</button>
+          <button className="sumbitReg" type="submit">
+            Register
+          </button>
         </div>
       </form>
     </div>

@@ -6,7 +6,7 @@ useEffect(() => {
     headers: { "Content-Type": "application/json" },
   };
 
-  fetch("https://cogip-990e44950882.herokuapp.com/users", registerUser)
+  fetch(import.meta.env.VITE_API_LINK, registerUser)
     .then((response) => response.json())
     .then((data) => this.setState({ postId: data.id }));
 }, []);

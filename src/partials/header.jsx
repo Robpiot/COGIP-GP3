@@ -1,6 +1,6 @@
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 // import ModalLogin from "../components/modalLogin";
 // import ModalRegister from "../components/ModalRegister";
@@ -11,6 +11,7 @@ export default function Header({ setOpenModal }) {
 
   const toggleMenuLinks = () => setIsOpen(!isOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const location = useLocation();
 
   return (
     <div className="headerDiv">
@@ -22,8 +23,7 @@ export default function Header({ setOpenModal }) {
           <li>
             <NavLink
               to="/"
-              isactive={(match, location) => location.pathname === "/"}
-              activeclassname="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Home
             </NavLink>
@@ -31,8 +31,7 @@ export default function Header({ setOpenModal }) {
           <li>
             <NavLink
               to="/invoices"
-              isactive={(match, location) => location.pathname === "/"}
-              activeclassname="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Invoices
             </NavLink>
@@ -40,8 +39,7 @@ export default function Header({ setOpenModal }) {
           <li>
             <NavLink
               to="/Companies"
-              isactive={(match, location) => location.pathname === "/"}
-              activeclassname="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Companies
             </NavLink>
@@ -49,8 +47,7 @@ export default function Header({ setOpenModal }) {
           <li>
             <NavLink
               to="/contacts"
-              isactive={(match, location) => location.pathname === "/"}
-              activeclassname="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Contacts
             </NavLink>

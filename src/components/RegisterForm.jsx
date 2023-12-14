@@ -9,20 +9,31 @@ export default function RegisterForm() {
   } = useForm(); //
 
   const onSubmit = (data) => {
-    data.role_id = 1;
+    data.role_id = 4;
+    console.log('Sending data:', data);
+
     fetch("https://cogip-990e44950882.herokuapp.com/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success", data);
-      })
-      .catch((error) => {
-        console.error("Error", error);
-      });
-  };
+    .then(response => {
+        if (!response.ok) {
+            console.error('Server response:', response);
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+    })
+    .then(text => {
+        console.log('Server response text:', text);
+        return JSON.parse(text);
+    })
+    .then(data => {
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+};
 
   return (
     <div className="formLogin">

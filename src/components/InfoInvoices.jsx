@@ -34,7 +34,7 @@ export function InfoInvoices() {
                 <h1 className="InvRef">{invoice.ref}</h1>
                 <ul className="cont">
                     <li><span className="bold">Invoice Number: </span>{invoice.ref}</li>
-                    <li><span className="bold">Due date: </span>{invoice.due_date}</li>
+                    <li><span className="bold">Due date: </span>{formatDate(invoice.due_at)}</li>
                     <li><span className="bold">Company: </span>
                         <Link to={`/ShowCompany/${invoice.companyId}`}>
                             {invoice.companyName}

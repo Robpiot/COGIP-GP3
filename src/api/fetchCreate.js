@@ -4,7 +4,7 @@
  * @param {Object} data - Les données à envoyer.
  * @returns {Promise<Object>} Un objet contenant le nom des données (de la table) et les informations de la table.
  */
-export default async function createData(tableName, data) {
+export default async function fetchCreate(tableName, data) {
     const url = import.meta.env.VITE_URL;
 
     try {

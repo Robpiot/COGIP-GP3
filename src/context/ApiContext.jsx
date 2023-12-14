@@ -15,12 +15,12 @@ export default function ApiProvider(props) {
         try {
             if (method === 'get') {
                 const entityData = await fetchAll(entityName);
-                setEntity(entityData.dataObject);
+                setEntity(entityData);
             }
             else if (method === 'post') {
                 await fetchCreate(entityName, data);
                 const entityData = await fetchAll(entityName);
-                setEntity(entityData.dataObject);
+                setEntity(entityData);
                 // const entityData = await fetchCreate(entityName, data);
                 // setEntity(entityData.dataObject);
             }
@@ -34,8 +34,10 @@ export default function ApiProvider(props) {
         <ApiContext.Provider
             value={{
                 fetchContacts: async () => await fetchEntity('get', 'contacts', setContacts),
+                createContacts: async (data) => await fetchEntity('post', 'contacts', setContacts, data),
                 contacts,
                 fetchCompanies: async () => await fetchEntity('get', 'companies', setCompanies),
+                createCompanies: async (data) => await fetchEntity('post', 'companies', setCompanies, data),
                 companies,
                 fetchInvoices: async () => await fetchEntity('get', 'invoices', setInvoices),
                 createInvoices: async (data) => await fetchEntity('post', 'invoices', setInvoices, data),

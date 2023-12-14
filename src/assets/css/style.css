@@ -1327,7 +1327,7 @@ section.form .form-container form button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 7%;
+  padding: 0% 7% 7% 7%;
   position: relative;
 }
 .page .home .title {
@@ -1935,7 +1935,7 @@ Files inside this folder can contain specific element styles and layout.
   }
   .headerDiv {
     background-color: #F9DE4E;
-    padding: 30px;
+    padding: 30px 30px 0px 30px;
   }
   .headerDiv .navBarHeader {
     display: grid;
@@ -2077,13 +2077,21 @@ footer .divContact li {
 }
 footer .divContact .listeSocials, footer .divContact ul {
   display: flex;
-  gap: 10%;
+  gap: 5.5%;
   padding-left: 0;
   margin-bottom: 10%;
+  text-align: left;
+  width: 30vw;
 }
 footer .divContact .listeSocials li, footer .divContact ul li {
   margin: 0%;
   padding: 0%;
+}
+footer .divContact .listeSocials li .svgTransform, footer .divContact ul li .svgTransform {
+  width: 1.5vw;
+}
+footer .divContact .listeSocials li .fontawesome, footer .divContact ul li .fontawesome {
+  font-size: 1.5vw;
 }
 footer .divContact .listeContacts li {
   margin-top: 0;

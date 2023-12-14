@@ -66,12 +66,22 @@ footer {
         
         .listeSocials, ul {
             display:flex;
-            gap: 10%;
+            gap: 5.5%;
             padding-left: 0;
             margin-bottom: 10%;
+            text-align: left;
+            width: 30vw;
             li {
                 margin: 0%;
                 padding: 0%;
+
+                .svgTransform {
+                    width: 1.5vw;
+                }
+
+                .fontawesome {
+                    font-size: 1.5vw;
+                }
             }
             
         }
@@ -80,7 +90,6 @@ footer {
                 margin-top: 0;
                 p {
                     width: 12vw;
-                    
                 }
             }
         }

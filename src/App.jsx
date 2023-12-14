@@ -5,6 +5,7 @@ import Companies from "./view/companies.jsx";
 import Contacts from "./view/contacts.jsx";
 import { ShowContacts } from "./view/showContacts.jsx";
 import ShowCompany from './view/showCompany.jsx';
+import { ShowInvoices } from "./view/showInvoices.jsx";
 
 import Header from "./partials/header.jsx";
 import ModalLogin from './components/modalLogin.jsx';
@@ -97,6 +98,14 @@ function App() {
           </>
         }/>
         <Route path='ShowCompany/:id' element={
+          <>
+            <Header setOpenModal={setOpenModal} />
+            {openModal === 'login' && <ModalLogin closeModal={() => setOpenModal('')} />}
+            {openModal === 'register' && <ModalRegister closeModal={() => setOpenModal('')} />}
+            <ShowCompany />
+          </>
+        }/>
+        <Route path='ShowInvoices/:id' element={
           <>
             <Header setOpenModal={setOpenModal} />
             {openModal === 'login' && <ModalLogin closeModal={() => setOpenModal('')} />}

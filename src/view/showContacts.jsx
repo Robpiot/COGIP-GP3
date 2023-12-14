@@ -1,4 +1,3 @@
-import Header from "../partials/header.jsx";
 import Footer from "../partials/footer.jsx";
 import { InfoUser } from "../components/InfoUser.jsx";
 

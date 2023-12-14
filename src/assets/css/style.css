@@ -569,15 +569,15 @@ footer .bottomLinks nav .copyright {
   color: #737373;
 }
 
-.modalContainer .title {
+.modalContainer .title, .modalContainer-Register .title {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
 }
-.modalContainer .form-control label, .modalContainer .form-control input {
+.modalContainer .form-control label, .modalContainer .form-control input, .modalContainer-Register .form-control label, .modalContainer-Register .form-control input {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
-.modalContainer .submitLog, .modalContainer .sumbitReg {
+.modalContainer .submitLog, .modalContainer .sumbitReg, .modalContainer-Register .submitLog, .modalContainer-Register .sumbitReg {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
@@ -1792,7 +1792,7 @@ section.form .form-container form button {
 .modalBackground {
   grid-row: 2;
   width: 100vw;
-  height: 70vh;
+  height: 65vh;
   background-color: #F9DE4E;
   position: static;
   display: flex;
@@ -1870,6 +1870,92 @@ section.form .form-container form button {
     height: 70vh;
   }
   .modalBackground .modalContainer {
+    top: 20%;
+    left: 22%;
+  }
+}
+.modalBackground-register {
+  grid-row: 2;
+  width: 100vw;
+  height: 84vh;
+  background-color: #F9DE4E;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 0;
+}
+
+.modalContainer-Register {
+  position: absolute;
+  top: 32%;
+  left: 25%;
+  width: 50%;
+  height: 70vh;
+  border-radius: 12px;
+  background-color: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.32) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  justify-content: flex-start;
+}
+.modalContainer-Register .title {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 5%;
+}
+.modalContainer-Register .titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+.modalContainer-Register .titleCloseBtn .closeBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modalContainer-Register .formLogin {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.modalContainer-Register .form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.modalContainer-Register .form-control label {
+  margin-bottom: 5px;
+}
+.modalContainer-Register .form-control input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.modalContainer-Register .submitLog, .modalContainer-Register .sumbitReg {
+  border-radius: 5px;
+  padding: 3%;
+}
+.modalContainer-Register .submitLog:hover, .modalContainer-Register .sumbitReg:hover {
+  background-color: #F9DE4E;
+}
+.modalContainer-Register .errorMsg {
+  color: red;
+  margin-top: 5px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  .modalBackground-register {
+    width: 100vw;
+    height: 70vh;
+  }
+  .modalBackground-register .modalContainer-Register {
     top: 20%;
     left: 22%;
   }

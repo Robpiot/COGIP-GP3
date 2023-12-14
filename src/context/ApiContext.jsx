@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import fetchAll from '../api/fetchAll';
 import fetchCreate from '../api/fetchCreate';
+import fetchDelete from "../api/fetchDelete";
 
 export const ApiContext = createContext();
 
@@ -29,6 +30,30 @@ export default function ApiProvider(props) {
         }
     };
 
+    
+    const deleteRow = async (entityName, idRow) => {
+        try {
+            await fetchDelete(entityName, idRow);
+            const entityData = await fetchAll(entityName);
+            switch (entityName) {
+                case 'contacts':
+                    setContacts(entityData);
+                    break;
+                case 'companies':
+                    setCompanies(entityData);
+                    break;
+                case 'invoices':
+                    setInvoices(entityData);
+                    break;
+            }
+            // const entityData = await fetchDelete(entityName, idRow);
+            // setEntity(entityData);
+            
+        } catch (error) {
+            console.error(`Error fetching data for ${entityName}: ${error.message}`);
+        }
+    };
+
 
     return (
         <ApiContext.Provider
@@ -43,7 +68,8 @@ export default function ApiProvider(props) {
                 createInvoices: async (data) => await fetchEntity('post', 'invoices', setInvoices, data),
                 invoices,
                 fetchTypes: async () => await fetchEntity('get', 'types', setTypes),
-                types
+                types,
+                deleteRow
             }}
         >
             {props.children}

@@ -51,7 +51,7 @@ const CreateCompanies = () => {
                 {...register("type_id", { required: "The type is required" })}
             >
                 <option value="">Choose a type</option>
-                {types?.dataInfos.map((type) => (
+                {types?.dataObject.dataInfos.map((type) => (
                     <option key={type.id} value={type.id}>{type.id} - {type.name}</option>
                 ))}
             </select>

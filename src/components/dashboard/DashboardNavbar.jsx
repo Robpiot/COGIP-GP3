@@ -54,9 +54,9 @@ const DashboardNavbar = () => {
 
     const menuItems = [
         { label: 'Dashboard', icon: <img src= {DashboardIcon} alt='Icône du dashboard' />, key: 'dashboard' },
-        { label: 'Invoices', icon: <img src= {InvoicesIcon} alt='Icône de invoices' />, key: 'invoices' },
-        { label: 'Companies', icon: <img src= {CompaniesIcon} alt='Icône de invoices' />, key: 'companies' },
-        { label: 'Contacts', icon: <img src= {ContactsIcon} alt='Icône de invoices' />, key: 'contacts' },
+        { label: 'Invoice', icon: <img src= {InvoicesIcon} alt='Icône de invoices' />, key: 'invoice' },
+        { label: 'Companie', icon: <img src= {CompaniesIcon} alt='Icône de invoices' />, key: 'companie' },
+        { label: 'Contact', icon: <img src= {ContactsIcon} alt='Icône de invoices' />, key: 'contact' },
     ];
 
 

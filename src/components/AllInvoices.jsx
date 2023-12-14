@@ -19,6 +19,8 @@ export function AllInvoices() {
                 const company = companiesResult.find(company => company.id === invoice.id_company);
                 return { ...invoice, companyName: company ? company.name : 'Unknown', companyId: company ? company.id : null };
             });
+
+            invoicesWithCompanyData.sort((a, b) => new Date(b.due_date) - new Date(a.due_date));
     
             setInvoices(invoicesWithCompanyData);
         };

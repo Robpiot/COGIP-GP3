@@ -1515,6 +1515,7 @@ section.form .form-container form button {
 }
 .allInvoices table td {
   height: 3.6vw;
+  width: 7vw;
 }
 .allInvoices table tr:nth-child(even) {
   background-color: #F5F5F5;

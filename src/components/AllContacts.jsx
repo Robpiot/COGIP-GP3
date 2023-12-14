@@ -13,7 +13,8 @@ export function AllContacts() {
     useEffect(() => {
         const fetchContacts = async () => {
             const result = await RequestContacts();
-            setContacts(result);
+            const sortedResult = result.sort((a, b) => a.name.localeCompare(b.name));
+            setContacts(sortedResult);
         };
 
         fetchContacts();

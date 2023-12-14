@@ -13,7 +13,8 @@ export function AllCompanies() {
     useEffect(() => {
         const fetchCompanies = async () => {
             const result = await RequestCompanies();
-            setCompanies(result);
+            const sortedResult = result.sort((a, b) => a.name.localeCompare(b.name));
+            setCompanies(sortedResult);
         };
 
         fetchCompanies();

@@ -16,13 +16,18 @@ const CreateContacts = () => {
         formState: { errors }
     } = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = async (data) => {
         data.company_id = parseInt(data.company_id, 10);
         console.log(data);
         console.log(JSON.stringify(data));
-        createContacts(data);
-        reset();
-        changeComponentToDisplay('Dashboard');
+        try {
+            createContacts(data);
+            reset();
+            changeComponentToDisplay('Dashboard');
+        } catch (error) {
+            console.error("Error creating contact:", error);
+            // Gérer l'erreur, afficher un message à l'utilisateur, etc.
+        }
     };
 
     return (
@@ -46,11 +51,11 @@ const CreateContacts = () => {
                 {...register("company_id", { required: "The companie is required" })}
             >
                 <option value="">Choose a companie</option>
-                {companies?.dataInfos.map((companie) => (
+                {companies?.dataObject.dataInfos.map((companie) => (
                     <option key={companie.id} value={companie.id}>{companie.id} - {companie.name}</option>
                 ))}
             </select>
-            {errors.companie_id && (<p>{errors.companie_id.message}</p>)}
+            {errors.company_id && (<p>{errors.company_id.message}</p>)}
 
             <label htmlFor="email" className="visually-hidden">Email</label>
             <input 

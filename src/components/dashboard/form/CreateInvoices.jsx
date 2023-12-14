@@ -14,13 +14,18 @@ const CreateInvoices = () => {
         formState: { errors }
     } = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = async (data) => {
         data.id_company = parseInt(data.id_company, 10);
         console.log(data);
         console.log(JSON.stringify(data));
-        createInvoices(data);
-        reset();
-        changeComponentToDisplay('Dashboard');
+        try {
+            createInvoices(data);
+            reset();
+            changeComponentToDisplay('Dashboard');
+        } catch (error) {
+            console.error("Error creating invoice:", error);
+            // Gérer l'erreur, afficher un message à l'utilisateur, etc.
+        }
     };
 
     return (
@@ -48,7 +53,7 @@ const CreateInvoices = () => {
                     {...register("id_company", { required: "The companie is required" })}
                 >
                     <option value="">Choose a companie</option>
-                    {companies?.dataInfos.map((companie) => (
+                    {companies?.dataObject.dataInfos.map((companie) => (
                         <option key={companie.id} value={companie.id}>
                             {companie.id} - {companie.name}
                         </option>

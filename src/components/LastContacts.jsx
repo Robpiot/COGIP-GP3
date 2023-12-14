@@ -22,7 +22,7 @@ export default function LastContacts() {
             <table>
                 <thead>
                     <tr>
-                        <th className="names">Name</th>
+                        <th className="namesCont">Name</th>
                         <th className="phone">Phone</th>
                         <th className="mail">Mail</th>
                         <th className="comp">Company</th>

@@ -1,9 +1,8 @@
 import { RequestContacts } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import formatDate from "../assets/utils/Date";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 export function AllContacts() {
     const [contacts, setContacts] = useState([]);
@@ -13,8 +12,7 @@ export function AllContacts() {
     useEffect(() => {
         const fetchContacts = async () => {
             const result = await RequestContacts();
-            const sortedResult = result.sort((a, b) => a.name.localeCompare(b.name));
-            setContacts(sortedResult);
+            setContacts(result);
         };
 
         fetchContacts();
@@ -30,7 +28,7 @@ export function AllContacts() {
             <table>
                 <thead>
                     <tr>
-                        <th className="names">Name</th>
+                        <th className="namesCont">Name</th>
                         <th className="phone">Phone</th>
                         <th className="mail">Mail</th>
                         <th className="comp">Company</th>
@@ -50,7 +48,7 @@ export function AllContacts() {
                         <td>{contact.phone}</td>
                         <td>{contact.email}</td>
                         <td>{contact.company_name}</td>
-                        <td>{formatDate(contact.created_at)}</td>
+                        <td>{contact.created_at}</td>
                     </tr>
                 ))}
                 </tbody>

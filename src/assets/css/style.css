@@ -1264,16 +1264,25 @@ section.form .form-container form button {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .names, .invoices table .company {
+.invoices table .namesCont, .invoices table .company {
   width: 18%;
 }
-.invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
+.invoices table .country, .invoices table .comp, .invoices table .invNum {
   width: 15%;
+}
+.invoices table .tva {
+  width: 22%;
+}
+.invoices table .names {
+  width: 20%;
 }
 .invoices table .mail {
   width: 25%;
 }
-.invoices table .phone, .invoices table .type {
+.invoices table .phone {
+  width: 15%;
+}
+.invoices table .type {
   width: 10%;
 }
 .invoices table .date {
@@ -1378,16 +1387,25 @@ section.form .form-container form button {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .names, .invoices table .company {
+.invoices table .namesCont, .invoices table .company {
   width: 18%;
 }
-.invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
+.invoices table .country, .invoices table .comp, .invoices table .invNum {
   width: 15%;
+}
+.invoices table .tva {
+  width: 22%;
+}
+.invoices table .names {
+  width: 20%;
 }
 .invoices table .mail {
   width: 25%;
 }
-.invoices table .phone, .invoices table .type {
+.invoices table .phone {
+  width: 15%;
+}
+.invoices table .type {
   width: 10%;
 }
 .invoices table .date {
@@ -1507,15 +1525,23 @@ section.form .form-container form button {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.allInvoices table .invNum {
+.allInvoices table .invNum, .allInvoices table .comp, .allInvoices table .phone {
   width: 15%;
 }
-.allInvoices table .date {
+.allInvoices table .date, .allInvoices table .country, .allInvoices table .type {
   width: 12%;
+}
+.allInvoices table .namesCont {
+  width: 17%;
+}
+.allInvoices table .mail {
+  width: 24%;
+}
+.allInvoices table .company, .allInvoices table .names, .allInvoices table .tva {
+  width: 22%;
 }
 .allInvoices table td {
   height: 3.6vw;
-  width: 7vw;
 }
 .allInvoices table tr:nth-child(even) {
   background-color: #F5F5F5;

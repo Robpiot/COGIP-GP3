@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+// import { useFetchUsers } from "../assets/utils/users";
 
 export default function RegisterForm() {
   const {
@@ -9,19 +10,28 @@ export default function RegisterForm() {
   } = useForm(); //
 
   const onSubmit = (data) => {
-    data.role_id = 1;
-    console.log(data);
+    data.role_id = 4;
+    console.log("Sending data:", data);
+
     fetch("https://cogip-990e44950882.herokuapp.com/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success", data);
+      .then((response) => {
+        if (!response.ok) {
+          console.error("Server response:", response);
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
       })
+      .then((text) => {
+        console.log("Server response text:", text);
+        return JSON.parse(text);
+      })
+      .then((data) => {})
       .catch((error) => {
-        console.error("Error", error);
+        console.error("There was a problem with the fetch operation:", error);
       });
   };
 

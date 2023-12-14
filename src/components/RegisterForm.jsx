@@ -92,7 +92,7 @@ export default function LoginForm() {
         </div>
         <div className="form-control">
           <label></label>
-          <button type="submit">Register</button>
+          <button className="sumbitReg" type="submit">Register</button>
         </div>
       </form>
     </div>

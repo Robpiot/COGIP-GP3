@@ -54,7 +54,7 @@ export default function LoginForm(closeModalLogin) {
         </div>
         <div className="form-control">
           <label></label>
-          <button type="submit">Login</button>
+          <button className="submitLog" type="submit">Login</button>
         </div>
       </form>
     </div>

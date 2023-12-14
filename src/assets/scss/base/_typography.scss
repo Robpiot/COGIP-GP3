@@ -346,6 +346,25 @@ footer {
 //     }
 // }
 
+.modalContainer {
+    .title {
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .form-control {
+        label, input {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+        }
+    }
+
+    .submitLog, .sumbitReg {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+}
+
 
 @media screen and (min-width:320px) and (max-width:425px) {
     .lastInvTable, .lastCompTable, .lastContTable {

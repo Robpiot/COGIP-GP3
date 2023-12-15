@@ -9,8 +9,8 @@ function Logoff() {
   };
 
   return (
-    <button onClick={logoff}>
-      Log off
+    <button className="logoffbtn" onClick={logoff}>
+      Logoff
     </button>
   );
 }

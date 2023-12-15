@@ -638,6 +638,10 @@ footer .bottomLinks nav .copyright {
     font-size: 1.2vw;
   }
 }
+.headerDiv .headerButtons .signUpBtnStyle, .headerDiv .headerButtons .dashboardBtnStyle, .headerDiv .headerButtons .loginBtnStyle, .headerDiv .headerButtons .logoffbtn {
+  font-family: "Roboto", sans-serif;
+}
+
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .ulHeaderLinks li a {
     font-size: 14px;
@@ -2096,6 +2100,30 @@ Files inside this folder can contain specific element styles and layout.
 .headerDiv .headerButtons {
   display: none;
 }
+.headerDiv .headerButtons .signUpBtnStyle, .headerDiv .headerButtons .dashboardBtnStyle {
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.headerDiv .headerButtons .loginBtnStyle, .headerDiv .headerButtons .logoffbtn {
+  background-color: #F9DE4E;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 .headerDiv .headerButtons.is-open {
   display: block;
   position: absolute;
@@ -2161,7 +2189,7 @@ Files inside this folder can contain specific element styles and layout.
     position: static;
     top: auto;
   }
-  .headerDiv .navBarHeader .headerButtons .signUpBtnStyle {
+  .headerDiv .navBarHeader .headerButtons .signUpBtnStyle, .headerDiv .navBarHeader .headerButtons .dashboardBtnStyle {
     background-color: white;
     border: none;
     border-radius: 12px;
@@ -2173,7 +2201,7 @@ Files inside this folder can contain specific element styles and layout.
     margin: 4px 2px;
     cursor: pointer;
   }
-  .headerDiv .navBarHeader .headerButtons .loginBtnStyle {
+  .headerDiv .navBarHeader .headerButtons .loginBtnStyle, .headerDiv .navBarHeader .headerButtons .logoffbtn {
     background-color: #F9DE4E;
     border: none;
     border-radius: 12px;

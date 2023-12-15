@@ -317,35 +317,6 @@ footer {
 }
 
 
-// section.form {
-//     h3 {
-//         color: #000;
-//         font-family: 'Inter' sans-serif;
-//         font-size: 20px;
-//         font-style: normal;
-//         font-weight: 700;
-//         line-height: normal;
-//     }
-
-//     .input {
-//         font-style: normal;
-//         font-weight: 100;
-//         line-height: normal;
-//         font-family: 'Inter', sans-serif;
-//         font-size: 20px;
-//     }
-
-//     .save {
-//         font-family: 'Inter', sans-serif;
-//         font-size: 20px;
-//         text-align: left;
-//         color:white;
-//         font-style: normal;
-//         font-weight: 400;
-//         line-height: normal; 
-//     }
-// }
-
 .modalContainer, .modalContainer-Register {
     .title {
         font-size: 20px;
@@ -467,6 +438,14 @@ footer {
                     font-size: 1.2vw;
                 }
             }
+        }
+    }
+}
+
+.headerDiv {
+    .headerButtons {
+        .signUpBtnStyle, .dashboardBtnStyle, .loginBtnStyle, .logoffbtn {
+            font-family: 'Roboto', sans-serif;
         }
     }
 }

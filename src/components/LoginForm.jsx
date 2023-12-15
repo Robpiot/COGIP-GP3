@@ -1,25 +1,18 @@
 import React from "react";
-import { useRef, useState, useEffect, useContext } from "react";
 import { useForm } from "react-hook-form";
-import api from "../api/axios";
 
-export default function LoginForm(closeModalLogin) {
+export default function LoginForm({ closeModal, mockLogin }) {
   const {
     register, // that is use to register input
     handleSubmit, //we can use this to handle the form submission
     formState: { errors }, //contain all the errors & validations errors
   } = useForm(); //
 
-  const onSubmit = (data) => {
-    api
-      .post("/", data)
-      .then((response) => {
-        console.log(response.data);
-        console.log(data.first_name + " " + data.last_name);
-      })
-      .catch((error) => {
-        console.error(error + " " + "unable to connect");
-      });
+  const onSubmit = (data, event) => {
+    event.preventDefault();
+    console.log(data);
+    mockLogin(); // call the login function when the form is submitted
+    closeModal(); // close the modal when the form is submitted
   };
 
   return (
@@ -64,9 +57,7 @@ export default function LoginForm(closeModalLogin) {
         </div>
         <div className="form-control">
           <label></label>
-          <button className="submitLog" type="submit">
-            Login
-          </button>
+          <button className="submitLog" type="submit">Login</button>
         </div>
       </form>
     </div>

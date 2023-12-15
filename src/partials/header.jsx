@@ -1,17 +1,25 @@
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Logoff from "../assets/utils/Logoff";
+import { useContext } from 'react';
+import { UserContext } from "../assets/utils/UserContext"; 
 // import ModalLogin from "../components/modalLogin";
 // import ModalRegister from "../components/ModalRegister";
 
 export default function Header({ setOpenModal }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, setUser } = useContext(UserContext);
 
   const toggleMenuLinks = () => setIsOpen(!isOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const location = useLocation();
+
+  const navigate = useNavigate();
+
+  <Logoff setUser={setUser} navigate={navigate}/>
 
   return (
     <div className="headerDiv">
@@ -61,23 +69,41 @@ export default function Header({ setOpenModal }) {
           </li>
         </ul>
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>
-          <li className="signupButton">
-            <button
-              className="signUpBtnStyle"
-              onClick={() => setOpenModal('register')}
-            >
-              Sign up
-            </button>
-          </li>
+        {user ? (
+          <>
+            <li className="dashboardButton">
+              <button
+                className="dashboardBtnStyle"
+                onClick={() => navigate('/dashboard')}
+              >
+                Dashboard
+              </button>
+            </li>
+            <li className="logoffButton">
+              <Logoff setUser={setUser} navigate={navigate}/>
+            </li>
+          </>
+        ) : (
+          <>
+            <li className="signupButton">
+              <button
+                className="signUpBtnStyle"
+                onClick={() => setOpenModal('register')}
+              >
+                Sign up
+              </button>
+            </li>
+            <li className="loginButton">
+              <button
+                className="loginBtnStyle"
+                onClick={() => setOpenModal('login')}
+              >
+                Login
+              </button>
+            </li>
+          </>
+        )}
 
-          <li className="loginButton">
-            <button
-              className="loginBtnStyle"
-              onClick={() => setOpenModal('login')}
-            >
-              Login
-            </button>
-          </li>
         </ul>
       </nav>
       <button className="userButton" onClick={toggleMenu}>

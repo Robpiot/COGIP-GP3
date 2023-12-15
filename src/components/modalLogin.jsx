@@ -1,7 +1,10 @@
 import React from "react";
 import LoginForm from "./LoginForm";
+import { useContext } from 'react';
+import { UserContext } from "../assets/utils/UserContext";
 
 export default function ModalLogin({ closeModal }) {
+  const { mockLogin } = useContext(UserContext);
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -17,7 +20,7 @@ export default function ModalLogin({ closeModal }) {
         </div>
 
         <div className="formLoginContainer">
-          <LoginForm />
+        <LoginForm closeModal={closeModal} mockLogin={mockLogin} />
         </div>
       </div>
     </div>

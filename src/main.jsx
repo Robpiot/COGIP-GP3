@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import ApiProvider from "./context/ApiContext.jsx";
 import DashboardProvider from "./context/DashboardContext.jsx";
 import { AuthProvider } from "./context/AuthProvider.jsx";
+import { UserProvider } from './assets/utils/UserContext.jsx'; // import UserProvider
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -14,7 +15,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <ApiProvider>
           <DashboardProvider>
-            <App />
+            <UserProvider> {/* Add UserProvider here */}
+              <App />
+            </UserProvider>
           </DashboardProvider>
         </ApiProvider>
       </AuthProvider>

@@ -6,8 +6,10 @@ export default function RegisterForm() {
   const {
     register, // that is use to register input
     handleSubmit, //we can use this to handle the form submission
-    formState: { errors }, //contain all the errors & validations errors
-  } = useForm(); //
+    reset,
+    formState,
+    formState: { errors, isSubmitSuccessful }, //contain all the errors & validations errors
+  } = useForm({ defaultValue: { something: "anything" } }); //
 
   const onSubmit = (data) => {
     data.role_id = 4;
@@ -34,6 +36,11 @@ export default function RegisterForm() {
         console.error("There was a problem with the fetch operation:", error);
       });
   };
+  React.useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({ first_name: "", last_name: "", email: "", password: "" });
+    }
+  }, [formState, reset]);
 
   return (
     <div className="formLogin">

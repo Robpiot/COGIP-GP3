@@ -1167,7 +1167,7 @@ section.infos .infos-container table tr th {
   min-width: 180px;
 }
 section.infos .infos-container table tr th:first-of-type {
-  min-width: 90px;
+  min-width: 60px;
   max-width: 120px;
 }
 section.infos .infos-container table tr th:nth-of-type(3) {
@@ -1181,17 +1181,20 @@ section.infos .infos-container table tr td {
   font-weight: 300;
   line-height: normal;
 }
+section.infos .infos-container table tr td .btn {
+  height: 20px;
+  width: 20px;
+  margin: auto 5px;
+  cursor: pointer;
+}
 section.infos .infos-container table tr td:first-of-type {
   height: 30px;
-  max-width: 90px;
+  max-width: 60px;
   display: flex;
   flex-direction: row;
 }
-section.infos .infos-container table tr td:first-of-type button {
-  height: 20px;
-  width: 20px;
-  margin: auto 7px;
-  cursor: pointer;
+section.infos .infos-container table tr td input {
+  width: 60%;
 }
 
 @media only screen and (min-width: 1200px) {

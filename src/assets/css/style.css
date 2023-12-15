@@ -948,6 +948,15 @@ header.dashboard-header div h3 {
   font-size: 29px;
   line-height: 28.36px;
 }
+header.dashboard-header a {
+  display: flex;
+  justify-content: end;
+  text-decoration: none;
+  color: #9698D6;
+  color: #232323;
+  font-weight: 700;
+  padding-right: 70px;
+}
 
 @media only screen and (min-width: 756px) {
   header.dashboard-header img {
@@ -1024,6 +1033,12 @@ header.dashboard-header div h3 {
   gap: 50px;
 }
 
+@media only screen and (min-width: 1500px) {
+  .dashboard-sections .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 section.statistics {
   width: 100%;
   max-width: 100%;
@@ -1151,16 +1166,32 @@ section.infos .infos-container table tr th {
   line-height: normal;
   min-width: 180px;
 }
-section.infos .infos-container table tr th:nth-last-of-type(2) {
+section.infos .infos-container table tr th:first-of-type {
+  min-width: 90px;
+  max-width: 120px;
+}
+section.infos .infos-container table tr th:nth-of-type(3) {
   min-width: 150px;
 }
 section.infos .infos-container table tr td {
   color: #000;
   font-family: Inter;
-  font-size: 15px;
+  font-size: clamp(8px, 2.5vw, 15px);
   font-style: normal;
   font-weight: 300;
   line-height: normal;
+}
+section.infos .infos-container table tr td:first-of-type {
+  height: 30px;
+  max-width: 90px;
+  display: flex;
+  flex-direction: row;
+}
+section.infos .infos-container table tr td:first-of-type button {
+  height: 20px;
+  width: 20px;
+  margin: auto 7px;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1200px) {

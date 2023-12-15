@@ -43,7 +43,8 @@ export default async function fetchAll(tableName) {
         };
         // console.warn('dataObject : ', dataObject);
         // console.warn('lastDataObject : ', lastDataObject);
-    
+        // console.log({dataObject, lastDataObject});
+        
         // Retourne les objets contenants les informations des contacts et des derniers contacts.
         return {dataObject, lastDataObject};
         

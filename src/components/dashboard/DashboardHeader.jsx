@@ -1,4 +1,5 @@
 import DashboardImg from "../../assets/img/dashboard.png";
+import { Link } from "react-router-dom";
 
 const DashboardHeader = () => {
     return ( 
@@ -13,6 +14,8 @@ const DashboardHeader = () => {
                     <h3>Welcome back Henry!</h3>
                     <p>You can here add an invoice, a company and some contacts</p>
                 </div>
+
+                <Link to={"/"}>{'> Back to home page'}</Link>
                 
             </header>
         </>

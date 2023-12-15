@@ -935,6 +935,19 @@ header.dashboard-header p {
   line-height: 18px;
   margin: 0;
 }
+header.dashboard-header .homeBtn {
+  background-color: #9698D6;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 header.dashboard-header div {
   background: #9698D6;
   color: #ffffff;

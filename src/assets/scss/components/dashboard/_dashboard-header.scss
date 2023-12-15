@@ -23,6 +23,19 @@ header.dashboard-header {
         line-height: 18px;
         margin: 0;
     }
+    .homeBtn {
+        background-color: #9698D6;
+        color: #ffffff;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+    }
     div {
         background: #9698D6;
         color: #ffffff;

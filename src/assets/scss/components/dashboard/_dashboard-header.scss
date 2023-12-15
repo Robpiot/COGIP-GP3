@@ -36,6 +36,15 @@ header.dashboard-header {
             line-height: 28.36px;
         }
     }
+    a {
+        display: flex;
+        justify-content: end;
+        text-decoration: none;
+        color: #9698D6;
+        color: #232323;
+        font-weight: 700;
+        padding-right: 70px;
+    }
 }
 
 @media only screen and (min-width: 756px) {

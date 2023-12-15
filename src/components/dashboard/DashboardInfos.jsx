@@ -1,8 +1,28 @@
+import { ApiContext } from "../../context/ApiContext";
+import { DashboardContext } from "../../context/DashboardContext";
+import { useContext } from "react";
+
 import toUppercase from "../../functions/toUppercase";
 import formatDate from "../../functions/dateFormat";
 
 
 const DashboardInfos = ({ data }) => {
+
+    const { deleteRow } = useContext(ApiContext);
+    const { changeComponentToDisplay, setEditRow } = useContext(DashboardContext);
+
+    /**
+     * Gère l'édition d'une ligne dans le tableau en modifiant le composant à afficher et en stockant les détails de l'édition.
+     * @param {number} idRowToEdit - L'identifiant de la ligne à éditer.
+     */
+    function handleEditRow(idRowToEdit) {
+        // data.dataName se termine par un "s" !   -> slice(0, -1) pour retirer ce "s"
+        changeComponentToDisplay("update" + (data.dataName).slice(0, -1));
+        setEditRow({
+            tableName: data.dataName,
+            idRow: idRowToEdit
+        })
+    }
 
     // Initialisez les variables pour stocker les titres des colonnes du tableau et les lignes de données.
     let title_1 = '';
@@ -64,6 +84,7 @@ const DashboardInfos = ({ data }) => {
             break;
     }
 
+
     return (
         <section className="infos">
             {data.dataName && <h3>{toUppercase(data.dataName)}</h3>}
@@ -72,17 +93,23 @@ const DashboardInfos = ({ data }) => {
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>{title_1}</th>
                             <th>{title_2}</th>
                             <th>{title_3}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {datas.map(data => (
-                            <tr key={data.id}>
-                                <td>{data.col_1}</td>
-                                <td>{data.col_2}</td>
-                                <td>{data.col_3}</td>
+                        {datas.map(row => (
+                            <tr key={row.id}>
+                                <td>
+                                    <button onClick={() => handleEditRow(row.id)}>E</button>
+                                    {/* <button onClick={() => changeComponentToDisplay("update" + data.dataName, row.id)}>E</button> */}
+                                    <button onClick={async () => await deleteRow(data.dataName, row.id)}>D</button>
+                                </td>
+                                <td>{row.col_1}</td>
+                                <td>{row.col_2}</td>
+                                <td>{row.col_3}</td>
                             </tr>
                         ))}
                     </tbody>

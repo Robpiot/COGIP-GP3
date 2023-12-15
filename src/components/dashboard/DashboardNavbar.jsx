@@ -1,5 +1,7 @@
 import { DashboardContext } from "../../context/DashboardContext";
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../assets/utils/UserContext";
+import toUppercase from "../../functions/toUppercase";
 
 import AdminImg from '../../assets/img/pexels-italo-melo-2379004-1.png'
 
@@ -38,6 +40,7 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
 
 
 const DashboardNavbar = () => {
+    const { user } = useContext(UserContext);
 
     const { 
         changeComponentToDisplay, 
@@ -83,7 +86,7 @@ const DashboardNavbar = () => {
                         {/* Photo + nom de l'utilisateur */}
                         <div className='avatar'>
                             <img src={AdminImg} alt="Photo de l'administrateur" />
-                            <p>Henry George</p>
+                            <p>{toUppercase(user.first_name)} {toUppercase(user.last_name)}</p>
                         </div>
 
                         {/* Ligne de séparation */}

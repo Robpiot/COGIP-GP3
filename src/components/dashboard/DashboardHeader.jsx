@@ -1,7 +1,11 @@
 import DashboardImg from "../../assets/img/dashboard.png";
 import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { UserContext } from "../../assets/utils/UserContext";
+import toUppercase from "../../functions/toUppercase";
 
 const DashboardHeader = () => {
+    const { user } = useContext(UserContext);
     return ( 
         <>
             <header className="dashboard-header">
@@ -11,7 +15,7 @@ const DashboardHeader = () => {
                 <p>dashboard/</p>
                 
                 <div>
-                    <h3>Welcome back Henry!</h3>
+                    <h3>Welcome back {toUppercase(user.first_name)}!</h3>
                     <p>You can here add an invoice, a company and some contacts</p>
                 </div>
 

@@ -1980,6 +1980,15 @@ section.form .form-container form button {
   color: red;
   margin-top: 5px;
 }
+.modalContainer-Register .responseRegister {
+  padding: 6px;
+  align-self: center;
+  background-color: rgb(30, 182, 30);
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  margin-top: 5px;
+}
 
 @media screen and (min-width: 360px) and (max-width: 768px) {
   .modalBackground-register {

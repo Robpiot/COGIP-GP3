@@ -11,6 +11,8 @@ export default function RegisterForm() {
     formState: { errors, isSubmitSuccessful }, //contain all the errors & validations errors
   } = useForm({ defaultValue: { something: "anything" } }); //
 
+  const [message, setMessage] = React.useState("");
+
   const onSubmit = (data) => {
     data.role_id = 4;
     console.log("Sending data:", data);
@@ -39,6 +41,7 @@ export default function RegisterForm() {
   React.useEffect(() => {
     if (isSubmitSuccessful) {
       reset({ first_name: "", last_name: "", email: "", password: "" });
+      setMessage("Successfully registered");
     }
   }, [formState, reset]);
 
@@ -126,6 +129,7 @@ export default function RegisterForm() {
             Register
           </button>
         </div>
+        {message && <p className="responseRegister">{message}</p>}
       </form>
     </div>
   );

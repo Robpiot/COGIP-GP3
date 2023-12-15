@@ -19,5 +19,7 @@ Files inside this folder should contain all styles relating to a reusable compon
 @import './allEverything';
 @import './showCompany';
 @import './infoUser';
+@import './infoInvoices';
 
-@import './_modalLogin.scss'
+@import './_modalLogin.scss';
+@import './modalRegister';

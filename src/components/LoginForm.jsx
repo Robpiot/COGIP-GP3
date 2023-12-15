@@ -1,5 +1,7 @@
 import React from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import { useForm } from "react-hook-form";
+import api from "../api/axios";
 
 export default function LoginForm(closeModalLogin) {
   const {
@@ -9,7 +11,15 @@ export default function LoginForm(closeModalLogin) {
   } = useForm(); //
 
   const onSubmit = (data) => {
-    console.log(data); // data will contain all the input values
+    api
+      .post("/", data)
+      .then((response) => {
+        console.log(response.data);
+        console.log(data.first_name + " " + data.last_name);
+      })
+      .catch((error) => {
+        console.error(error + " " + "unable to connect");
+      });
   };
 
   return (
@@ -54,7 +64,9 @@ export default function LoginForm(closeModalLogin) {
         </div>
         <div className="form-control">
           <label></label>
-          <button type="submit">Login</button>
+          <button className="submitLog" type="submit">
+            Login
+          </button>
         </div>
       </form>
     </div>

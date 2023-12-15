@@ -4,7 +4,7 @@ import { RequestContacts, RequestCompanies } from '../assets/utils/Requests';
 
 export function InfoUser() {
     const [contact, setContact] = useState(null);
-    const [company, setCompany] = useState(null);
+    const [company, setCompany] = useState([]);
     const { id } = useParams();
     console.log(id);
 

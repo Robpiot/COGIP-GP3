@@ -511,7 +511,7 @@ Files inside this folder can contain global styles used in the project.
   color: #F9DE4E;
 }
 
-.contactPage .infoContacts .nameUser {
+.contactPage .infoContacts .nameUser, .contactPage .infoContacts .InvRef, .contactPage .infoInvoices .nameUser, .contactPage .infoInvoices .InvRef, .InvoicePage .infoContacts .nameUser, .InvoicePage .infoContacts .InvRef, .InvoicePage .infoInvoices .nameUser, .InvoicePage .infoInvoices .InvRef {
   color: #000;
   font-family: "Inter", sans-serif;
   font-size: 4.5vw;
@@ -520,7 +520,7 @@ Files inside this folder can contain global styles used in the project.
   line-height: normal;
   margin-bottom: 2%;
 }
-.contactPage .infoContacts .cont li {
+.contactPage .infoContacts .cont li, .contactPage .infoInvoices .cont li, .InvoicePage .infoContacts .cont li, .InvoicePage .infoInvoices .cont li {
   color: #000;
   font-family: "Roboto", sans-serif;
   font-size: 1.7vw;
@@ -528,14 +528,14 @@ Files inside this folder can contain global styles used in the project.
   font-weight: 600;
   line-height: normal;
 }
-.contactPage .infoContacts .cont li .bold {
+.contactPage .infoContacts .cont li .bold, .contactPage .infoInvoices .cont li .bold, .InvoicePage .infoContacts .cont li .bold, .InvoicePage .infoInvoices .cont li .bold {
   font-weight: 900;
 }
-.contactPage .infoContacts .cont li a {
+.contactPage .infoContacts .cont li a, .contactPage .infoInvoices .cont li a, .InvoicePage .infoContacts .cont li a, .InvoicePage .infoInvoices .cont li a {
   text-decoration: none;
   color: black;
 }
-.contactPage .infoContacts .cont li a:hover {
+.contactPage .infoContacts .cont li a:hover, .contactPage .infoInvoices .cont li a:hover, .InvoicePage .infoContacts .cont li a:hover, .InvoicePage .infoInvoices .cont li a:hover {
   color: #F9DE4E;
 }
 
@@ -567,6 +567,19 @@ footer .bottomLinks nav .copyright {
   font-family: "Inter", sans-serif;
   font-size: 0.9vw;
   color: #737373;
+}
+
+.modalContainer .title, .modalContainer-Register .title {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.modalContainer .form-control label, .modalContainer .form-control input, .modalContainer-Register .form-control label, .modalContainer-Register .form-control input {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+.modalContainer .submitLog, .modalContainer .sumbitReg, .modalContainer-Register .submitLog, .modalContainer-Register .sumbitReg {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
@@ -1345,7 +1358,7 @@ section.form .form-container form button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 7%;
+  padding: 0% 7% 7% 7%;
   position: relative;
 }
 .page .home .title {
@@ -1533,6 +1546,7 @@ section.form .form-container form button {
 }
 .allInvoices table td {
   height: 3.6vw;
+  width: 7vw;
 }
 .allInvoices table tr:nth-child(even) {
   background-color: #F5F5F5;
@@ -1769,19 +1783,60 @@ section.form .form-container form button {
   height: 18vw;
 }
 
+.InvoicePage {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-bottom: 20%;
+  gap: 20%;
+  align-items: center;
+}
+.InvoicePage .infoInvoices {
+  display: flex;
+  flex-direction: column;
+}
+.InvoicePage .infoInvoices .InvRef {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 99;
+}
+.InvoicePage .infoInvoices .InvRef::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 13.7%;
+  bottom: 0;
+  height: 30%;
+  width: 100%;
+  background-color: #F9DE4E;
+  z-index: -1;
+}
+.InvoicePage .infoInvoices .cont {
+  padding-left: 0;
+}
+.InvoicePage .infoInvoices .cont li {
+  list-style-type: none;
+}
+
 .modalBackground {
   grid-row: 2;
   width: 100vw;
-  height: 70vh;
+  height: 65vh;
   background-color: #F9DE4E;
   position: static;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  z-index: 0;
 }
 .modalBackground .modalContainer {
+  position: absolute;
+  top: 32%;
+  left: 25%;
   width: 50%;
-  height: 40vh;
+  height: 50vh;
   border-radius: 12px;
   background-color: whitesmoke;
   box-shadow: rgba(0, 0, 0, 0.32) 0px 5px 15px;
@@ -1793,12 +1848,11 @@ section.form .form-container form button {
 .modalBackground .modalContainer .title {
   display: inline-block;
   text-align: center;
-  font-size: 20px;
+  margin-bottom: 5%;
 }
 .modalBackground .modalContainer .titleCloseBtn {
   display: flex;
   justify-content: flex-end;
-  font-family: "roboto", sans-serif;
 }
 .modalBackground .modalContainer .titleCloseBtn .closeBtn {
   background-color: transparent;
@@ -1809,7 +1863,7 @@ section.form .form-container form button {
 .modalBackground .modalContainer .formLogin {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 30vw;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ddd;
@@ -1829,11 +1883,114 @@ section.form .form-container form button {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+.modalBackground .modalContainer .submitLog, .modalBackground .modalContainer .sumbitReg {
+  border-radius: 5px;
+  padding: 3%;
+}
+.modalBackground .modalContainer .submitLog:hover, .modalBackground .modalContainer .sumbitReg:hover {
+  background-color: #F9DE4E;
+}
 .modalBackground .modalContainer .errorMsg {
   color: red;
   margin-top: 5px;
 }
 
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  .modalBackground {
+    width: 100vw;
+    height: 70vh;
+  }
+  .modalBackground .modalContainer {
+    top: 20%;
+    left: 22%;
+  }
+}
+.modalBackground-register {
+  grid-row: 2;
+  width: 100vw;
+  height: 84vh;
+  background-color: #F9DE4E;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 0;
+}
+
+.modalContainer-Register {
+  position: absolute;
+  top: 32%;
+  left: 25%;
+  width: 50%;
+  height: 70vh;
+  border-radius: 12px;
+  background-color: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.32) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  justify-content: flex-start;
+}
+.modalContainer-Register .title {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 5%;
+}
+.modalContainer-Register .titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+.modalContainer-Register .titleCloseBtn .closeBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modalContainer-Register .formLogin {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.modalContainer-Register .form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.modalContainer-Register .form-control label {
+  margin-bottom: 5px;
+}
+.modalContainer-Register .form-control input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.modalContainer-Register .submitLog, .modalContainer-Register .sumbitReg {
+  border-radius: 5px;
+  padding: 3%;
+}
+.modalContainer-Register .submitLog:hover, .modalContainer-Register .sumbitReg:hover {
+  background-color: #F9DE4E;
+}
+.modalContainer-Register .errorMsg {
+  color: red;
+  margin-top: 5px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  .modalBackground-register {
+    width: 100vw;
+    height: 70vh;
+  }
+  .modalBackground-register .modalContainer-Register {
+    top: 20%;
+    left: 22%;
+  }
+}
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
@@ -1846,6 +2003,8 @@ Files inside this folder can contain specific element styles and layout.
 .navBarHeader {
   display: flex;
   width: 80%;
+  position: relative;
+  z-index: 10;
 }
 
 .headerDiv {
@@ -1925,13 +2084,13 @@ Files inside this folder can contain specific element styles and layout.
   color: black;
 }
 
-@media only screen and (min-width: 756px) {
+@media only screen and (min-width: 880px) {
   .menuButton, .userButton {
     display: none;
   }
   .headerDiv {
     background-color: #F9DE4E;
-    padding: 30px;
+    padding: 30px 30px 0px 30px;
   }
   .headerDiv .navBarHeader {
     display: grid;
@@ -2073,13 +2232,21 @@ footer .divContact li {
 }
 footer .divContact .listeSocials, footer .divContact ul {
   display: flex;
-  gap: 10%;
+  gap: 5.5%;
   padding-left: 0;
   margin-bottom: 10%;
+  text-align: left;
+  width: 30vw;
 }
 footer .divContact .listeSocials li, footer .divContact ul li {
   margin: 0%;
   padding: 0%;
+}
+footer .divContact .listeSocials li .svgTransform, footer .divContact ul li .svgTransform {
+  width: 1.5vw;
+}
+footer .divContact .listeSocials li .fontawesome, footer .divContact ul li .fontawesome {
+  font-size: 1.5vw;
 }
 footer .divContact .listeContacts li {
   margin-top: 0;

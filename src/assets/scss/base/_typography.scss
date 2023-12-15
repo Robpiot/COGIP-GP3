@@ -230,9 +230,9 @@
     }
 }
 
-.contactPage {
-    .infoContacts {
-        .nameUser {
+.contactPage, .InvoicePage {
+    .infoContacts, .infoInvoices {
+        .nameUser, .InvRef {
             color: #000;
             font-family: 'Inter', sans-serif;
             font-size: 4.5vw;
@@ -345,6 +345,25 @@ footer {
 //         line-height: normal; 
 //     }
 // }
+
+.modalContainer, .modalContainer-Register {
+    .title {
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .form-control {
+        label, input {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+        }
+    }
+
+    .submitLog, .sumbitReg {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+}
 
 
 @media screen and (min-width:320px) and (max-width:425px) {

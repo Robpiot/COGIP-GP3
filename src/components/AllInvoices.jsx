@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import formatDate from "../assets/utils/Date";
 
 export function AllInvoices() {
     const [invoices, setInvoices] = useState([]);
@@ -18,6 +19,8 @@ export function AllInvoices() {
                 const company = companiesResult.find(company => company.id === invoice.id_company);
                 return { ...invoice, companyName: company ? company.name : 'Unknown', companyId: company ? company.id : null };
             });
+
+            invoicesWithCompanyData.sort((a, b) => new Date(b.due_date) - new Date(a.due_date));
     
             setInvoices(invoicesWithCompanyData);
         };
@@ -46,14 +49,17 @@ export function AllInvoices() {
                     .map(invoice => {
                         return (
                             <tr key={invoice.id}>
-                                <td>{invoice.ref}</td>
+                                <td>
+                                    <Link to={`/ShowInvoices/${invoice.id}`}>
+                                        {invoice.ref}
+                                    </Link></td>
                                 <td>{invoice.due_date}</td>
                                 <td>
                                     <Link to={`/ShowCompany/${invoice.companyId}`}>
                                         {invoice.companyName}
                                     </Link>
                                 </td>
-                                <td>{invoice.created_at}</td>
+                                <td>{formatDate(invoice.created_at)}</td>
                             </tr>
                         );
                     })}

@@ -71,7 +71,8 @@ export default function Header({ setOpenModal }) {
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>
         {user ? (
           <>
-            <li className="dashboardButton">
+          {(user.role_id === 1 || user.role_id === 2) && (
+                        <li className="dashboardButton">
               <button
                 className="dashboardBtnStyle"
                 onClick={() => navigate('/dashboard')}
@@ -79,6 +80,7 @@ export default function Header({ setOpenModal }) {
                 Dashboard
               </button>
             </li>
+          )}
             <li className="logoffButton">
               <Logoff setUser={setUser} navigate={navigate}/>
             </li>

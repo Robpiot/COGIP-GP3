@@ -44,8 +44,6 @@ section.infos {
         margin: 24px 30px 50px;
 
         table {
-
-            
             tr {
                 text-align: left;
                 height: 2rem;
@@ -59,7 +57,7 @@ section.infos {
                     line-height: normal;
                     min-width: 180px;
                     &:first-of-type {
-                        min-width: 90px;
+                        min-width: 60px;
                         max-width: 120px;
                     }
                     &:nth-of-type(3) {
@@ -74,40 +72,43 @@ section.infos {
                     font-style: normal;
                     font-weight: 300;
                     line-height: normal;
+                    .btn {
+                        height: 20px;
+                        width: 20px;
+                        margin: auto 5px;
+                        cursor: pointer;
+                        border:none;
+                        background-color: white;
+                        svg {
+                            filter: invert(67%) 
+                                    sepia(65%) 
+                                    saturate(527%) 
+                                    hue-rotate(197deg) 
+                                    brightness(88%) 
+                                    contrast(88%);
+                            &:hover {
+                                // filter: invert(31%) 
+                                //         sepia(45%) 
+                                //         saturate(1167%) 
+                                //         hue-rotate(206deg) 
+                                //         brightness(92%) 
+                                //         contrast(90%);
+                                filter: invert(68%) 
+                                        sepia(37%) 
+                                        saturate(5815%) 
+                                        hue-rotate(316deg) 
+                                        brightness(122%) 
+                                        contrast(106%);
+                            }
+                        }
+                    }
                     &:first-of-type {
                         height: 30px;
-                        max-width: 90px;
+                        max-width: 60px;
                         display: flex;
-                        flex-direction: row;
-                        .editDelete {
-                            height: 20px;
-                            width: 20px;
-                            margin: auto 7px;
-                            cursor: pointer;
-                            border:none;
-                            background-color: white;
-                            svg {
-                                filter: invert(67%) 
-                                        sepia(65%) 
-                                        saturate(527%) 
-                                        hue-rotate(197deg) 
-                                        brightness(88%) 
-                                        contrast(88%);
-                                &:hover {
-                                    // filter: invert(31%) 
-                                    //         sepia(45%) 
-                                    //         saturate(1167%) 
-                                    //         hue-rotate(206deg) 
-                                    //         brightness(92%) 
-                                    //         contrast(90%);
-                                    filter: invert(68%) 
-                                            sepia(37%) 
-                                            saturate(5815%) 
-                                            hue-rotate(316deg) 
-                                            brightness(122%) 
-                                            contrast(106%);
-                                }
-                            }
+                        flex-direction: row;                            
+                        input {
+                            width: 60%;
                         }
                     }
                 }
@@ -125,6 +126,7 @@ section.infos {
         flex-basis: 580px;
     }
 }
+
 @media only screen and (min-width: 1500px) {
     section.infos {    
         flex-basis: 570px;

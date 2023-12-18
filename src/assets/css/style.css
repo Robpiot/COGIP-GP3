@@ -1171,7 +1171,7 @@ section.infos .infos-container table tr th {
   min-width: 180px;
 }
 section.infos .infos-container table tr th:first-of-type {
-  min-width: 90px;
+  min-width: 60px;
   max-width: 120px;
 }
 section.infos .infos-container table tr th:nth-of-type(3) {
@@ -1185,25 +1185,28 @@ section.infos .infos-container table tr td {
   font-weight: 300;
   line-height: normal;
 }
-section.infos .infos-container table tr td:first-of-type {
-  height: 30px;
-  max-width: 90px;
-  display: flex;
-  flex-direction: row;
-}
-section.infos .infos-container table tr td:first-of-type .editDelete {
+section.infos .infos-container table tr td .btn {
   height: 20px;
   width: 20px;
-  margin: auto 7px;
+  margin: auto 5px;
   cursor: pointer;
   border: none;
   background-color: white;
 }
-section.infos .infos-container table tr td:first-of-type .editDelete svg {
+section.infos .infos-container table tr td .btn svg {
   filter: invert(67%) sepia(65%) saturate(527%) hue-rotate(197deg) brightness(88%) contrast(88%);
 }
-section.infos .infos-container table tr td:first-of-type .editDelete svg:hover {
+section.infos .infos-container table tr td .btn svg:hover {
   filter: invert(68%) sepia(37%) saturate(5815%) hue-rotate(316deg) brightness(122%) contrast(106%);
+}
+section.infos .infos-container table tr td:first-of-type {
+  height: 30px;
+  max-width: 60px;
+  display: flex;
+  flex-direction: row;
+}
+section.infos .infos-container table tr td:first-of-type input {
+  width: 60%;
 }
 
 @media only screen and (min-width: 1200px) {

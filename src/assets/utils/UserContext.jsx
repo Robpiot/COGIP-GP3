@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
       id: 1,
       first_name: 'super',
       last_name: 'admin',
-      role_id: 1,
+      role_id: 2,
       roles_name: 'superAdmin',
       email: 'boss@gmail.com',
       password: 'rootroot',

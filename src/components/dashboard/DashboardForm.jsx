@@ -3,11 +3,11 @@ import { useContext, useEffect, useState } from "react";
 import CreateInvoices from "./form/CreateInvoices";
 import CreateCompanies from "./form/CreateCompanies";
 import CreateContacts from "./form/CreateContacts";
-import UpdateInvoice from "./form/UpdateInvoice";
-
 import toUppercase from "../../functions/toUppercase";
-import UpdateCompanie from "./form/UpdateCompanie";
-import UpdateContact from "./form/UpdateContact";
+
+// import UpdateInvoice from "./form/UpdateInvoice";
+// import UpdateCompanie from "./form/UpdateCompanie";
+// import UpdateContact from "./form/UpdateContact";
 
 
 const Form = () => {
@@ -33,9 +33,9 @@ const Form = () => {
                 {componentToDisplay === 'Invoice' && <CreateInvoices />}
                 {componentToDisplay === 'Companie' && <CreateCompanies />}
                 {componentToDisplay === 'Contact' && <CreateContacts />}
-                {componentToDisplay === 'updateinvoice' && <UpdateInvoice />}
+                {/* {componentToDisplay === 'updateinvoice' && <UpdateInvoice />}
                 {componentToDisplay === 'updatecompanie' && <UpdateCompanie />}
-                {componentToDisplay === 'updatecontact' && <UpdateContact />}
+                {componentToDisplay === 'updatecontact' && <UpdateContact />} */}
             </div>
         </section>
     );

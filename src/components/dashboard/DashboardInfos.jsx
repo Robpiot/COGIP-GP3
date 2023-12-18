@@ -51,7 +51,11 @@ const DashboardInfos = ({ data }) => {
                     "id_company": row.id_company
                 };         
                 if (colKey === 'col_1') {
-                    datasToSend.ref = inputValue;
+                    if (!data.dataInfos.find(row => row.ref === inputValue.trim())) {
+                        datasToSend.ref = inputValue;
+                    } else {
+                        alert('Cette référence est déjà présente en DB ! \nEntrer une autre référence.');
+                    }
                 } else if (colKey === 'col_2') {
                     datasToSend.due_at = new Date(inputValue);
                 } else if (colKey === 'col_3') {
@@ -85,7 +89,12 @@ const DashboardInfos = ({ data }) => {
                 if (colKey === 'col_1') {
                     datasToSend.name = inputValue;
                 } else if (colKey === 'col_2') {
-                    datasToSend.tva = inputValue;
+                    if (!data.dataInfos.find(row => row.tva === inputValue.trim())) {
+                        console.log(data.dataInfos.find(row => row.tva === inputValue.trim()));
+                        datasToSend.tva = inputValue;
+                    } else {
+                        alert('Ce numéro de TVA est déjà présent en DB ! \nEntrer un autre numéro de TVA.');
+                    }
                 } else if (colKey === 'col_3') {
                     datasToSend.country = inputValue;
                 } 

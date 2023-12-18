@@ -848,13 +848,20 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout img {
   height: 48px;
   border-radius: 50px;
 }
-header.dashboard-navbar .menu--left .menuToggle .menuItem .logout P {
+header.dashboard-navbar .menu--left .menuToggle .menuItem .logout .logoutDash {
   color: #9698D6;
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  width: 120px;
+  background-color: white;
+  border: none;
+  height: 30px;
+  padding: 0;
+  justify-content: end;
+  margin-left: 50px;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -2240,7 +2247,7 @@ Files inside this folder can contain specific element styles and layout.
     margin: 4px 2px;
     cursor: pointer;
   }
-  .headerDiv .navBarHeader .headerButtons .loginBtnStyle, .headerDiv .navBarHeader .headerButtons .logoffbtn {
+  .headerDiv .navBarHeader .headerButtons .loginBtnStyle, .headerDiv .navBarHeader .headerButtons .logout {
     background-color: #F9DE4E;
     border: none;
     border-radius: 12px;

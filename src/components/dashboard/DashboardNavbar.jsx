@@ -9,7 +9,7 @@ import DashboardIcon from '../../assets/icons/dashboard.svg'
 import InvoicesIcon from '../../assets/icons/invoices.svg'
 import CompaniesIcon from '../../assets/icons/companies.svg'
 import ContactsIcon from '../../assets/icons/contacts.svg'
-
+import Logoff from "../../assets/utils/Logoff";
 
 /*
     Extraction des éléments répétitifs : 
@@ -41,6 +41,10 @@ const MenuItem = ({ label, icon, onClick, isSelected }) => (
 
 const DashboardNavbar = () => {
     const { user } = useContext(UserContext);
+
+    const handleLogoff = () => {
+        Logoff();
+    }
 
     const { 
         changeComponentToDisplay, 
@@ -111,7 +115,7 @@ const DashboardNavbar = () => {
                         <div className="logout">
                             <img src={AdminImg} alt="Photo de l'administrateur" />
                             {/* <Link to={''}><p>Logout</p></Link> */}
-                            <p>Logout</p>
+                            <Logoff />
                         </div>
 
                     </div>

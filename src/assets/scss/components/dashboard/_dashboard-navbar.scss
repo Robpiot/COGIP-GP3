@@ -170,13 +170,20 @@ header.dashboard-navbar {
                         height: 48px;
                         border-radius: 50px;
                     }                       
-                    P {
+                    .logoutDash {
                         color: #9698D6;
                         font-family: Inter;
                         font-size: 20px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: normal;
+                        width: 120px;
+                        background-color: white;
+                        border: none;
+                        height: 30px;
+                        padding: 0;
+                        justify-content: end;
+                        margin-left: 50px;
                     }
                 }
             }

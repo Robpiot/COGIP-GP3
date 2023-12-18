@@ -22,18 +22,18 @@ export default function RegisterForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((response) => {
-        if (!response.ok) {
-          console.error("Server response:", response);
-          throw new Error(`HTTP error! status: ${response.status}`);
+      .then((response) => response.json()) // Parse the response body as JSON
+      .then((data) => {
+        console.log("Server response data:", data);
+        if (data.status === 400) {
+          // Check the status property of the parsed object
+          setMessage("This email is already in use");
+        } else if (data.status >= 200 && data.status < 300) {
+          setMessage("You are now registered");
+        } else {
+          throw new Error(`HTTP error! status: ${data.status}`);
         }
-        return response.text();
       })
-      .then((text) => {
-        console.log("Server response text:", text);
-        return JSON.parse(text);
-      })
-      .then((data) => {})
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
       });
@@ -41,7 +41,7 @@ export default function RegisterForm() {
   React.useEffect(() => {
     if (isSubmitSuccessful) {
       reset({ first_name: "", last_name: "", email: "", password: "" });
-      setMessage("Successfully registered");
+      // setMessage("Successfully registered");
     }
   }, [formState, reset]);
 

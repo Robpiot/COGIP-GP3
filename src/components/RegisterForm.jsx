@@ -18,9 +18,9 @@ export default function RegisterForm() {
     console.log("Sending data:", data);
 
     fetch("https://cogip-990e44950882.herokuapp.com/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     })
       .then((response) => response.json()) // Parse the response body as JSON
       .then((data) => {
@@ -112,6 +112,7 @@ export default function RegisterForm() {
             {...register("password", {
               required: true,
               minLength: 6,
+              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/,
             })}
           />
           {errors.password && errors.password.type === "required" && (
@@ -120,6 +121,12 @@ export default function RegisterForm() {
           {errors.password && errors.password.type === "minLength" && (
             <p className="errorMsg">
               Password should be at-least 6 characters.
+            </p>
+          )}
+          {errors.password && errors.password.type === "pattern" && (
+            <p className="errorMsg">
+              Password must contain at least one uppercase letter, one lowercase
+              letter, and one number.
             </p>
           )}
         </div>

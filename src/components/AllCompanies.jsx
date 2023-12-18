@@ -50,7 +50,7 @@ export function AllCompanies() {
                             </td>
                             <td>{company.tva}</td>
                             <td>{company.country}</td>
-                            <td>{company.type}</td>
+                            <td>{company.types_name}</td>
                             <td>{formatDate(company.created_at)}</td>
                         </tr>
                     );

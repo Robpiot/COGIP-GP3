@@ -45,7 +45,7 @@ export default function LastInvoices() {
                                         {invoice.ref}
                                     </Link>
                                 </td>
-                                <td>{invoice.due_date}</td>
+                                <td>{formatDate(invoice.due_at)}</td>
                                 <td>
                                     <Link to={`/ShowCompany/${invoice.companyId}`}>
                                         {invoice.companyName}

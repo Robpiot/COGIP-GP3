@@ -93,7 +93,7 @@ export function InfoCompany() {
                                     <Link to={`/ShowInvoices/${invoice.id}`}>
                                         {invoice.ref}
                                     </Link></td>
-                                <td>{invoice.due_date}</td>
+                                <td>{formatDate(invoice.due_at)}</td>
                                 <td>
                                     <Link key={company.id} to={`/ShowCompany/${company.id}`}>
                                         {company.name}

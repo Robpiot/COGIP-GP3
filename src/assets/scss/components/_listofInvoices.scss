@@ -8,18 +8,30 @@
             background-color:#F9DE4E;
             height: 3.6vw;
         }
-        .names, .company {
+        .namesCont, .company {
             width:18%;
         }
-        .tva, .country, .comp, .invNum {
+        .country, .comp, .invNum {
             width: 15%;
+        }
+
+        .tva {
+            width: 22%;
+        }
+        
+        .names {
+            width: 20%;
         }
 
         .mail {
             width:25%;
         }
 
-        .phone, .type {
+        .phone {
+            width: 15%;
+        }
+
+        .type {
             width: 10%;
         }
 

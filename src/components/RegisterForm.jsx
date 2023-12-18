@@ -18,9 +18,9 @@ export default function RegisterForm() {
     console.log("Sending data:", data);
 
     fetch("https://cogip-990e44950882.herokuapp.com/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
     })
       .then((response) => response.json()) // Parse the response body as JSON
       .then((data) => {

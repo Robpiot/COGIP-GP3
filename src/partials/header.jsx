@@ -1,16 +1,25 @@
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
+import Logoff from "../assets/utils/Logoff";
+import { useContext } from "react";
+import { UserContext } from "../assets/utils/UserContext";
 // import ModalLogin from "../components/modalLogin";
 // import ModalRegister from "../components/ModalRegister";
 
 export default function Header({ setOpenModal }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, setUser } = useContext(UserContext);
 
   const toggleMenuLinks = () => setIsOpen(!isOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const location = useLocation();
+
+  const navigate = useNavigate();
+
+  <Logoff setUser={setUser} navigate={navigate} />;
 
   return (
     <div className="headerDiv">
@@ -22,8 +31,7 @@ export default function Header({ setOpenModal }) {
           <li>
             <NavLink
               to="/"
-              isactive={(match, location) => location.pathname === "/"}
-              activeclassname="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Home
             </NavLink>
@@ -31,8 +39,7 @@ export default function Header({ setOpenModal }) {
           <li>
             <NavLink
               to="/invoices"
-              isactive={(match, location) => location.pathname === "/"}
-              activeclassname="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Invoices
             </NavLink>
@@ -40,8 +47,7 @@ export default function Header({ setOpenModal }) {
           <li>
             <NavLink
               to="/Companies"
-              isactive={(match, location) => location.pathname === "/"}
-              activeclassname="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Companies
             </NavLink>
@@ -49,8 +55,7 @@ export default function Header({ setOpenModal }) {
           <li>
             <NavLink
               to="/contacts"
-              isactive={(match, location) => location.pathname === "/"}
-              activeclassname="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Contacts
             </NavLink>
@@ -64,23 +69,42 @@ export default function Header({ setOpenModal }) {
           </li>
         </ul>
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>
-          <li className="signupButton">
-            <button
-              className="signUpBtnStyle"
-              onClick={() => setOpenModal("register")}
-            >
-              Sign up
-            </button>
-          </li>
-
-          <li className="loginButton">
-            <button
-              className="loginBtnStyle"
-              onClick={() => setOpenModal("login")}
-            >
-              Login
-            </button>
-          </li>
+          {user ? (
+            <>
+              {(user.role_id === 1 || user.role_id === 2) && (
+                <li className="dashboardButton">
+                  <button
+                    className="dashboardBtnStyle"
+                    onClick={() => navigate("/dashboard")}
+                  >
+                    Dashboard
+                  </button>
+                </li>
+              )}
+              <li className="logoffButton">
+                <Logoff setUser={setUser} navigate={navigate} />
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="signupButton">
+                <button
+                  className="signUpBtnStyle"
+                  onClick={() => setOpenModal("register")}
+                >
+                  Sign up
+                </button>
+              </li>
+              <li className="loginButton">
+                <button
+                  className="loginBtnStyle"
+                  onClick={() => setOpenModal("login")}
+                >
+                  Login
+                </button>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
       <button className="userButton" onClick={toggleMenu}>

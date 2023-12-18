@@ -85,6 +85,30 @@
 
   .headerButtons {
       display: none;
+      .signUpBtnStyle, .dashboardBtnStyle {
+          background-color: white;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        .loginBtnStyle, .logoffbtn {
+          background-color: #F9DE4E;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
   }
   
   .headerButtons.is-open{
@@ -180,11 +204,11 @@
       }
 
       .headerButtons {
-          grid-column: 3;
-          display: flex;
+        grid-column: 3;
+        display: flex;
         position: static; // Reset the positioning
         top: auto; // Reset the top property
-        .signUpBtnStyle {
+        .signUpBtnStyle, .dashboardBtnStyle {
           background-color: white;
           border: none;
           border-radius: 12px;
@@ -196,7 +220,7 @@
           margin: 4px 2px;
           cursor: pointer;
         }
-        .loginBtnStyle {
+        .loginBtnStyle, .logoffbtn {
           background-color: #F9DE4E;
           border: none;
           border-radius: 12px;

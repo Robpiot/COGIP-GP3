@@ -638,6 +638,10 @@ footer .bottomLinks nav .copyright {
     font-size: 1.2vw;
   }
 }
+.headerDiv .headerButtons .signUpBtnStyle, .headerDiv .headerButtons .dashboardBtnStyle, .headerDiv .headerButtons .loginBtnStyle, .headerDiv .headerButtons .logoffbtn {
+  font-family: "Roboto", sans-serif;
+}
+
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .ulHeaderLinks li a {
     font-size: 14px;
@@ -1205,6 +1209,14 @@ section.infos .infos-container table tr td .btn {
   width: 20px;
   margin: auto 5px;
   cursor: pointer;
+  border: none;
+  background-color: white;
+}
+section.infos .infos-container table tr td .btn svg {
+  filter: invert(67%) sepia(65%) saturate(527%) hue-rotate(197deg) brightness(88%) contrast(88%);
+}
+section.infos .infos-container table tr td .btn svg:hover {
+  filter: invert(68%) sepia(37%) saturate(5815%) hue-rotate(316deg) brightness(122%) contrast(106%);
 }
 section.infos .infos-container table tr td:first-of-type {
   height: 30px;
@@ -1212,7 +1224,7 @@ section.infos .infos-container table tr td:first-of-type {
   display: flex;
   flex-direction: row;
 }
-section.infos .infos-container table tr td input {
+section.infos .infos-container table tr td:first-of-type input {
   width: 60%;
 }
 
@@ -1317,16 +1329,25 @@ section.form .form-container form button {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .names, .invoices table .company {
+.invoices table .namesCont, .invoices table .company {
   width: 18%;
 }
-.invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
+.invoices table .country, .invoices table .comp, .invoices table .invNum {
   width: 15%;
+}
+.invoices table .tva {
+  width: 22%;
+}
+.invoices table .names {
+  width: 20%;
 }
 .invoices table .mail {
   width: 25%;
 }
-.invoices table .phone, .invoices table .type {
+.invoices table .phone {
+  width: 15%;
+}
+.invoices table .type {
   width: 10%;
 }
 .invoices table .date {
@@ -1431,16 +1452,25 @@ section.form .form-container form button {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.invoices table .names, .invoices table .company {
+.invoices table .namesCont, .invoices table .company {
   width: 18%;
 }
-.invoices table .tva, .invoices table .country, .invoices table .comp, .invoices table .invNum {
+.invoices table .country, .invoices table .comp, .invoices table .invNum {
   width: 15%;
+}
+.invoices table .tva {
+  width: 22%;
+}
+.invoices table .names {
+  width: 20%;
 }
 .invoices table .mail {
   width: 25%;
 }
-.invoices table .phone, .invoices table .type {
+.invoices table .phone {
+  width: 15%;
+}
+.invoices table .type {
   width: 10%;
 }
 .invoices table .date {
@@ -1560,15 +1590,23 @@ section.form .form-container form button {
   background-color: #F9DE4E;
   height: 3.6vw;
 }
-.allInvoices table .invNum {
+.allInvoices table .invNum, .allInvoices table .comp, .allInvoices table .phone {
   width: 15%;
 }
-.allInvoices table .date {
+.allInvoices table .date, .allInvoices table .country, .allInvoices table .type {
   width: 12%;
+}
+.allInvoices table .namesCont {
+  width: 17%;
+}
+.allInvoices table .mail {
+  width: 24%;
+}
+.allInvoices table .company, .allInvoices table .names, .allInvoices table .tva {
+  width: 22%;
 }
 .allInvoices table td {
   height: 3.6vw;
-  width: 7vw;
 }
 .allInvoices table tr:nth-child(even) {
   background-color: #F5F5F5;
@@ -2104,6 +2142,30 @@ Files inside this folder can contain specific element styles and layout.
 .headerDiv .headerButtons {
   display: none;
 }
+.headerDiv .headerButtons .signUpBtnStyle, .headerDiv .headerButtons .dashboardBtnStyle {
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.headerDiv .headerButtons .loginBtnStyle, .headerDiv .headerButtons .logoffbtn {
+  background-color: #F9DE4E;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 .headerDiv .headerButtons.is-open {
   display: block;
   position: absolute;
@@ -2192,7 +2254,7 @@ Files inside this folder can contain specific element styles and layout.
     position: static;
     top: auto;
   }
-  .headerDiv .navBarHeader .headerButtons .signUpBtnStyle {
+  .headerDiv .navBarHeader .headerButtons .signUpBtnStyle, .headerDiv .navBarHeader .headerButtons .dashboardBtnStyle {
     background-color: white;
     border: none;
     border-radius: 12px;
@@ -2204,7 +2266,7 @@ Files inside this folder can contain specific element styles and layout.
     margin: 4px 2px;
     cursor: pointer;
   }
-  .headerDiv .navBarHeader .headerButtons .loginBtnStyle {
+  .headerDiv .navBarHeader .headerButtons .loginBtnStyle, .headerDiv .navBarHeader .headerButtons .logoffbtn {
     background-color: #F9DE4E;
     border: none;
     border-radius: 12px;

@@ -48,17 +48,28 @@
             background-color:#F9DE4E;
             height: 3.6vw;
         }
-        .invNum {
+        .invNum, .comp, .phone {
             width: 15%;
         }
 
-        .date {
+        .date, .country, .type {
             width: 12%;
+        }
+
+        .namesCont {
+            width: 17%;
+        }
+
+        .mail {
+            width: 24%;
+        }
+
+        .company, .names, .tva {
+            width: 22%;
         }
 
         td {
             height: 3.6vw;
-            width: 7vw;
             
         }
         tr:nth-child(even) {

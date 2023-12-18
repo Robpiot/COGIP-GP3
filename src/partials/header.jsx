@@ -67,7 +67,7 @@ export default function Header({ setOpenModal }) {
           <li className="signupButton">
             <button
               className="signUpBtnStyle"
-              onClick={() => setOpenModal('register')}
+              onClick={() => setOpenModal("register")}
             >
               Sign up
             </button>
@@ -76,7 +76,7 @@ export default function Header({ setOpenModal }) {
           <li className="loginButton">
             <button
               className="loginBtnStyle"
-              onClick={() => setOpenModal('login')}
+              onClick={() => setOpenModal("login")}
             >
               Login
             </button>
@@ -88,4 +88,4 @@ export default function Header({ setOpenModal }) {
       </button>
     </div>
   );
-};
+}

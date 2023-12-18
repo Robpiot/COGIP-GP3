@@ -21,6 +21,7 @@
 
 /**
  * Récupère toutes les données d'une table depuis l'API.
+ * Les données sont triées par identifiant (ordre croissant).
  * @returns {Promise<Object>} Un objet contenant le nom des données (de la table) et les informations de la table.
  */
 export default async function fetchAll(tableName) {
@@ -32,24 +33,30 @@ export default async function fetchAll(tableName) {
         // Effectue une requête pour récupérer toutes les données de la table depuis l'API.
         const response = await fetch(url + tableName);
         const json = await response.json();
-    
-        // Construit un objet avec le nom des données (de la table) et les informations de la table.
-        const dataObject = {"dataName": tableName, "dataInfos": json.data};
+        // console.warn('json.data : ', json.data.sort((a, b) => a.created_at - b.created_at));
+
+        // Trie les données par identifiant (ordre croissant).
+        const sortedData = json.data.sort((a, b) => a.id - b.id);
+
+        // Construit un objet avec le nom des données (de la table) et les informations triées de la table.
+        const dataObject = {"dataName": tableName, "dataInfos": sortedData};
+
  
-        const copyData = [...json.data];
+        // Crée une copie triée des données pour le dernier objet.
+        const copyData = [...sortedData];
         const lastDataObject = {
             "dataName": tableName,
             "dataInfos": copyData.slice(-5)
         };
-        // console.warn('dataObject : ', dataObject);
-        // console.warn('lastDataObject : ', lastDataObject);
-        // console.log({dataObject, lastDataObject});
+
+        // Affiche les objets dans la console à des fins de débogage.
+        console.log({dataObject, lastDataObject});
         
         // Retourne les objets contenants les informations des contacts et des derniers contacts.
         return {dataObject, lastDataObject};
         
     }
     catch (error) {
-        throw new Error(`Error when retrieving data from the ${tableName} table`);
+        throw new Error(`Error when retrieving data from the ${tableName} table: ${error.message}`);
     }
 } 

@@ -43,51 +43,65 @@ const DashboardInfos = ({ data }) => {
 
         let datasToSend = '';
 
-        if (data.dataName === 'invoices') {   
-            datasToSend = {
-                "ref": row.ref,
-                "id_company": row.id_company
-            };         
-            if (colKey === 'col_1') {
-                datasToSend.ref = inputValue;
-            } else if (colKey === 'col_3') {
-                datasToSend.id_company = parseInt(inputValue, 10);
-            } 
-        }
-        else if (data.dataName === 'contacts') {  
-            datasToSend = {
-                "name": row.name,
-                "company_id": row.company_id,
-                "email": row.email,
-                "phone": row.phone
-            };          
-            if (colKey === 'col_1') {
-                datasToSend.name = inputValue;
-            } else if (colKey === 'col_2') {
-                datasToSend.phone = inputValue;
-            } else if (colKey === 'col_3') {
-                datasToSend.email = inputValue;
-            } else if (colKey === 'col_4') {
-                datasToSend.company_id = parseInt(inputValue, 10);
-            } 
-        }
-        else if (data.dataName === 'companies') {  
-            datasToSend = {
-                "name": row.name,
-                "type_id": row.type_id,
-                "country": row.country,
-                "tva": row.tva
-            };          
-            if (colKey === 'col_1') {
-                datasToSend.name = inputValue;
-            } else if (colKey === 'col_2') {
-                datasToSend.tva = inputValue;
-            } else if (colKey === 'col_3') {
-                datasToSend.country = inputValue;
-            } 
-        }
+        if (inputValue.trim() !== '' && inputValue.trim() !== null) {
 
-        await updateRow(data.dataName, rowToEdit.id, datasToSend);
+            if (data.dataName === 'invoices') {   
+                datasToSend = {
+                    "ref": row.ref,
+                    "id_company": row.id_company
+                };         
+                if (colKey === 'col_1') {
+                    if (!data.dataInfos.find(row => row.ref === inputValue.trim())) {
+                        datasToSend.ref = inputValue;
+                    } else {
+                        alert('Cette référence est déjà présente en DB ! \nEntrer une autre référence.');
+                    }
+                } else if (colKey === 'col_2') {
+                    datasToSend.due_at = new Date(inputValue);
+                } else if (colKey === 'col_3') {
+                    datasToSend.id_company = parseInt(inputValue, 10);
+                } 
+            }
+            else if (data.dataName === 'contacts') {  
+                datasToSend = {
+                    "name": row.name,
+                    "company_id": row.company_id,
+                    "email": row.email,
+                    "phone": row.phone
+                };          
+                if (colKey === 'col_1') {
+                    datasToSend.name = inputValue;
+                } else if (colKey === 'col_2') {
+                    datasToSend.phone = inputValue;
+                } else if (colKey === 'col_3') {
+                    datasToSend.email = inputValue;
+                } else if (colKey === 'col_4') {
+                    datasToSend.company_id = parseInt(inputValue, 10);
+                } 
+            }
+            else if (data.dataName === 'companies') {  
+                datasToSend = {
+                    "name": row.name,
+                    "type_id": row.type_id,
+                    "country": row.country,
+                    "tva": row.tva
+                };          
+                if (colKey === 'col_1') {
+                    datasToSend.name = inputValue;
+                } else if (colKey === 'col_2') {
+                    if (!data.dataInfos.find(row => row.tva === inputValue.trim())) {
+                        console.log(data.dataInfos.find(row => row.tva === inputValue.trim()));
+                        datasToSend.tva = inputValue;
+                    } else {
+                        alert('Ce numéro de TVA est déjà présent en DB ! \nEntrer un autre numéro de TVA.');
+                    }
+                } else if (colKey === 'col_3') {
+                    datasToSend.country = inputValue;
+                } 
+            }
+            console.log('datasToSend : ', datasToSend);
+            await updateRow(data.dataName, rowToEdit.id, datasToSend);
+        }
 
         // Réinitialisez l'état d'édition après la mise à jour
         setIsBeingEdited({...isBeingEdited, idRow: null, [colKey]: false});
@@ -124,7 +138,7 @@ const DashboardInfos = ({ data }) => {
             datas = data.dataInfos.map(info => ({
                 id: info.id,
                 col_1: info.ref,
-                col_2: formatDate(info.updated_at),
+                col_2: formatDate(info.due_at),
                 col_3: toUppercase(info.name)
             }));
             break;
@@ -249,12 +263,13 @@ const DashboardInfos = ({ data }) => {
                                         <>
                                             <td><button className="btn" onClick={async () => await deleteRow(data.dataName, row.id)}>D</button></td>
                                             <td onClick={() => setIsBeingEdited({idRow: row.id, col_1: true, col_2: false, col_3: false, col_4: false})}>{row.col_1}</td>
-                                            {(title_2 && title_2 !== 'Date') && (
+                                            <td onClick={() => setIsBeingEdited({idRow: row.id, col_1: false, col_2: true, col_3: false, col_4: false})}>{row.col_2}</td>
+                                            {/* {(title_2 && title_2 !== 'Date') && (
                                                 <td onClick={() => setIsBeingEdited({idRow: row.id, col_1: false, col_2: true, col_3: false, col_4: false})}>{row.col_2}</td>
                                             )}
                                             {(title_2 && title_2 === 'Date') && 
                                                 <td>{row.col_2}</td>
-                                            }
+                                            } */}
                                                 
                                             
                                             {/* {(title_2 !== 'Date') ? (

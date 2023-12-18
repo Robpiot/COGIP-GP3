@@ -638,7 +638,7 @@ footer .bottomLinks nav .copyright {
     font-size: 1.2vw;
   }
 }
-.headerDiv .headerButtons .signUpBtnStyle, .headerDiv .headerButtons .dashboardBtnStyle, .headerDiv .headerButtons .loginBtnStyle, .headerDiv .headerButtons .logoffbtn {
+.headerDiv .headerButtons .signUpBtnStyle, .headerDiv .headerButtons .dashboardBtnStyle, .headerDiv .headerButtons .loginBtnStyle, .headerDiv .headerButtons .logout {
   font-family: "Roboto", sans-serif;
 }
 

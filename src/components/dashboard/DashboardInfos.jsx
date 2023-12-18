@@ -39,6 +39,7 @@ const DashboardInfos = ({ data }) => {
 
         // Trouve la ligne correspondante dans la table (stockée dans le state) en fonction de l'ID de la ligne à éditer.
         const row = data.dataInfos.find(row => row.id === rowToEdit.id);
+        // console.log('row : ', row);
 
         let datasToSend = '';
 
@@ -52,10 +53,6 @@ const DashboardInfos = ({ data }) => {
             } else if (colKey === 'col_3') {
                 datasToSend.id_company = parseInt(inputValue, 10);
             } 
-            
-            // console.log('datasToSend : ', datasToSend);
-            // console.log(data.dataName, rowToEdit.id, datasToSend);
-            // await updateRow(data.dataName, rowToEdit.id, datasToSend);
         }
         else if (data.dataName === 'contacts') {  
             datasToSend = {
@@ -73,10 +70,6 @@ const DashboardInfos = ({ data }) => {
             } else if (colKey === 'col_4') {
                 datasToSend.company_id = parseInt(inputValue, 10);
             } 
-            
-            // console.log('datasToSend : ', datasToSend);
-            // console.log(data.dataName, rowToEdit.id, datasToSend);
-            await updateRow(data.dataName, rowToEdit.id, datasToSend);
         }
         else if (data.dataName === 'companies') {  
             datasToSend = {
@@ -92,17 +85,9 @@ const DashboardInfos = ({ data }) => {
             } else if (colKey === 'col_3') {
                 datasToSend.country = inputValue;
             } 
-            
-            console.log('datasToSend : ', datasToSend);
-            console.log(data.dataName, rowToEdit.id, datasToSend);
-            await updateRow(data.dataName, rowToEdit.id, datasToSend);
         }
 
-
-        // console.log('datasToSend : ', datasToSend);
-        // console.log(data.dataName, rowToEdit.id, datasToSend);
-        // await updateRow(data.dataName, rowToEdit.id, datasToSend);
-
+        await updateRow(data.dataName, rowToEdit.id, datasToSend);
 
         // Réinitialisez l'état d'édition après la mise à jour
         setIsBeingEdited({...isBeingEdited, idRow: null, [colKey]: false});
@@ -263,15 +248,23 @@ const DashboardInfos = ({ data }) => {
                                     ) : (
                                         <>
                                             <td><button className="btn" onClick={async () => await deleteRow(data.dataName, row.id)}>D</button></td>
-                                            <td onClick={() => setIsBeingEdited({...isBeingEdited, idRow: row.id, col_1: true})}>{row.col_1}</td>
-                                            {(title_2 !== 'Date') ? (
+                                            <td onClick={() => setIsBeingEdited({idRow: row.id, col_1: true, col_2: false, col_3: false, col_4: false})}>{row.col_1}</td>
+                                            {(title_2 && title_2 !== 'Date') && (
+                                                <td onClick={() => setIsBeingEdited({idRow: row.id, col_1: false, col_2: true, col_3: false, col_4: false})}>{row.col_2}</td>
+                                            )}
+                                            {(title_2 && title_2 === 'Date') && 
+                                                <td>{row.col_2}</td>
+                                            }
+                                                
+                                            
+                                            {/* {(title_2 !== 'Date') ? (
                                                 <td onClick={() => setIsBeingEdited({...isBeingEdited, idRow: row.id, col_2: true})}>{row.col_2}</td>
                                             ) : (
                                                 <td>{row.col_2}</td>
-                                            )}
-                                            <td onClick={() => setIsBeingEdited({...isBeingEdited, idRow: row.id, col_3: true})}>{row.col_3}</td>
+                                            )} */}
+                                            <td onClick={() => setIsBeingEdited({idRow: row.id, col_1: false, col_2: false, col_3: true, col_4: false})}>{row.col_3}</td>
                                             {(title_4 && title_4 !== 'Type') && (
-                                                <td onClick={() => setIsBeingEdited({...isBeingEdited, idRow: row.id, col_4: true})}>{row.col_4}</td>
+                                                <td onClick={() => setIsBeingEdited({idRow: row.id, col_1: false, col_2: false, col_3: false, col_4: true})}>{row.col_4}</td>
                                             )}
                                             {(title_4 && title_4 === 'Type') && (
                                                 <td>{row.col_4}</td>

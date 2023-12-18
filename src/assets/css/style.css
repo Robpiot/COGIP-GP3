@@ -2073,7 +2073,7 @@ Files inside this folder can contain specific element styles and layout.
   left: -43px;
   z-index: 9999;
   list-style-type: none;
-  width: 60vw;
+  width: 70vw;
   background-color: #F9DE4E;
 }
 .headerDiv .ulHeaderLinks.is-open li, .headerDiv .ulHeaderLinks.is-open a {
@@ -2113,7 +2113,7 @@ Files inside this folder can contain specific element styles and layout.
   z-index: 9999;
   list-style-type: none;
   height: 100vh;
-  width: 60vw;
+  width: 70vw;
   background-color: #F9DE4E;
 }
 .headerDiv .headerButtons.is-open .signUpBtnStyle {

@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import fetchAll from '../api/fetchAll';
 import fetchCreate from '../api/fetchCreate';
 import fetchDelete from "../api/fetchDelete";
+import fetchUpdate from "../api/fetchUpdate";
 
 export const ApiContext = createContext();
 
@@ -33,6 +34,7 @@ export default function ApiProvider(props) {
     
     const deleteRow = async (entityName, idRow) => {
         try {
+            // const entityData = await fetchDelete(entityName, idRow);
             await fetchDelete(entityName, idRow);
             const entityData = await fetchAll(entityName);
             switch (entityName) {
@@ -46,13 +48,41 @@ export default function ApiProvider(props) {
                     setInvoices(entityData);
                     break;
             }
-            // const entityData = await fetchDelete(entityName, idRow);
-            // setEntity(entityData);
+            
+       
             
         } catch (error) {
-            console.error(`Error fetching data for ${entityName}: ${error.message}`);
+            console.error(`Error deleting data for ${entityName}: ${error.message}`);
         }
     };
+
+    const updateRow = async (entityName, idRow, data) => {
+        try {
+            // const entityData = await fetchUpdate(entityName, idRow);
+            await fetchUpdate(entityName, idRow, data);
+            const entityData = await fetchAll(entityName);
+
+            switch (entityName) {
+                case 'contacts':
+                    const companiesOfContacts = await fetchAll('companies');
+                    setCompanies(companiesOfContacts);
+                    setContacts(entityData);
+                    break;
+                case 'companies':
+                    const typesOfCompanies = await fetchAll('types');
+                    setTypes(typesOfCompanies);
+                    setCompanies(entityData);
+                    break;
+                case 'invoices':
+                    const companiesOfInvoices = await fetchAll('companies');
+                    setCompanies(companiesOfInvoices);
+                    setInvoices(entityData);
+                    break;
+            } 
+        } catch (error) {
+            console.error(`Error updating data for ${entityName}: ${error.message}`);
+        }
+    }
 
 
     return (
@@ -69,6 +99,7 @@ export default function ApiProvider(props) {
                 invoices,
                 fetchTypes: async () => await fetchEntity('get', 'types', setTypes),
                 types,
+                updateRow,
                 deleteRow
             }}
         >

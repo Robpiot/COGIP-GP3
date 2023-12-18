@@ -939,6 +939,25 @@ header.dashboard-header p {
   line-height: 18px;
   margin: 0;
 }
+header.dashboard-header .homeBtn {
+  background-color: #9698D6;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+header.dashboard-header .homeBtn:hover {
+  background-color: #ffffff;
+  color: #9698D6;
+  border: 1px solid #9698D6;
+  box-shadow: #9698D6 0px 0px 10px 0px;
+}
 header.dashboard-header div {
   background: #9698D6;
   color: #ffffff;
@@ -2019,6 +2038,15 @@ section.form .form-container form button {
 }
 .modalContainer-Register .errorMsg {
   color: red;
+  margin-top: 5px;
+}
+.modalContainer-Register .responseRegister {
+  padding: 6px;
+  align-self: center;
+  background-color: #F9DE4E;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
   margin-top: 5px;
 }
 

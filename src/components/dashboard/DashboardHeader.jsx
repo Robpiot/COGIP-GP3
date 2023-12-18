@@ -19,11 +19,12 @@ const DashboardHeader = () => {
                     <p>You can here add an invoice, a company and some contacts</p>
                 </div>
 
-                <Link to={"/"}>{'> Back to home page'}</Link>
-                
-            </header>
-        </>
-     );
-}
+        <Link to={"/"}>
+          <button className="homeBtn">Home Page</button>
+        </Link>
+      </header>
+    </>
+  );
+};
 
 export default DashboardHeader;

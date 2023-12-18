@@ -11,6 +11,8 @@ export default function RegisterForm() {
     formState: { errors, isSubmitSuccessful }, //contain all the errors & validations errors
   } = useForm({ defaultValue: { something: "anything" } }); //
 
+  const [message, setMessage] = React.useState("");
+
   const onSubmit = (data) => {
     data.role_id = 4;
     console.log("Sending data:", data);
@@ -20,18 +22,18 @@ export default function RegisterForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
     })
-      .then((response) => {
-        if (!response.ok) {
-          console.error("Server response:", response);
-          throw new Error(`HTTP error! status: ${response.status}`);
+      .then((response) => response.json()) // Parse the response body as JSON
+      .then((data) => {
+        console.log("Server response data:", data);
+        if (data.status === 400) {
+          // Check the status property of the parsed object
+          setMessage("This email is already in use");
+        } else if (data.status >= 200 && data.status < 300) {
+          setMessage("You are now registered");
+        } else {
+          throw new Error(`HTTP error! status: ${data.status}`);
         }
-        return response.text();
       })
-      .then((text) => {
-        console.log("Server response text:", text);
-        return JSON.parse(text);
-      })
-      .then((data) => {})
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
       });
@@ -39,6 +41,7 @@ export default function RegisterForm() {
   React.useEffect(() => {
     if (isSubmitSuccessful) {
       reset({ first_name: "", last_name: "", email: "", password: "" });
+      // setMessage("Successfully registered");
     }
   }, [formState, reset]);
 
@@ -126,6 +129,7 @@ export default function RegisterForm() {
             Register
           </button>
         </div>
+        {message && <p className="responseRegister">{message}</p>}
       </form>
     </div>
   );

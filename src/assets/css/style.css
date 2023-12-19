@@ -946,9 +946,16 @@ header.dashboard-header p {
   line-height: 18px;
   margin: 0;
 }
-header.dashboard-header .homeBtn {
+header.dashboard-header .btnHomePage {
+  background-color: #F5F5FB;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+header.dashboard-header .btnHomePage .homeBtn {
   background-color: #9698D6;
-  color: #ffffff;
   border: none;
   border-radius: 12px;
   padding: 10px 20px;
@@ -958,12 +965,20 @@ header.dashboard-header .homeBtn {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border: 1px solid #9698D6;
+  position: absolute;
 }
-header.dashboard-header .homeBtn:hover {
+header.dashboard-header .btnHomePage .homeBtn a {
+  color: #ffffff;
+}
+header.dashboard-header .btnHomePage .homeBtn:hover {
   background-color: #ffffff;
   color: #9698D6;
   border: 1px solid #9698D6;
   box-shadow: #9698D6 0px 0px 10px 0px;
+}
+header.dashboard-header .btnHomePage .homeBtn:hover a {
+  color: black;
 }
 header.dashboard-header div {
   background: #9698D6;
@@ -2113,12 +2128,13 @@ Files inside this folder can contain specific element styles and layout.
 .headerDiv .ulHeaderLinks.is-open {
   display: block;
   position: absolute;
-  height: 100vh;
+  height: 12vh;
   top: 100%;
-  left: -43px;
+  left: 0;
+  top: 5vh;
   z-index: 9999;
   list-style-type: none;
-  width: 70vw;
+  width: 15vw;
   background-color: #F9DE4E;
 }
 .headerDiv .ulHeaderLinks.is-open li, .headerDiv .ulHeaderLinks.is-open a {
@@ -2129,11 +2145,15 @@ Files inside this folder can contain specific element styles and layout.
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .headerDiv .ulTitleHeader .titleHeader, .headerDiv .ulTitleHeader a {
   text-decoration: none;
   list-style-type: none;
   color: black;
+}
+.headerDiv .ulTitleHeader .titleHeader h1, .headerDiv .ulTitleHeader a h1 {
+  justify-content: center;
 }
 .headerDiv .userButton {
   background-color: #F9DE4E;
@@ -2177,15 +2197,16 @@ Files inside this folder can contain specific element styles and layout.
   display: block;
   position: absolute;
   top: 100%;
-  left: -43px;
+  right: 0;
+  top: 5vh;
   margin-right: 0;
   z-index: 9999;
   list-style-type: none;
-  height: 100vh;
-  width: 70vw;
+  height: 13vh;
+  width: 20vw;
   background-color: #F9DE4E;
 }
-.headerDiv .headerButtons.is-open .signUpBtnStyle {
+.headerDiv .headerButtons.is-open .signUpBtnStyle, .headerDiv .headerButtons.is-open .dashboardBtnStyle {
   background-color: white;
   border: none;
   border-radius: 12px;
@@ -2196,8 +2217,9 @@ Files inside this folder can contain specific element styles and layout.
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  height: 5vh;
 }
-.headerDiv .headerButtons.is-open .loginBtnStyle {
+.headerDiv .headerButtons.is-open .loginBtnStyle, .headerDiv .headerButtons.is-open .logout {
   background-color: #F9DE4E;
   border: none;
   border-radius: 12px;

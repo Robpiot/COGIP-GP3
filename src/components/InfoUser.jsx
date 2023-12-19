@@ -58,7 +58,7 @@ export function InfoUser() {
           <li>
             <span className="bold">Company: </span>
             <Link key={company.id} to={`/ShowCompany/${company.id}`}>
-              {contact.company_name}
+              {toUppercase(contact.company_name)}
             </Link>
           </li>
         </ul>

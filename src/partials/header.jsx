@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Logoff from "../assets/utils/Logoff";
-import { useContext } from 'react';
-import { UserContext } from "../assets/utils/UserContext"; 
+import { useContext } from "react";
+import { UserContext } from "../assets/utils/UserContext";
 // import ModalLogin from "../components/modalLogin";
 // import ModalRegister from "../components/ModalRegister";
 
@@ -19,7 +19,7 @@ export default function Header({ setOpenModal }) {
 
   const navigate = useNavigate();
 
-  <Logoff setUser={setUser} navigate={navigate}/>
+  <Logoff setUser={setUser} navigate={navigate} />;
 
   return (
     <div className="headerDiv">
@@ -69,43 +69,42 @@ export default function Header({ setOpenModal }) {
           </li>
         </ul>
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>
-        {user ? (
-          <>
-          {(user.role_id === 1 || user.role_id === 2) && (
-                        <li className="dashboardButton">
-              <button
-                className="dashboardBtnStyle"
-                onClick={() => navigate('/dashboard')}
-              >
-                Dashboard
-              </button>
-            </li>
+          {user ? (
+            <>
+              {(user.role_id === 1 || user.role_id === 2) && (
+                <li className="dashboardButton">
+                  <button
+                    className="dashboardBtnStyle"
+                    onClick={() => navigate("/dashboard")}
+                  >
+                    Dashboard
+                  </button>
+                </li>
+              )}
+              <li className="logoffButton">
+                <Logoff setUser={setUser} navigate={navigate} />
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="signupButton">
+                <button
+                  className="signUpBtnStyle"
+                  onClick={() => setOpenModal("register")}
+                >
+                  Sign up
+                </button>
+              </li>
+              <li className="loginButton">
+                <button
+                  className="loginBtnStyle"
+                  onClick={() => setOpenModal("login")}
+                >
+                  Login
+                </button>
+              </li>
+            </>
           )}
-            <li className="logoffButton">
-              <Logoff setUser={setUser} navigate={navigate}/>
-            </li>
-          </>
-        ) : (
-          <>
-            <li className="signupButton">
-              <button
-                className="signUpBtnStyle"
-                onClick={() => setOpenModal('register')}
-              >
-                Sign up
-              </button>
-            </li>
-            <li className="loginButton">
-              <button
-                className="loginBtnStyle"
-                onClick={() => setOpenModal('login')}
-              >
-                Login
-              </button>
-            </li>
-          </>
-        )}
-
         </ul>
       </nav>
       <button className="userButton" onClick={toggleMenu}>
@@ -113,4 +112,4 @@ export default function Header({ setOpenModal }) {
       </button>
     </div>
   );
-};
+}

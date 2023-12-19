@@ -638,7 +638,7 @@ footer .bottomLinks nav .copyright {
     font-size: 1.2vw;
   }
 }
-.headerDiv .headerButtons .signUpBtnStyle, .headerDiv .headerButtons .dashboardBtnStyle, .headerDiv .headerButtons .loginBtnStyle, .headerDiv .headerButtons .logoffbtn {
+.headerDiv .headerButtons .signUpBtnStyle, .headerDiv .headerButtons .dashboardBtnStyle, .headerDiv .headerButtons .loginBtnStyle, .headerDiv .headerButtons .logout {
   font-family: "Roboto", sans-serif;
 }
 
@@ -2113,10 +2113,13 @@ Files inside this folder can contain specific element styles and layout.
 .headerDiv .ulHeaderLinks.is-open {
   display: block;
   position: absolute;
+  height: 100vh;
   top: 100%;
-  left: 0;
+  left: -43px;
   z-index: 9999;
   list-style-type: none;
+  width: 70vw;
+  background-color: #F9DE4E;
 }
 .headerDiv .ulHeaderLinks.is-open li, .headerDiv .ulHeaderLinks.is-open a {
   text-decoration: none;
@@ -2174,14 +2177,37 @@ Files inside this folder can contain specific element styles and layout.
   display: block;
   position: absolute;
   top: 100%;
-  right: 0;
-  margin-right: 30px;
+  left: -43px;
+  margin-right: 0;
   z-index: 9999;
   list-style-type: none;
+  height: 100vh;
+  width: 70vw;
+  background-color: #F9DE4E;
 }
-.headerDiv .headerButtons.is-open li, .headerDiv .headerButtons.is-open a {
+.headerDiv .headerButtons.is-open .signUpBtnStyle {
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
   text-decoration: none;
-  color: black;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.headerDiv .headerButtons.is-open .loginBtnStyle {
+  background-color: #F9DE4E;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 880px) {

@@ -17,7 +17,7 @@ export default function RegisterForm() {
     data.role_id = 4;
     console.log("Sending data:", data);
 
-    fetch("https://cogip-990e44950882.herokuapp.com/users", {
+    fetch(import.meta.env.VITE_API_LINK, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

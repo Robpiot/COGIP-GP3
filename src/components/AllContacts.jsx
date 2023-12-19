@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import formatDate from "../assets/utils/Date";
+import toUppercase from "../functions/toUppercase";
 
 export function AllContacts() {
     const [contacts, setContacts] = useState([]);
@@ -13,7 +14,8 @@ export function AllContacts() {
     useEffect(() => {
         const fetchContacts = async () => {
             const result = await RequestContacts();
-            setContacts(result);
+            const sortedResult = result.sort((a, b) => a.name.localeCompare(b.name));
+            setContacts(sortedResult);
         };
 
         fetchContacts();
@@ -43,12 +45,12 @@ export function AllContacts() {
                     <tr key={contact.id}>
                         <td>
                             <Link key={contact.id} to={`/ShowContacts/${contact.id}`}>
-                                {contact.name}
+                                {toUppercase(contact.name)}
                             </Link>
                         </td>
                         <td>{contact.phone}</td>
                         <td>{contact.email}</td>
-                        <td>{contact.company_name}</td>
+                        <td>{toUppercase(contact.company_name)}</td>
                         <td>{formatDate(contact.created_at)}</td>
                     </tr>
                 ))}

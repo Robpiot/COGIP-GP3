@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { RequestCompanies, RequestInvoices } from '../assets/utils/Requests';
 import formatDate from "../assets/utils/Date";
+import toUppercase from '../functions/toUppercase';
 
 export function InfoInvoices() {
     const [invoice, setInvoices] = useState(null);
@@ -37,7 +38,7 @@ export function InfoInvoices() {
                     <li><span className="bold">Due date: </span>{formatDate(invoice.due_at)}</li>
                     <li><span className="bold">Company: </span>
                         <Link to={`/ShowCompany/${invoice.companyId}`}>
-                            {invoice.companyName}
+                            {toUppercase(invoice.companyName)}
                         </Link>
                     </li>
                     <li><span className="bold">Created at: </span>{formatDate(invoice.created_at)}

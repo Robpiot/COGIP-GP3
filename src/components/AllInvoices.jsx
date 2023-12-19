@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import formatDate from "../assets/utils/Date";
+import toUppercase from "../functions/toUppercase";
 
 export function AllInvoices() {
     const [invoices, setInvoices] = useState([]);
@@ -56,7 +57,7 @@ export function AllInvoices() {
                                 <td>{formatDate(invoice.due_at)}</td>
                                 <td>
                                     <Link to={`/ShowCompany/${invoice.companyId}`}>
-                                        {invoice.companyName}
+                                        {toUppercase(invoice.companyName)}
                                     </Link>
                                 </td>
                                 <td>{formatDate(invoice.created_at)}</td>

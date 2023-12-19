@@ -2,6 +2,7 @@ import { RequestLastContacts } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import formatDate from "../assets/utils/Date";
+import toUppercase from "../functions/toUppercase";
 
 export default function LastContacts() {
     const [contacts, setContacts] = useState([]);
@@ -34,12 +35,12 @@ export default function LastContacts() {
                     <tr key={contact.id}>
                         <td>
                             <Link key={contact.id} to={`/ShowContacts/${contact.id}`}>
-                                {contact.name}
+                                {toUppercase(contact.name)}
                             </Link>
                         </td>
                         <td>{contact.phone}</td>
                         <td>{contact.email}</td>
-                        <td>{contact.company_name}</td>
+                        <td>{toUppercase(contact.company_name)}</td>
                         <td>{formatDate(contact.created_at)}</td>
                     </tr>
                 ))}

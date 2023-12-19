@@ -4,6 +4,9 @@ import { RequestCompanies, RequestContacts, RequestInvoices } from '../assets/ut
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import formatDate from "../assets/utils/Date";
+import Loading from './Loading';
+import toUppercase from '../functions/toUppercase';
+
 
 export function InfoCompany() {
     const [company, setCompany] = useState(null);
@@ -38,19 +41,19 @@ export function InfoCompany() {
 
     
     if (!company) {
-        return <div>Loading...</div>;
+        return <div><Loading /></div>;
     }
 
     return (
         <div className="user">
             <div className="infos">
-                <h1 className="name">{company.name}</h1>
+                <h1 className="name">{toUppercase(company.name)}</h1>
                 <div className="infoUsers">
                     <ul>
-                        <li><span className="bold">Name:</span> {company.name}</li>
+                        <li><span className="bold">Name:</span> {toUppercase(company.name)}</li>
                         <li><span className="bold">TVA:</span> {company.tva}</li>
-                        <li><span className="bold">Country:</span> {company.country}</li>
-                        <li><span className="bold">Type:</span> {company.types_name}</li>
+                        <li><span className="bold">Country:</span> {toUppercase(company.country)}</li>
+                        <li><span className="bold">Type:</span> {toUppercase(company.types_name)}</li>
                     </ul>
                 </div>
             </div>
@@ -63,7 +66,7 @@ export function InfoCompany() {
                         <img className="contactPicture" src="/img/Contacts/bertram.png" alt="contact-picture"></img>
                         <h3 className="contactName">
                             <Link key={contact.id} to={`/ShowContacts/${contact.id}`}>
-                                {contact.name}
+                                {toUppercase(contact.name)}
                             </Link>
                         </h3>
                     </div>
@@ -96,7 +99,7 @@ export function InfoCompany() {
                                 <td>{formatDate(invoice.due_at)}</td>
                                 <td>
                                     <Link key={company.id} to={`/ShowCompany/${company.id}`}>
-                                        {company.name}
+                                        {toUppercase(company.name)}
                                     </Link>
                                 </td>
                                 <td>{formatDate(invoice.created_at)}</td>

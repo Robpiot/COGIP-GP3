@@ -2,6 +2,7 @@ import { RequestLastCompanies } from "../assets/utils/Requests";
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import formatDate from "../assets/utils/Date";
+import toUppercase from "../functions/toUppercase";
 
 export default function LastCompanies() {
     const [companies, setCompanies] = useState([]);
@@ -36,12 +37,12 @@ export default function LastCompanies() {
                         <tr key={company.id}>
                             <td>                            
                                 <Link key={company.id} to={`/ShowCompany/${company.id}`}>
-                                    {company.name}
+                                    {toUppercase(company.name)}
                                 </Link>
                             </td>
                             <td>{company.tva}</td>
-                            <td>{company.country}</td>
-                            <td>{company.types_name}</td>
+                            <td>{toUppercase(company.country)}</td>
+                            <td>{toUppercase(company.types_name)}</td>
                             <td>{formatDate(company.created_at)}</td>
                         </tr>
                     );

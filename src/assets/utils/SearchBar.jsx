@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export function SearchBar() {
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const handleChange = event => {
-        setSearchTerm(event.target.value);
-    }
-
+export function SearchBar({ value, onChange }) {
     return (
         <input
             className="field"
-            type="text"
+            type="search"
             placeholder='Search...'
-            value={searchTerm}
-            onChange={handleChange}
+            value={value}
+            onChange={onChange}
         />
     );
 }

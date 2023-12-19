@@ -18,8 +18,8 @@ const CreateCompanies = () => {
 
     const onSubmit = async (data) => {
         data.company_id = parseInt(data.company_id, 10);
-        console.log(data);
-        console.log(JSON.stringify(data));
+        // console.log(data);
+        // console.log(JSON.stringify(data));
         try {
             createCompanies(data);
             reset();

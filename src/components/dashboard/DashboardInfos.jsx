@@ -90,7 +90,7 @@ const DashboardInfos = ({ data }) => {
                     datasToSend.name = inputValue;
                 } else if (colKey === 'col_2') {
                     if (!data.dataInfos.find(row => row.tva === inputValue.trim())) {
-                        console.log(data.dataInfos.find(row => row.tva === inputValue.trim()));
+                        // console.log(data.dataInfos.find(row => row.tva === inputValue.trim()));
                         datasToSend.tva = inputValue;
                     } else {
                         alert('Ce numéro de TVA est déjà présent en DB ! \nEntrer un autre numéro de TVA.');

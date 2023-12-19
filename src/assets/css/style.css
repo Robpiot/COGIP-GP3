@@ -864,7 +864,7 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout .logoutDash {
   margin-left: 50px;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 64rem) {
   header.dashboard-navbar {
     height: 100vh;
   }
@@ -876,41 +876,41 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout .logoutDash {
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem {
     left: 0;
-    margin: 0 0 0 285px;
+    margin: 0 0 0 17.8125rem;
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar {
-    margin-top: 30px;
+    margin-top: 1.875rem;
   }
 }
-@media only screen and (min-height: 756px) {
+@media only screen and (min-height: 47.25rem) {
   header.dashboard-navbar .menu--left .menuToggle .menuItem {
-    padding-top: 120px;
-    height: calc(100vh - 80px);
+    padding-top: 3.75rem;
+    height: calc(100vh - 2.5rem);
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar {
-    top: 50px;
-    padding-top: 50px;
-    margin-top: 50px;
-    height: 200px;
+    top: 3.125rem;
+    padding-top: 3.125rem;
+    margin-top: 3.125rem;
+    height: 12.5rem;
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar img {
-    width: 105px;
-    height: 105px;
+    width: 6.5625rem;
+    height: 6.5625rem;
     border-radius: 50%;
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar p {
-    font-size: 25px;
+    font-size: 1.5625rem;
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .separate {
-    top: 60px;
-    margin: 30px 0 20px;
+    top: 3.75rem;
+    margin: 1.875rem 0 1.25rem;
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem ul {
     position: relative;
-    top: 70px;
+    top: 4.375rem;
   }
 }
-@media only screen and (min-width: 1024px), only screen and (min-height: 756px) {
+@media only screen and (min-width: 64rem), only screen and (min-height: 47.25rem) {
   header.dashboard-navbar {
     height: 100vh;
   }
@@ -919,7 +919,7 @@ header.dashboard-navbar .menu--left .menuToggle .menuItem .logout .logoutDash {
     height: 100vh;
   }
   header.dashboard-navbar .menu--left .menuToggle .menuItem .avatar {
-    padding-top: 20px;
+    padding-top: 1.25rem;
   }
 }
 header.dashboard-header {

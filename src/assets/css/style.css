@@ -1219,10 +1219,8 @@ section.infos .infos-container table tr td .btn {
   border: none;
   background-color: white;
 }
-section.infos .infos-container table tr td .btn svg {
-  filter: invert(67%) sepia(65%) saturate(527%) hue-rotate(197deg) brightness(88%) contrast(88%);
-}
-section.infos .infos-container table tr td .btn svg:hover {
+section.infos .infos-container table tr td .btn img:hover {
+  fill: #000000;
   filter: invert(68%) sepia(37%) saturate(5815%) hue-rotate(316deg) brightness(122%) contrast(106%);
 }
 section.infos .infos-container table tr td:first-of-type {

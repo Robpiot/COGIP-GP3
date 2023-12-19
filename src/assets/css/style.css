@@ -1719,10 +1719,10 @@ section.form .form-container form button {
   z-index: 1;
 }
 .user .contactInfo .contactPeople {
-  display: flex;
-  flex-direction: row;
-  gap: 8%;
-  width: 50vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+  width: 95%;
 }
 .user .contactInfo .contactPeople .people {
   display: flex;
@@ -1731,7 +1731,7 @@ section.form .form-container form button {
   border-radius: 20px;
   align-items: center;
   padding: 3% 12% 3% 7%;
-  gap: 10%;
+  gap: 2%;
 }
 .user .contactInfo .contactPeople .people .contactPicture {
   border-radius: 50%;

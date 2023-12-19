@@ -2,6 +2,8 @@ import { RequestLastInvoices, RequestCompanies } from "../assets/utils/Requests"
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import formatDate from "../assets/utils/Date";
+import toUppercase from "../functions/toUppercase";
+
 
 export default function LastInvoices() {
     const [invoices, setInvoices] = useState([]);
@@ -48,7 +50,7 @@ export default function LastInvoices() {
                                 <td>{formatDate(invoice.due_at)}</td>
                                 <td>
                                     <Link to={`/ShowCompany/${invoice.companyId}`}>
-                                        {invoice.companyName}
+                                        {toUppercase(invoice.companyName)}
                                     </Link>
                                 </td>
                                 <td>{formatDate(invoice.created_at)}</td>

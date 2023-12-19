@@ -2,6 +2,7 @@ import { RequestLastContacts } from "../assets/utils/Requests";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import formatDate from "../assets/utils/Date";
+import toUppercase from "../functions/toUppercase";
 import Loading from "./loading";
 
 export default function LastContacts() {

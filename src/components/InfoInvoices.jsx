@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { RequestCompanies, RequestInvoices } from "../assets/utils/Requests";
 import formatDate from "../assets/utils/Date";
 import Loading from "./loading";
+import toUppercase from '../functions/toUppercase';
 
 export function InfoInvoices() {
   const [invoice, setInvoices] = useState(null);
@@ -55,7 +56,7 @@ export function InfoInvoices() {
           <li>
             <span className="bold">Company: </span>
             <Link to={`/ShowCompany/${invoice.companyId}`}>
-              {invoice.companyName}
+              {toUppercase(invoice.companyName)}
             </Link>
           </li>
           <li>

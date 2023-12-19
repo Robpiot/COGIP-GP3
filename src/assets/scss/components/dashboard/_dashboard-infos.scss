@@ -79,27 +79,36 @@ section.infos {
                         cursor: pointer;
                         border:none;
                         background-color: white;
-                        svg {
-                            filter: invert(67%) 
-                                    sepia(65%) 
-                                    saturate(527%) 
-                                    hue-rotate(197deg) 
-                                    brightness(88%) 
-                                    contrast(88%);
-                            &:hover {
-                                // filter: invert(31%) 
-                                //         sepia(45%) 
-                                //         saturate(1167%) 
-                                //         hue-rotate(206deg) 
-                                //         brightness(92%) 
-                                //         contrast(90%);
-                                filter: invert(68%) 
-                                        sepia(37%) 
-                                        saturate(5815%) 
-                                        hue-rotate(316deg) 
-                                        brightness(122%) 
-                                        contrast(106%);
-                            }
+                        // svg {
+                        //     filter: invert(67%) 
+                        //             sepia(65%) 
+                        //             saturate(527%) 
+                        //             hue-rotate(197deg) 
+                        //             brightness(88%) 
+                        //             contrast(88%);
+                        //     &:hover {
+                        //         // filter: invert(31%) 
+                        //         //         sepia(45%) 
+                        //         //         saturate(1167%) 
+                        //         //         hue-rotate(206deg) 
+                        //         //         brightness(92%) 
+                        //         //         contrast(90%);
+                        //         filter: invert(68%) 
+                        //                 sepia(37%) 
+                        //                 saturate(5815%) 
+                        //                 hue-rotate(316deg) 
+                        //                 brightness(122%) 
+                        //                 contrast(106%);
+                        //     }
+                        // }
+                        img:hover {
+                            fill: #000000;
+                            filter: invert(68%) 
+                                    sepia(37%) 
+                                    saturate(5815%) 
+                                    hue-rotate(316deg) 
+                                    brightness(122%) 
+                                    contrast(106%);     
                         }
                     }
                     &:first-of-type {

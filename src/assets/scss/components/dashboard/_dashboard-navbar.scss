@@ -192,7 +192,7 @@ header.dashboard-navbar {
 }
 
 // ////////////////////////////////////////////////////////////////////////////////////
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 64rem) {
     header.dashboard-navbar {
         height: 100vh;
 
@@ -207,10 +207,12 @@ header.dashboard-navbar {
 
                 .menuItem {
                     left: 0;
-                    margin: 0 0 0 285px;
+                    // margin: 0 0 0 285px;
+                    margin: 0 0 0 17.8125rem;
 
                     .avatar {
-                        margin-top: 30px;
+                        // margin-top: 30px;
+                        margin-top: 1.875rem;
                     }
                 }
             }
@@ -221,7 +223,7 @@ header.dashboard-navbar {
 
 
 // ////////////////////////////////////////////////////////////////////////////////////
-@media only screen and (min-height: 756px) {
+@media only screen and (min-height: 47.25rem) {
     header.dashboard-navbar {
         
         .menu--left {
@@ -229,34 +231,46 @@ header.dashboard-navbar {
             .menuToggle {
 
                 .menuItem {
-                    padding-top: 120px;
-                    height: calc(100vh - 80px);
+                    // padding-top: 120px;
+                    padding-top: 3.75rem;
+                    // height: calc(100vh - 80px);
+                    height: calc(100vh - 2.5rem);
 
                     .avatar {
-                        top: 50px;
-                        padding-top: 50px;
-                        margin-top: 50px;
-                        height: 200px;
+                        // top: 50px;
+                        top: 3.125rem;
+                        // padding-top: 50px;
+                        padding-top: 3.125rem;
+                        // margin-top: 50px;
+                        margin-top: 3.125rem;
+                        // height: 200px;
+                        height: 12.5rem;
                         
                         img {
-                            width: 105px;
-                            height: 105px;
+                            // width: 105px;
+                            width: 6.5625rem;
+                            // height: 105px;
+                            height: 6.5625rem;
                             border-radius: 50%;
                         }
 
                         p {
-                            font-size: 25px;
+                            // font-size: 25px;
+                            font-size: 1.5625rem;
                         }
                     }
 
                     .separate {
-                        top: 60px;
-                        margin: 30px 0 20px;
+                        // top: 60px;
+                        top: 3.75rem;
+                        // margin: 30px 0 20px;
+                        margin: 1.875rem 0 1.25rem;
                     }
 
                     ul {
                         position: relative;
-                        top: 70px;
+                        // top: 70px;
+                        top: 4.375rem;
                     }
                 }
             }
@@ -266,8 +280,8 @@ header.dashboard-navbar {
 
 
 // ////////////////////////////////////////////////////////////////////////////////////
-@media only screen and (min-width: 1024px), 
-    only screen and (min-height: 756px) {
+@media only screen and (min-width: 64rem), 
+    only screen and (min-height: 47.25rem) {
 
     header.dashboard-navbar {
         height: 100vh;
@@ -280,7 +294,8 @@ header.dashboard-navbar {
                     padding-top: 0;
                     height: 100vh;
                     .avatar {
-                        padding-top: 20px;
+                        // padding-top: 20px;
+                        padding-top: 1.25rem;
                     }
                 }    
             }   

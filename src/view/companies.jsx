@@ -1,6 +1,6 @@
-import Header from "../partials/header.jsx";
 import Footer from "../partials/footer.jsx";
 import { AllCompanies } from "../components/AllCompanies.jsx";
+import { SearchBar } from "../assets/utils/searchBar.jsx";
 
 const Companies = () => {
   return (
@@ -12,7 +12,7 @@ const Companies = () => {
           </svg> 
       </div>
       <h1 className="titleSection">All Companies</h1>
-      <input className="field" type="text" placeholder="Search company name"/>
+      <SearchBar />
       <div className="allInvoices">
         <AllCompanies />
       </div>

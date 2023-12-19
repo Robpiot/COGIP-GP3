@@ -71,7 +71,7 @@ export default function Header({ setOpenModal }) {
         <ul className={`headerButtons ${isMenuOpen ? "is-open" : ""}`}>
           {user ? (
             <>
-              {(user.role_id === 1 || user.role_id === 2) && (
+              {(user.role_id === 1 || user.role_id === 2 || user.role_id === 3) && (
                 <li className="dashboardButton">
                   <button
                     className="dashboardBtnStyle"

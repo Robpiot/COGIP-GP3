@@ -1,5 +1,4 @@
-import { RequestCompanies } from "../assets/utils/Requests";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -7,20 +6,9 @@ import formatDate from "../assets/utils/Date";
 import Loading from "./loading";
 import toUppercase from "../functions/toUppercase";
 
-export function AllCompanies() {
-  const [companies, setCompanies] = useState([]);
+export function AllCompanies( { companies }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-
-  useEffect(() => {
-    const fetchCompanies = async () => {
-      const result = await RequestCompanies();
-      const sortedResult = result.sort((a, b) => a.name.localeCompare(b.name));
-      setCompanies(sortedResult);
-    };
-
-    fetchCompanies();
-  }, []);
 
   const totalPages = Math.ceil(companies.length / itemsPerPage);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);

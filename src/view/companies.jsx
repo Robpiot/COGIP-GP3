@@ -1,8 +1,34 @@
 import Footer from "../partials/footer.jsx";
 import { AllCompanies } from "../components/AllCompanies.jsx";
 import { SearchBar } from "../assets/utils/searchBar.jsx";
+import { RequestCompanies } from "../assets/utils/Requests.jsx";
+import { useState, useEffect } from 'react';
 
 const Companies = () => {
+  const [companies, setCompanies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    const fetchCompanies = async () => {
+      const result = await RequestCompanies();
+      const sortedResult = result.sort((a, b) => a.name.localeCompare(b.name));
+      setCompanies(sortedResult);
+    };
+
+    fetchCompanies();
+  }, []);
+
+  const handleChange = event => {
+    setSearchTerm(event.target.value);
+    console.log(handleChange)
+  }
+
+  const filteredCompanies = companies.filter(company =>
+    company.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    company.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    company.types_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <div className="empty"></div>
@@ -12,9 +38,9 @@ const Companies = () => {
           </svg> 
       </div>
       <h1 className="titleSection">All Companies</h1>
-      <SearchBar />
+      <SearchBar value={searchTerm} onChange={handleChange} />
       <div className="allInvoices">
-        <AllCompanies />
+        <AllCompanies companies={filteredCompanies} />
       </div>
       <Footer />
     </div>

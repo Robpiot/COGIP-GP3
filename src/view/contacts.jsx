@@ -1,8 +1,34 @@
-import Header from "../partials/header.jsx";
+
 import Footer from "../partials/footer.jsx";
 import { AllContacts } from "../components/AllContacts.jsx";
+import { SearchBar } from "../assets/utils/searchBar.jsx";
+import { RequestContacts } from "../assets/utils/Requests.jsx";
+import { useState, useEffect } from 'react';
 
 const Contacts = () => {
+  const [contacts, setContacts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+    useEffect(() => {
+        const fetchContacts = async () => {
+            const result = await RequestContacts();
+            const sortedResult = result.sort((a, b) => a.name.localeCompare(b.name));
+            setContacts(sortedResult);
+        };
+
+    fetchContacts();
+  }, []);
+
+  const handleChange = event => {
+    setSearchTerm(event.target.value);
+    console.log(handleChange)
+  }
+
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    contact.company_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <div className="empty"></div>
@@ -12,9 +38,9 @@ const Contacts = () => {
           </svg> 
       </div>
       <h1 className="titleSection">All contacts</h1>
-      <input className="field" type="text" placeholder="Search contact"/>
+      <SearchBar value={searchTerm} onChange={handleChange}/>
       <div className="allInvoices">
-        <AllContacts />
+        <AllContacts contacts={filteredContacts}/>
       </div>
       <Footer />
     </div>

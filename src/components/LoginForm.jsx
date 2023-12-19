@@ -19,10 +19,11 @@ export default function LoginForm({ closeModal, mockLogin }) {
     <div className="formLogin">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <input
             type="text"
-            name="email"
+            id="email"
+            autoComplete="on"
             {...register("email", {
               // ... will tracks all the props and spread all the required events handlers
               required: true,
@@ -37,10 +38,11 @@ export default function LoginForm({ closeModal, mockLogin }) {
           )}
         </div>
         <div className="form-control">
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <input
+            id="password"
             type="password"
-            name="password"
+            autoComplete="on"
             {...register("password", {
               required: true,
               minLength: 6,
@@ -56,8 +58,9 @@ export default function LoginForm({ closeModal, mockLogin }) {
           )}
         </div>
         <div className="form-control">
-          <label></label>
-          <button className="submitLog" type="submit">Login</button>
+          <button className="submitLog" type="submit">
+            Login
+          </button>
         </div>
       </form>
     </div>

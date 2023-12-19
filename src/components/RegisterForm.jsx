@@ -47,12 +47,13 @@ export default function RegisterForm() {
 
   return (
     <div className="formLogin">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} id="registerForm">
         <div className="form-control">
-          <label>First Name :</label>
+          <label htmlFor="first_name">First Name :</label>
           <input
+            autoComplete="off"
             type="text"
-            name="first_name"
+            id="first_name"
             {...register("first_name", {
               required: true,
               maxLength: 20,
@@ -68,10 +69,11 @@ export default function RegisterForm() {
           {errors.first_name && errors.first_name.type === "pattern" && (
             <p className="errorMsg">Alphabetical characters only.</p>
           )}
-          <label>Last Name : </label>
+          <label htmlFor="last_name">Last Name : </label>
           <input
+            autoComplete="off"
             type="text"
-            name="last_name"
+            id="last_name"
             {...register("last_name", {
               required: true,
               maxLength: 20,
@@ -87,10 +89,11 @@ export default function RegisterForm() {
           {errors.last_name && errors.last_name.type === "pattern" && (
             <p className="errorMsg">Alphabetical characters only.</p>
           )}
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <input
             type="text"
-            name="email"
+            id="email"
+            autoComplete="off"
             {...register("email", {
               // ... will tracks all the props and spread all the required events handlers
               required: true,
@@ -105,10 +108,10 @@ export default function RegisterForm() {
           )}
         </div>
         <div className="form-control">
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
-            name="password"
+            id="password"
             {...register("password", {
               required: true,
               minLength: 6,
@@ -131,7 +134,6 @@ export default function RegisterForm() {
           )}
         </div>
         <div className="form-control">
-          <label></label>
           <button className="sumbitReg" type="submit">
             Register
           </button>

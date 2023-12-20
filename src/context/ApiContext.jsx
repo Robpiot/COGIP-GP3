@@ -43,6 +43,10 @@ export default function ApiProvider(props) {
                     break;
                 case 'companies':
                     setCompanies(entityData);
+                    const invoicesUpdated = await fetchAll('invoices');
+                    setInvoices(invoicesUpdated);
+                    const contactsUpdated = await fetchAll('contacts');
+                    setContacts(contactsUpdated);
                     break;
                 case 'invoices':
                     setInvoices(entityData);

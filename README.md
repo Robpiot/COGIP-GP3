@@ -3,17 +3,11 @@
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
-
-
-
-
-
-
 # Accounting Database System
 
 ## Overview
 
-This project is an accounting database system designed to manage financial and contact information through a user-friendly interface. The system caters to two main user profiles: Admin and user. 
+This project is an accounting database system designed to manage financial and contact information through a user-friendly interface. The system caters to two main user profiles: Admin and user.  
 
 ## Features
 
@@ -62,14 +56,15 @@ The project aims to streamline the management of financial and contact data, pro
 - [Rosalie](https://github.com/RosaBld)
 - [Robin](https://github.com/robpiot)
 
-
 ## Back-end
 
 Back end repository is availlaible if you click on this [Link](https://github.com/AlexandreVDW/Cogip_Project_back),
-And is made by : 
--[Tim](https://github.com/TimDesmet00)
--[Okly](Okly2023)
--[Alexandre](https://github.com/AlexandreVDW)
+And is made by :  
+
+- [Tim](https://github.com/TimDesmet00)
+- [Okly](Okly2023)
+- [Alexandre](https://github.com/AlexandreVDW)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

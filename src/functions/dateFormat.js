@@ -1,3 +1,8 @@
+/**
+ * Fonction utilitaire qui prend en paramètre une date au format ISO et retourne une chaîne de caractères représentant la date au format "jour/mois/année".
+ * @param {Date} date - La date à formater.
+ * @returns {string} - La date formatée.
+ */
 export default function formatDate(date) {
     const day = new Date(date).getDate();
     const formatDay = day < 10 ? '0' + day : day; 

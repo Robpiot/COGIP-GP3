@@ -58,10 +58,18 @@ The project aims to streamline the management of financial and contact data, pro
 
 ## Contributors
 
-- Carole
-- Rosalie
-- Robin
+- [Carole](https://github.com/Carole-GRD)
+- [Rosalie](https://github.com/RosaBld)
+- [Robin](https://github.com/robpiot)
 
+
+## Back-end
+
+Back end repository is availlaible if you click on this [Link](https://github.com/AlexandreVDW/Cogip_Project_back),
+And is made by : 
+-[Tim](https://github.com/TimDesmet00)
+-[Okly](Okly2023)
+-[Alexandre](https://github.com/AlexandreVDW)
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

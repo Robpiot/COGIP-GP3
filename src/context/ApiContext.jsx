@@ -72,6 +72,10 @@ export default function ApiProvider(props) {
                     const typesOfCompanies = await fetchAll('types');
                     setTypes(typesOfCompanies);
                     setCompanies(entityData);
+                    const invoicesUpdated = await fetchAll('invoices');
+                    setInvoices(invoicesUpdated);
+                    const contactsUpdated = await fetchAll('contacts');
+                    setContacts(contactsUpdated);
                     break;
                 case 'invoices':
                     const companiesOfInvoices = await fetchAll('companies');

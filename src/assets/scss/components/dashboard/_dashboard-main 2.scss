@@ -1,0 +1,21 @@
+main.dashboard-main {
+    position: absolute;
+    z-index: 0;
+    top: 60px;
+    box-sizing: border-box;
+    padding: 0 8%;
+    margin: 0;
+    width: 100%;
+    background: #F5F5FB;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    
+    main.dashboard-main {
+        width: calc(100% - 275px);
+        top: 0;
+        left: 275px;
+    }
+}
+

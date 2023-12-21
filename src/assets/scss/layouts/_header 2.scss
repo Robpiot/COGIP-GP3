@@ -1,0 +1,245 @@
+* {
+    margin : 0px;
+    padding: 0px;
+}
+.navBarHeader {
+    display: flex;
+    width: 80%;
+    position: relative;
+    z-index: 10;
+}
+
+.headerDiv {
+  background-color: #F9DE4E;
+  display: flex;
+  position: relative; 
+  justify-content: center;
+  align-items: center;
+  
+  ul {
+      li {
+          list-style-type: none;
+          a {
+              text-decoration: none;
+          }
+      }
+  }
+
+  .menuButton {
+      background-color: #F9DE4E;
+      position: absolute;
+      top: 50%; 
+      left: 0; // Add this line
+      transform: translateY(-50%);
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      border: none;
+  }
+  .ulHeaderLinks{
+      display:none;
+      // border-top: .0625rem solid #F9DE4E;
+  }
+
+  .ulHeaderLinks.is-open {
+      display: block;
+      position: absolute;
+      height: 12vh;
+      top: 100%; // Adjust this line
+      left: 0;
+      top: 5vh;
+      z-index: 9999;
+      list-style-type: none;
+      width: 15vw;
+      background-color: #F9DE4E;
+    
+      li, a {
+        text-decoration: none;
+        color: black;
+      }
+      
+    }
+
+  .ulTitleHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+      .titleHeader, a {
+          text-decoration: none;
+          list-style-type: none;
+          color : black;
+          h1 {
+            justify-content: center;
+          }
+      }
+  }
+
+  .userButton {
+      background-color: #F9DE4E;
+      position: absolute;
+      top: 50%; 
+      right: 0; // Add this line
+      transform: translateY(-50%);
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      border: none;
+  }
+
+  .headerButtons {
+      display: none;
+      .signUpBtnStyle, .dashboardBtnStyle {
+          background-color: white;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        .loginBtnStyle, .logoffbtn {
+          background-color: #F9DE4E;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+  }
+  
+  .headerButtons.is-open{
+    display: block;
+    position: absolute;
+    top: 100%; // Adjust this line
+    right: 0;
+    top: 5vh;
+    margin-right: 0;
+    z-index: 9999;
+    list-style-type: none;
+    height: 13vh;
+    width: 20vw;
+    background-color: #F9DE4E;
+  
+    .signUpBtnStyle, .dashboardBtnStyle {
+      background-color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 20px; // Adjust as needed
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      height: 5vh;
+    }
+    .loginBtnStyle, .logout {
+      background-color: #F9DE4E;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 20px; // Adjust as needed
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  }
+  }
+
+
+@media only screen and (min-width: 880px) {
+  .menuButton, .userButton {
+    display: none;
+  }
+  .headerDiv {
+    background-color: #F9DE4E;
+    padding: 30px 30px 0px 30px;
+
+    .navBarHeader {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      width: 100vw;
+      align-items: center;
+
+      .ulHeaderLinks {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        position: relative; // Reset the positioning
+        align-items: center;
+        top: auto; // Reset the top property
+        left: auto; // Reset the left property
+
+        li {
+          margin: 0 20px;
+
+          a {
+            text-decoration: none;
+              color: black;
+              padding: 7px;
+
+              &.active { // Add this block
+                  border: 1px solid black;
+                }
+              
+              
+          }
+        }
+      }
+
+      .ulTitleHeader {
+          grid-column: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .titleHeader, a{
+              text-decoration: none;
+              list-style-type: none;
+              color : black;
+          }
+      }
+
+      .headerButtons {
+        grid-column: 3;
+        display: flex;
+        position: static; // Reset the positioning
+        top: auto; // Reset the top property
+        .signUpBtnStyle, .dashboardBtnStyle {
+          background-color: white;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        .loginBtnStyle, .logout {
+          background-color: #F9DE4E;
+          border: none;
+          border-radius: 12px;
+          padding: 10px 20px; // Adjust as needed
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
